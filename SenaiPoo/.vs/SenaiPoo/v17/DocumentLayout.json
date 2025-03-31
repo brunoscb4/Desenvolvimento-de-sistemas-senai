@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\C#\\SenaiPoo\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{570796B1-BA87-456C-A14B-DEE1DEC0EFDC}|SenaiPoo\\SenaiPoo.csproj|d:\\c#\\senaipoo\\senaipoo\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{570796B1-BA87-456C-A14B-DEE1DEC0EFDC}|SenaiPoo\\SenaiPoo.csproj|solutionrelative:senaipoo\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\C#\\SenaiPoo\\SenaiPoo\\Program.cs",
+              "RelativeDocumentMoniker": "SenaiPoo\\Program.cs",
+              "ToolTip": "D:\\C#\\SenaiPoo\\SenaiPoo\\Program.cs",
+              "RelativeToolTip": "SenaiPoo\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD8AAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-31T16:02:59.489Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

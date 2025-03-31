@@ -1,0 +1,14 @@
+D:\C#\SenaiPoo\SenaiPoo\obj\Debug\net8.0\SenaiPoo.GeneratedMSBuildEditorConfig.editorconfig
+D:\C#\SenaiPoo\SenaiPoo\obj\Debug\net8.0\SenaiPoo.AssemblyInfoInputs.cache
+D:\C#\SenaiPoo\SenaiPoo\obj\Debug\net8.0\SenaiPoo.AssemblyInfo.cs
+D:\C#\SenaiPoo\SenaiPoo\obj\Debug\net8.0\SenaiPoo.csproj.CoreCompileInputs.cache
+D:\C#\SenaiPoo\SenaiPoo\bin\Debug\net8.0\SenaiPoo.exe
+D:\C#\SenaiPoo\SenaiPoo\bin\Debug\net8.0\SenaiPoo.deps.json
+D:\C#\SenaiPoo\SenaiPoo\bin\Debug\net8.0\SenaiPoo.runtimeconfig.json
+D:\C#\SenaiPoo\SenaiPoo\bin\Debug\net8.0\SenaiPoo.dll
+D:\C#\SenaiPoo\SenaiPoo\bin\Debug\net8.0\SenaiPoo.pdb
+D:\C#\SenaiPoo\SenaiPoo\obj\Debug\net8.0\SenaiPoo.dll
+D:\C#\SenaiPoo\SenaiPoo\obj\Debug\net8.0\refint\SenaiPoo.dll
+D:\C#\SenaiPoo\SenaiPoo\obj\Debug\net8.0\SenaiPoo.pdb
+D:\C#\SenaiPoo\SenaiPoo\obj\Debug\net8.0\SenaiPoo.genruntimeconfig.cache
+D:\C#\SenaiPoo\SenaiPoo\obj\Debug\net8.0\ref\SenaiPoo.dll
