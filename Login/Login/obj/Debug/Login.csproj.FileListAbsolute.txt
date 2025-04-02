@@ -1,0 +1,16 @@
+C:\Bruno\Login\Login\obj\Debug\Login.csprojResolveAssemblyReference.cache
+C:\Bruno\Login\Login\obj\Debug\Login.MainForm.resources
+C:\Bruno\Login\Login\obj\Debug\Login.csproj.GenerateResource.Cache
+C:\Bruno\Login\Login\bin\Debug\Login.exe.config
+C:\Bruno\Login\Login\bin\Debug\Login.exe
+C:\Bruno\Login\Login\bin\Debug\Login.pdb
+C:\Bruno\Login\Login\bin\Debug\MySql.Data.dll
+C:\Bruno\Login\Login\obj\Debug\Login.exe
+C:\Bruno\Login\Login\obj\Debug\Login.pdb
+C:\Bruno\Login\Login\obj\Debug\Login.Cadastro.resources
+D:\C#\Login\Login\obj\Debug\Login.csprojResolveAssemblyReference.cache
+D:\C#\Login\Login\obj\Debug\Login.Cadastro.resources
+D:\C#\Login\Login\obj\Debug\Login.MainForm.resources
+D:\C#\Login\Login\obj\Debug\Login.csproj.GenerateResource.Cache
+D:\C#\Login\Login\obj\Debug\Login.exe
+D:\C#\Login\Login\obj\Debug\Login.pdb
