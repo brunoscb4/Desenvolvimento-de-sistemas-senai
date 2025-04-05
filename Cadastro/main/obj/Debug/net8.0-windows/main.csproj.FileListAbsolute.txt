@@ -1,0 +1,16 @@
+C:\Bruno\Cadastro\main\bin\Debug\net8.0-windows\main.exe
+C:\Bruno\Cadastro\main\bin\Debug\net8.0-windows\main.deps.json
+C:\Bruno\Cadastro\main\bin\Debug\net8.0-windows\main.runtimeconfig.json
+C:\Bruno\Cadastro\main\bin\Debug\net8.0-windows\main.dll
+C:\Bruno\Cadastro\main\bin\Debug\net8.0-windows\main.pdb
+C:\Bruno\Cadastro\main\obj\Debug\net8.0-windows\main.Form1.resources
+C:\Bruno\Cadastro\main\obj\Debug\net8.0-windows\main.csproj.GenerateResource.cache
+C:\Bruno\Cadastro\main\obj\Debug\net8.0-windows\main.GeneratedMSBuildEditorConfig.editorconfig
+C:\Bruno\Cadastro\main\obj\Debug\net8.0-windows\main.AssemblyInfoInputs.cache
+C:\Bruno\Cadastro\main\obj\Debug\net8.0-windows\main.AssemblyInfo.cs
+C:\Bruno\Cadastro\main\obj\Debug\net8.0-windows\main.csproj.CoreCompileInputs.cache
+C:\Bruno\Cadastro\main\obj\Debug\net8.0-windows\main.dll
+C:\Bruno\Cadastro\main\obj\Debug\net8.0-windows\refint\main.dll
+C:\Bruno\Cadastro\main\obj\Debug\net8.0-windows\main.pdb
+C:\Bruno\Cadastro\main\obj\Debug\net8.0-windows\main.genruntimeconfig.cache
+C:\Bruno\Cadastro\main\obj\Debug\net8.0-windows\ref\main.dll
