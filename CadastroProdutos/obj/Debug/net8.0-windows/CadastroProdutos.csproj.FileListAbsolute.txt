@@ -1,0 +1,16 @@
+C:\SenaiC#\CadastroProdutos\bin\Debug\net8.0-windows\CadastroProdutos.exe
+C:\SenaiC#\CadastroProdutos\bin\Debug\net8.0-windows\CadastroProdutos.deps.json
+C:\SenaiC#\CadastroProdutos\bin\Debug\net8.0-windows\CadastroProdutos.runtimeconfig.json
+C:\SenaiC#\CadastroProdutos\bin\Debug\net8.0-windows\CadastroProdutos.dll
+C:\SenaiC#\CadastroProdutos\bin\Debug\net8.0-windows\CadastroProdutos.pdb
+C:\SenaiC#\CadastroProdutos\obj\Debug\net8.0-windows\CadastroProdutos.Form1.resources
+C:\SenaiC#\CadastroProdutos\obj\Debug\net8.0-windows\CadastroProdutos.csproj.GenerateResource.cache
+C:\SenaiC#\CadastroProdutos\obj\Debug\net8.0-windows\CadastroProdutos.GeneratedMSBuildEditorConfig.editorconfig
+C:\SenaiC#\CadastroProdutos\obj\Debug\net8.0-windows\CadastroProdutos.AssemblyInfoInputs.cache
+C:\SenaiC#\CadastroProdutos\obj\Debug\net8.0-windows\CadastroProdutos.AssemblyInfo.cs
+C:\SenaiC#\CadastroProdutos\obj\Debug\net8.0-windows\CadastroProdutos.csproj.CoreCompileInputs.cache
+C:\SenaiC#\CadastroProdutos\obj\Debug\net8.0-windows\CadastroProdutos.dll
+C:\SenaiC#\CadastroProdutos\obj\Debug\net8.0-windows\refint\CadastroProdutos.dll
+C:\SenaiC#\CadastroProdutos\obj\Debug\net8.0-windows\CadastroProdutos.pdb
+C:\SenaiC#\CadastroProdutos\obj\Debug\net8.0-windows\CadastroProdutos.genruntimeconfig.cache
+C:\SenaiC#\CadastroProdutos\obj\Debug\net8.0-windows\ref\CadastroProdutos.dll
