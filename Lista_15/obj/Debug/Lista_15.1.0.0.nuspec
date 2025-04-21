@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>Lista_15</id>
+    <version>1.0.0</version>
+    <authors>Lista_15</authors>
+    <description>Package Description</description>
+    <repository type="git" commit="31e604bc7e4802161557c8c2098f179a2b05b15e" />
+    <dependencies>
+      <group targetFramework="net8.0-windows7.0" />
+    </dependencies>
+    <frameworkReferences>
+      <group targetFramework="net8.0-windows7.0">
+        <frameworkReference name="Microsoft.WindowsDesktop.App.WindowsForms" />
+      </group>
+    </frameworkReferences>
+  </metadata>
+  <files>
+    <file src="D:\C#\Lista_15\bin\Debug\net8.0-windows\Lista_15.runtimeconfig.json" target="lib\net8.0-windows7.0\Lista_15.runtimeconfig.json" />
+    <file src="D:\C#\Lista_15\bin\Debug\net8.0-windows\Lista_15.dll" target="lib\net8.0-windows7.0\Lista_15.dll" />
+  </files>
+</package>
