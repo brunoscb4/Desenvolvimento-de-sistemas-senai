@@ -1,0 +1,177 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\C#\\SenaiGerenciadorProdutos\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1E1F77FC-B876-47A4-BFFB-1983E98EB5F9}|SenaiGerenciadorProdutos.csproj|d:\\c#\\senaigerenciadorprodutos\\resources\\paineis\\pagina_inicial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E1F77FC-B876-47A4-BFFB-1983E98EB5F9}|SenaiGerenciadorProdutos.csproj|solutionrelative:resources\\paineis\\pagina_inicial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E1F77FC-B876-47A4-BFFB-1983E98EB5F9}|SenaiGerenciadorProdutos.csproj|d:\\c#\\senaigerenciadorprodutos\\progama\u00E7\u00E3o\\produtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E1F77FC-B876-47A4-BFFB-1983E98EB5F9}|SenaiGerenciadorProdutos.csproj|solutionrelative:progama\u00E7\u00E3o\\produtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E1F77FC-B876-47A4-BFFB-1983E98EB5F9}|SenaiGerenciadorProdutos.csproj|d:\\c#\\senaigerenciadorprodutos\\resources\\paineis\\pagina_inicial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1E1F77FC-B876-47A4-BFFB-1983E98EB5F9}|SenaiGerenciadorProdutos.csproj|solutionrelative:resources\\paineis\\pagina_inicial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E1F77FC-B876-47A4-BFFB-1983E98EB5F9}|SenaiGerenciadorProdutos.csproj|d:\\c#\\senaigerenciadorprodutos\\progama\u00E7\u00E3o\\bancoconection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E1F77FC-B876-47A4-BFFB-1983E98EB5F9}|SenaiGerenciadorProdutos.csproj|solutionrelative:progama\u00E7\u00E3o\\bancoconection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E1F77FC-B876-47A4-BFFB-1983E98EB5F9}|SenaiGerenciadorProdutos.csproj|D:\\C#\\SenaiGerenciadorProdutos\\resources\\paineis\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1E1F77FC-B876-47A4-BFFB-1983E98EB5F9}|SenaiGerenciadorProdutos.csproj|solutionrelative:resources\\paineis\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E1F77FC-B876-47A4-BFFB-1983E98EB5F9}|SenaiGerenciadorProdutos.csproj|d:\\c#\\senaigerenciadorprodutos\\progama\u00E7\u00E3o\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E1F77FC-B876-47A4-BFFB-1983E98EB5F9}|SenaiGerenciadorProdutos.csproj|solutionrelative:progama\u00E7\u00E3o\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E1F77FC-B876-47A4-BFFB-1983E98EB5F9}|SenaiGerenciadorProdutos.csproj|d:\\c#\\senaigerenciadorprodutos\\resources\\paineis\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E1F77FC-B876-47A4-BFFB-1983E98EB5F9}|SenaiGerenciadorProdutos.csproj|solutionrelative:resources\\paineis\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E1F77FC-B876-47A4-BFFB-1983E98EB5F9}|SenaiGerenciadorProdutos.csproj|D:\\C#\\SenaiGerenciadorProdutos\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1E1F77FC-B876-47A4-BFFB-1983E98EB5F9}|SenaiGerenciadorProdutos.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E1F77FC-B876-47A4-BFFB-1983E98EB5F9}|SenaiGerenciadorProdutos.csproj|d:\\c#\\senaigerenciadorprodutos\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E1F77FC-B876-47A4-BFFB-1983E98EB5F9}|SenaiGerenciadorProdutos.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Pagina_inicial.cs [Projeto]",
+              "DocumentMoniker": "D:\\C#\\SenaiGerenciadorProdutos\\Resources\\Paineis\\Pagina_inicial.cs",
+              "RelativeDocumentMoniker": "Resources\\Paineis\\Pagina_inicial.cs",
+              "ToolTip": "D:\\C#\\SenaiGerenciadorProdutos\\Resources\\Paineis\\Pagina_inicial.cs [Projeto]*",
+              "RelativeToolTip": "Resources\\Paineis\\Pagina_inicial.cs [Projeto]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-03T01:33:27.743Z",
+              "EditorCaption": " [Projeto]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "BancoConection.cs",
+              "DocumentMoniker": "D:\\C#\\SenaiGerenciadorProdutos\\Progama\u00E7\u00E3o\\BancoConection.cs",
+              "RelativeDocumentMoniker": "Progama\u00E7\u00E3o\\BancoConection.cs",
+              "ToolTip": "D:\\C#\\SenaiGerenciadorProdutos\\Progama\u00E7\u00E3o\\BancoConection.cs",
+              "RelativeToolTip": "Progama\u00E7\u00E3o\\BancoConection.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-01T20:17:05.044Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Pagina_inicial.cs",
+              "DocumentMoniker": "D:\\C#\\SenaiGerenciadorProdutos\\Resources\\Paineis\\Pagina_inicial.cs",
+              "RelativeDocumentMoniker": "Resources\\Paineis\\Pagina_inicial.cs",
+              "ToolTip": "D:\\C#\\SenaiGerenciadorProdutos\\Resources\\Paineis\\Pagina_inicial.cs*",
+              "RelativeToolTip": "Resources\\Paineis\\Pagina_inicial.cs*",
+              "ViewState": "AgIAABMAAAAAAAAAAAAQwB0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-30T11:52:36.975Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Produtos.cs",
+              "DocumentMoniker": "D:\\C#\\SenaiGerenciadorProdutos\\Progama\u00E7\u00E3o\\Produtos.cs",
+              "RelativeDocumentMoniker": "Progama\u00E7\u00E3o\\Produtos.cs",
+              "ToolTip": "D:\\C#\\SenaiGerenciadorProdutos\\Progama\u00E7\u00E3o\\Produtos.cs",
+              "RelativeToolTip": "Progama\u00E7\u00E3o\\Produtos.cs",
+              "ViewState": "AgIAALYAAAAAAAAAAAAQwMcAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-30T11:40:27.96Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Main.cs",
+              "DocumentMoniker": "D:\\C#\\SenaiGerenciadorProdutos\\Resources\\Paineis\\Main.cs",
+              "RelativeDocumentMoniker": "Resources\\Paineis\\Main.cs",
+              "ToolTip": "D:\\C#\\SenaiGerenciadorProdutos\\Resources\\Paineis\\Main.cs",
+              "RelativeToolTip": "Resources\\Paineis\\Main.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAQwCoAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-29T17:08:25.1Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Login.cs",
+              "DocumentMoniker": "D:\\C#\\SenaiGerenciadorProdutos\\Progama\u00E7\u00E3o\\Login.cs",
+              "RelativeDocumentMoniker": "Progama\u00E7\u00E3o\\Login.cs",
+              "ToolTip": "D:\\C#\\SenaiGerenciadorProdutos\\Progama\u00E7\u00E3o\\Login.cs",
+              "RelativeToolTip": "Progama\u00E7\u00E3o\\Login.cs",
+              "ViewState": "AgIAADUAAAAAAAAAAAAYwDMAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-29T16:34:12.931Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Main.cs [Projeto]",
+              "DocumentMoniker": "D:\\C#\\SenaiGerenciadorProdutos\\Resources\\Paineis\\Main.cs",
+              "RelativeDocumentMoniker": "Resources\\Paineis\\Main.cs",
+              "ToolTip": "D:\\C#\\SenaiGerenciadorProdutos\\Resources\\Paineis\\Main.cs [Projeto]",
+              "RelativeToolTip": "Resources\\Paineis\\Main.cs [Projeto]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-28T13:00:34.767Z",
+              "EditorCaption": " [Projeto]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Form1.cs [Projeto]",
+              "DocumentMoniker": "D:\\C#\\SenaiGerenciadorProdutos\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "D:\\C#\\SenaiGerenciadorProdutos\\Form1.cs [Projeto]",
+              "RelativeToolTip": "Form1.cs [Projeto]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-29T16:04:18.126Z",
+              "EditorCaption": " [Projeto]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "D:\\C#\\SenaiGerenciadorProdutos\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "D:\\C#\\SenaiGerenciadorProdutos\\Form1.cs",
+              "RelativeToolTip": "Form1.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABoAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-29T17:52:58.449Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
