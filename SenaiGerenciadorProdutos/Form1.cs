@@ -61,15 +61,20 @@ namespace SenaiGerenciadorProdutos
                     panel2.Controls.Add(pagina_Inicial);
                     pagina_Inicial.Show();
                 }
-               
-                    
+
+
 
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Email, Usuario ou senha incoretos");
-                
+
             }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+           this.WindowState = FormWindowState.Minimized;
         }
     }
 }

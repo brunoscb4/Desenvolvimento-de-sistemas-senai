@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SenaiGerenciadorProdutos")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b0c223af3f199a12dee94106c087bda4cee2a215")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ea733a3dab28fb6c8780de915abad65905e1b3ae")]
 [assembly: System.Reflection.AssemblyProductAttribute("SenaiGerenciadorProdutos")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SenaiGerenciadorProdutos")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
