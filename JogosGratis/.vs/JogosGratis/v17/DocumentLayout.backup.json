@@ -1,0 +1,95 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\C#\\JogosGratis\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4E1018B4-8EB6-4697-872C-D5703F87CDAA}|JogosGratis.csproj|d:\\c#\\jogosgratis\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{4E1018B4-8EB6-4697-872C-D5703F87CDAA}|JogosGratis.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E1018B4-8EB6-4697-872C-D5703F87CDAA}|JogosGratis.csproj|d:\\c#\\jogosgratis\\programa\\apigame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E1018B4-8EB6-4697-872C-D5703F87CDAA}|JogosGratis.csproj|solutionrelative:programa\\apigame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E1018B4-8EB6-4697-872C-D5703F87CDAA}|JogosGratis.csproj|d:\\c#\\jogosgratis\\programa\\apiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E1018B4-8EB6-4697-872C-D5703F87CDAA}|JogosGratis.csproj|solutionrelative:programa\\apiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E1018B4-8EB6-4697-872C-D5703F87CDAA}|JogosGratis.csproj|d:\\c#\\jogosgratis\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E1018B4-8EB6-4697-872C-D5703F87CDAA}|JogosGratis.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs [Projeto]",
+              "DocumentMoniker": "D:\\C#\\JogosGratis\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "D:\\C#\\JogosGratis\\Form1.cs [Projeto]*",
+              "RelativeToolTip": "Form1.cs [Projeto]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-08T23:57:09.259Z",
+              "EditorCaption": " [Projeto]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "D:\\C#\\JogosGratis\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "D:\\C#\\JogosGratis\\Form1.cs*",
+              "RelativeToolTip": "Form1.cs*",
+              "ViewState": "AgIAABQAAAAAAAAAAAAgwDAAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-08T06:12:48.975Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ApiService.cs",
+              "DocumentMoniker": "D:\\C#\\JogosGratis\\Programa\\ApiService.cs",
+              "RelativeDocumentMoniker": "Programa\\ApiService.cs",
+              "ToolTip": "D:\\C#\\JogosGratis\\Programa\\ApiService.cs",
+              "RelativeToolTip": "Programa\\ApiService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-08T06:40:38.109Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ApiGame.cs",
+              "DocumentMoniker": "D:\\C#\\JogosGratis\\Programa\\ApiGame.cs",
+              "RelativeDocumentMoniker": "Programa\\ApiGame.cs",
+              "ToolTip": "D:\\C#\\JogosGratis\\Programa\\ApiGame.cs",
+              "RelativeToolTip": "Programa\\ApiGame.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAwBsAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-08T06:30:48.494Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
