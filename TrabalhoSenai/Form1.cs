@@ -63,6 +63,7 @@ namespace TrabalhoSenai
         {
             try
             {
+                CadastroProduto produto = new CadastroProduto();
                 Usuario usuario = new Usuario();
                 if (textEmail.Text != "" && textSenha.Text != "")
                 {
@@ -71,10 +72,14 @@ namespace TrabalhoSenai
 
                     if ( usuario.VerificarSenha())
                     {
+
+                        produto.IdUsuario = usuario.RetornoId();
+                        
                     TelaPrincipal principal = new TelaPrincipal();
                     panel3.Controls.Clear();
                     principal.Dock = DockStyle.Fill;
                     panel3.Controls.Add(principal);
+                        
                     }
                     else
                     {

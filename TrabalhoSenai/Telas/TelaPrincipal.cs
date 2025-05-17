@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TrabalhoSenai.Programas;
 
 namespace TrabalhoSenai.Telas
 {
@@ -21,6 +22,9 @@ namespace TrabalhoSenai.Telas
         private void label7_Click(object sender, EventArgs e)
         {
             Cadastro cadastro = new Cadastro();
+            Usuario usuario  =  new Usuario();
+
+            
 
             PanelMain.Controls.Clear();
             cadastro.Dock = DockStyle.Fill;

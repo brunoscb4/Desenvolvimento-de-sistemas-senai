@@ -44,6 +44,7 @@
             pictureBox2 = new PictureBox();
             label6 = new Label();
             textVenda = new TextBox();
+            textId = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
@@ -153,6 +154,7 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 12;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // button1
             // 
@@ -166,6 +168,7 @@
             button1.TabIndex = 24;
             button1.Text = "salvar";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // label7
             // 
@@ -215,10 +218,19 @@
             textVenda.Size = new Size(154, 27);
             textVenda.TabIndex = 29;
             // 
+            // textId
+            // 
+            textId.Location = new Point(460, 240);
+            textId.Margin = new Padding(2, 3, 2, 3);
+            textId.Name = "textId";
+            textId.Size = new Size(45, 27);
+            textId.TabIndex = 30;
+            // 
             // Cadastro
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(textId);
             Controls.Add(textVenda);
             Controls.Add(label6);
             Controls.Add(textCategoria);
@@ -238,6 +250,7 @@
             Margin = new Padding(2, 3, 2, 3);
             Name = "Cadastro";
             Size = new Size(507, 331);
+            Load += Cadastro_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
@@ -261,5 +274,6 @@
         private PictureBox pictureBox2;
         private Label label6;
         private TextBox textVenda;
+        private TextBox textId;
     }
 }

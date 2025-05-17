@@ -18,6 +18,7 @@ SENHA varchar (100) not null
 create table CadastroProduto
 (
 ID int auto_increment primary key,
+IMAGEM_URL longblob,
 PRODUTO varchar(300) not null,
 CATEGORIA varchar(100) not null,
 ESTOQUE int not null,
@@ -32,4 +33,4 @@ foreign key (ID_USUARIO) references CadastroUsuario(ID)
 
 
 select * from CadastroUsuario;
-
+select * from  CadastroProduto;

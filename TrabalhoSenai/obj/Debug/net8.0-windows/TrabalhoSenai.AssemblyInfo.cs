@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TrabalhoSenai")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b3b27cb73b59aa205a827648ba2bf0c74f1b7263")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8088ed09b8bf385b71e5697e93a4c9335808508b")]
 [assembly: System.Reflection.AssemblyProductAttribute("TrabalhoSenai")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TrabalhoSenai")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

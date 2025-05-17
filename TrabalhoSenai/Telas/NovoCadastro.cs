@@ -36,7 +36,7 @@ namespace TrabalhoSenai.Telas
             {
                 Usuario usuario = new Usuario();
 
-                if (textNome.Text != "" && textEmail.Text != "" && textCpf.Text != "" && textNomeUsuario.Text != "" && textTelefone.Text != "" && textSenha.Text == textConfSenha.Text)
+                if (textNome.Text != "" && textEmail.Text != "" && textCpf.Text != "" && textNomeUsuario.Text != "" && textTelefone.Text != "" && textSenha.Text != "" && textSenha.Text == textConfSenha.Text)
                 {
                     usuario.Nome = textNome.Text;
                     usuario.Email = textEmail.Text;

@@ -10,6 +10,7 @@ namespace TrabalhoSenai.Programas
 {
     internal class Usuario
     {
+        private int id;
         private string nome;
         private string email;
         private string cpf;
@@ -17,6 +18,9 @@ namespace TrabalhoSenai.Programas
         private string telefone;
         private string senha;
 
+
+        public int Id
+        { get { return id; } set { id = value; } }
         public string Nome
             { get { return nome; } set { nome = value; } }
         public string Email
@@ -42,7 +46,42 @@ namespace TrabalhoSenai.Programas
             }
         }
 
+              
+        private void Cadastro_Load(object sender, EventArgs e)
+        {
+            
+        }
+        public int  RetornoId()
+        {
+            try
+            {
+                using (MySqlConnection mySqlConnection = new MySqlConnection(BancoConexao.ConexaoBancoDados))
+                {
+                    mySqlConnection.Open();
+                    string select = "SELECT ID FROM CadastroUsuario WHERE EMAIL = @Email ";
 
+                    MySqlCommand cmd = new MySqlCommand(select,mySqlConnection);
+
+                    cmd.Parameters.AddWithValue("@Email",Email);
+                    object result = cmd.ExecuteScalar();
+
+                    if (result != null)
+                    {
+                        return Convert.ToInt32(result);
+                    }
+
+                     return -1;
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao retornar valor de id " + ex.Message);
+
+                return -1;
+            }
+        }
         public bool NovoCadastro()
         {
 
@@ -59,6 +98,7 @@ namespace TrabalhoSenai.Programas
 
                             string senhaHash = GerarHashSHA256(Senha);
 
+                    
                     cmd.Parameters.AddWithValue("@Nome",Nome);
                     cmd.Parameters.AddWithValue("@Email",Email);
                     cmd.Parameters.AddWithValue("@Cpf",Cpf);
@@ -109,6 +149,8 @@ namespace TrabalhoSenai.Programas
                 return false;
             }
         }
+
+
 
 
     }
