@@ -29,4 +29,4 @@ foreign key (Usuario_id) references CadastroUsuario(id)
 
 );
 
-select * from CadastroUsuario;
+select * from CadastroProduto;
