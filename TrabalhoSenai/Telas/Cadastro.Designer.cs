@@ -45,6 +45,7 @@
             label6 = new Label();
             textVenda = new TextBox();
             textId = new TextBox();
+            label8 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
@@ -226,10 +227,22 @@
             textId.Size = new Size(45, 27);
             textId.TabIndex = 30;
             // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label8.Location = new Point(393, 246);
+            label8.Margin = new Padding(2, 0, 2, 0);
+            label8.Name = "label8";
+            label8.Size = new Size(63, 20);
+            label8.TabIndex = 31;
+            label8.Text = "IdUser:";
+            // 
             // Cadastro
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(label8);
             Controls.Add(textId);
             Controls.Add(textVenda);
             Controls.Add(label6);
@@ -275,5 +288,6 @@
         private Label label6;
         private TextBox textVenda;
         private TextBox textId;
+        private Label label8;
     }
 }

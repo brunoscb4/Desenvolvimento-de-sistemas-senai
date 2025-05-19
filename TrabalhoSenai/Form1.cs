@@ -69,11 +69,12 @@ namespace TrabalhoSenai
                 {
                     usuario.Email = textEmail.Text;
                     usuario.Senha = textSenha.Text;
+                    
 
                     if ( usuario.VerificarSenha())
                     {
 
-                        produto.IdUsuario = usuario.RetornoId();
+                        
                         
                     TelaPrincipal principal = new TelaPrincipal();
                     panel3.Controls.Clear();

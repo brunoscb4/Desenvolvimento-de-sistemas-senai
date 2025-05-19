@@ -5,12 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using System.IO;
+using System.Data;
 
 
 namespace TrabalhoSenai.Programas
 {
     internal class CadastroProduto
     {
+        private int idBusca;
         private byte [] imagem;
         private string produto;
         private string categoria;
@@ -18,9 +20,12 @@ namespace TrabalhoSenai.Programas
         private int codigo;
         private double valorCompra;
         private double valorVenda;
-        private int idUsuario;
+        private string idUsuario;
+       private string nome;
 
 
+        public int IdBusca
+        { get { return idBusca; } set { idBusca = value; } }
         public byte [] Imagem
         {  get { return imagem; } set { imagem = value; } }
         public string Produto
@@ -35,9 +40,10 @@ namespace TrabalhoSenai.Programas
         { get { return valorCompra; } set { valorCompra = value; } }
             public double ValorVenda
         { get { return valorVenda; } set {valorVenda = value; } }
-        public int IdUsuario
+        public string IdUsuario
         { get { return idUsuario; } set { idUsuario = value; } }
-
+        public string Nome
+        { get { return nome; } set { nome = value; } }
         
 
         public bool CadastroP()
@@ -75,5 +81,117 @@ namespace TrabalhoSenai.Programas
             }
 
         }
+
+
+        public DataTable TableProduto ()
+        {
+
+            try
+            {
+                using (MySqlConnection conexao = new MySqlConnection(BancoConexao.ConexaoBancoDados))
+                {
+                
+                    conexao.Open();
+                    string select = "SELECT IMAGEM_URL ,PRODUTO,CATEGORIA,ESTOQUE,CODIGO,VALOR_DA_COMPRA,VALOR_DE_VENDA FROM CadastroProduto";
+
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(select, conexao);
+                    DataTable dataTable = new DataTable();
+                    adapter.Fill(dataTable);
+                    return dataTable;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao acessar o banco de dados"  +ex.Message);
+                return null;
+            }
+        }
+
+        public DataTable BuscarProduto( )
+        {
+
+            try
+            {
+                using (MySqlConnection conexao = new MySqlConnection(BancoConexao.ConexaoBancoDados))
+                {
+
+                    conexao.Open();
+                    string select = "SELECT * FROM CadastroProduto WHERE CODIGO=@IdBusca OR PRODUTO LIKE  @nome";
+
+                    MySqlCommand cmd = new MySqlCommand(select, conexao);
+                    cmd.Parameters.AddWithValue("@IdBusca", IdBusca);
+                    cmd.Parameters.AddWithValue("@nome","%"+nome+"%");
+                    cmd.Parameters.AddWithValue("@Categoria", Categoria);
+
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                    DataTable dataTable = new DataTable();
+                    adapter.Fill(dataTable);
+                    return dataTable;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao acessar o banco de dados" + ex.Message);
+                return null;
+            }
+        }
+
+        public DataTable BuscarCategorias()
+        {
+            DataTable tabela = new DataTable();
+
+            try
+            {
+                using (MySqlConnection conexao = new MySqlConnection(BancoConexao.ConexaoBancoDados))
+                {
+                    conexao.Open();
+
+                    string query = "SELECT DISTINCT CATEGORIA FROM CadastroProduto ORDER BY CATEGORIA";
+                    using (MySqlCommand cmd = new MySqlCommand(query, conexao))
+                    {
+                        MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                        adapter.Fill(tabela);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao carregar categorias: " + ex.Message);
+            }
+
+            return tabela;
+        }
+
+        public DataTable BuscarCategoria()
+        {
+
+            try
+            {
+                using (MySqlConnection conexao = new MySqlConnection(BancoConexao.ConexaoBancoDados))
+                {
+
+                    conexao.Open();
+                    string select = "SELECT * FROM CadastroProduto WHERE CATEGORIA LIKE @Categoria ";
+
+                    MySqlCommand cmd = new MySqlCommand(select, conexao);
+                    
+                    cmd.Parameters.AddWithValue("@Categoria", Categoria);
+
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                    DataTable dataTable = new DataTable();
+                    adapter.Fill(dataTable);
+                    return dataTable;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao acessar o banco de dados" + ex.Message);
+                return null;
+            }
+        }
+
     }
 }

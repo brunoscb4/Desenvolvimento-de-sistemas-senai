@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using System.Security.Cryptography;
+using System.Data;
 
 namespace TrabalhoSenai.Programas
 {
@@ -17,6 +18,7 @@ namespace TrabalhoSenai.Programas
         private string usuario1;
         private string telefone;
         private string senha;
+        private string emailVerifica;
 
 
         public int Id
@@ -33,6 +35,8 @@ namespace TrabalhoSenai.Programas
         { get { return telefone; } set { telefone = value; } }
         public string Senha
             { get { return senha; } set { senha = value; } }
+        public string EmailVerifica
+        { get { return emailVerifica; } set { emailVerifica = value; } }
 
         private string GerarHashSHA256(string senha)
         {
@@ -147,6 +151,35 @@ namespace TrabalhoSenai.Programas
             {
                 MessageBox.Show("Erro ao verificar a senha no banco" + ex.Message);
                 return false;
+            }
+        }
+
+
+        public DataTable SelectUsuario()
+        {
+            using (MySqlConnection conexao = new MySqlConnection(BancoConexao.ConexaoBancoDados))
+            {
+                conexao.Open();
+
+                try
+                {
+                    string select = "SELECT * FROM CadastroUsuario ";
+
+                    MySqlCommand cmd = new MySqlCommand(select, conexao);
+              
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+                    return dt;
+
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("erro ao acessar banco"+ ex.Message);
+                    return null;
+                }
+
             }
         }
 

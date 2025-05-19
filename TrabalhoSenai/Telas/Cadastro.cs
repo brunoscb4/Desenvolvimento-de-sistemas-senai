@@ -65,7 +65,7 @@ namespace TrabalhoSenai.Telas
                             produto.Imagem = ms.ToArray();
                         }
                     }
-                    produto.IdUsuario = Convert.ToInt32(textId.Text);
+                    produto.IdUsuario = textId.Text;
                     produto.Produto = textNomeProduto.Text;
                     produto.Categoria = textCategoria.Text;
                     produto.Estoque = Convert.ToInt32(TextQuantidade.Text);

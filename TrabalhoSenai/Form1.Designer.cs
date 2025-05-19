@@ -84,12 +84,12 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(293, 0);
+            label1.Location = new Point(221, -1);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(65, 25);
+            label1.Size = new Size(220, 25);
             label1.TabIndex = 0;
-            label1.Text = "Login";
+            label1.Text = "Cadastro de produtos";
             // 
             // pictureBox2
             // 
@@ -207,7 +207,6 @@
             label3.Size = new Size(73, 24);
             label3.TabIndex = 20;
             label3.Text = "Senha:";
-      
             // 
             // label2
             // 
