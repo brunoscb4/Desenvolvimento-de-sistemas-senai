@@ -3,28 +3,12 @@
   "WorkspaceRootPath": "D:\\C#\\ControContatos\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D86AC518-090E-488C-A8C6-5B931C56FB87}|ControContatos.csproj|d:\\c#\\controcontatos\\telas\\telamain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D86AC518-090E-488C-A8C6-5B931C56FB87}|ControContatos.csproj|solutionrelative:telas\\telamain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D86AC518-090E-488C-A8C6-5B931C56FB87}|ControContatos.csproj|D:\\C#\\ControContatos\\telas\\telamain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{D86AC518-090E-488C-A8C6-5B931C56FB87}|ControContatos.csproj|solutionrelative:telas\\telamain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D86AC518-090E-488C-A8C6-5B931C56FB87}|ControContatos.csproj|d:\\c#\\controcontatos\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{D86AC518-090E-488C-A8C6-5B931C56FB87}|ControContatos.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{D86AC518-090E-488C-A8C6-5B931C56FB87}|ControContatos.csproj|d:\\c#\\controcontatos\\programa\u00E7\u00E3o\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D86AC518-090E-488C-A8C6-5B931C56FB87}|ControContatos.csproj|solutionrelative:programa\u00E7\u00E3o\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D86AC518-090E-488C-A8C6-5B931C56FB87}|ControContatos.csproj|d:\\c#\\controcontatos\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D86AC518-090E-488C-A8C6-5B931C56FB87}|ControContatos.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D86AC518-090E-488C-A8C6-5B931C56FB87}|ControContatos.csproj|d:\\c#\\controcontatos\\telas\\novocadastro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D86AC518-090E-488C-A8C6-5B931C56FB87}|ControContatos.csproj|solutionrelative:telas\\novocadastro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D86AC518-090E-488C-A8C6-5B931C56FB87}|ControContatos.csproj|d:\\c#\\controcontatos\\programa\u00E7\u00E3o\\bancoconexao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D86AC518-090E-488C-A8C6-5B931C56FB87}|ControContatos.csproj|solutionrelative:programa\u00E7\u00E3o\\bancoconexao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,17 +18,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "Usuario.cs",
               "DocumentMoniker": "D:\\C#\\ControContatos\\Programa\u00E7\u00E3o\\Usuario.cs",
               "RelativeDocumentMoniker": "Programa\u00E7\u00E3o\\Usuario.cs",
               "ToolTip": "D:\\C#\\ControContatos\\Programa\u00E7\u00E3o\\Usuario.cs",
               "RelativeToolTip": "Programa\u00E7\u00E3o\\Usuario.cs",
-              "ViewState": "AgIAAE4AAAAAAAAAAAAwwAQBAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAIEAAAAAAAAAAAAAAIMAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-27T11:28:35.973Z",
               "IsPinned": true,
@@ -53,28 +37,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "TelaMain.cs [Projeto]",
-              "DocumentMoniker": "D:\\C#\\ControContatos\\Telas\\TelaMain.cs",
-              "RelativeDocumentMoniker": "Telas\\TelaMain.cs",
-              "ToolTip": "D:\\C#\\ControContatos\\Telas\\TelaMain.cs [Projeto]",
-              "RelativeToolTip": "Telas\\TelaMain.cs [Projeto]",
+              "Title": "BancoConexao.cs",
+              "DocumentMoniker": "D:\\C#\\ControContatos\\Programa\u00E7\u00E3o\\BancoConexao.cs",
+              "RelativeDocumentMoniker": "Programa\u00E7\u00E3o\\BancoConexao.cs",
+              "ToolTip": "D:\\C#\\ControContatos\\Programa\u00E7\u00E3o\\BancoConexao.cs",
+              "RelativeToolTip": "Programa\u00E7\u00E3o\\BancoConexao.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-27T12:15:29.565Z",
-              "IsPinned": true,
-              "EditorCaption": " [Projeto]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Form1.cs",
-              "DocumentMoniker": "D:\\C#\\ControContatos\\Form1.cs",
-              "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "D:\\C#\\ControContatos\\Form1.cs",
-              "RelativeToolTip": "Form1.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-27T11:17:29.675Z",
-              "IsPinned": true,
+              "WhenOpened": "2025-05-28T13:24:37.98Z",
               "EditorCaption": ""
             },
             {
@@ -88,44 +58,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Form1.cs [Projeto]",
-              "DocumentMoniker": "D:\\C#\\ControContatos\\Form1.cs",
-              "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "D:\\C#\\ControContatos\\Form1.cs [Projeto]",
-              "RelativeToolTip": "Form1.cs [Projeto]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-27T15:37:18.097Z",
-              "EditorCaption": " [Projeto]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "NovoCadastro.cs",
-              "DocumentMoniker": "D:\\C#\\ControContatos\\Telas\\NovoCadastro.cs",
-              "RelativeDocumentMoniker": "Telas\\NovoCadastro.cs",
-              "ToolTip": "D:\\C#\\ControContatos\\Telas\\NovoCadastro.cs",
-              "RelativeToolTip": "Telas\\NovoCadastro.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAiwC8AAAA3AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-27T15:35:06.944Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "TelaMain.cs",
-              "DocumentMoniker": "D:\\C#\\ControContatos\\Telas\\TelaMain.cs",
-              "RelativeDocumentMoniker": "Telas\\TelaMain.cs",
-              "ToolTip": "D:\\C#\\ControContatos\\Telas\\TelaMain.cs",
-              "RelativeToolTip": "Telas\\TelaMain.cs",
-              "ViewState": "AgIAAGcAAAAAAAAAAAAkwIcAAAA6AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-27T12:20:30.338Z",
-              "EditorCaption": ""
             }
           ]
         }

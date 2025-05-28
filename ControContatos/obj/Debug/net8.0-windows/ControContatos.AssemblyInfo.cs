@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ControContatos")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ac3b93f93f2bc1e2cd56d1baee09371a16f832a4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fad0c6544a666c16dac0bb2b1207263df472800a")]
 [assembly: System.Reflection.AssemblyProductAttribute("ControContatos")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ControContatos")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

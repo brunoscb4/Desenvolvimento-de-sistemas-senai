@@ -121,6 +121,7 @@ namespace ControContatos.Programação
                     return reader.HasRows;
 
 
+
                 }
 
             }
