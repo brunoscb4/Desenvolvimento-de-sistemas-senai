@@ -1,0 +1,119 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\C#\\Projeto_03\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1CB75104-1E75-4F4B-80BE-A79D7FF46541}|Projeto_03\\Projeto_03.csproj|c:\\c#\\projeto_03\\projeto_03\\telas\\tarefas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1CB75104-1E75-4F4B-80BE-A79D7FF46541}|Projeto_03\\Projeto_03.csproj|solutionrelative:projeto_03\\telas\\tarefas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1CB75104-1E75-4F4B-80BE-A79D7FF46541}|Projeto_03\\Projeto_03.csproj|C:\\C#\\Projeto_03\\projeto_03\\telas\\tarefas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1CB75104-1E75-4F4B-80BE-A79D7FF46541}|Projeto_03\\Projeto_03.csproj|solutionrelative:projeto_03\\telas\\tarefas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1CB75104-1E75-4F4B-80BE-A79D7FF46541}|Projeto_03\\Projeto_03.csproj|c:\\c#\\projeto_03\\projeto_03\\programa\u00E7\u00E3o\\cadastrotarefas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1CB75104-1E75-4F4B-80BE-A79D7FF46541}|Projeto_03\\Projeto_03.csproj|solutionrelative:projeto_03\\programa\u00E7\u00E3o\\cadastrotarefas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1CB75104-1E75-4F4B-80BE-A79D7FF46541}|Projeto_03\\Projeto_03.csproj|C:\\C#\\Projeto_03\\projeto_03\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1CB75104-1E75-4F4B-80BE-A79D7FF46541}|Projeto_03\\Projeto_03.csproj|solutionrelative:projeto_03\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1CB75104-1E75-4F4B-80BE-A79D7FF46541}|Projeto_03\\Projeto_03.csproj|c:\\c#\\projeto_03\\projeto_03\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1CB75104-1E75-4F4B-80BE-A79D7FF46541}|Projeto_03\\Projeto_03.csproj|solutionrelative:projeto_03\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1CB75104-1E75-4F4B-80BE-A79D7FF46541}|Projeto_03\\Projeto_03.csproj|c:\\c#\\projeto_03\\projeto_03\\programa\u00E7\u00E3o\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1CB75104-1E75-4F4B-80BE-A79D7FF46541}|Projeto_03\\Projeto_03.csproj|solutionrelative:projeto_03\\programa\u00E7\u00E3o\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Tarefas.cs",
+              "DocumentMoniker": "C:\\C#\\Projeto_03\\Projeto_03\\Telas\\Tarefas.cs",
+              "RelativeDocumentMoniker": "Projeto_03\\Telas\\Tarefas.cs",
+              "ToolTip": "C:\\C#\\Projeto_03\\Projeto_03\\Telas\\Tarefas.cs",
+              "RelativeToolTip": "Projeto_03\\Telas\\Tarefas.cs",
+              "ViewState": "AgIAAHcAAAAAAAAAAAA6wH8AAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-30T09:17:51.277Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Tarefas.cs [Projeto]",
+              "DocumentMoniker": "C:\\C#\\Projeto_03\\Projeto_03\\Telas\\Tarefas.cs",
+              "RelativeDocumentMoniker": "Projeto_03\\Telas\\Tarefas.cs",
+              "ToolTip": "C:\\C#\\Projeto_03\\Projeto_03\\Telas\\Tarefas.cs [Projeto]",
+              "RelativeToolTip": "Projeto_03\\Telas\\Tarefas.cs [Projeto]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-01T07:50:57.134Z",
+              "EditorCaption": " [Projeto]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\C#\\Projeto_03\\Projeto_03\\Form1.cs",
+              "RelativeDocumentMoniker": "Projeto_03\\Form1.cs",
+              "ToolTip": "C:\\C#\\Projeto_03\\Projeto_03\\Form1.cs",
+              "RelativeToolTip": "Projeto_03\\Form1.cs",
+              "ViewState": "AgIAAEEAAAAAAAAAAAAjwCcAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-01T03:37:44.052Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Form1.cs [Projeto]",
+              "DocumentMoniker": "C:\\C#\\Projeto_03\\Projeto_03\\Form1.cs",
+              "RelativeDocumentMoniker": "Projeto_03\\Form1.cs",
+              "ToolTip": "C:\\C#\\Projeto_03\\Projeto_03\\Form1.cs [Projeto]",
+              "RelativeToolTip": "Projeto_03\\Form1.cs [Projeto]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-01T03:37:40.612Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CadastroTarefas.cs",
+              "DocumentMoniker": "C:\\C#\\Projeto_03\\Projeto_03\\programa\u00E7\u00E3o\\CadastroTarefas.cs",
+              "RelativeDocumentMoniker": "Projeto_03\\programa\u00E7\u00E3o\\CadastroTarefas.cs",
+              "ToolTip": "C:\\C#\\Projeto_03\\Projeto_03\\programa\u00E7\u00E3o\\CadastroTarefas.cs",
+              "RelativeToolTip": "Projeto_03\\programa\u00E7\u00E3o\\CadastroTarefas.cs",
+              "ViewState": "AgIAAGIAAAAAAAAAAAAiwGQAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-30T09:05:40.693Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Usuario.cs",
+              "DocumentMoniker": "C:\\C#\\Projeto_03\\Projeto_03\\programa\u00E7\u00E3o\\Usuario.cs",
+              "RelativeDocumentMoniker": "Projeto_03\\programa\u00E7\u00E3o\\Usuario.cs",
+              "ToolTip": "C:\\C#\\Projeto_03\\Projeto_03\\programa\u00E7\u00E3o\\Usuario.cs",
+              "RelativeToolTip": "Projeto_03\\programa\u00E7\u00E3o\\Usuario.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAH4AAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-30T05:25:58.368Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
