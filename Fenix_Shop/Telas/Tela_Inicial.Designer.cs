@@ -29,12 +29,14 @@
         private void InitializeComponent()
         {
             parrotGradientPanel1 = new ReaLTaiizor.Controls.ParrotGradientPanel();
+            parrotGradientPanel2 = new ReaLTaiizor.Controls.ParrotGradientPanel();
+            label4 = new Label();
             pictureBox1 = new PictureBox();
             button4 = new ReaLTaiizor.Controls.Button();
             button3 = new ReaLTaiizor.Controls.Button();
             button2 = new ReaLTaiizor.Controls.Button();
             button1 = new ReaLTaiizor.Controls.Button();
-            CadastroProdutos = new ReaLTaiizor.Controls.Button();
+            ButtonCadastroProduto = new ReaLTaiizor.Controls.Button();
             Inicio = new ReaLTaiizor.Controls.Button();
             PanelInicio = new ReaLTaiizor.Controls.ParrotGradientPanel();
             panel4 = new Panel();
@@ -49,7 +51,9 @@
             panel1 = new Panel();
             labelNumeroDeCadastrados = new Label();
             label1 = new Label();
+            panel5IncialControler = new Panel();
             parrotGradientPanel1.SuspendLayout();
+            parrotGradientPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             PanelInicio.SuspendLayout();
             panel4.SuspendLayout();
@@ -57,6 +61,7 @@
             panel3.SuspendLayout();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
+            panel5IncialControler.SuspendLayout();
             SuspendLayout();
             // 
             // parrotGradientPanel1
@@ -65,12 +70,12 @@
             parrotGradientPanel1.BottomLeft = Color.Black;
             parrotGradientPanel1.BottomRight = Color.FromArgb(128, 255, 255);
             parrotGradientPanel1.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
-            parrotGradientPanel1.Controls.Add(pictureBox1);
+            parrotGradientPanel1.Controls.Add(parrotGradientPanel2);
             parrotGradientPanel1.Controls.Add(button4);
             parrotGradientPanel1.Controls.Add(button3);
             parrotGradientPanel1.Controls.Add(button2);
             parrotGradientPanel1.Controls.Add(button1);
-            parrotGradientPanel1.Controls.Add(CadastroProdutos);
+            parrotGradientPanel1.Controls.Add(ButtonCadastroProduto);
             parrotGradientPanel1.Controls.Add(Inicio);
             parrotGradientPanel1.Dock = DockStyle.Left;
             parrotGradientPanel1.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
@@ -86,9 +91,41 @@
             parrotGradientPanel1.TopLeft = Color.Black;
             parrotGradientPanel1.TopRight = Color.Black;
             // 
+            // parrotGradientPanel2
+            // 
+            parrotGradientPanel2.BorderStyle = BorderStyle.FixedSingle;
+            parrotGradientPanel2.BottomLeft = Color.Cyan;
+            parrotGradientPanel2.BottomRight = Color.FromArgb(0, 64, 64);
+            parrotGradientPanel2.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+            parrotGradientPanel2.Controls.Add(label4);
+            parrotGradientPanel2.Controls.Add(pictureBox1);
+            parrotGradientPanel2.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
+            parrotGradientPanel2.Location = new Point(15, 16);
+            parrotGradientPanel2.Name = "parrotGradientPanel2";
+            parrotGradientPanel2.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
+            parrotGradientPanel2.PrimerColor = Color.FromArgb(0, 64, 64);
+            parrotGradientPanel2.Size = new Size(235, 148);
+            parrotGradientPanel2.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            parrotGradientPanel2.Style = ReaLTaiizor.Controls.ParrotGradientPanel.GradientStyle.Corners;
+            parrotGradientPanel2.TabIndex = 8;
+            parrotGradientPanel2.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            parrotGradientPanel2.TopLeft = Color.FromArgb(0, 64, 64);
+            parrotGradientPanel2.TopRight = Color.FromArgb(0, 64, 64);
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.BackColor = Color.Transparent;
+            label4.Font = new Font("Arial Narrow", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.Location = new Point(39, 112);
+            label4.Name = "label4";
+            label4.Size = new Size(147, 23);
+            label4.TabIndex = 8;
+            label4.Text = "Nome da empresa";
+            // 
             // pictureBox1
             // 
-            pictureBox1.Location = new Point(15, 16);
+            pictureBox1.Location = new Point(12, 9);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(100, 100);
             pictureBox1.TabIndex = 7;
@@ -105,7 +142,7 @@
             button4.Image = null;
             button4.ImageAlign = ContentAlignment.MiddleLeft;
             button4.InactiveColor = Color.SlateBlue;
-            button4.Location = new Point(15, 491);
+            button4.Location = new Point(15, 534);
             button4.Name = "button4";
             button4.PressedBorderColor = Color.Black;
             button4.PressedColor = Color.FromArgb(0, 64, 0);
@@ -125,7 +162,7 @@
             button3.Image = null;
             button3.ImageAlign = ContentAlignment.MiddleLeft;
             button3.InactiveColor = Color.SlateBlue;
-            button3.Location = new Point(15, 419);
+            button3.Location = new Point(15, 462);
             button3.Name = "button3";
             button3.PressedBorderColor = Color.Black;
             button3.PressedColor = Color.FromArgb(0, 64, 0);
@@ -145,7 +182,7 @@
             button2.Image = null;
             button2.ImageAlign = ContentAlignment.MiddleLeft;
             button2.InactiveColor = Color.SlateBlue;
-            button2.Location = new Point(15, 350);
+            button2.Location = new Point(15, 393);
             button2.Name = "button2";
             button2.PressedBorderColor = Color.Black;
             button2.PressedColor = Color.FromArgb(0, 64, 0);
@@ -165,7 +202,7 @@
             button1.Image = null;
             button1.ImageAlign = ContentAlignment.MiddleLeft;
             button1.InactiveColor = Color.SlateBlue;
-            button1.Location = new Point(15, 279);
+            button1.Location = new Point(15, 322);
             button1.Name = "button1";
             button1.PressedBorderColor = Color.Black;
             button1.PressedColor = Color.FromArgb(0, 64, 0);
@@ -173,26 +210,28 @@
             button1.TabIndex = 3;
             button1.Text = "Lista de  produtos";
             button1.TextAlignment = StringAlignment.Center;
+            button1.Click += button1_Click;
             // 
-            // CadastroProdutos
+            // ButtonCadastroProduto
             // 
-            CadastroProdutos.Anchor = AnchorStyles.None;
-            CadastroProdutos.BackColor = Color.Transparent;
-            CadastroProdutos.BorderColor = Color.Black;
-            CadastroProdutos.EnteredBorderColor = Color.Black;
-            CadastroProdutos.EnteredColor = Color.DarkSlateBlue;
-            CadastroProdutos.Font = new Font("Algerian", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            CadastroProdutos.Image = null;
-            CadastroProdutos.ImageAlign = ContentAlignment.MiddleLeft;
-            CadastroProdutos.InactiveColor = Color.SlateBlue;
-            CadastroProdutos.Location = new Point(15, 210);
-            CadastroProdutos.Name = "CadastroProdutos";
-            CadastroProdutos.PressedBorderColor = Color.Black;
-            CadastroProdutos.PressedColor = Color.FromArgb(0, 64, 0);
-            CadastroProdutos.Size = new Size(235, 53);
-            CadastroProdutos.TabIndex = 2;
-            CadastroProdutos.Text = "Cadastro de produtos";
-            CadastroProdutos.TextAlignment = StringAlignment.Center;
+            ButtonCadastroProduto.Anchor = AnchorStyles.None;
+            ButtonCadastroProduto.BackColor = Color.Transparent;
+            ButtonCadastroProduto.BorderColor = Color.Black;
+            ButtonCadastroProduto.EnteredBorderColor = Color.Black;
+            ButtonCadastroProduto.EnteredColor = Color.DarkSlateBlue;
+            ButtonCadastroProduto.Font = new Font("Algerian", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ButtonCadastroProduto.Image = null;
+            ButtonCadastroProduto.ImageAlign = ContentAlignment.MiddleLeft;
+            ButtonCadastroProduto.InactiveColor = Color.SlateBlue;
+            ButtonCadastroProduto.Location = new Point(15, 253);
+            ButtonCadastroProduto.Name = "ButtonCadastroProduto";
+            ButtonCadastroProduto.PressedBorderColor = Color.Black;
+            ButtonCadastroProduto.PressedColor = Color.FromArgb(0, 64, 0);
+            ButtonCadastroProduto.Size = new Size(235, 53);
+            ButtonCadastroProduto.TabIndex = 2;
+            ButtonCadastroProduto.Text = "Cadastro de produtos";
+            ButtonCadastroProduto.TextAlignment = StringAlignment.Center;
+            ButtonCadastroProduto.Click += CadastroProdutos_Click;
             // 
             // Inicio
             // 
@@ -205,7 +244,7 @@
             Inicio.Image = null;
             Inicio.ImageAlign = ContentAlignment.MiddleLeft;
             Inicio.InactiveColor = Color.SlateBlue;
-            Inicio.Location = new Point(15, 142);
+            Inicio.Location = new Point(15, 185);
             Inicio.Name = "Inicio";
             Inicio.PressedBorderColor = Color.Black;
             Inicio.PressedColor = Color.FromArgb(0, 64, 0);
@@ -213,6 +252,7 @@
             Inicio.TabIndex = 1;
             Inicio.Text = "Inicio";
             Inicio.TextAlignment = StringAlignment.Center;
+            Inicio.Click += Inicio_Click;
             // 
             // PanelInicio
             // 
@@ -226,7 +266,7 @@
             PanelInicio.Controls.Add(panel1);
             PanelInicio.Dock = DockStyle.Fill;
             PanelInicio.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
-            PanelInicio.Location = new Point(274, 0);
+            PanelInicio.Location = new Point(0, 0);
             PanelInicio.Name = "PanelInicio";
             PanelInicio.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
             PanelInicio.PrimerColor = Color.White;
@@ -236,14 +276,14 @@
             PanelInicio.TabIndex = 1;
             PanelInicio.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             PanelInicio.TopLeft = Color.White;
-            PanelInicio.TopRight = Color.Gray;
+            PanelInicio.TopRight = Color.FromArgb(128, 255, 255);
             // 
             // panel4
             // 
             panel4.BackColor = Color.FromArgb(0, 64, 64);
             panel4.BorderStyle = BorderStyle.FixedSingle;
             panel4.Controls.Add(labelusuario);
-            panel4.Location = new Point(139, 26);
+            panel4.Location = new Point(143, 56);
             panel4.Name = "panel4";
             panel4.Size = new Size(255, 53);
             panel4.TabIndex = 1;
@@ -273,7 +313,7 @@
             // 
             // panel3
             // 
-            panel3.Anchor = AnchorStyles.None;
+            panel3.Anchor = AnchorStyles.Top;
             panel3.BackColor = Color.MediumTurquoise;
             panel3.BorderStyle = BorderStyle.FixedSingle;
             panel3.Controls.Add(labelSemEstoque);
@@ -285,7 +325,7 @@
             // 
             // labelSemEstoque
             // 
-            labelSemEstoque.Anchor = AnchorStyles.None;
+            labelSemEstoque.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             labelSemEstoque.AutoSize = true;
             labelSemEstoque.BackColor = Color.Transparent;
             labelSemEstoque.Font = new Font("Arial Narrow", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -297,7 +337,7 @@
             // 
             // label3
             // 
-            label3.Anchor = AnchorStyles.None;
+            label3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label3.AutoSize = true;
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Arial Narrow", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -309,7 +349,7 @@
             // 
             // panel2
             // 
-            panel2.Anchor = AnchorStyles.None;
+            panel2.Anchor = AnchorStyles.Top;
             panel2.BackColor = Color.MediumTurquoise;
             panel2.BorderStyle = BorderStyle.FixedSingle;
             panel2.Controls.Add(labelVendidos);
@@ -321,7 +361,7 @@
             // 
             // labelVendidos
             // 
-            labelVendidos.Anchor = AnchorStyles.None;
+            labelVendidos.Anchor = AnchorStyles.Top;
             labelVendidos.AutoSize = true;
             labelVendidos.BackColor = Color.Transparent;
             labelVendidos.Font = new Font("Arial Narrow", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -333,7 +373,7 @@
             // 
             // label2
             // 
-            label2.Anchor = AnchorStyles.None;
+            label2.Anchor = AnchorStyles.Top;
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Arial Narrow", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -345,7 +385,7 @@
             // 
             // panel1
             // 
-            panel1.Anchor = AnchorStyles.None;
+            panel1.Anchor = AnchorStyles.Top;
             panel1.BackColor = Color.MediumTurquoise;
             panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(labelNumeroDeCadastrados);
@@ -357,7 +397,6 @@
             // 
             // labelNumeroDeCadastrados
             // 
-            labelNumeroDeCadastrados.Anchor = AnchorStyles.None;
             labelNumeroDeCadastrados.AutoSize = true;
             labelNumeroDeCadastrados.BackColor = Color.Transparent;
             labelNumeroDeCadastrados.Font = new Font("Arial Narrow", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -369,7 +408,6 @@
             // 
             // label1
             // 
-            label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Arial Narrow", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -379,17 +417,28 @@
             label1.TabIndex = 0;
             label1.Text = "Cadastrados";
             // 
+            // panel5IncialControler
+            // 
+            panel5IncialControler.Controls.Add(PanelInicio);
+            panel5IncialControler.Dock = DockStyle.Fill;
+            panel5IncialControler.Location = new Point(274, 0);
+            panel5IncialControler.Name = "panel5IncialControler";
+            panel5IncialControler.Size = new Size(926, 670);
+            panel5IncialControler.TabIndex = 4;
+            // 
             // Tela_Inicial
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            Controls.Add(PanelInicio);
+            Controls.Add(panel5IncialControler);
             Controls.Add(parrotGradientPanel1);
             ForeColor = Color.Black;
             Name = "Tela_Inicial";
             Size = new Size(1200, 670);
             parrotGradientPanel1.ResumeLayout(false);
+            parrotGradientPanel2.ResumeLayout(false);
+            parrotGradientPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             PanelInicio.ResumeLayout(false);
             panel4.ResumeLayout(false);
@@ -401,6 +450,7 @@
             panel2.PerformLayout();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            panel5IncialControler.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -408,7 +458,7 @@
 
         private ReaLTaiizor.Controls.ParrotGradientPanel parrotGradientPanel1;
         private ReaLTaiizor.Controls.Button Inicio;
-        private ReaLTaiizor.Controls.Button CadastroProdutos;
+        private ReaLTaiizor.Controls.Button ButtonCadastroProduto;
         private PictureBox pictureBox1;
         private ReaLTaiizor.Controls.Button button4;
         private ReaLTaiizor.Controls.Button button3;
@@ -427,5 +477,8 @@
         private Label labelusuario;
         private Label labelSemEstoque;
         private Label label3;
+        private ReaLTaiizor.Controls.ParrotGradientPanel parrotGradientPanel2;
+        private Label label4;
+        private Panel panel5IncialControler;
     }
 }

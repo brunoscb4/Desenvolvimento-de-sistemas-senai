@@ -19,6 +19,7 @@ namespace Fenix_Shop
             if (this.WindowState == FormWindowState.Normal)
             {
                 this.WindowState = FormWindowState.Maximized;
+                
             }
             else
             {

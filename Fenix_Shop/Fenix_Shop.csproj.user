@@ -4,6 +4,15 @@
     <Compile Update="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Telas\CadastroProdutos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Telas\ListaProdutos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Telas\RelatorioVendas.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="Telas\Tela_Inicial.cs">
       <SubType>UserControl</SubType>
     </Compile>

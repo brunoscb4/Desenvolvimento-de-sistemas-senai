@@ -16,5 +16,32 @@ namespace Fenix_Shop.Telas
         {
             InitializeComponent();
         }
+
+        private void CadastroProdutos_Click(object sender, EventArgs e)
+        {
+            CadastroProdutos cadastro = new CadastroProdutos();
+            panel5IncialControler.Controls.Clear();
+            cadastro.Dock = DockStyle.Fill;
+            panel5IncialControler.Controls.Add(cadastro);
+            ButtonCadastroProduto.InactiveColor = Color.Green;
+        }
+
+        private void Inicio_Click(object sender, EventArgs e)
+        {
+            panel5IncialControler.Controls.Clear();
+            PanelInicio.Dock = DockStyle.Fill;
+            panel5IncialControler.Controls.Add(PanelInicio);
+
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ListaProdutos lista = new ListaProdutos();
+            panel5IncialControler.Controls.Clear();
+            lista.Dock = DockStyle.Fill;
+            panel5IncialControler.Controls.Add(lista);
+
+        }
     }
 }
