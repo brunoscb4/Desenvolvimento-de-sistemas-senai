@@ -190,6 +190,7 @@
             button2.TabIndex = 4;
             button2.Text = "Relatório de vendas";
             button2.TextAlignment = StringAlignment.Center;
+            button2.Click += button2_Click;
             // 
             // button1
             // 

@@ -139,9 +139,10 @@
             // 
             // metroPanel1
             // 
-            metroPanel1.Anchor = AnchorStyles.None;
-            metroPanel1.BackgroundColor = Color.WhiteSmoke;
-            metroPanel1.BorderColor = Color.Black;
+            metroPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            metroPanel1.AutoSize = true;
+            metroPanel1.BackgroundColor = Color.White;
+            metroPanel1.BorderColor = Color.FromArgb(150, 150, 150);
             metroPanel1.BorderThickness = 2;
             metroPanel1.Controls.Add(label1);
             metroPanel1.Controls.Add(pictureBox1);
@@ -152,6 +153,8 @@
             metroPanel1.Controls.Add(bigLabel1);
             metroPanel1.IsDerivedStyle = true;
             metroPanel1.Location = new Point(365, 56);
+            metroPanel1.MaximumSize = new Size(632, 780);
+            metroPanel1.MinimumSize = new Size(465, 547);
             metroPanel1.Name = "metroPanel1";
             metroPanel1.Size = new Size(465, 547);
             metroPanel1.Style = ReaLTaiizor.Enum.Metro.Style.Light;
@@ -307,6 +310,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             PanelLogin.ResumeLayout(false);
+            PanelLogin.PerformLayout();
             metroPanel1.ResumeLayout(false);
             metroPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

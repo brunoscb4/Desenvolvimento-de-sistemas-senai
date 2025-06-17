@@ -28,7 +28,7 @@ namespace Fenix_Shop.Telas
             PanelCadastroProduto.Width = this.ClientSize.Width;
             PanelCadastroProduto.Height = this.ClientSize.Height;
 
-            
+
 
         }
     }
