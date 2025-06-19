@@ -52,5 +52,14 @@ namespace Fenix_Shop.Telas
             relatorio.Dock = DockStyle.Fill;
             panel5IncialControler.Controls.Add(relatorio);
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Vendas vendas = new Vendas();
+
+            panel5IncialControler.Controls.Clear();
+            vendas.Dock = DockStyle.Fill;
+            panel5IncialControler.Controls.Add(vendas);
+        }
     }
 }

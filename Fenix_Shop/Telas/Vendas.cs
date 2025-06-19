@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace Fenix_Shop.Telas
 {
-    public partial class RelatorioVendas : UserControl
+    public partial class Vendas : UserControl
     {
-        public RelatorioVendas()
+        public Vendas()
         {
             InitializeComponent();
         }
 
-        private void label16PagamentosCredito_Click(object sender, EventArgs e)
+        private void label11_Click(object sender, EventArgs e)
         {
 
         }

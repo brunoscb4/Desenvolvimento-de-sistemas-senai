@@ -28,16 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             PanelListaProdutos = new ReaLTaiizor.Controls.ParrotGradientPanel();
+            dataGridView1 = new DataGridView();
+            label2 = new Label();
+            label1 = new Label();
             button1 = new ReaLTaiizor.Controls.Button();
             TextBoxNomeBusacar = new ReaLTaiizor.Controls.CyberRichTextBox();
             TextBoxCodigoBuscar = new MaskedTextBox();
-            poisonDataGridView1 = new ReaLTaiizor.Controls.PoisonDataGridView();
             PanelListaProdutos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)poisonDataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // PanelListaProdutos
@@ -45,17 +44,20 @@
             PanelListaProdutos.BottomLeft = Color.White;
             PanelListaProdutos.BottomRight = Color.White;
             PanelListaProdutos.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+            PanelListaProdutos.Controls.Add(label2);
+            PanelListaProdutos.Controls.Add(label1);
             PanelListaProdutos.Controls.Add(button1);
             PanelListaProdutos.Controls.Add(TextBoxNomeBusacar);
             PanelListaProdutos.Controls.Add(TextBoxCodigoBuscar);
-            PanelListaProdutos.Controls.Add(poisonDataGridView1);
+            PanelListaProdutos.Controls.Add(dataGridView1);
             PanelListaProdutos.Dock = DockStyle.Fill;
             PanelListaProdutos.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
             PanelListaProdutos.Location = new Point(0, 0);
+            PanelListaProdutos.Margin = new Padding(3, 4, 3, 4);
             PanelListaProdutos.Name = "PanelListaProdutos";
             PanelListaProdutos.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
             PanelListaProdutos.PrimerColor = Color.White;
-            PanelListaProdutos.Size = new Size(926, 670);
+            PanelListaProdutos.Size = new Size(1058, 893);
             PanelListaProdutos.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
             PanelListaProdutos.Style = ReaLTaiizor.Controls.ParrotGradientPanel.GradientStyle.Horizontal;
             PanelListaProdutos.TabIndex = 0;
@@ -63,22 +65,57 @@
             PanelListaProdutos.TopLeft = Color.White;
             PanelListaProdutos.TopRight = Color.FromArgb(128, 255, 255);
             // 
+            // dataGridView1
+            // 
+            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridView1.BackgroundColor = Color.White;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.GridColor = Color.Gray;
+            dataGridView1.Location = new Point(-7, 131);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.Size = new Size(1065, 762);
+            dataGridView1.TabIndex = 4;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Arial", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label2.Location = new Point(330, 43);
+            label2.Name = "label2";
+            label2.Size = new Size(102, 24);
+            label2.TabIndex = 13;
+            label2.Text = "Pesquisa:";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Arial", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label1.Location = new Point(22, 46);
+            label1.Name = "label1";
+            label1.Size = new Size(85, 24);
+            label1.TabIndex = 12;
+            label1.Text = "Codigo:";
+            // 
             // button1
             // 
             button1.BackColor = Color.Transparent;
             button1.BorderColor = Color.Black;
             button1.EnteredBorderColor = Color.Black;
             button1.EnteredColor = Color.Lime;
-            button1.Font = new Font("Arial Narrow", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.Image = null;
             button1.ImageAlign = ContentAlignment.MiddleLeft;
             button1.InactiveColor = Color.FromArgb(0, 192, 0);
-            button1.Location = new Point(768, 74);
+            button1.Location = new Point(919, 37);
+            button1.Margin = new Padding(3, 4, 3, 4);
             button1.Name = "button1";
             button1.PressedBorderColor = Color.Black;
             button1.PressedColor = Color.FromArgb(0, 64, 0);
-            button1.Size = new Size(99, 28);
-            button1.TabIndex = 3;
+            button1.Size = new Size(113, 37);
+            button1.TabIndex = 11;
             button1.Text = "Buscar";
             button1.TextAlignment = StringAlignment.Center;
             // 
@@ -98,90 +135,51 @@
             TextBoxNomeBusacar.ForeColor = Color.FromArgb(245, 245, 245);
             TextBoxNomeBusacar.Lighting = false;
             TextBoxNomeBusacar.LinearGradientPen = false;
-            TextBoxNomeBusacar.Location = new Point(296, 75);
+            TextBoxNomeBusacar.Location = new Point(469, 37);
+            TextBoxNomeBusacar.Margin = new Padding(3, 4, 3, 4);
             TextBoxNomeBusacar.Name = "TextBoxNomeBusacar";
             TextBoxNomeBusacar.PenWidth = 15;
             TextBoxNomeBusacar.RGB = false;
             TextBoxNomeBusacar.Rounding = true;
             TextBoxNomeBusacar.RoundingInt = 60;
-            TextBoxNomeBusacar.Size = new Size(395, 27);
+            TextBoxNomeBusacar.Size = new Size(390, 36);
             TextBoxNomeBusacar.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            TextBoxNomeBusacar.TabIndex = 2;
+            TextBoxNomeBusacar.TabIndex = 10;
             TextBoxNomeBusacar.Tag = "Cyber";
             TextBoxNomeBusacar.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             TextBoxNomeBusacar.Timer_RGB = 300;
             // 
             // TextBoxCodigoBuscar
             // 
-            TextBoxCodigoBuscar.Location = new Point(72, 79);
+            TextBoxCodigoBuscar.Location = new Point(123, 43);
+            TextBoxCodigoBuscar.Margin = new Padding(3, 4, 3, 4);
             TextBoxCodigoBuscar.Mask = "00000000000000000000000";
             TextBoxCodigoBuscar.Name = "TextBoxCodigoBuscar";
-            TextBoxCodigoBuscar.Size = new Size(135, 23);
-            TextBoxCodigoBuscar.TabIndex = 1;
-            // 
-            // poisonDataGridView1
-            // 
-            poisonDataGridView1.AllowUserToResizeRows = false;
-            poisonDataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            poisonDataGridView1.BackgroundColor = Color.FromArgb(128, 128, 255);
-            poisonDataGridView1.BorderStyle = BorderStyle.None;
-            poisonDataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.None;
-            poisonDataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(0, 174, 219);
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
-            dataGridViewCellStyle1.ForeColor = Color.FromArgb(255, 255, 255);
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(0, 198, 247);
-            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(17, 17, 17);
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            poisonDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            poisonDataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(255, 255, 255);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
-            dataGridViewCellStyle2.ForeColor = Color.FromArgb(136, 136, 136);
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(0, 198, 247);
-            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(17, 17, 17);
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            poisonDataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
-            poisonDataGridView1.EnableHeadersVisualStyles = false;
-            poisonDataGridView1.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
-            poisonDataGridView1.GridColor = Color.FromArgb(255, 255, 255);
-            poisonDataGridView1.Location = new Point(0, 177);
-            poisonDataGridView1.Name = "poisonDataGridView1";
-            poisonDataGridView1.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(0, 174, 219);
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
-            dataGridViewCellStyle3.ForeColor = Color.FromArgb(255, 255, 255);
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(0, 198, 247);
-            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(17, 17, 17);
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            poisonDataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            poisonDataGridView1.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            poisonDataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            poisonDataGridView1.Size = new Size(926, 493);
-            poisonDataGridView1.TabIndex = 0;
+            TextBoxCodigoBuscar.Size = new Size(154, 27);
+            TextBoxCodigoBuscar.TabIndex = 9;
             // 
             // ListaProdutos
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(PanelListaProdutos);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "ListaProdutos";
-            Size = new Size(926, 670);
+            Size = new Size(1058, 893);
             PanelListaProdutos.ResumeLayout(false);
             PanelListaProdutos.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)poisonDataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
         private ReaLTaiizor.Controls.ParrotGradientPanel PanelListaProdutos;
-        private ReaLTaiizor.Controls.PoisonDataGridView poisonDataGridView1;
+        private DataGridView dataGridView1;
+        private Label label2;
+        private Label label1;
+        private ReaLTaiizor.Controls.Button button1;
         private ReaLTaiizor.Controls.CyberRichTextBox TextBoxNomeBusacar;
         private MaskedTextBox TextBoxCodigoBuscar;
-        private ReaLTaiizor.Controls.Button button1;
     }
 }

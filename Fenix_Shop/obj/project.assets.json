@@ -58,23 +58,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Manacas\\.nuget\\packages\\": {},
+    "C:\\Users\\bruno\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Senai_Tcc\\Fenix_Shop\\Fenix_Shop.csproj",
+      "projectUniqueName": "D:\\Trabalho Senai\\Fenix_Shop\\Fenix_Shop.csproj",
       "projectName": "Fenix_Shop",
-      "projectPath": "C:\\Senai_Tcc\\Fenix_Shop\\Fenix_Shop.csproj",
-      "packagesPath": "C:\\Users\\Manacas\\.nuget\\packages\\",
-      "outputPath": "C:\\Senai_Tcc\\Fenix_Shop\\obj\\",
+      "projectPath": "D:\\Trabalho Senai\\Fenix_Shop\\Fenix_Shop.csproj",
+      "packagesPath": "C:\\Users\\bruno\\.nuget\\packages\\",
+      "outputPath": "D:\\Trabalho Senai\\Fenix_Shop\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Manacas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\bruno\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -131,7 +131,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

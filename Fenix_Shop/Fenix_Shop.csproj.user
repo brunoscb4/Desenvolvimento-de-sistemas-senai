@@ -16,5 +16,8 @@
     <Compile Update="Telas\Tela_Inicial.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="Telas\Vendas.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
   </ItemGroup>
 </Project>
