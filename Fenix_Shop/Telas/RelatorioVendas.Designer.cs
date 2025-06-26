@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             parrotGradientPanel1 = new ReaLTaiizor.Controls.ParrotGradientPanel();
+            dataGridView1 = new DataGridView();
             button1 = new ReaLTaiizor.Controls.Button();
             bigLabel4 = new ReaLTaiizor.Controls.BigLabel();
             dateTimePickerFinal = new DateTimePicker();
@@ -60,8 +61,8 @@
             panel1 = new Panel();
             label9VendasRealizadas = new Label();
             label1 = new Label();
-            dataGridView1 = new DataGridView();
             parrotGradientPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel6.SuspendLayout();
             panel7.SuspendLayout();
             panel5.SuspendLayout();
@@ -70,7 +71,6 @@
             panel3.SuspendLayout();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // parrotGradientPanel1
@@ -107,7 +107,19 @@
             parrotGradientPanel1.TabIndex = 0;
             parrotGradientPanel1.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             parrotGradientPanel1.TopLeft = Color.White;
-            parrotGradientPanel1.TopRight = Color.FromArgb(128, 255, 255);
+            parrotGradientPanel1.TopRight = Color.FromArgb(192, 192, 255);
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridView1.BackgroundColor = Color.White;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.GridColor = Color.Gray;
+            dataGridView1.Location = new Point(0, 520);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.Size = new Size(1058, 370);
+            dataGridView1.TabIndex = 13;
             // 
             // button1
             // 
@@ -503,18 +515,6 @@
             label1.TabIndex = 0;
             label1.Text = "Vendas realizadas";
             // 
-            // dataGridView1
-            // 
-            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dataGridView1.BackgroundColor = Color.White;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.GridColor = Color.Gray;
-            dataGridView1.Location = new Point(0, 520);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1058, 370);
-            dataGridView1.TabIndex = 13;
-            // 
             // RelatorioVendas
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -525,6 +525,7 @@
             Size = new Size(1058, 893);
             parrotGradientPanel1.ResumeLayout(false);
             parrotGradientPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
             panel7.ResumeLayout(false);
@@ -541,7 +542,6 @@
             panel2.PerformLayout();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
 

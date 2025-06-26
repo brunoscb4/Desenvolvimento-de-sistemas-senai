@@ -55,7 +55,7 @@
             // 
             parrotGradientPanel1.BorderStyle = BorderStyle.FixedSingle;
             parrotGradientPanel1.BottomLeft = Color.Black;
-            parrotGradientPanel1.BottomRight = Color.FromArgb(128, 255, 255);
+            parrotGradientPanel1.BottomRight = Color.FromArgb(192, 192, 255);
             parrotGradientPanel1.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
             parrotGradientPanel1.Controls.Add(pictureBox4);
             parrotGradientPanel1.Controls.Add(pictureBox3);
@@ -72,7 +72,7 @@
             parrotGradientPanel1.Style = ReaLTaiizor.Controls.ParrotGradientPanel.GradientStyle.Corners;
             parrotGradientPanel1.TabIndex = 1;
             parrotGradientPanel1.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            parrotGradientPanel1.TopLeft = Color.FromArgb(128, 255, 255);
+            parrotGradientPanel1.TopLeft = Color.FromArgb(192, 192, 255);
             parrotGradientPanel1.TopRight = Color.Black;
             // 
             // pictureBox4
@@ -123,8 +123,8 @@
             // PanelLogin
             // 
             PanelLogin.BorderStyle = BorderStyle.FixedSingle;
-            PanelLogin.BottomLeft = Color.Black;
-            PanelLogin.BottomRight = Color.FromArgb(192, 255, 255);
+            PanelLogin.BottomLeft = Color.White;
+            PanelLogin.BottomRight = Color.FromArgb(192, 192, 255);
             PanelLogin.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
             PanelLogin.Controls.Add(parrotGradientPanel2);
             PanelLogin.Dock = DockStyle.Fill;
@@ -133,20 +133,20 @@
             PanelLogin.Margin = new Padding(3, 4, 3, 4);
             PanelLogin.Name = "PanelLogin";
             PanelLogin.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
-            PanelLogin.PrimerColor = Color.Black;
+            PanelLogin.PrimerColor = Color.White;
             PanelLogin.Size = new Size(1371, 894);
             PanelLogin.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-            PanelLogin.Style = ReaLTaiizor.Controls.ParrotGradientPanel.GradientStyle.Horizontal;
+            PanelLogin.Style = ReaLTaiizor.Controls.ParrotGradientPanel.GradientStyle.Corners;
             PanelLogin.TabIndex = 2;
             PanelLogin.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            PanelLogin.TopLeft = Color.FromArgb(192, 255, 255);
+            PanelLogin.TopLeft = Color.FromArgb(192, 192, 255);
             PanelLogin.TopRight = Color.Black;
             // 
             // parrotGradientPanel2
             // 
             parrotGradientPanel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            parrotGradientPanel2.BottomLeft = Color.Black;
-            parrotGradientPanel2.BottomRight = Color.LightSkyBlue;
+            parrotGradientPanel2.BottomLeft = Color.White;
+            parrotGradientPanel2.BottomRight = Color.FromArgb(192, 192, 255);
             parrotGradientPanel2.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
             parrotGradientPanel2.Controls.Add(TextBox1Senha);
             parrotGradientPanel2.Controls.Add(TextBox1Email);
@@ -156,7 +156,7 @@
             parrotGradientPanel2.Controls.Add(pictureBox1);
             parrotGradientPanel2.Controls.Add(label2);
             parrotGradientPanel2.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
-            parrotGradientPanel2.Location = new Point(406, 93);
+            parrotGradientPanel2.Location = new Point(380, 70);
             parrotGradientPanel2.Name = "parrotGradientPanel2";
             parrotGradientPanel2.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
             parrotGradientPanel2.PrimerColor = Color.White;
@@ -165,8 +165,8 @@
             parrotGradientPanel2.Style = ReaLTaiizor.Controls.ParrotGradientPanel.GradientStyle.Corners;
             parrotGradientPanel2.TabIndex = 8;
             parrotGradientPanel2.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            parrotGradientPanel2.TopLeft = Color.DeepSkyBlue;
-            parrotGradientPanel2.TopRight = Color.Red;
+            parrotGradientPanel2.TopLeft = Color.FromArgb(192, 192, 255);
+            parrotGradientPanel2.TopRight = Color.FromArgb(192, 192, 255);
             // 
             // TextBox1Senha
             // 

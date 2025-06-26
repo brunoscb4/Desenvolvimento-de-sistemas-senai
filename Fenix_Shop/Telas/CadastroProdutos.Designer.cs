@@ -99,7 +99,7 @@
             PanelCadastroProduto.TabIndex = 0;
             PanelCadastroProduto.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             PanelCadastroProduto.TopLeft = Color.White;
-            PanelCadastroProduto.TopRight = Color.FromArgb(128, 255, 255);
+            PanelCadastroProduto.TopRight = Color.FromArgb(192, 192, 255);
             // 
             // TextBoxNome
             // 
@@ -121,6 +121,7 @@
             TextBoxNome.Location = new Point(112, 250);
             TextBoxNome.Margin = new Padding(3, 7, 3, 7);
             TextBoxNome.MaximumSize = new Size(500, 59);
+            TextBoxNome.MinimumSize = new Size(354, 59);
             TextBoxNome.Name = "TextBoxNome";
             TextBoxNome.PenWidth = 15;
             TextBoxNome.RGB = false;
@@ -136,7 +137,7 @@
             // 
             // label12
             // 
-            label12.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            label12.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label12.AutoSize = true;
             label12.BackColor = Color.Transparent;
             label12.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -150,7 +151,7 @@
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dateTimePicker1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             dateTimePicker1.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dateTimePicker1.Format = DateTimePickerFormat.Short;
             dateTimePicker1.Location = new Point(707, 819);
@@ -176,7 +177,7 @@
             // 
             // TextBoxEstoqueMinimo
             // 
-            TextBoxEstoqueMinimo.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            TextBoxEstoqueMinimo.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             TextBoxEstoqueMinimo.Location = new Point(707, 716);
             TextBoxEstoqueMinimo.Margin = new Padding(3, 4, 3, 4);
             TextBoxEstoqueMinimo.Mask = "000000000000000000";
@@ -187,7 +188,7 @@
             // 
             // label10
             // 
-            label10.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            label10.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label10.AutoSize = true;
             label10.BackColor = Color.Transparent;
             label10.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -244,7 +245,7 @@
             // 
             // TextBoxSku
             // 
-            TextBoxSku.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            TextBoxSku.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             TextBoxSku.Location = new Point(707, 619);
             TextBoxSku.Margin = new Padding(3, 4, 3, 4);
             TextBoxSku.Mask = "000000000000000000";
@@ -255,7 +256,7 @@
             // 
             // label7
             // 
-            label7.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            label7.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label7.AutoSize = true;
             label7.BackColor = Color.Transparent;
             label7.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -269,7 +270,7 @@
             // 
             // TextBoxCodigoBarras
             // 
-            TextBoxCodigoBarras.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            TextBoxCodigoBarras.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             TextBoxCodigoBarras.Location = new Point(707, 520);
             TextBoxCodigoBarras.Margin = new Padding(3, 4, 3, 4);
             TextBoxCodigoBarras.Mask = "000000000000000000";
@@ -280,7 +281,7 @@
             // 
             // label6
             // 
-            label6.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            label6.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label6.AutoSize = true;
             label6.BackColor = Color.Transparent;
             label6.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -294,7 +295,7 @@
             // 
             // TextBoxEstoque
             // 
-            TextBoxEstoque.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            TextBoxEstoque.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             TextBoxEstoque.Location = new Point(707, 427);
             TextBoxEstoque.Margin = new Padding(3, 4, 3, 4);
             TextBoxEstoque.Mask = "000000000000000000";
@@ -305,7 +306,7 @@
             // 
             // label5
             // 
-            label5.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            label5.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label5.AutoSize = true;
             label5.BackColor = Color.Transparent;
             label5.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -319,7 +320,7 @@
             // 
             // TextBoxVenda
             // 
-            TextBoxVenda.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            TextBoxVenda.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             TextBoxVenda.Location = new Point(707, 335);
             TextBoxVenda.Margin = new Padding(3, 4, 3, 4);
             TextBoxVenda.Mask = "000000000000000000";
@@ -330,7 +331,7 @@
             // 
             // label4
             // 
-            label4.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            label4.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label4.AutoSize = true;
             label4.BackColor = Color.Transparent;
             label4.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -344,7 +345,7 @@
             // 
             // TextBoxCusto
             // 
-            TextBoxCusto.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            TextBoxCusto.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             TextBoxCusto.Location = new Point(707, 243);
             TextBoxCusto.Margin = new Padding(3, 4, 3, 4);
             TextBoxCusto.Mask = "000000000000000000";
@@ -373,6 +374,7 @@
             TextBoxMarca.Location = new Point(112, 456);
             TextBoxMarca.Margin = new Padding(3, 5, 3, 5);
             TextBoxMarca.MaximumSize = new Size(500, 59);
+            TextBoxMarca.MinimumSize = new Size(354, 59);
             TextBoxMarca.Name = "TextBoxMarca";
             TextBoxMarca.PenWidth = 15;
             TextBoxMarca.RGB = false;
@@ -388,7 +390,7 @@
             // 
             // label3
             // 
-            label3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            label3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label3.AutoSize = true;
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -420,6 +422,7 @@
             TextBoxCategoria.Location = new Point(112, 350);
             TextBoxCategoria.Margin = new Padding(3, 7, 3, 7);
             TextBoxCategoria.MaximumSize = new Size(500, 59);
+            TextBoxCategoria.MinimumSize = new Size(354, 59);
             TextBoxCategoria.Name = "TextBoxCategoria";
             TextBoxCategoria.PenWidth = 15;
             TextBoxCategoria.RGB = false;

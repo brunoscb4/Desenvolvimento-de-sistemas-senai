@@ -94,11 +94,11 @@
             parrotGradientPanel1.TabIndex = 0;
             parrotGradientPanel1.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             parrotGradientPanel1.TopLeft = Color.White;
-            parrotGradientPanel1.TopRight = Color.FromArgb(192, 255, 255);
+            parrotGradientPanel1.TopRight = Color.FromArgb(192, 192, 255);
             // 
             // panel2
             // 
-            panel2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            panel2.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             panel2.BackColor = Color.SlateBlue;
             panel2.BorderStyle = BorderStyle.FixedSingle;
             panel2.Controls.Add(label11ValorTotalCompra);
@@ -114,7 +114,7 @@
             // 
             // label11ValorTotalCompra
             // 
-            label11ValorTotalCompra.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            label11ValorTotalCompra.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             label11ValorTotalCompra.AutoSize = true;
             label11ValorTotalCompra.BackColor = Color.Transparent;
             label11ValorTotalCompra.Font = new Font("Arial", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
@@ -126,7 +126,7 @@
             // 
             // label11QuantidadeVendidos
             // 
-            label11QuantidadeVendidos.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            label11QuantidadeVendidos.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             label11QuantidadeVendidos.AutoSize = true;
             label11QuantidadeVendidos.BackColor = Color.Transparent;
             label11QuantidadeVendidos.Font = new Font("Arial", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
@@ -138,6 +138,7 @@
             // 
             // dateTimePicker1
             // 
+            dateTimePicker1.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             dateTimePicker1.Format = DateTimePickerFormat.Short;
             dateTimePicker1.Location = new Point(25, 60);
             dateTimePicker1.Name = "dateTimePicker1";
@@ -146,7 +147,7 @@
             // 
             // label10
             // 
-            label10.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            label10.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             label10.AutoSize = true;
             label10.BackColor = Color.Transparent;
             label10.Font = new Font("Arial", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
@@ -159,7 +160,7 @@
             // 
             // label9
             // 
-            label9.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            label9.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             label9.AutoSize = true;
             label9.BackColor = Color.Transparent;
             label9.Font = new Font("Arial", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
@@ -172,7 +173,7 @@
             // 
             // button3
             // 
-            button3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            button3.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             button3.BackColor = Color.Transparent;
             button3.BorderColor = Color.Black;
             button3.EnteredBorderColor = Color.Black;
@@ -350,11 +351,12 @@
             // 
             // label4
             // 
+            label4.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             label4.AutoSize = true;
             label4.BackColor = Color.Transparent;
             label4.Font = new Font("Arial", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.Blue;
-            label4.Location = new Point(19, 496);
+            label4.Location = new Point(19, 459);
             label4.Name = "label4";
             label4.Size = new Size(92, 26);
             label4.TabIndex = 12;
@@ -374,20 +376,20 @@
             // 
             // dataGridView1Vendas
             // 
-            dataGridView1Vendas.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridView1Vendas.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridView1Vendas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1Vendas.BackgroundColor = Color.White;
             dataGridView1Vendas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1Vendas.GridColor = Color.FromArgb(64, 64, 64);
-            dataGridView1Vendas.Location = new Point(19, 525);
+            dataGridView1Vendas.Location = new Point(19, 496);
             dataGridView1Vendas.Name = "dataGridView1Vendas";
             dataGridView1Vendas.RowHeadersWidth = 51;
-            dataGridView1Vendas.Size = new Size(612, 347);
+            dataGridView1Vendas.Size = new Size(612, 376);
             dataGridView1Vendas.TabIndex = 10;
             // 
             // dataGridViewProdutos
             // 
-            dataGridViewProdutos.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridViewProdutos.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridViewProdutos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewProdutos.BackgroundColor = Color.White;
             dataGridViewProdutos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -395,7 +397,7 @@
             dataGridViewProdutos.Location = new Point(19, 116);
             dataGridViewProdutos.Name = "dataGridViewProdutos";
             dataGridViewProdutos.RowHeadersWidth = 51;
-            dataGridViewProdutos.Size = new Size(612, 352);
+            dataGridViewProdutos.Size = new Size(612, 340);
             dataGridViewProdutos.TabIndex = 9;
             // 
             // label2

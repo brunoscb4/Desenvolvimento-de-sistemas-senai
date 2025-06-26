@@ -49,3 +49,4 @@ D:\Trabalho Senai\Fenix_Shop\obj\Debug\net8.0-windows\Fenix_Shop.pdb
 D:\Trabalho Senai\Fenix_Shop\obj\Debug\net8.0-windows\Fenix_Shop.genruntimeconfig.cache
 D:\Trabalho Senai\Fenix_Shop\obj\Debug\net8.0-windows\ref\Fenix_Shop.dll
 D:\Trabalho Senai\Fenix_Shop\obj\Debug\net8.0-windows\Fenix_Shop.Telas.Vendas.resources
+D:\Trabalho Senai\Fenix_Shop\obj\Debug\net8.0-windows\Fenix_Shop.Telas.CadastroDeUsuario.resources
