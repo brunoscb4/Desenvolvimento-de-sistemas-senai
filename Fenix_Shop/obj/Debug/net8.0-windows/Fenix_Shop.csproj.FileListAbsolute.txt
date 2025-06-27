@@ -50,3 +50,10 @@ D:\Trabalho Senai\Fenix_Shop\obj\Debug\net8.0-windows\Fenix_Shop.genruntimeconfi
 D:\Trabalho Senai\Fenix_Shop\obj\Debug\net8.0-windows\ref\Fenix_Shop.dll
 D:\Trabalho Senai\Fenix_Shop\obj\Debug\net8.0-windows\Fenix_Shop.Telas.Vendas.resources
 D:\Trabalho Senai\Fenix_Shop\obj\Debug\net8.0-windows\Fenix_Shop.Telas.CadastroDeUsuario.resources
+C:\Senai_Tcc\Fenix_Shop\obj\Debug\net8.0-windows\Fenix_Shop.Telas.CadastroDeUsuario.resources
+C:\Senai_Tcc\Fenix_Shop\obj\Debug\net8.0-windows\Fenix_Shop.Telas.Vendas.resources
+C:\Senai_Tcc\Fenix_Shop\bin\Debug\net8.0-windows\System.Data.SQLite.dll
+C:\Senai_Tcc\Fenix_Shop\bin\Debug\net8.0-windows\runtimes\linux-x64\native\SQLite.Interop.dll
+C:\Senai_Tcc\Fenix_Shop\bin\Debug\net8.0-windows\runtimes\osx-x64\native\SQLite.Interop.dll
+C:\Senai_Tcc\Fenix_Shop\bin\Debug\net8.0-windows\runtimes\win-x64\native\SQLite.Interop.dll
+C:\Senai_Tcc\Fenix_Shop\bin\Debug\net8.0-windows\runtimes\win-x86\native\SQLite.Interop.dll
