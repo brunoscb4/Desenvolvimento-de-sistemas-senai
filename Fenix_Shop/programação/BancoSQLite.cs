@@ -35,8 +35,13 @@ namespace Fenix_Shop.programação
                 Id INTEGER PRIMARY KEY AUTOINCREMENT,
                 Nome TEXT NOT NULL,
                 Email TEXT UNIQUE NOT NULL,
-                Senha TEXT NOT NULL,
-                NivelUsuario TEXT NOT NULL 
+                Senha TEXT NOT NULL, 
+                NivelUsuario TEXT NOT NULL ,
+                Cpf TEXT UNIQUE,
+                NomeLoja TEXT,
+                Telefone TEXT,
+                DataDeCadastro DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+              
             );
 
             CREATE TABLE IF NOT EXISTS CadastroProduto (

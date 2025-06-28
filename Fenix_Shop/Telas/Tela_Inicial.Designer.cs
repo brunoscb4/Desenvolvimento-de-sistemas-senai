@@ -456,6 +456,7 @@
             Margin = new Padding(3, 4, 3, 4);
             Name = "Tela_Inicial";
             Size = new Size(1371, 893);
+            Load += Tela_Inicial_Load;
             parrotGradientPanel1.ResumeLayout(false);
             parrotGradientPanel2.ResumeLayout(false);
             parrotGradientPanel2.PerformLayout();

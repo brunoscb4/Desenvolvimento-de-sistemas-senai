@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "C+vekz3tpRU=",
+  "dgSpecHash": "R9HbPQAG4vg=",
   "success": true,
-  "projectFilePath": "C:\\Senai_Tcc\\Fenix_Shop\\Fenix_Shop.csproj",
+  "projectFilePath": "D:\\Trabalho Senai\\Fenix_Shop\\Fenix_Shop.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Manacas\\.nuget\\packages\\realtaiizor\\3.8.1.3\\realtaiizor.3.8.1.3.nupkg.sha512",
-    "C:\\Users\\Manacas\\.nuget\\packages\\stub.system.data.sqlite.core.netstandard\\1.0.119\\stub.system.data.sqlite.core.netstandard.1.0.119.nupkg.sha512",
-    "C:\\Users\\Manacas\\.nuget\\packages\\system.data.sqlite.core\\1.0.119\\system.data.sqlite.core.1.0.119.nupkg.sha512"
+    "C:\\Users\\bruno\\.nuget\\packages\\realtaiizor\\3.8.1.3\\realtaiizor.3.8.1.3.nupkg.sha512",
+    "C:\\Users\\bruno\\.nuget\\packages\\stub.system.data.sqlite.core.netstandard\\1.0.119\\stub.system.data.sqlite.core.netstandard.1.0.119.nupkg.sha512",
+    "C:\\Users\\bruno\\.nuget\\packages\\system.data.sqlite.core\\1.0.119\\system.data.sqlite.core.1.0.119.nupkg.sha512"
   ],
   "logs": []
 }

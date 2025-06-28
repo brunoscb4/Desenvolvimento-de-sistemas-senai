@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Fenix_Shop": {
+      "commandName": "Project",
+      "nativeDebugging": true
+    }
+  }
+}

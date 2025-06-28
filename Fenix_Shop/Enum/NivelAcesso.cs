@@ -8,8 +8,9 @@ namespace Fenix_Shop.Enums
 {
     public enum NivelAcesso
     {
-            ADMINISTRADOR,
-            GERENTE,
-            VENDEDOR
+        NENHUM = 0,
+        ADMINISTRADOR,
+        GERENTE,
+        VENDEDOR
     }
 }

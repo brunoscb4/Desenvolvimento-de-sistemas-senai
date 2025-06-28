@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             parrotGradientPanel1 = new ReaLTaiizor.Controls.ParrotGradientPanel();
             pictureBox4 = new PictureBox();
@@ -40,6 +41,9 @@
             Login = new ReaLTaiizor.Controls.Button();
             pictureBox1 = new PictureBox();
             label2 = new Label();
+            textBox1Email = new TextBox();
+            contextMenuStrip1 = new ContextMenuStrip(components);
+            textBox2Senha = new TextBox();
             parrotGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -61,10 +65,12 @@
             parrotGradientPanel1.Dock = DockStyle.Top;
             parrotGradientPanel1.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
             parrotGradientPanel1.Location = new Point(0, 0);
+            parrotGradientPanel1.Margin = new Padding(3, 4, 3, 4);
+            parrotGradientPanel1.MinimumSize = new Size(1371, 39);
             parrotGradientPanel1.Name = "parrotGradientPanel1";
             parrotGradientPanel1.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
             parrotGradientPanel1.PrimerColor = Color.Black;
-            parrotGradientPanel1.Size = new Size(1200, 30);
+            parrotGradientPanel1.Size = new Size(1371, 39);
             parrotGradientPanel1.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
             parrotGradientPanel1.Style = ReaLTaiizor.Controls.ParrotGradientPanel.GradientStyle.Corners;
             parrotGradientPanel1.TabIndex = 1;
@@ -78,9 +84,10 @@
             pictureBox4.BackColor = Color.Transparent;
             pictureBox4.BackgroundImage = Properties.Resources.botao_fechar;
             pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(1051, -1);
+            pictureBox4.Location = new Point(1201, -1);
+            pictureBox4.Margin = new Padding(3, 4, 3, 4);
             pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(28, 28);
+            pictureBox4.Size = new Size(32, 37);
             pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox4.TabIndex = 2;
             pictureBox4.TabStop = false;
@@ -92,9 +99,10 @@
             pictureBox3.BackColor = Color.Transparent;
             pictureBox3.BackgroundImage = Properties.Resources.botao_fechar;
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(1106, -1);
+            pictureBox3.Location = new Point(1264, -1);
+            pictureBox3.Margin = new Padding(3, 4, 3, 4);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(28, 28);
+            pictureBox3.Size = new Size(32, 37);
             pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox3.TabIndex = 1;
             pictureBox3.TabStop = false;
@@ -106,9 +114,10 @@
             pictureBox2.BackColor = Color.Transparent;
             pictureBox2.BackgroundImage = Properties.Resources.botao_fechar;
             pictureBox2.Image = Properties.Resources.botao_fechar;
-            pictureBox2.Location = new Point(1159, -1);
+            pictureBox2.Location = new Point(1325, -1);
+            pictureBox2.Margin = new Padding(3, 4, 3, 4);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(28, 28);
+            pictureBox2.Size = new Size(32, 37);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 0;
             pictureBox2.TabStop = false;
@@ -123,11 +132,13 @@
             PanelLogin.Controls.Add(PanelDeLogin);
             PanelLogin.Dock = DockStyle.Fill;
             PanelLogin.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
-            PanelLogin.Location = new Point(0, 30);
+            PanelLogin.Location = new Point(0, 39);
+            PanelLogin.Margin = new Padding(3, 4, 3, 4);
+            PanelLogin.MinimumSize = new Size(1371, 894);
             PanelLogin.Name = "PanelLogin";
             PanelLogin.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
             PanelLogin.PrimerColor = Color.White;
-            PanelLogin.Size = new Size(1200, 670);
+            PanelLogin.Size = new Size(1371, 894);
             PanelLogin.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
             PanelLogin.Style = ReaLTaiizor.Controls.ParrotGradientPanel.GradientStyle.Corners;
             PanelLogin.TabIndex = 2;
@@ -138,23 +149,25 @@
             // PanelDeLogin
             // 
             PanelDeLogin.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            PanelDeLogin.BorderStyle = BorderStyle.FixedSingle;
             PanelDeLogin.BottomLeft = Color.White;
             PanelDeLogin.BottomRight = Color.FromArgb(192, 192, 255);
             PanelDeLogin.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+            PanelDeLogin.Controls.Add(textBox2Senha);
+            PanelDeLogin.Controls.Add(textBox1Email);
             PanelDeLogin.Controls.Add(label1);
             PanelDeLogin.Controls.Add(bigLabel1);
             PanelDeLogin.Controls.Add(Login);
             PanelDeLogin.Controls.Add(pictureBox1);
             PanelDeLogin.Controls.Add(label2);
             PanelDeLogin.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
-            PanelDeLogin.Location = new Point(332, 52);
-            PanelDeLogin.Margin = new Padding(3, 2, 3, 2);
-            PanelDeLogin.MaximumSize = new Size(700, 620);
-            PanelDeLogin.MinimumSize = new Size(564, 537);
+            PanelDeLogin.Location = new Point(370, 29);
+            PanelDeLogin.MaximumSize = new Size(800, 827);
+            PanelDeLogin.MinimumSize = new Size(645, 716);
             PanelDeLogin.Name = "PanelDeLogin";
             PanelDeLogin.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
             PanelDeLogin.PrimerColor = Color.White;
-            PanelDeLogin.Size = new Size(564, 537);
+            PanelDeLogin.Size = new Size(645, 717);
             PanelDeLogin.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
             PanelDeLogin.Style = ReaLTaiizor.Controls.ParrotGradientPanel.GradientStyle.Corners;
             PanelDeLogin.TabIndex = 8;
@@ -169,9 +182,9 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Black;
-            label1.Location = new Point(84, 297);
+            label1.Location = new Point(96, 395);
             label1.Name = "label1";
-            label1.Size = new Size(68, 24);
+            label1.Size = new Size(86, 29);
             label1.TabIndex = 1;
             label1.Text = "Email:";
             // 
@@ -182,9 +195,9 @@
             bigLabel1.BackColor = Color.Transparent;
             bigLabel1.Font = new Font("Microsoft Sans Serif", 24F, FontStyle.Italic, GraphicsUnit.Point, 0);
             bigLabel1.ForeColor = Color.Black;
-            bigLabel1.Location = new Point(174, 43);
+            bigLabel1.Location = new Point(198, 57);
             bigLabel1.Name = "bigLabel1";
-            bigLabel1.Size = new Size(173, 37);
+            bigLabel1.Size = new Size(216, 46);
             bigLabel1.TabIndex = 0;
             bigLabel1.Text = "Fenix shop";
             // 
@@ -199,27 +212,29 @@
             Login.Image = null;
             Login.ImageAlign = ContentAlignment.MiddleLeft;
             Login.InactiveColor = Color.Green;
-            Login.Location = new Point(378, 474);
+            Login.Location = new Point(430, 631);
+            Login.Margin = new Padding(3, 4, 3, 4);
             Login.Name = "Login";
             Login.PressedBorderColor = Color.Black;
             Login.PressedColor = Color.Lime;
             Login.RightToLeft = RightToLeft.No;
-            Login.Size = new Size(73, 26);
+            Login.Size = new Size(83, 35);
             Login.TabIndex = 6;
             Login.Text = "Login";
             Login.TextAlignment = StringAlignment.Center;
-            Login.Click += Login_Click;
+            Login.Click += Login_Click_1;
             // 
             // pictureBox1
             // 
             pictureBox1.Anchor = AnchorStyles.Top;
             pictureBox1.BackColor = Color.Transparent;
             pictureBox1.Image = Properties.Resources.img_Fenix_Shop;
-            pictureBox1.Location = new Point(84, 80);
-            pictureBox1.MaximumSize = new Size(612, 338);
-            pictureBox1.MinimumSize = new Size(391, 240);
+            pictureBox1.Location = new Point(95, 107);
+            pictureBox1.Margin = new Padding(3, 4, 3, 4);
+            pictureBox1.MaximumSize = new Size(699, 451);
+            pictureBox1.MinimumSize = new Size(447, 320);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(391, 240);
+            pictureBox1.Size = new Size(447, 320);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 7;
             pictureBox1.TabStop = false;
@@ -231,21 +246,48 @@
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.Black;
-            label2.Location = new Point(84, 381);
+            label2.Location = new Point(96, 507);
             label2.Name = "label2";
-            label2.Size = new Size(76, 24);
+            label2.Size = new Size(94, 29);
             label2.TabIndex = 2;
             label2.Text = "Senha:";
             // 
+            // textBox1Email
+            // 
+            textBox1Email.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            textBox1Email.Location = new Point(133, 458);
+            textBox1Email.MaximumSize = new Size(400, 27);
+            textBox1Email.MinimumSize = new Size(360, 27);
+            textBox1Email.Name = "textBox1Email";
+            textBox1Email.Size = new Size(360, 27);
+            textBox1Email.TabIndex = 8;
+            // 
+            // contextMenuStrip1
+            // 
+            contextMenuStrip1.ImageScalingSize = new Size(20, 20);
+            contextMenuStrip1.Name = "contextMenuStrip1";
+            contextMenuStrip1.Size = new Size(61, 4);
+            // 
+            // textBox2Senha
+            // 
+            textBox2Senha.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            textBox2Senha.Location = new Point(133, 562);
+            textBox2Senha.MaximumSize = new Size(400, 27);
+            textBox2Senha.MinimumSize = new Size(360, 27);
+            textBox2Senha.Name = "textBox2Senha";
+            textBox2Senha.Size = new Size(360, 27);
+            textBox2Senha.TabIndex = 9;
+            // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1200, 700);
+            ClientSize = new Size(1371, 933);
             Controls.Add(PanelLogin);
             Controls.Add(parrotGradientPanel1);
             FormBorderStyle = FormBorderStyle.None;
             IsMdiContainer = true;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Form1";
             Text = "Form1";
             Load += Form1_Load;
@@ -273,5 +315,8 @@
         private PictureBox pictureBox2;
         private PictureBox pictureBox4;
         private ReaLTaiizor.Controls.ParrotGradientPanel PanelDeLogin;
+        private TextBox textBox2Senha;
+        private TextBox textBox1Email;
+        private ContextMenuStrip contextMenuStrip1;
     }
 }

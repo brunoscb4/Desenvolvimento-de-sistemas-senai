@@ -8,6 +8,7 @@ namespace Fenix_Shop
         public Form1()
         {
             InitializeComponent();
+            
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -33,13 +34,36 @@ namespace Fenix_Shop
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void Login_Click(object sender, EventArgs e)
-        {
-            Tela_Inicial tela_Inicial = new Tela_Inicial();
-            PanelLogin.Controls.Clear();
-            tela_Inicial.Dock = DockStyle.Fill;
-            PanelLogin.Controls.Add(tela_Inicial);
 
+        private void Login_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                CadastroNovoUsuario usuario = new CadastroNovoUsuario();
+
+                if (textBox1Email.Text != "" && textBox2Senha.Text != "")
+                {
+                    usuario.Email = textBox1Email.Text;
+                    usuario.Senha = textBox2Senha.Text;
+                    if (usuario.FazerLogin())
+                    {
+                        Tela_Inicial tela_Inicial = new Tela_Inicial();
+                        PanelLogin.Controls.Clear();
+                        tela_Inicial.Dock = DockStyle.Fill;
+                        PanelLogin.Controls.Add(tela_Inicial);
+
+                    }
+                    else { MessageBox.Show("Email ou senha inválidos."); }
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao fazer login: " + ex.Message);
+
+            }
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -47,14 +71,17 @@ namespace Fenix_Shop
             CadastroNovoUsuario usuario = new CadastroNovoUsuario();
             BancoSQLite.CriarBancoETabela();
             Tela_Inicial tela_Inicial = new Tela_Inicial();
+            CadastroDeUsuario cadastroDeUsuario = new CadastroDeUsuario();
 
-            
+
             if (usuario.VerificarUsuario())
             {
-                PanelLogin.Controls.Clear();
-                tela_Inicial.Dock = DockStyle.Fill;
-                PanelLogin.Controls.Add(tela_Inicial);
+                PanelDeLogin.Size = new Size(800, 827);
+                PanelDeLogin.Controls.Clear();
+                cadastroDeUsuario.Dock = DockStyle.Fill;
+                PanelDeLogin.Controls.Add(cadastroDeUsuario);
             }
+
         }
     }
 }

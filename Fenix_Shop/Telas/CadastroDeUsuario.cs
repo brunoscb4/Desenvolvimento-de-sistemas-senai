@@ -32,22 +32,60 @@ namespace Fenix_Shop.Telas
 
             try
             {
-                if (string.IsNullOrWhiteSpace(textBox1Nome.Text) && 
-                    string.IsNullOrWhiteSpace(textBox2Email.Text)&&
-                    string.IsNullOrWhiteSpace(textBox3Senha.Text)&&
-                    string.IsNullOrWhiteSpace(textBox4ConfirmarSenha.Text)&&
-                    string.IsNullOrWhiteSpace(TextBoxMasCpf.Text)&&
-                    string.IsNullOrWhiteSpace(comboBoxNivelPermissão.Text))
+                if (textBox1Nome.Text != "" && textBox2Email.Text != "" && textBox3Senha.Text != "" && comboBoxNivelPermissão.Text != "")
+                    
                 {
-                    NivelAcesso escolhodo = (NivelAcesso)comboBoxNivelPermissão.SelectedItem;
+                    
 
                     usuario.Nome = textBox1Nome.Text;
                     usuario.Email = textBox2Email.Text;
-                    usuario.Senha =  textBox3Senha.Text == textBox4ConfirmarSenha.Text ? textBox3Senha.Text: null;
-                    usuario.Nivelusuario = escolhodo.ToString();
+                    usuario.Senha =  textBox3Senha.Text.Equals(textBox4ConfirmarSenha.Text)? textBox3Senha.Text: null;
+                    if (comboBoxNivelPermissão.Text .Equals("ADMINISTRADOR"))
+                    {
+                        usuario.Nivelusuario = NivelAcesso.ADMINISTRADOR.ToString();
+                    }
+                    else if (comboBoxNivelPermissão.Text.Equals("GERENTE"))
+                    {
+                        usuario.Nivelusuario = NivelAcesso.GERENTE.ToString();
+                    }
+                    else if (comboBoxNivelPermissão.Text.Equals("VENDEDOR"))
+                    {
+                        usuario.Nivelusuario = NivelAcesso.VENDEDOR.ToString();
+                    }
+                    else 
+                    {
+                        MessageBox.Show("Selecione um nível de permissão válido.");
+                        return;
+                    }
+                    usuario.Cpf = TextBoxMasCpf.Text;
+                    usuario.NomeLoja = textBox5NomeLoja.Text;
+                    usuario.Telefone = TextBoxMaskTelefone.Text;
 
                     usuario.CadastroUsuario();
                     MessageBox.Show("Cadastro realizado com suceso..");
+                    textBox1Nome.Clear();
+                    textBox2Email.Clear();
+                    textBox3Senha.Clear();
+                    textBox4ConfirmarSenha.Clear();
+                    TextBoxMasCpf.Clear();
+                    textBox5NomeLoja.Clear();
+                    TextBoxMaskTelefone.Clear();
+                    comboBoxNivelPermissão.Text = NivelAcesso.VENDEDOR.ToString();
+                    textBox1Nome.Focus();
+                }
+                else
+                {
+                    MessageBox.Show("Preencha todos os campos corretamente.");
+
+                    textBox1Nome.Clear();
+                    textBox2Email.Clear();
+                    textBox3Senha.Clear();
+                    textBox4ConfirmarSenha.Clear();
+                    TextBoxMasCpf.Clear();
+                    textBox5NomeLoja.Clear();
+                    TextBoxMaskTelefone.Clear();
+                    comboBoxNivelPermissão.Text = NivelAcesso.NENHUM.ToString();
+                    textBox1Nome.Focus();
                 }
 
             }

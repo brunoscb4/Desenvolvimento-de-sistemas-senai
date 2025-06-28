@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Fenix_Shop.programação;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -69,6 +70,12 @@ namespace Fenix_Shop.Telas
             panel5IncialControler.Controls.Clear();
             usuario.Dock = DockStyle.Fill;
             panel5IncialControler.Controls.Add(usuario);
+        }
+
+        private void Tela_Inicial_Load(object sender, EventArgs e)
+        {
+            UsuarioLogado usuarioLogado = new UsuarioLogado();
+            labelusuario.Text = usuarioLogado.Nome;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace Fenix_Shop.programação
     public class CadastroNovoUsuario
     {
 
-        private string nome, email, senha, nivelusuario;
+        private string nome, email, senha, nivelusuario,cpf,nomeloja,telefone;
 
         public string Nome
         { get { return nome; } set { nome = value; } }
@@ -22,6 +22,12 @@ namespace Fenix_Shop.programação
             { get { return senha; } set { senha = value; } }
         public string Nivelusuario
             { get { return nivelusuario; } set { nivelusuario = value; } }
+        public string Cpf
+            { get { return cpf; } set { cpf = value; } }
+        public string NomeLoja
+            { get { return nomeloja; } set { nomeloja = value; } }
+        public string Telefone
+            { get { return telefone; } set { telefone = value; } }
 
 
 
@@ -53,7 +59,7 @@ namespace Fenix_Shop.programação
             Array.Copy(hashBytes,0,salt,0,16);
 
 
-            var pbk2f2 = new Rfc2898DeriveBytes(SenhaDigitada,salt,1000000, HashAlgorithmName.SHA256);
+            var pbk2f2 = new Rfc2898DeriveBytes(SenhaDigitada,salt,100000, HashAlgorithmName.SHA256);
             byte[] hash = pbk2f2.GetBytes(32);
 
             for (int i = 0; i < 32; i++)
@@ -73,7 +79,7 @@ namespace Fenix_Shop.programação
                 {
                     connection.Open();
                     string SenhaHash = GerarHash(Senha);
-                    string insert = "INSERT INTO Usuario (Nome,Email,Senha,NivelUsuario) VALUES (@Nome,@Email,@Senha,@Nivelusuario)";
+                    string insert = "INSERT INTO Usuario (Nome,Email,Senha,NivelUsuario,Cpf,NomeLoja,Telefone) VALUES (@Nome,@Email,@Senha,@Nivelusuario,@Cpf,@NomeLoja,@Telefone)";
 
                     using (var cmd = new SQLiteCommand(insert, connection))
                     {
@@ -81,6 +87,9 @@ namespace Fenix_Shop.programação
                         cmd.Parameters.AddWithValue("@Email",Email);
                         cmd.Parameters.AddWithValue("@Senha",SenhaHash);
                         cmd.Parameters.AddWithValue("@Nivelusuario", Nivelusuario);
+                        cmd.Parameters.AddWithValue("@Cpf", Cpf);
+                        cmd.Parameters.AddWithValue("@NomeLoja", NomeLoja);
+                        cmd.Parameters.AddWithValue("@Telefone", Telefone);
                         cmd.ExecuteNonQuery();
 
                         return true;
@@ -106,7 +115,7 @@ namespace Fenix_Shop.programação
                 {
                     connection.Open();
 
-                    string SenhaHash = GerarHash(Senha);
+                  
                     string login = " SELECT Senha FROM Usuario WHERE Email = @Email";
 
                     using (var cmd = new SQLiteCommand(login, connection))
@@ -117,7 +126,7 @@ namespace Fenix_Shop.programação
                         if (resultado != null)
                         {
                             string hashSalvo = resultado.ToString();
-                            return VerificarSenha(senha,hashSalvo);
+                            return VerificarSenha(Senha,hashSalvo);
                         }
                         else 
                         {
