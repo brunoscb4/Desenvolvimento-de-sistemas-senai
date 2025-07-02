@@ -13,9 +13,11 @@ namespace Fenix_Shop.Telas
 {
     public partial class Tela_Inicial : UserControl
     {
-        public Tela_Inicial()
+        private UsuarioLogado usuariologado;
+        public Tela_Inicial(UsuarioLogado usuariologado)
         {
             InitializeComponent();
+            this.usuariologado = usuariologado;
         }
 
         private void CadastroProdutos_Click(object sender, EventArgs e)
@@ -74,8 +76,13 @@ namespace Fenix_Shop.Telas
 
         private void Tela_Inicial_Load(object sender, EventArgs e)
         {
-            UsuarioLogado usuarioLogado = new UsuarioLogado();
-            labelusuario.Text = usuarioLogado.Nome;
+            labelusuario.Text = usuariologado.Nome;
+            label4NivelUsuario.Text = usuariologado.Nivelusuario;
+        }
+
+        private void labelusuario_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

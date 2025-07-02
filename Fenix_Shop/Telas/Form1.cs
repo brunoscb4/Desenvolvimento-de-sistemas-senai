@@ -45,12 +45,19 @@ namespace Fenix_Shop
                 {
                     usuario.Email = textBox1Email.Text;
                     usuario.Senha = textBox2Senha.Text;
+
                     if (usuario.FazerLogin())
                     {
-                        Tela_Inicial tela_Inicial = new Tela_Inicial();
+                        UsuarioLogado usuarioLogado = new UsuarioLogado();
+                        usuarioLogado.Email = usuario.Email;
+                        if (usuarioLogado.UsuarioAtivo())
+                        {
+                        Tela_Inicial tela_Inicial = new Tela_Inicial(usuarioLogado);
                         PanelLogin.Controls.Clear();
                         tela_Inicial.Dock = DockStyle.Fill;
                         PanelLogin.Controls.Add(tela_Inicial);
+                        }
+                        
 
                     }
                     else { MessageBox.Show("Email ou senha inválidos."); }
@@ -70,7 +77,6 @@ namespace Fenix_Shop
         {
             CadastroNovoUsuario usuario = new CadastroNovoUsuario();
             BancoSQLite.CriarBancoETabela();
-            Tela_Inicial tela_Inicial = new Tela_Inicial();
             CadastroDeUsuario cadastroDeUsuario = new CadastroDeUsuario();
 
 

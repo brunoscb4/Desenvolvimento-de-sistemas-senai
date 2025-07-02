@@ -30,8 +30,11 @@
         {
             parrotGradientPanel1 = new ReaLTaiizor.Controls.ParrotGradientPanel();
             parrotGradientPanel2 = new ReaLTaiizor.Controls.ParrotGradientPanel();
+            label5 = new Label();
             label4 = new Label();
             pictureBox1 = new PictureBox();
+            labelusuario = new Label();
+            label4NivelUsuario = new Label();
             button4 = new ReaLTaiizor.Controls.Button();
             button3 = new ReaLTaiizor.Controls.Button();
             button2 = new ReaLTaiizor.Controls.Button();
@@ -39,8 +42,6 @@
             ButtonCadastroProduto = new ReaLTaiizor.Controls.Button();
             Inicio = new ReaLTaiizor.Controls.Button();
             PanelInicio = new ReaLTaiizor.Controls.ParrotGradientPanel();
-            panel4 = new Panel();
-            labelusuario = new Label();
             pictureBox2 = new PictureBox();
             panel3 = new Panel();
             labelSemEstoque = new Label();
@@ -56,7 +57,6 @@
             parrotGradientPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             PanelInicio.SuspendLayout();
-            panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel3.SuspendLayout();
             panel2.SuspendLayout();
@@ -95,44 +95,87 @@
             // parrotGradientPanel2
             // 
             parrotGradientPanel2.BorderStyle = BorderStyle.FixedSingle;
-            parrotGradientPanel2.BottomLeft = Color.FromArgb(192, 192, 255);
-            parrotGradientPanel2.BottomRight = Color.FromArgb(0, 64, 64);
+            parrotGradientPanel2.BottomLeft = Color.Black;
+            parrotGradientPanel2.BottomRight = Color.FromArgb(192, 192, 255);
             parrotGradientPanel2.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+            parrotGradientPanel2.Controls.Add(label5);
             parrotGradientPanel2.Controls.Add(label4);
             parrotGradientPanel2.Controls.Add(pictureBox1);
+            parrotGradientPanel2.Controls.Add(labelusuario);
+            parrotGradientPanel2.Controls.Add(label4NivelUsuario);
+            parrotGradientPanel2.Dock = DockStyle.Top;
             parrotGradientPanel2.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
-            parrotGradientPanel2.Location = new Point(27, 21);
-            parrotGradientPanel2.Margin = new Padding(3, 4, 3, 4);
+            parrotGradientPanel2.Location = new Point(0, 0);
             parrotGradientPanel2.Name = "parrotGradientPanel2";
             parrotGradientPanel2.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
-            parrotGradientPanel2.PrimerColor = Color.FromArgb(0, 64, 64);
-            parrotGradientPanel2.Size = new Size(245, 199);
+            parrotGradientPanel2.PrimerColor = Color.Black;
+            parrotGradientPanel2.Size = new Size(311, 240);
             parrotGradientPanel2.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
             parrotGradientPanel2.Style = ReaLTaiizor.Controls.ParrotGradientPanel.GradientStyle.Corners;
-            parrotGradientPanel2.TabIndex = 8;
+            parrotGradientPanel2.TabIndex = 9;
             parrotGradientPanel2.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            parrotGradientPanel2.TopLeft = Color.FromArgb(192, 255, 255);
-            parrotGradientPanel2.TopRight = Color.FromArgb(192, 255, 255);
+            parrotGradientPanel2.TopLeft = Color.FromArgb(192, 192, 255);
+            parrotGradientPanel2.TopRight = Color.Black;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.BackColor = Color.Transparent;
+            label5.Font = new Font("Calibri", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.FromArgb(128, 128, 255);
+            label5.Location = new Point(13, 211);
+            label5.Name = "label5";
+            label5.Size = new Size(61, 28);
+            label5.TabIndex = 10;
+            label5.Text = "User:";
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.BackColor = Color.Transparent;
-            label4.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(12, 149);
+            label4.Font = new Font("Calibri", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.FromArgb(128, 128, 255);
+            label4.Location = new Point(13, 167);
             label4.Name = "label4";
-            label4.Size = new Size(228, 29);
-            label4.TabIndex = 8;
-            label4.Text = "Nome da empresa";
+            label4.Size = new Size(67, 28);
+            label4.TabIndex = 9;
+            label4.Text = "Nivel:";
             // 
             // pictureBox1
             // 
-            pictureBox1.Location = new Point(14, 12);
+            pictureBox1.BackColor = Color.White;
+            pictureBox1.BorderStyle = BorderStyle.FixedSingle;
+            pictureBox1.Location = new Point(13, 13);
             pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(114, 133);
             pictureBox1.TabIndex = 7;
             pictureBox1.TabStop = false;
+            // 
+            // labelusuario
+            // 
+            labelusuario.AutoSize = true;
+            labelusuario.BackColor = Color.Transparent;
+            labelusuario.Font = new Font("Calibri", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            labelusuario.ForeColor = Color.White;
+            labelusuario.Location = new Point(102, 211);
+            labelusuario.Name = "labelusuario";
+            labelusuario.Size = new Size(86, 28);
+            labelusuario.TabIndex = 3;
+            labelusuario.Text = "Usuario";
+            labelusuario.Click += labelusuario_Click;
+            // 
+            // label4NivelUsuario
+            // 
+            label4NivelUsuario.AutoSize = true;
+            label4NivelUsuario.BackColor = Color.Transparent;
+            label4NivelUsuario.Font = new Font("Calibri", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label4NivelUsuario.ForeColor = Color.White;
+            label4NivelUsuario.Location = new Point(102, 167);
+            label4NivelUsuario.Name = "label4NivelUsuario";
+            label4NivelUsuario.Size = new Size(140, 28);
+            label4NivelUsuario.TabIndex = 8;
+            label4NivelUsuario.Text = "Nivel Usuario";
             // 
             // button4
             // 
@@ -268,10 +311,10 @@
             // 
             // PanelInicio
             // 
+            PanelInicio.BorderStyle = BorderStyle.FixedSingle;
             PanelInicio.BottomLeft = Color.White;
             PanelInicio.BottomRight = Color.White;
             PanelInicio.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
-            PanelInicio.Controls.Add(panel4);
             PanelInicio.Controls.Add(pictureBox2);
             PanelInicio.Controls.Add(panel3);
             PanelInicio.Controls.Add(panel2);
@@ -291,34 +334,12 @@
             PanelInicio.TopLeft = Color.White;
             PanelInicio.TopRight = Color.FromArgb(192, 192, 255);
             // 
-            // panel4
-            // 
-            panel4.BackColor = Color.SlateBlue;
-            panel4.BorderStyle = BorderStyle.FixedSingle;
-            panel4.Controls.Add(labelusuario);
-            panel4.Location = new Point(163, 75);
-            panel4.Margin = new Padding(3, 4, 3, 4);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(291, 70);
-            panel4.TabIndex = 1;
-            // 
-            // labelusuario
-            // 
-            labelusuario.AutoSize = true;
-            labelusuario.BackColor = Color.Transparent;
-            labelusuario.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelusuario.Location = new Point(66, 20);
-            labelusuario.Name = "labelusuario";
-            labelusuario.Size = new Size(103, 29);
-            labelusuario.TabIndex = 3;
-            labelusuario.Text = "Usuario";
-            // 
             // pictureBox2
             // 
             pictureBox2.Anchor = AnchorStyles.None;
             pictureBox2.BackColor = Color.Transparent;
             pictureBox2.Image = Properties.Resources.img_Fenix_Shop;
-            pictureBox2.Location = new Point(211, 321);
+            pictureBox2.Location = new Point(210, 320);
             pictureBox2.Margin = new Padding(3, 4, 3, 4);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(623, 541);
@@ -333,7 +354,7 @@
             panel3.BorderStyle = BorderStyle.FixedSingle;
             panel3.Controls.Add(labelSemEstoque);
             panel3.Controls.Add(label3);
-            panel3.Location = new Point(730, 228);
+            panel3.Location = new Point(729, 228);
             panel3.Margin = new Padding(3, 4, 3, 4);
             panel3.Name = "panel3";
             panel3.Size = new Size(291, 70);
@@ -370,7 +391,7 @@
             panel2.BorderStyle = BorderStyle.FixedSingle;
             panel2.Controls.Add(labelVendidos);
             panel2.Controls.Add(label2);
-            panel2.Location = new Point(389, 228);
+            panel2.Location = new Point(388, 228);
             panel2.Margin = new Padding(3, 4, 3, 4);
             panel2.Name = "panel2";
             panel2.Size = new Size(291, 70);
@@ -407,7 +428,7 @@
             panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(labelNumeroDeCadastrados);
             panel1.Controls.Add(label1);
-            panel1.Location = new Point(43, 228);
+            panel1.Location = new Point(42, 228);
             panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
             panel1.Size = new Size(291, 70);
@@ -462,8 +483,6 @@
             parrotGradientPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             PanelInicio.ResumeLayout(false);
-            panel4.ResumeLayout(false);
-            panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
@@ -489,7 +508,6 @@
         private Panel panel1;
         private Panel panel3;
         private Panel panel2;
-        private Panel panel4;
         private PictureBox pictureBox2;
         private Label labelVendidos;
         private Label label2;
@@ -498,8 +516,10 @@
         private Label labelusuario;
         private Label labelSemEstoque;
         private Label label3;
+        private Label label4NivelUsuario;
+        private Panel panel5IncialControler;
         private ReaLTaiizor.Controls.ParrotGradientPanel parrotGradientPanel2;
         private Label label4;
-        private Panel panel5IncialControler;
+        private Label label5;
     }
 }
