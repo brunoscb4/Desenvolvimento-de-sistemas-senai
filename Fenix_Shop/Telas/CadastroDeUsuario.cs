@@ -60,8 +60,17 @@ namespace Fenix_Shop.Telas
                     usuario.Cpf = TextBoxMasCpf.Text;
                     usuario.NomeLoja = textBox5NomeLoja.Text;
                     usuario.Telefone = TextBoxMaskTelefone.Text;
+                    if (pictureBox1Usuario.Image != null)
+                    {
+                     usuario.Imagem = CadastroProdutos.ConverterImagemParaBytes(pictureBox1Usuario.Image);
 
-                    usuario.CadastroUsuario();
+                    }
+                    else
+                    {
+                        usuario.Imagem =CadastroProdutos.ConverterImagemParaBytes(Properties.Resources.img_Fenix_Shop);
+                    }
+
+                        usuario.CadastroUsuario();
                     MessageBox.Show("Cadastro realizado com suceso..");
                     textBox1Nome.Clear();
                     textBox2Email.Clear();

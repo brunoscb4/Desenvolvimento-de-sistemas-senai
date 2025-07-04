@@ -13,7 +13,7 @@ namespace Fenix_Shop.programação
     {
 
         private string nome, email, senha, nivelusuario,cpf,nomeloja,telefone;
-
+        private byte[] imagem;
         public string Nome
         { get { return nome; } set { nome = value; } }
         public string Email
@@ -28,6 +28,8 @@ namespace Fenix_Shop.programação
             { get { return nomeloja; } set { nomeloja = value; } }
         public string Telefone
             { get { return telefone; } set { telefone = value; } }
+        public byte[] Imagem
+        { get { return imagem; } set { imagem = value; } }
 
 
 
@@ -79,7 +81,7 @@ namespace Fenix_Shop.programação
                 {
                     connection.Open();
                     string SenhaHash = GerarHash(Senha);
-                    string insert = "INSERT INTO Usuario (Nome,Email,Senha,NivelUsuario,Cpf,NomeLoja,Telefone) VALUES (@Nome,@Email,@Senha,@Nivelusuario,@Cpf,@NomeLoja,@Telefone)";
+                    string insert = "INSERT INTO Usuario (Nome,Email,Senha,NivelUsuario,Cpf,NomeLoja,Telefone,Foto) VALUES (@Nome,@Email,@Senha,@Nivelusuario,@Cpf,@NomeLoja,@Telefone,@Imagem)";
 
                     using (var cmd = new SQLiteCommand(insert, connection))
                     {
@@ -90,6 +92,7 @@ namespace Fenix_Shop.programação
                         cmd.Parameters.AddWithValue("@Cpf", Cpf);
                         cmd.Parameters.AddWithValue("@NomeLoja", NomeLoja);
                         cmd.Parameters.AddWithValue("@Telefone", Telefone);
+                        cmd.Parameters.AddWithValue("@Imagem",Imagem);
                         cmd.ExecuteNonQuery();
 
                         return true;

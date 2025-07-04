@@ -11,7 +11,10 @@ namespace Fenix_Shop.programação
     {
 
         private string nome, email, nivelusuario;
+        private int id;
 
+        public int Id
+        { get { return id; } set { id = value; } }
         public string Nome
         { get { return nome; } set { nome = value; } }
         public string Email
@@ -27,7 +30,7 @@ namespace Fenix_Shop.programação
                 {
                     connection.Open();
 
-                    string Logado = "SELECT Nome,Email,NivelUsuario FROM usuario WHERE Email = @Email";
+                    string Logado = "SELECT Id,Nome,Email,NivelUsuario FROM usuario WHERE Email = @Email";
                     using (var cmd = new SQLiteCommand(Logado, connection))
                     {
                         cmd.Parameters.AddWithValue("@Email", email);
@@ -35,6 +38,7 @@ namespace Fenix_Shop.programação
                         {
                             if (reader.Read())
                             {
+                                Id = int.Parse(reader["Id"].ToString());
                                 nome = reader["Nome"].ToString();
                                 email = reader["Email"].ToString();
                                 nivelusuario = reader["NivelUsuario"].ToString();

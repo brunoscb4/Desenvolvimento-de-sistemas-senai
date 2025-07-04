@@ -36,26 +36,29 @@ namespace Fenix_Shop.programação
                 Nome TEXT NOT NULL,
                 Email TEXT UNIQUE NOT NULL,
                 Senha TEXT NOT NULL, 
-                NivelUsuario TEXT NOT NULL ,
+                NivelUsuario TEXT NOT NULL CHECK  (NivelUsuario IN ('ADMINISTRADOR','GERENTE','VENDEDOR')),
                 Cpf TEXT UNIQUE,
                 NomeLoja TEXT,
                 Telefone TEXT,
-                DataDeCadastro DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+                DataDeCadastro DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+                Foto BLOB
               
             );
 
             CREATE TABLE IF NOT EXISTS CadastroProduto (
                 Id INTEGER PRIMARY KEY AUTOINCREMENT,
+                IdUsuario INT NOT NULL,
                 Nome TEXT NOT NULL,
                 Categoria TEXT,
                 Descricao TEXT,
                 Marca TEXT,
-                ValorDeCusto DECIMAL(10,2) NOT NULL,
-                ValorDeVenda DECIMAL(10,2) NOT NULL,
+                ValorDeCusto REAL NOT NULL,
+                ValorDeVenda REAL NOT NULL,
                 CodigoDeBarras TEXT UNIQUE,
                 Sku TEXT UNIQUE,
                 DataDeCadastro DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-                Foto BLOB
+                Foto BLOB,
+                FOREIGN KEY (Idusuario) REFERENCES Usuario (Id)
 
             );
 
@@ -64,7 +67,7 @@ namespace Fenix_Shop.programação
                  IdProduto INTEGER NOT NULL,
                  Tipo TEXT NOT NULL CHECK (Tipo IN ('ENTRADA','SAIDA')),
                  Quantidade INTEGER NOT NULL CHECK (Quantidade > 0),
-                 ValorUnitario DECIMAL(10,2) NOT NULL,
+                 ValorUnitario REAL NOT NULL,
                  DataDaMovimentacao DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
                  FOREIGN KEY (IdProduto) REFERENCES CadastroProduto(Id) ON DELETE CASCADE ON UPDATE CASCADE
                  
@@ -74,7 +77,7 @@ namespace Fenix_Shop.programação
                  Id INTEGER PRIMARY KEY AUTOINCREMENT,
                  IdUsuario INTEGER NOT NULL,
                  DataVenda DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-                 Total DECIMAL(10,2) NOT NULL,
+                 Total REAL NOT NULL,
                  FormaDePagamento TEXT NOT NULL CHECK (FormaDePagamento IN ('DINHEIRO','CARTAO','PIX','OUTROS')),
                  FOREIGN KEY (IdUsuario) REFERENCES Usuario(Id)
 
@@ -85,7 +88,7 @@ namespace Fenix_Shop.programação
                  IdVenda INTEGER NOT NULL,
                  IdProduto INTEGER NOT NULL,
                  Quantidade INTEGER NOT NULL CHECK (Quantidade > 0),
-                 PrecoUnitario DECIMAL(10,2) NOT NULL,
+                 PrecoUnitario REAL NOT NULL,
                  FOREIGN KEY (IdVenda) REFERENCES Vendas (Id) ON DELETE CASCADE,
                  FOREIGN KEY (IdProduto) REFERENCES CadastroProduto(Id)
 
