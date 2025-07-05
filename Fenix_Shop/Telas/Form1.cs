@@ -10,7 +10,14 @@ namespace Fenix_Shop
             InitializeComponent();
             
         }
-
+        public Panel panelLogin ()
+        {
+            return PanelDeLogin;
+        }
+        public Panel panelControl()
+        {
+            return panel1ControlerPanelLogin;
+        }
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -40,7 +47,7 @@ namespace Fenix_Shop
             try
             {
                 CadastroNovoUsuario usuario = new CadastroNovoUsuario();
-
+                textBox1Email.Focus();
                 if (textBox1Email.Text != "" && textBox2Senha.Text != "")
                 {
                     usuario.Email = textBox1Email.Text;
@@ -82,11 +89,13 @@ namespace Fenix_Shop
 
             if (usuario.VerificarUsuario())
             {
-                PanelDeLogin.Size = new Size(800, 827);
-                PanelDeLogin.Controls.Clear();
+                panel1ControlerPanelLogin.Size = new Size(800, 827);
+                panel1ControlerPanelLogin.Controls.Clear();
                 cadastroDeUsuario.Dock = DockStyle.Fill;
-                PanelDeLogin.Controls.Add(cadastroDeUsuario);
+                panel1ControlerPanelLogin.Controls.Add(cadastroDeUsuario);
             }
+            
+          
 
         }
     }

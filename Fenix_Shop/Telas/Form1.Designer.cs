@@ -35,6 +35,7 @@
             pictureBox3 = new PictureBox();
             pictureBox2 = new PictureBox();
             PanelLogin = new ReaLTaiizor.Controls.ParrotGradientPanel();
+            panel1ControlerPanelLogin = new Panel();
             PanelDeLogin = new ReaLTaiizor.Controls.ParrotGradientPanel();
             textBox2Senha = new TextBox();
             textBox1Email = new TextBox();
@@ -49,6 +50,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             PanelLogin.SuspendLayout();
+            panel1ControlerPanelLogin.SuspendLayout();
             PanelDeLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -125,7 +127,7 @@
             PanelLogin.BottomLeft = Color.White;
             PanelLogin.BottomRight = Color.FromArgb(192, 192, 255);
             PanelLogin.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
-            PanelLogin.Controls.Add(PanelDeLogin);
+            PanelLogin.Controls.Add(panel1ControlerPanelLogin);
             PanelLogin.Dock = DockStyle.Fill;
             PanelLogin.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
             PanelLogin.Location = new Point(0, 30);
@@ -141,9 +143,18 @@
             PanelLogin.TopLeft = Color.FromArgb(192, 192, 255);
             PanelLogin.TopRight = Color.Black;
             // 
+            // panel1ControlerPanelLogin
+            // 
+            panel1ControlerPanelLogin.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            panel1ControlerPanelLogin.BackColor = Color.White;
+            panel1ControlerPanelLogin.Controls.Add(PanelDeLogin);
+            panel1ControlerPanelLogin.Location = new Point(300, 17);
+            panel1ControlerPanelLogin.Name = "panel1ControlerPanelLogin";
+            panel1ControlerPanelLogin.Size = new Size(565, 538);
+            panel1ControlerPanelLogin.TabIndex = 10;
+            // 
             // PanelDeLogin
             // 
-            PanelDeLogin.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             PanelDeLogin.BorderStyle = BorderStyle.FixedSingle;
             PanelDeLogin.BottomLeft = Color.White;
             PanelDeLogin.BottomRight = Color.FromArgb(192, 192, 255);
@@ -155,8 +166,9 @@
             PanelDeLogin.Controls.Add(Login);
             PanelDeLogin.Controls.Add(pictureBox1);
             PanelDeLogin.Controls.Add(label2);
+            PanelDeLogin.Dock = DockStyle.Fill;
             PanelDeLogin.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
-            PanelDeLogin.Location = new Point(324, 22);
+            PanelDeLogin.Location = new Point(0, 0);
             PanelDeLogin.Margin = new Padding(3, 2, 3, 2);
             PanelDeLogin.MaximumSize = new Size(700, 621);
             PanelDeLogin.MinimumSize = new Size(565, 538);
@@ -179,7 +191,7 @@
             textBox2Senha.MaximumSize = new Size(350, 27);
             textBox2Senha.MinimumSize = new Size(316, 27);
             textBox2Senha.Name = "textBox2Senha";
-            textBox2Senha.Size = new Size(316, 23);
+            textBox2Senha.Size = new Size(316, 27);
             textBox2Senha.TabIndex = 9;
             // 
             // textBox1Email
@@ -190,7 +202,7 @@
             textBox1Email.MaximumSize = new Size(350, 27);
             textBox1Email.MinimumSize = new Size(316, 27);
             textBox1Email.Name = "textBox1Email";
-            textBox1Email.Size = new Size(316, 23);
+            textBox1Email.Size = new Size(316, 27);
             textBox1Email.TabIndex = 8;
             // 
             // label1
@@ -291,6 +303,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             PanelLogin.ResumeLayout(false);
+            panel1ControlerPanelLogin.ResumeLayout(false);
             PanelDeLogin.ResumeLayout(false);
             PanelDeLogin.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -313,5 +326,6 @@
         private TextBox textBox2Senha;
         private TextBox textBox1Email;
         private ContextMenuStrip contextMenuStrip1;
+        private Panel panel1ControlerPanelLogin;
     }
 }

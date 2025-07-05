@@ -38,8 +38,8 @@ namespace Fenix_Shop.programação
                 Senha TEXT NOT NULL, 
                 NivelUsuario TEXT NOT NULL CHECK  (NivelUsuario IN ('ADMINISTRADOR','GERENTE','VENDEDOR')),
                 Cpf TEXT UNIQUE,
-                NomeLoja TEXT,
-                Telefone TEXT,
+                NomeLoja TEXT UNIQUE,
+                Telefone TEXT UNIQUE,
                 DataDeCadastro DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
                 Foto BLOB
               

@@ -8,14 +8,14 @@ using System.Threading.Tasks;
 
 namespace Fenix_Shop.programação
 {
-    internal class CadastroDeProduto
+    internal class CadastroDeProduto 
     {
         private byte[] imagem;
-        private string nome, categoria, marca, descricao, movimentacaoEstoque;
+        private string nome, categoria, marca, descricao, movimentacaoEstoque, codigoBarras, sku;
         private double valorCusto, valorVenda;
-        private int estoque, codigoBarras, sku, esMinimo;
+        private int estoque, esMinimo;
         private DateTime dataCadastro;
-
+        private static int id;
         public byte[] Imagem
             { get { return imagem; } set { imagem = value; } }
         public string Nome
@@ -34,12 +34,14 @@ namespace Fenix_Shop.programação
         { get { return valorVenda; } set { valorVenda = value; } }
         public int Estoque
             { get { return estoque; } set { estoque = value; } }
-        public int CodigoBarras
+        public string CodigoBarras
             { get { return codigoBarras; } set { codigoBarras = value; } }
-        public int Sku
+        public string Sku
             { get { return sku; } set { sku = value; } }
         public int EsMinimo
             { get { return esMinimo; } set { esMinimo = value; } }
+        public static int Id
+        { get { return id; } set { id = value; } }
         public DateTime DataCadastro
             { get { return dataCadastro; } set { dataCadastro = value; } }
 
@@ -54,8 +56,8 @@ namespace Fenix_Shop.programação
 
                     using (var transaction = connection.BeginTransaction())
                     {
-                        UsuarioLogado usuarioLogado = new UsuarioLogado();
-                        int id = usuarioLogado.Id;
+                      
+                        
                         string insert = @"INSERT INTO CadastroProduto(IdUsuario,Nome,Categoria,Descricao,Marca,ValorDeCusto,ValorDeVenda,CodigoDeBarras,Sku,Foto)" +
                             "VALUES(@Id,@Nome,@Categoria,@Marca,@Descricao,@ValorCusto,@ValorVenda,@CodigoBarras,@Sku,@Imagem) RETURNING Id";
 
@@ -63,7 +65,7 @@ namespace Fenix_Shop.programação
                         double ValorDeVendaFormatado = Math.Round(ValorVenda,2);
                         using (SQLiteCommand cmd = new SQLiteCommand(insert, connection))
                         {
-                            cmd.Parameters.AddWithValue("@id", id);
+                            cmd.Parameters.AddWithValue("@Id", Id);
                             cmd.Parameters.AddWithValue("@Nome", Nome);
                             cmd.Parameters.AddWithValue("@Categoria", Categoria);
                             cmd.Parameters.AddWithValue("@Marca", Marca);
@@ -111,8 +113,10 @@ namespace Fenix_Shop.programação
                 {
                     connection.Open();
 
-                    string select = "SELECT cp.Nome, cp.ValorDeVenda,cp.DataDeCadastro, e.Quantidade AS Estoque FROM CadastroProduto cp " +
-                        "JOIN  Estoque e ON cp.Id = e.IdProduto";
+                    string select = @"SELECT u.Nome AS Usuario,cp.Nome AS Produto, cp.ValorDeVenda, cp.DataDeCadastro, e.Quantidade AS Estoque
+                    FROM CadastroProduto cp
+                    INNER JOIN Usuario u ON cp.IdUsuario = u.Id
+                    INNER JOIN Estoque e ON cp.Id = e.IdProduto";
 
                    DataTable dt = new DataTable();
 

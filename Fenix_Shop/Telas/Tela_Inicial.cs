@@ -26,7 +26,15 @@ namespace Fenix_Shop.Telas
             panel5IncialControler.Controls.Clear();
             cadastro.Dock = DockStyle.Fill;
             panel5IncialControler.Controls.Add(cadastro);
-            ButtonCadastroProduto.InactiveColor = Color.Green;
+            if (panel5IncialControler.Controls.Contains(cadastro))
+            {
+              ButtonCadastroProduto.InactiveColor = Color.Green;
+            }
+            else 
+            {
+                ButtonCadastroProduto.InactiveColor = Color.SlateBlue;
+            }
+          
         }
 
         private void Inicio_Click(object sender, EventArgs e)
@@ -78,6 +86,7 @@ namespace Fenix_Shop.Telas
         {
             labelusuario.Text = usuariologado.Nome;
             label4NivelUsuario.Text = usuariologado.Nivelusuario;
+            CadastroDeProduto.Id = usuariologado.Id;
         }
 
         private void labelusuario_Click(object sender, EventArgs e)

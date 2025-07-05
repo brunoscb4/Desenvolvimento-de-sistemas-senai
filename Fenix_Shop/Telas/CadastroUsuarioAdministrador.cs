@@ -1,4 +1,5 @@
-﻿using Fenix_Shop.programação;
+﻿using Fenix_Shop.Enums;
+using Fenix_Shop.programação;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,36 +9,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Fenix_Shop.Enums;
-
 
 namespace Fenix_Shop.Telas
 {
-    public partial class CadastroDeUsuario : UserControl
+    public partial class CadastroUsuarioAdministrador : UserControl
     {
-        public CadastroDeUsuario()
+        public CadastroUsuarioAdministrador()
         {
             InitializeComponent();
         }
-
-        private void CadastroDeUsuario_Load(object sender, EventArgs e)
+        private void CadastroUsuarioAdministrador_Load(object sender, EventArgs e)
         {
-
-            comboBoxNivelPermissão.DataSource = Enum.GetValues(typeof(NivelAcesso));
-        }
-
-        private void LimparCampo()
-        {
-            textBox1Nome.Clear();
-            textBox2Email.Clear();
-            textBox3Senha.Clear();
-            textBox4ConfirmarSenha.Clear();
-            TextBoxMasCpf.Clear();
-            textBox5NomeLoja.Clear();
-            TextBoxMaskTelefone.Clear();
-            comboBoxNivelPermissão.Text = NivelAcesso.VENDEDOR.ToString();
-            textBox1Nome.Focus();
-            
+            comboBoxNivelPermissão.DataSource = NivelAcesso.ADMINISTRADOR.ToString();
         }
         private void Salvar_Click(object sender, EventArgs e)
         {
@@ -57,14 +40,7 @@ namespace Fenix_Shop.Telas
                     {
                         usuario.Nivelusuario = NivelAcesso.ADMINISTRADOR.ToString();
                     }
-                    else if (comboBoxNivelPermissão.Text.Equals("GERENTE"))
-                    {
-                        usuario.Nivelusuario = NivelAcesso.GERENTE.ToString();
-                    }
-                    else if (comboBoxNivelPermissão.Text.Equals("VENDEDOR"))
-                    {
-                        usuario.Nivelusuario = NivelAcesso.VENDEDOR.ToString();
-                    }
+
                     else
                     {
                         MessageBox.Show("Selecione um nível de permissão válido.");
@@ -86,14 +62,13 @@ namespace Fenix_Shop.Telas
                     usuario.CadastroUsuario();
                     MessageBox.Show("Cadastro realizado com suceso..");
 
-                    
-                        LimparCampo();
+
+
                 }
                 else
                 {
                     MessageBox.Show("Preencha todos os campos corretamente.");
-                    LimparCampo();
-                    
+
                 }
 
             }
@@ -104,21 +79,6 @@ namespace Fenix_Shop.Telas
             }
         }
 
-        private void pictureBox1Usuario_Click(object sender, EventArgs e)
-        {
-            using (OpenFileDialog open = new OpenFileDialog())
-            {
-                open.Title = "Selecione uma imagem";
-                open.Filter = "Imagens(*.jpg;*.jpeg;*.png;*.bmp|*.jpg;*.jpeg;*.png;*.bmp)";
-
-                if (open.ShowDialog() == DialogResult.OK)
-                {
-                   pictureBox1Usuario.Image = Image.FromFile(open.FileName);
-
-                   pictureBox1Usuario.SizeMode = PictureBoxSizeMode.StretchImage;
-
-                }
-            }
-        }
+       
     }
 }

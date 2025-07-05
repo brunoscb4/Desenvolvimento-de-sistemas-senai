@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             PanelCadastroProduto = new ReaLTaiizor.Controls.ParrotGradientPanel();
+            Salvar = new ReaLTaiizor.Controls.Button();
             textBox3Marca = new TextBox();
             textBox2Categoria = new TextBox();
             textBox1Nome = new TextBox();
@@ -53,7 +54,6 @@
             label2 = new Label();
             label1 = new Label();
             pictureBoxCadastroProduto = new PictureBox();
-            Salvar = new ReaLTaiizor.Controls.Button();
             PanelCadastroProduto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxCadastroProduto).BeginInit();
             SuspendLayout();
@@ -102,10 +102,32 @@
             PanelCadastroProduto.TopLeft = Color.White;
             PanelCadastroProduto.TopRight = Color.FromArgb(192, 192, 255);
             // 
+            // Salvar
+            // 
+            Salvar.Anchor = AnchorStyles.Left;
+            Salvar.BackColor = Color.Transparent;
+            Salvar.BorderColor = Color.Black;
+            Salvar.EnteredBorderColor = Color.Black;
+            Salvar.EnteredColor = Color.FromArgb(0, 64, 0);
+            Salvar.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Salvar.Image = null;
+            Salvar.ImageAlign = ContentAlignment.MiddleLeft;
+            Salvar.InactiveColor = Color.Green;
+            Salvar.Location = new Point(735, 620);
+            Salvar.Name = "Salvar";
+            Salvar.PressedBorderColor = Color.Black;
+            Salvar.PressedColor = Color.Lime;
+            Salvar.RightToLeft = RightToLeft.No;
+            Salvar.Size = new Size(73, 26);
+            Salvar.TabIndex = 39;
+            Salvar.Text = "Salvar";
+            Salvar.TextAlignment = StringAlignment.Center;
+            Salvar.Click += Salvar_Click;
+            // 
             // textBox3Marca
             // 
             textBox3Marca.Font = new Font("Calibri Light", 12F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            textBox3Marca.Location = new Point(121, 351);
+            textBox3Marca.Location = new Point(98, 353);
             textBox3Marca.Name = "textBox3Marca";
             textBox3Marca.Size = new Size(253, 27);
             textBox3Marca.TabIndex = 26;
@@ -113,7 +135,7 @@
             // textBox2Categoria
             // 
             textBox2Categoria.Font = new Font("Calibri Light", 12F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            textBox2Categoria.Location = new Point(121, 271);
+            textBox2Categoria.Location = new Point(98, 276);
             textBox2Categoria.Name = "textBox2Categoria";
             textBox2Categoria.Size = new Size(253, 27);
             textBox2Categoria.TabIndex = 25;
@@ -121,7 +143,7 @@
             // textBox1Nome
             // 
             textBox1Nome.Font = new Font("Calibri Light", 12F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            textBox1Nome.Location = new Point(121, 182);
+            textBox1Nome.Location = new Point(98, 189);
             textBox1Nome.Name = "textBox1Nome";
             textBox1Nome.Size = new Size(253, 27);
             textBox1Nome.TabIndex = 24;
@@ -377,28 +399,7 @@
             pictureBoxCadastroProduto.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBoxCadastroProduto.TabIndex = 0;
             pictureBoxCadastroProduto.TabStop = false;
-            // 
-            // Salvar
-            // 
-            Salvar.Anchor = AnchorStyles.Left;
-            Salvar.BackColor = Color.Transparent;
-            Salvar.BorderColor = Color.Black;
-            Salvar.EnteredBorderColor = Color.Black;
-            Salvar.EnteredColor = Color.FromArgb(0, 64, 0);
-            Salvar.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Salvar.Image = null;
-            Salvar.ImageAlign = ContentAlignment.MiddleLeft;
-            Salvar.InactiveColor = Color.Green;
-            Salvar.Location = new Point(735, 620);
-            Salvar.Name = "Salvar";
-            Salvar.PressedBorderColor = Color.Black;
-            Salvar.PressedColor = Color.Lime;
-            Salvar.RightToLeft = RightToLeft.No;
-            Salvar.Size = new Size(73, 26);
-            Salvar.TabIndex = 39;
-            Salvar.Text = "Salvar";
-            Salvar.TextAlignment = StringAlignment.Center;
-            Salvar.Click += Salvar_Click;
+            pictureBoxCadastroProduto.Click += pictureBoxCadastroProduto_Click;
             // 
             // CadastroProdutos
             // 
@@ -407,6 +408,7 @@
             Controls.Add(PanelCadastroProduto);
             Name = "CadastroProdutos";
             Size = new Size(926, 670);
+            Load += CadastroProdutos_Load;
             Resize += CadastroProdutos_Resize;
             PanelCadastroProduto.ResumeLayout(false);
             PanelCadastroProduto.PerformLayout();

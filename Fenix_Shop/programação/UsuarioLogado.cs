@@ -11,9 +11,9 @@ namespace Fenix_Shop.programação
     {
 
         private string nome, email, nivelusuario;
-        private int id;
+        private  int id;
 
-        public int Id
+        public  int Id
         { get { return id; } set { id = value; } }
         public string Nome
         { get { return nome; } set { nome = value; } }
@@ -38,7 +38,7 @@ namespace Fenix_Shop.programação
                         {
                             if (reader.Read())
                             {
-                                Id = int.Parse(reader["Id"].ToString());
+                                Id = Convert.ToInt32(reader["Id"]);
                                 nome = reader["Nome"].ToString();
                                 email = reader["Email"].ToString();
                                 nivelusuario = reader["NivelUsuario"].ToString();

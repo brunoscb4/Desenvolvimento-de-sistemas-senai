@@ -13,7 +13,7 @@ using System.Drawing;
 using System.Drawing.Text;
 namespace Fenix_Shop.Telas
 {
-    
+
     public partial class CadastroProdutos : UserControl
     {
         public CadastroProdutos()
@@ -21,14 +21,14 @@ namespace Fenix_Shop.Telas
             InitializeComponent();
             this.Resize += new System.EventHandler(this.CadastroProdutos_Resize);
         }
-     public static byte[] ConverterImagemParaBytes(Image imagem)
-    {
-        using (MemoryStream ms = new MemoryStream())
+        public static byte[] ConverterImagemParaBytes(Image imagem)
         {
-            imagem.Save(ms, imagem.RawFormat);
-            return ms.ToArray();
+            using (MemoryStream ms = new MemoryStream())
+            {
+                imagem.Save(ms, imagem.RawFormat);
+                return ms.ToArray();
+            }
         }
-    }
         private void LimparCampos()
         {
             textBox1Nome.Clear();
@@ -54,35 +54,37 @@ namespace Fenix_Shop.Telas
 
 
         }
-
+        
         private void Salvar_Click(object sender, EventArgs e)
         {
             try
             {
-                
+
                 if (textBox1Nome.Text != "" && TextBoxCusto.Text != "" && TextBoxVenda.Text != "" && TextBoxEstoque.Text != "")
                 {
                     CadastroDeProduto produto = new CadastroDeProduto();
 
-                    
+
                     produto.Nome = textBox1Nome.Text;
                     produto.Categoria = textBox2Categoria.Text;
                     produto.Marca = textBox3Marca.Text;
                     produto.Descricao = TextBoxDescricao.Text;
                     produto.ValorCusto = double.Parse(TextBoxCusto.Text);
                     produto.ValorVenda = double.Parse(TextBoxVenda.Text);
-                    produto.CodigoBarras = int.Parse (TextBoxCodigoBarras.Text);
-                    produto.Sku =int.Parse (TextBoxSku.Text);
+                    produto.CodigoBarras = TextBoxCodigoBarras.Text;
+                    produto.Sku = TextBoxSku.Text;
                     if (pictureBoxCadastroProduto.Image != null)
                     {
-                      produto.Imagem = ConverterImagemParaBytes(pictureBoxCadastroProduto.Image);
+                        produto.Imagem = ConverterImagemParaBytes(pictureBoxCadastroProduto.Image);
                     }
                     else
                     {
                         produto.Imagem = ConverterImagemParaBytes(Properties.Resources.img_Fenix_Shop);
                     }
                     produto.MovimentacaoEstoque = "ENTRADA";
-                    produto.Estoque = Convert.ToInt32( TextBoxEstoque.Text);
+                    produto.Estoque = Convert.ToInt32(TextBoxEstoque.Text);
+
+
                     produto.CadastroProdutoEstoque();
 
                     MessageBox.Show("Cadastro realizado..");
@@ -99,6 +101,28 @@ namespace Fenix_Shop.Telas
             {
 
                 MessageBox.Show("Erro ao salvar dados " + ex.Message);
+            }
+        }
+
+        private void CadastroProdutos_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBoxCadastroProduto_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog open = new OpenFileDialog())
+            {
+                open.Title = "Selecione uma imagem";
+                open.Filter = "Imagens(*.jpg;*.jpeg;*.png;*.bmp|*.jpg;*.jpeg;*.png;*.bmp)";
+
+                if (open.ShowDialog() == DialogResult.OK)
+                {
+                    pictureBoxCadastroProduto.Image = Image.FromFile(open.FileName);
+
+                    pictureBoxCadastroProduto.SizeMode = PictureBoxSizeMode.StretchImage;
+
+                }
             }
         }
     }
