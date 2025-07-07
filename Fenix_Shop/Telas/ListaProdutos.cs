@@ -21,8 +21,13 @@ namespace Fenix_Shop.Telas
         private void ListaProdutos_Load(object sender, EventArgs e)
         {
             CadastroDeProduto produto = new CadastroDeProduto();
-           
+
             dataGridView1.DataSource = produto.ProdutosRegistrados();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -1,22 +1,38 @@
 using Fenix_Shop.programação;
 using Fenix_Shop.Telas;
+using System.Runtime.InteropServices;
+
 
 namespace Fenix_Shop
 {
+
     public partial class Form1 : Form
     {
+
         public Form1()
         {
             InitializeComponent();
-            
+
+
         }
-        public Panel panelLogin ()
+
+        [DllImport("user32.dll")]
+        public static extern bool ReleaseCapture();
+
+        [DllImport("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HT_CAPTION = 0x2;
+
+        
+        public bool PanelInicioLogin()
         {
-            return PanelDeLogin;
-        }
-        public Panel panelControl()
-        {
-            return panel1ControlerPanelLogin;
+            panel1ControlerPanelLogin.Controls.Clear();
+            PanelDeLoginPrincipal.Dock = DockStyle.Fill;
+            panel1ControlerPanelLogin.Controls.Add(PanelDeLoginPrincipal);
+            panel1ControlerPanelLogin.Size = new Size(646, 717);
+            return true;
         }
         private void pictureBox2_Click(object sender, EventArgs e)
         {
@@ -59,12 +75,12 @@ namespace Fenix_Shop
                         usuarioLogado.Email = usuario.Email;
                         if (usuarioLogado.UsuarioAtivo())
                         {
-                        Tela_Inicial tela_Inicial = new Tela_Inicial(usuarioLogado);
-                        PanelLogin.Controls.Clear();
-                        tela_Inicial.Dock = DockStyle.Fill;
-                        PanelLogin.Controls.Add(tela_Inicial);
+                            Tela_Inicial tela_Inicial = new Tela_Inicial(usuarioLogado);
+                            PanelLogin.Controls.Clear();
+                            tela_Inicial.Dock = DockStyle.Fill;
+                            PanelLogin.Controls.Add(tela_Inicial);
                         }
-                        
+
 
                     }
                     else { MessageBox.Show("Email ou senha inválidos."); }
@@ -77,26 +93,38 @@ namespace Fenix_Shop
                 MessageBox.Show("Erro ao fazer login: " + ex.Message);
 
             }
-            
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             CadastroNovoUsuario usuario = new CadastroNovoUsuario();
+            CadastroUsuarioAdministrador cadastro = new CadastroUsuarioAdministrador();
             BancoSQLite.CriarBancoETabela();
-            CadastroDeUsuario cadastroDeUsuario = new CadastroDeUsuario();
+
 
 
             if (usuario.VerificarUsuario())
             {
                 panel1ControlerPanelLogin.Size = new Size(800, 827);
                 panel1ControlerPanelLogin.Controls.Clear();
-                cadastroDeUsuario.Dock = DockStyle.Fill;
-                panel1ControlerPanelLogin.Controls.Add(cadastroDeUsuario);
+                cadastro.Dock = DockStyle.Fill;
+                panel1ControlerPanelLogin.Controls.Add(cadastro);
             }
-            
-          
+
+
 
         }
+
+       
+
+        private void parrotGradientPanel1_MouseDown(object sender, MouseEventArgs e)
+        {
+         
+            ReleaseCapture();
+            SendMessage(this.Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+        }
+
     }
 }
+

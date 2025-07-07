@@ -26,17 +26,23 @@ namespace Fenix_Shop.Telas
             panel5IncialControler.Controls.Clear();
             cadastro.Dock = DockStyle.Fill;
             panel5IncialControler.Controls.Add(cadastro);
-            if (panel5IncialControler.Controls.Contains(cadastro))
-            {
-              ButtonCadastroProduto.InactiveColor = Color.Green;
-            }
-            else 
-            {
-                ButtonCadastroProduto.InactiveColor = Color.SlateBlue;
-            }
-          
-        }
+            
 
+        }
+        public static Image ConverterImagem(byte[] ImagemBytes)
+        {
+            if (ImagemBytes == null || ImagemBytes.Length == 0)
+               return null;
+            {
+               
+                using (MemoryStream ms = new MemoryStream(ImagemBytes))
+                {
+                    return Image.FromStream(ms);
+                    
+                }
+            }
+            
+        }
         private void Inicio_Click(object sender, EventArgs e)
         {
             panel5IncialControler.Controls.Clear();
@@ -87,9 +93,11 @@ namespace Fenix_Shop.Telas
             labelusuario.Text = usuariologado.Nome;
             label4NivelUsuario.Text = usuariologado.Nivelusuario;
             CadastroDeProduto.Id = usuariologado.Id;
+            label6NomeDaLoja.Text = usuariologado.NomeLoja;
+            pictureBoxTelaInicial.Image = ConverterImagem(usuariologado.Foto);
         }
 
-        private void labelusuario_Click(object sender, EventArgs e)
+        private void labelNumeroDeCadastrados_Click(object sender, EventArgs e)
         {
 
         }

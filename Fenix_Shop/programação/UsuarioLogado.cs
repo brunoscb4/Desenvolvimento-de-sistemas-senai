@@ -10,9 +10,9 @@ namespace Fenix_Shop.programação
     public class UsuarioLogado
     {
 
-        private string nome, email, nivelusuario;
+        private string nome, email, nivelusuario,nomeLoja;
         private  int id;
-
+        private byte[] foto;
         public  int Id
         { get { return id; } set { id = value; } }
         public string Nome
@@ -21,8 +21,12 @@ namespace Fenix_Shop.programação
         { get { return email; } set { email = value; } }
         public string Nivelusuario
         { get { return nivelusuario; } set { nivelusuario = value; } }
+        public string NomeLoja
+        { get { return nomeLoja; } set { nomeLoja = value; } }
+        public byte[] Foto
+        { get { return foto; } set { foto = value; } }
 
-    public bool UsuarioAtivo()
+        public bool UsuarioAtivo()
         {
             try
             {
@@ -30,7 +34,7 @@ namespace Fenix_Shop.programação
                 {
                     connection.Open();
 
-                    string Logado = "SELECT Id,Nome,Email,NivelUsuario FROM usuario WHERE Email = @Email";
+                    string Logado = "SELECT Id,Nome,Email,NivelUsuario,NomeLoja,Foto FROM usuario WHERE Email = @Email";
                     using (var cmd = new SQLiteCommand(Logado, connection))
                     {
                         cmd.Parameters.AddWithValue("@Email", email);
@@ -42,6 +46,8 @@ namespace Fenix_Shop.programação
                                 nome = reader["Nome"].ToString();
                                 email = reader["Email"].ToString();
                                 nivelusuario = reader["NivelUsuario"].ToString();
+                                nomeLoja = reader["NomeLoja"].ToString();
+                                foto = reader["Foto"] as byte[]; 
                                 return true;
                             }
                             else

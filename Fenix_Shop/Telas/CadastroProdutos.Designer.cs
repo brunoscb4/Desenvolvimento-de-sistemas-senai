@@ -91,20 +91,21 @@
             PanelCadastroProduto.Dock = DockStyle.Fill;
             PanelCadastroProduto.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
             PanelCadastroProduto.Location = new Point(0, 0);
+            PanelCadastroProduto.Margin = new Padding(3, 4, 3, 4);
             PanelCadastroProduto.Name = "PanelCadastroProduto";
             PanelCadastroProduto.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
             PanelCadastroProduto.PrimerColor = Color.White;
-            PanelCadastroProduto.Size = new Size(926, 670);
+            PanelCadastroProduto.Size = new Size(1058, 893);
             PanelCadastroProduto.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
             PanelCadastroProduto.Style = ReaLTaiizor.Controls.ParrotGradientPanel.GradientStyle.Horizontal;
             PanelCadastroProduto.TabIndex = 0;
             PanelCadastroProduto.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             PanelCadastroProduto.TopLeft = Color.White;
-            PanelCadastroProduto.TopRight = Color.FromArgb(192, 192, 255);
+            PanelCadastroProduto.TopRight = Color.FromArgb(64, 64, 64);
             // 
             // Salvar
             // 
-            Salvar.Anchor = AnchorStyles.Left;
+            Salvar.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             Salvar.BackColor = Color.Transparent;
             Salvar.BorderColor = Color.Black;
             Salvar.EnteredBorderColor = Color.Black;
@@ -113,12 +114,13 @@
             Salvar.Image = null;
             Salvar.ImageAlign = ContentAlignment.MiddleLeft;
             Salvar.InactiveColor = Color.Green;
-            Salvar.Location = new Point(735, 620);
+            Salvar.Location = new Point(840, 827);
+            Salvar.Margin = new Padding(3, 4, 3, 4);
             Salvar.Name = "Salvar";
             Salvar.PressedBorderColor = Color.Black;
             Salvar.PressedColor = Color.Lime;
             Salvar.RightToLeft = RightToLeft.No;
-            Salvar.Size = new Size(73, 26);
+            Salvar.Size = new Size(83, 35);
             Salvar.TabIndex = 39;
             Salvar.Text = "Salvar";
             Salvar.TextAlignment = StringAlignment.Center;
@@ -127,25 +129,28 @@
             // textBox3Marca
             // 
             textBox3Marca.Font = new Font("Calibri Light", 12F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            textBox3Marca.Location = new Point(98, 353);
+            textBox3Marca.Location = new Point(112, 471);
+            textBox3Marca.Margin = new Padding(3, 4, 3, 4);
             textBox3Marca.Name = "textBox3Marca";
-            textBox3Marca.Size = new Size(253, 27);
+            textBox3Marca.Size = new Size(289, 32);
             textBox3Marca.TabIndex = 26;
             // 
             // textBox2Categoria
             // 
             textBox2Categoria.Font = new Font("Calibri Light", 12F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            textBox2Categoria.Location = new Point(98, 276);
+            textBox2Categoria.Location = new Point(112, 368);
+            textBox2Categoria.Margin = new Padding(3, 4, 3, 4);
             textBox2Categoria.Name = "textBox2Categoria";
-            textBox2Categoria.Size = new Size(253, 27);
+            textBox2Categoria.Size = new Size(289, 32);
             textBox2Categoria.TabIndex = 25;
             // 
             // textBox1Nome
             // 
             textBox1Nome.Font = new Font("Calibri Light", 12F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            textBox1Nome.Location = new Point(98, 189);
+            textBox1Nome.Location = new Point(112, 252);
+            textBox1Nome.Margin = new Padding(3, 4, 3, 4);
             textBox1Nome.Name = "textBox1Nome";
-            textBox1Nome.Size = new Size(253, 27);
+            textBox1Nome.Size = new Size(289, 32);
             textBox1Nome.TabIndex = 24;
             // 
             // label12
@@ -153,11 +158,11 @@
             label12.AutoSize = true;
             label12.BackColor = Color.Transparent;
             label12.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label12.Location = new Point(622, 504);
-            label12.MaximumSize = new Size(220, 100);
-            label12.MinimumSize = new Size(110, 20);
+            label12.Location = new Point(711, 672);
+            label12.MaximumSize = new Size(251, 133);
+            label12.MinimumSize = new Size(126, 27);
             label12.Name = "label12";
-            label12.Size = new Size(110, 20);
+            label12.Size = new Size(126, 27);
             label12.TabIndex = 23;
             label12.Text = "Data:";
             // 
@@ -165,10 +170,11 @@
             // 
             dateTimePicker1.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dateTimePicker1.Format = DateTimePickerFormat.Short;
-            dateTimePicker1.Location = new Point(622, 539);
-            dateTimePicker1.MaximumSize = new Size(350, 33);
+            dateTimePicker1.Location = new Point(711, 719);
+            dateTimePicker1.Margin = new Padding(3, 4, 3, 4);
+            dateTimePicker1.MaximumSize = new Size(399, 33);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(186, 22);
+            dateTimePicker1.Size = new Size(212, 26);
             dateTimePicker1.TabIndex = 22;
             // 
             // label11
@@ -177,21 +183,22 @@
             label11.AutoSize = true;
             label11.BackColor = Color.Transparent;
             label11.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label11.Location = new Point(220, 74);
-            label11.MaximumSize = new Size(220, 40);
-            label11.MinimumSize = new Size(110, 20);
+            label11.Location = new Point(251, 99);
+            label11.MaximumSize = new Size(251, 53);
+            label11.MinimumSize = new Size(126, 27);
             label11.Name = "label11";
-            label11.Size = new Size(138, 20);
+            label11.Size = new Size(164, 27);
             label11.TabIndex = 21;
             label11.Text = "Foto do produto";
             // 
             // TextBoxEstoqueMinimo
             // 
-            TextBoxEstoqueMinimo.Location = new Point(622, 462);
+            TextBoxEstoqueMinimo.Location = new Point(711, 616);
+            TextBoxEstoqueMinimo.Margin = new Padding(3, 4, 3, 4);
             TextBoxEstoqueMinimo.Mask = "000000000000000000";
-            TextBoxEstoqueMinimo.MaximumSize = new Size(350, 33);
+            TextBoxEstoqueMinimo.MaximumSize = new Size(399, 33);
             TextBoxEstoqueMinimo.Name = "TextBoxEstoqueMinimo";
-            TextBoxEstoqueMinimo.Size = new Size(186, 23);
+            TextBoxEstoqueMinimo.Size = new Size(212, 27);
             TextBoxEstoqueMinimo.TabIndex = 20;
             // 
             // label10
@@ -199,11 +206,11 @@
             label10.AutoSize = true;
             label10.BackColor = Color.Transparent;
             label10.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label10.Location = new Point(622, 430);
-            label10.MaximumSize = new Size(220, 100);
-            label10.MinimumSize = new Size(110, 20);
+            label10.Location = new Point(711, 573);
+            label10.MaximumSize = new Size(251, 133);
+            label10.MinimumSize = new Size(126, 27);
             label10.Name = "label10";
-            label10.Size = new Size(142, 20);
+            label10.Size = new Size(172, 27);
             label10.TabIndex = 19;
             label10.Text = "Estoque minimo:";
             // 
@@ -213,11 +220,11 @@
             label9.AutoSize = true;
             label9.BackColor = Color.Transparent;
             label9.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label9.Location = new Point(98, 389);
-            label9.MaximumSize = new Size(220, 100);
-            label9.MinimumSize = new Size(110, 20);
+            label9.Location = new Point(112, 519);
+            label9.MaximumSize = new Size(251, 133);
+            label9.MinimumSize = new Size(126, 27);
             label9.Name = "label9";
-            label9.Size = new Size(110, 20);
+            label9.Size = new Size(126, 27);
             label9.TabIndex = 18;
             label9.Text = "Descrição:";
             // 
@@ -227,11 +234,12 @@
             TextBoxDescricao.BackColor = Color.White;
             TextBoxDescricao.BorderStyle = BorderStyle.FixedSingle;
             TextBoxDescricao.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            TextBoxDescricao.Location = new Point(98, 421);
-            TextBoxDescricao.MaximumSize = new Size(438, 370);
-            TextBoxDescricao.MinimumSize = new Size(271, 247);
+            TextBoxDescricao.Location = new Point(112, 561);
+            TextBoxDescricao.Margin = new Padding(3, 4, 3, 4);
+            TextBoxDescricao.MaximumSize = new Size(500, 492);
+            TextBoxDescricao.MinimumSize = new Size(309, 328);
             TextBoxDescricao.Name = "TextBoxDescricao";
-            TextBoxDescricao.Size = new Size(310, 247);
+            TextBoxDescricao.Size = new Size(354, 328);
             TextBoxDescricao.TabIndex = 17;
             TextBoxDescricao.Text = "";
             // 
@@ -241,21 +249,22 @@
             label8.AutoSize = true;
             label8.BackColor = Color.Transparent;
             label8.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.Location = new Point(98, 312);
-            label8.MaximumSize = new Size(220, 100);
-            label8.MinimumSize = new Size(110, 20);
+            label8.Location = new Point(112, 416);
+            label8.MaximumSize = new Size(251, 133);
+            label8.MinimumSize = new Size(126, 27);
             label8.Name = "label8";
-            label8.Size = new Size(110, 20);
+            label8.Size = new Size(126, 27);
             label8.TabIndex = 16;
             label8.Text = "Marca:";
             // 
             // TextBoxSku
             // 
-            TextBoxSku.Location = new Point(622, 389);
+            TextBoxSku.Location = new Point(711, 519);
+            TextBoxSku.Margin = new Padding(3, 4, 3, 4);
             TextBoxSku.Mask = "000000000000000000";
-            TextBoxSku.MaximumSize = new Size(350, 33);
+            TextBoxSku.MaximumSize = new Size(399, 33);
             TextBoxSku.Name = "TextBoxSku";
-            TextBoxSku.Size = new Size(186, 23);
+            TextBoxSku.Size = new Size(212, 27);
             TextBoxSku.TabIndex = 15;
             // 
             // label7
@@ -263,21 +272,22 @@
             label7.AutoSize = true;
             label7.BackColor = Color.Transparent;
             label7.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.Location = new Point(622, 353);
-            label7.MaximumSize = new Size(220, 100);
-            label7.MinimumSize = new Size(110, 20);
+            label7.Location = new Point(711, 471);
+            label7.MaximumSize = new Size(251, 133);
+            label7.MinimumSize = new Size(126, 27);
             label7.Name = "label7";
-            label7.Size = new Size(110, 20);
+            label7.Size = new Size(126, 27);
             label7.TabIndex = 14;
             label7.Text = "sku:";
             // 
             // TextBoxCodigoBarras
             // 
-            TextBoxCodigoBarras.Location = new Point(622, 315);
+            TextBoxCodigoBarras.Location = new Point(711, 420);
+            TextBoxCodigoBarras.Margin = new Padding(3, 4, 3, 4);
             TextBoxCodigoBarras.Mask = "000000000000000000";
-            TextBoxCodigoBarras.MaximumSize = new Size(350, 33);
+            TextBoxCodigoBarras.MaximumSize = new Size(399, 33);
             TextBoxCodigoBarras.Name = "TextBoxCodigoBarras";
-            TextBoxCodigoBarras.Size = new Size(186, 23);
+            TextBoxCodigoBarras.Size = new Size(212, 27);
             TextBoxCodigoBarras.TabIndex = 13;
             // 
             // label6
@@ -285,21 +295,22 @@
             label6.AutoSize = true;
             label6.BackColor = Color.Transparent;
             label6.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.Location = new Point(622, 283);
-            label6.MaximumSize = new Size(220, 100);
-            label6.MinimumSize = new Size(110, 20);
+            label6.Location = new Point(711, 377);
+            label6.MaximumSize = new Size(251, 133);
+            label6.MinimumSize = new Size(126, 27);
             label6.Name = "label6";
-            label6.Size = new Size(151, 20);
+            label6.Size = new Size(185, 27);
             label6.TabIndex = 12;
             label6.Text = "Codigo de barras:";
             // 
             // TextBoxEstoque
             // 
-            TextBoxEstoque.Location = new Point(622, 245);
+            TextBoxEstoque.Location = new Point(711, 327);
+            TextBoxEstoque.Margin = new Padding(3, 4, 3, 4);
             TextBoxEstoque.Mask = "000000000000000000";
-            TextBoxEstoque.MaximumSize = new Size(350, 33);
+            TextBoxEstoque.MaximumSize = new Size(399, 33);
             TextBoxEstoque.Name = "TextBoxEstoque";
-            TextBoxEstoque.Size = new Size(186, 23);
+            TextBoxEstoque.Size = new Size(212, 27);
             TextBoxEstoque.TabIndex = 11;
             // 
             // label5
@@ -307,21 +318,22 @@
             label5.AutoSize = true;
             label5.BackColor = Color.Transparent;
             label5.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(622, 213);
-            label5.MaximumSize = new Size(220, 100);
-            label5.MinimumSize = new Size(110, 20);
+            label5.Location = new Point(711, 284);
+            label5.MaximumSize = new Size(251, 133);
+            label5.MinimumSize = new Size(126, 27);
             label5.Name = "label5";
-            label5.Size = new Size(110, 20);
+            label5.Size = new Size(126, 27);
             label5.TabIndex = 10;
             label5.Text = "Estoque:";
             // 
             // TextBoxVenda
             // 
-            TextBoxVenda.Location = new Point(622, 176);
+            TextBoxVenda.Location = new Point(711, 235);
+            TextBoxVenda.Margin = new Padding(3, 4, 3, 4);
             TextBoxVenda.Mask = "000000000000000000";
-            TextBoxVenda.MaximumSize = new Size(350, 33);
+            TextBoxVenda.MaximumSize = new Size(399, 33);
             TextBoxVenda.Name = "TextBoxVenda";
-            TextBoxVenda.Size = new Size(186, 23);
+            TextBoxVenda.Size = new Size(212, 27);
             TextBoxVenda.TabIndex = 9;
             // 
             // label4
@@ -329,21 +341,22 @@
             label4.AutoSize = true;
             label4.BackColor = Color.Transparent;
             label4.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(622, 144);
-            label4.MaximumSize = new Size(220, 100);
-            label4.MinimumSize = new Size(110, 20);
+            label4.Location = new Point(711, 192);
+            label4.MaximumSize = new Size(251, 133);
+            label4.MinimumSize = new Size(126, 27);
             label4.Name = "label4";
-            label4.Size = new Size(134, 20);
+            label4.Size = new Size(165, 27);
             label4.TabIndex = 8;
             label4.Text = "Valor de venda:";
             // 
             // TextBoxCusto
             // 
-            TextBoxCusto.Location = new Point(622, 107);
+            TextBoxCusto.Location = new Point(711, 143);
+            TextBoxCusto.Margin = new Padding(3, 4, 3, 4);
             TextBoxCusto.Mask = "000000000000000000";
-            TextBoxCusto.MaximumSize = new Size(350, 33);
+            TextBoxCusto.MaximumSize = new Size(399, 33);
             TextBoxCusto.Name = "TextBoxCusto";
-            TextBoxCusto.Size = new Size(186, 23);
+            TextBoxCusto.Size = new Size(212, 27);
             TextBoxCusto.TabIndex = 7;
             // 
             // label3
@@ -351,11 +364,11 @@
             label3.AutoSize = true;
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(622, 74);
-            label3.MaximumSize = new Size(220, 100);
-            label3.MinimumSize = new Size(110, 20);
+            label3.Location = new Point(711, 99);
+            label3.MaximumSize = new Size(251, 133);
+            label3.MinimumSize = new Size(126, 27);
             label3.Name = "label3";
-            label3.Size = new Size(130, 20);
+            label3.Size = new Size(158, 27);
             label3.TabIndex = 5;
             label3.Text = "Valor de custo:";
             // 
@@ -365,11 +378,11 @@
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(98, 231);
-            label2.MaximumSize = new Size(220, 100);
-            label2.MinimumSize = new Size(110, 20);
+            label2.Location = new Point(112, 308);
+            label2.MaximumSize = new Size(251, 133);
+            label2.MinimumSize = new Size(126, 27);
             label2.Name = "label2";
-            label2.Size = new Size(110, 20);
+            label2.Size = new Size(126, 27);
             label2.TabIndex = 3;
             label2.Text = "Categoria:";
             // 
@@ -379,11 +392,11 @@
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(98, 150);
-            label1.MaximumSize = new Size(220, 100);
-            label1.MinimumSize = new Size(110, 20);
+            label1.Location = new Point(112, 200);
+            label1.MaximumSize = new Size(251, 133);
+            label1.MinimumSize = new Size(126, 27);
             label1.Name = "label1";
-            label1.Size = new Size(110, 20);
+            label1.Size = new Size(126, 27);
             label1.TabIndex = 1;
             label1.Text = "Nome:";
             // 
@@ -391,11 +404,12 @@
             // 
             pictureBoxCadastroProduto.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             pictureBoxCadastroProduto.BorderStyle = BorderStyle.FixedSingle;
-            pictureBoxCadastroProduto.Location = new Point(98, 35);
-            pictureBoxCadastroProduto.MaximumSize = new Size(100, 100);
-            pictureBoxCadastroProduto.MinimumSize = new Size(100, 100);
+            pictureBoxCadastroProduto.Location = new Point(112, 47);
+            pictureBoxCadastroProduto.Margin = new Padding(3, 4, 3, 4);
+            pictureBoxCadastroProduto.MaximumSize = new Size(114, 133);
+            pictureBoxCadastroProduto.MinimumSize = new Size(114, 133);
             pictureBoxCadastroProduto.Name = "pictureBoxCadastroProduto";
-            pictureBoxCadastroProduto.Size = new Size(100, 100);
+            pictureBoxCadastroProduto.Size = new Size(114, 133);
             pictureBoxCadastroProduto.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBoxCadastroProduto.TabIndex = 0;
             pictureBoxCadastroProduto.TabStop = false;
@@ -403,11 +417,12 @@
             // 
             // CadastroProdutos
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(PanelCadastroProduto);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "CadastroProdutos";
-            Size = new Size(926, 670);
+            Size = new Size(1058, 893);
             Load += CadastroProdutos_Load;
             Resize += CadastroProdutos_Resize;
             PanelCadastroProduto.ResumeLayout(false);

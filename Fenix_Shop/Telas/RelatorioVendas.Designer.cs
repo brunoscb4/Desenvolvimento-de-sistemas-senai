@@ -107,7 +107,7 @@
             parrotGradientPanel1.TabIndex = 0;
             parrotGradientPanel1.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             parrotGradientPanel1.TopLeft = Color.White;
-            parrotGradientPanel1.TopRight = Color.FromArgb(192, 192, 255);
+            parrotGradientPanel1.TopRight = Color.FromArgb(64, 64, 64);
             // 
             // dataGridView1
             // 

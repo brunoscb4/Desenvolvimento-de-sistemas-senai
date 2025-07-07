@@ -32,7 +32,7 @@
             parrotGradientPanel2 = new ReaLTaiizor.Controls.ParrotGradientPanel();
             label5 = new Label();
             label4 = new Label();
-            pictureBox1 = new PictureBox();
+            pictureBoxTelaInicial = new PictureBox();
             labelusuario = new Label();
             label4NivelUsuario = new Label();
             button4 = new ReaLTaiizor.Controls.Button();
@@ -42,6 +42,7 @@
             ButtonCadastroProduto = new ReaLTaiizor.Controls.Button();
             Inicio = new ReaLTaiizor.Controls.Button();
             PanelInicio = new ReaLTaiizor.Controls.ParrotGradientPanel();
+            label6NomeDaLoja = new Label();
             pictureBox2 = new PictureBox();
             panel3 = new Panel();
             labelSemEstoque = new Label();
@@ -55,7 +56,7 @@
             panel5IncialControler = new Panel();
             parrotGradientPanel1.SuspendLayout();
             parrotGradientPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxTelaInicial).BeginInit();
             PanelInicio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel3.SuspendLayout();
@@ -100,7 +101,7 @@
             parrotGradientPanel2.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
             parrotGradientPanel2.Controls.Add(label5);
             parrotGradientPanel2.Controls.Add(label4);
-            parrotGradientPanel2.Controls.Add(pictureBox1);
+            parrotGradientPanel2.Controls.Add(pictureBoxTelaInicial);
             parrotGradientPanel2.Controls.Add(labelusuario);
             parrotGradientPanel2.Controls.Add(label4NivelUsuario);
             parrotGradientPanel2.Dock = DockStyle.Top;
@@ -141,16 +142,17 @@
             label4.TabIndex = 9;
             label4.Text = "Nivel:";
             // 
-            // pictureBox1
+            // pictureBoxTelaInicial
             // 
-            pictureBox1.BackColor = Color.White;
-            pictureBox1.BorderStyle = BorderStyle.FixedSingle;
-            pictureBox1.Location = new Point(13, 13);
-            pictureBox1.Margin = new Padding(3, 4, 3, 4);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(114, 133);
-            pictureBox1.TabIndex = 7;
-            pictureBox1.TabStop = false;
+            pictureBoxTelaInicial.BackColor = Color.White;
+            pictureBoxTelaInicial.BorderStyle = BorderStyle.FixedSingle;
+            pictureBoxTelaInicial.Location = new Point(13, 13);
+            pictureBoxTelaInicial.Margin = new Padding(3, 4, 3, 4);
+            pictureBoxTelaInicial.Name = "pictureBoxTelaInicial";
+            pictureBoxTelaInicial.Size = new Size(114, 133);
+            pictureBoxTelaInicial.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxTelaInicial.TabIndex = 7;
+            pictureBoxTelaInicial.TabStop = false;
             // 
             // labelusuario
             // 
@@ -158,12 +160,11 @@
             labelusuario.BackColor = Color.Transparent;
             labelusuario.Font = new Font("Calibri", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             labelusuario.ForeColor = Color.White;
-            labelusuario.Location = new Point(102, 211);
+            labelusuario.Location = new Point(86, 211);
             labelusuario.Name = "labelusuario";
             labelusuario.Size = new Size(86, 28);
             labelusuario.TabIndex = 3;
             labelusuario.Text = "Usuario";
-            labelusuario.Click += labelusuario_Click;
             // 
             // label4NivelUsuario
             // 
@@ -171,7 +172,7 @@
             label4NivelUsuario.BackColor = Color.Transparent;
             label4NivelUsuario.Font = new Font("Calibri", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label4NivelUsuario.ForeColor = Color.White;
-            label4NivelUsuario.Location = new Point(102, 167);
+            label4NivelUsuario.Location = new Point(86, 167);
             label4NivelUsuario.Name = "label4NivelUsuario";
             label4NivelUsuario.Size = new Size(140, 28);
             label4NivelUsuario.TabIndex = 8;
@@ -315,6 +316,7 @@
             PanelInicio.BottomLeft = Color.White;
             PanelInicio.BottomRight = Color.White;
             PanelInicio.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+            PanelInicio.Controls.Add(label6NomeDaLoja);
             PanelInicio.Controls.Add(pictureBox2);
             PanelInicio.Controls.Add(panel3);
             PanelInicio.Controls.Add(panel2);
@@ -332,7 +334,19 @@
             PanelInicio.TabIndex = 1;
             PanelInicio.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             PanelInicio.TopLeft = Color.White;
-            PanelInicio.TopRight = Color.FromArgb(192, 192, 255);
+            PanelInicio.TopRight = Color.FromArgb(64, 64, 64);
+            // 
+            // label6NomeDaLoja
+            // 
+            label6NomeDaLoja.AutoSize = true;
+            label6NomeDaLoja.BackColor = Color.Transparent;
+            label6NomeDaLoja.Font = new Font("Georgia", 36F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label6NomeDaLoja.ForeColor = Color.Black;
+            label6NomeDaLoja.Location = new Point(193, 14);
+            label6NomeDaLoja.Name = "label6NomeDaLoja";
+            label6NomeDaLoja.Size = new Size(171, 69);
+            label6NomeDaLoja.TabIndex = 9;
+            label6NomeDaLoja.Text = "Loja";
             // 
             // pictureBox2
             // 
@@ -444,6 +458,7 @@
             labelNumeroDeCadastrados.Size = new Size(27, 29);
             labelNumeroDeCadastrados.TabIndex = 1;
             labelNumeroDeCadastrados.Text = "0";
+            labelNumeroDeCadastrados.Click += labelNumeroDeCadastrados_Click;
             // 
             // label1
             // 
@@ -481,8 +496,9 @@
             parrotGradientPanel1.ResumeLayout(false);
             parrotGradientPanel2.ResumeLayout(false);
             parrotGradientPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxTelaInicial).EndInit();
             PanelInicio.ResumeLayout(false);
+            PanelInicio.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
@@ -499,7 +515,7 @@
         private ReaLTaiizor.Controls.ParrotGradientPanel parrotGradientPanel1;
         private ReaLTaiizor.Controls.Button Inicio;
         private ReaLTaiizor.Controls.Button ButtonCadastroProduto;
-        private PictureBox pictureBox1;
+        private PictureBox pictureBoxTelaInicial;
         private ReaLTaiizor.Controls.Button button4;
         private ReaLTaiizor.Controls.Button button3;
         private ReaLTaiizor.Controls.Button button2;
@@ -521,5 +537,6 @@
         private ReaLTaiizor.Controls.ParrotGradientPanel parrotGradientPanel2;
         private Label label4;
         private Label label5;
+        private Label label6NomeDaLoja;
     }
 }
