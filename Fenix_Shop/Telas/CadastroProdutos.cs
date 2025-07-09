@@ -54,7 +54,7 @@ namespace Fenix_Shop.Telas
 
 
         }
-        
+
         private void Salvar_Click(object sender, EventArgs e)
         {
             try
@@ -106,9 +106,7 @@ namespace Fenix_Shop.Telas
 
         private void CadastroProdutos_Load(object sender, EventArgs e)
         {
-
         }
-
         private void pictureBoxCadastroProduto_Click(object sender, EventArgs e)
         {
             using (OpenFileDialog open = new OpenFileDialog())
@@ -125,5 +123,36 @@ namespace Fenix_Shop.Telas
                 }
             }
         }
+
+        private void TextBoxCusto_Click(object sender, EventArgs e)
+        {
+            TextBoxCusto.Select(0, 0);
+        }
+
+        private void TextBoxVenda_Click(object sender, EventArgs e)
+        {
+            TextBoxVenda.Select(0, 0);
+        }
+
+        private void TextBoxEstoque_Click(object sender, EventArgs e)
+        {
+            TextBoxEstoque.Select(0, 0);
+        }
+
+        private void TextBoxCodigoBarras_Click(object sender, EventArgs e)
+        {
+            TextBoxCodigoBarras.Select(0, 0);
+        }
+
+        private void TextBoxSku_Click(object sender, EventArgs e)
+        {
+            TextBoxSku.Select(0, 0);
+        }
+
+        private void TextBoxEstoqueMinimo_Click(object sender, EventArgs e)
+        {
+            TextBoxEstoqueMinimo.Select(0, 0);
+        }
+
     }
 }

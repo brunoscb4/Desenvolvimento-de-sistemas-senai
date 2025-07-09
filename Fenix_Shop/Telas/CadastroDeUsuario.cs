@@ -51,7 +51,7 @@ namespace Fenix_Shop.Telas
             TextBoxMaskTelefone.Clear();
             comboBoxNivelPermissão.Text = NivelAcesso.VENDEDOR.ToString();
             textBox1Nome.Focus();
-            
+
         }
         private void Salvar_Click(object sender, EventArgs e)
         {
@@ -141,7 +141,7 @@ namespace Fenix_Shop.Telas
                 MessageBox.Show("Erro ao relizar cadastro " + ex.Message);
             }
         }
-        
+
 
         private void pictureBox1Usuario_Click(object sender, EventArgs e)
         {
@@ -152,12 +152,22 @@ namespace Fenix_Shop.Telas
 
                 if (open.ShowDialog() == DialogResult.OK)
                 {
-                   pictureBox1Usuario.Image = Image.FromFile(open.FileName);
+                    pictureBox1Usuario.Image = Image.FromFile(open.FileName);
 
-                   pictureBox1Usuario.SizeMode = PictureBoxSizeMode.StretchImage;
+                    pictureBox1Usuario.SizeMode = PictureBoxSizeMode.StretchImage;
 
                 }
             }
+        }
+
+        private void TextBoxMaskTelefone_Click(object sender, EventArgs e)
+        {
+            TextBoxMaskTelefone.Select(0, 0);
+        }
+
+        private void TextBoxMasCpf_Click(object sender, EventArgs e)
+        {
+            TextBoxMasCpf.Select(0, 0);
         }
     }
 }
