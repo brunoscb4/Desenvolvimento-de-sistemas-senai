@@ -140,12 +140,15 @@
             // 
             // TextBoxCodigoBuscar
             // 
+            TextBoxCodigoBuscar.BorderStyle = BorderStyle.FixedSingle;
             TextBoxCodigoBuscar.Location = new Point(123, 43);
             TextBoxCodigoBuscar.Margin = new Padding(3, 4, 3, 4);
             TextBoxCodigoBuscar.Mask = "00000000000000000000000";
             TextBoxCodigoBuscar.Name = "TextBoxCodigoBuscar";
+            TextBoxCodigoBuscar.PromptChar = ' ';
             TextBoxCodigoBuscar.Size = new Size(154, 27);
             TextBoxCodigoBuscar.TabIndex = 9;
+            TextBoxCodigoBuscar.Click += TextBoxCodigoBuscar_Click;
             // 
             // dataGridView1
             // 

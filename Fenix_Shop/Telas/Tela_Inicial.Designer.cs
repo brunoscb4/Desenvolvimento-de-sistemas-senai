@@ -153,6 +153,7 @@
             pictureBoxTelaInicial.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBoxTelaInicial.TabIndex = 7;
             pictureBoxTelaInicial.TabStop = false;
+            pictureBoxTelaInicial.Click += pictureBoxTelaInicial_Click;
             // 
             // labelusuario
             // 

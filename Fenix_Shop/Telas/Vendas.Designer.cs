@@ -474,12 +474,15 @@
             // 
             // TextBoxCodigoBuscar
             // 
+            TextBoxCodigoBuscar.BorderStyle = BorderStyle.FixedSingle;
             TextBoxCodigoBuscar.Location = new Point(120, 29);
             TextBoxCodigoBuscar.Margin = new Padding(3, 4, 3, 4);
             TextBoxCodigoBuscar.Mask = "00000000000000000000000";
             TextBoxCodigoBuscar.Name = "TextBoxCodigoBuscar";
+            TextBoxCodigoBuscar.PromptChar = ' ';
             TextBoxCodigoBuscar.Size = new Size(154, 27);
             TextBoxCodigoBuscar.TabIndex = 4;
+            TextBoxCodigoBuscar.Click += TextBoxCodigoBuscar_Click;
             // 
             // Vendas
             // 
@@ -488,6 +491,7 @@
             Controls.Add(parrotGradientPanel1);
             Name = "Vendas";
             Size = new Size(1058, 893);
+            Load += Vendas_Load;
             parrotGradientPanel1.ResumeLayout(false);
             parrotGradientPanel1.PerformLayout();
             panel2.ResumeLayout(false);

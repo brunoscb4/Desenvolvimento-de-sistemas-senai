@@ -29,5 +29,10 @@ namespace Fenix_Shop.Telas
         {
 
         }
+
+        private void TextBoxCodigoBuscar_Click(object sender, EventArgs e)
+        {
+            TextBoxCodigoBuscar.Select(0,0);
+        }
     }
 }

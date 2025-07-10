@@ -78,12 +78,11 @@
             parrotGradientPanel1.Dock = DockStyle.Fill;
             parrotGradientPanel1.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
             parrotGradientPanel1.Location = new Point(0, 0);
-            parrotGradientPanel1.Margin = new Padding(3, 2, 3, 2);
-            parrotGradientPanel1.MinimumSize = new Size(926, 670);
+            parrotGradientPanel1.MinimumSize = new Size(1058, 893);
             parrotGradientPanel1.Name = "parrotGradientPanel1";
             parrotGradientPanel1.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
             parrotGradientPanel1.PrimerColor = Color.White;
-            parrotGradientPanel1.Size = new Size(926, 670);
+            parrotGradientPanel1.Size = new Size(1058, 893);
             parrotGradientPanel1.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
             parrotGradientPanel1.Style = ReaLTaiizor.Controls.ParrotGradientPanel.GradientStyle.Horizontal;
             parrotGradientPanel1.TabIndex = 0;
@@ -94,20 +93,20 @@
             // pictureBox1Usuario
             // 
             pictureBox1Usuario.BorderStyle = BorderStyle.FixedSingle;
-            pictureBox1Usuario.Location = new Point(97, 42);
+            pictureBox1Usuario.Location = new Point(111, 56);
+            pictureBox1Usuario.Margin = new Padding(3, 4, 3, 4);
             pictureBox1Usuario.Name = "pictureBox1Usuario";
-            pictureBox1Usuario.Size = new Size(100, 100);
+            pictureBox1Usuario.Size = new Size(114, 133);
             pictureBox1Usuario.TabIndex = 41;
             pictureBox1Usuario.TabStop = false;
             pictureBox1Usuario.Click += pictureBox1Usuario_Click;
             // 
             // TextBoxMaskTelefone
             // 
-            TextBoxMaskTelefone.Location = new Point(635, 207);
-            TextBoxMaskTelefone.Margin = new Padding(3, 2, 3, 2);
+            TextBoxMaskTelefone.Location = new Point(726, 276);
             TextBoxMaskTelefone.Mask = "(00) 0000-0000";
             TextBoxMaskTelefone.Name = "TextBoxMaskTelefone";
-            TextBoxMaskTelefone.Size = new Size(185, 23);
+            TextBoxMaskTelefone.Size = new Size(211, 27);
             TextBoxMaskTelefone.TabIndex = 40;
             TextBoxMaskTelefone.Click += TextBoxMaskTelefone_Click;
             // 
@@ -116,9 +115,9 @@
             label8.AutoSize = true;
             label8.BackColor = Color.Transparent;
             label8.Font = new Font("Arial", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label8.Location = new Point(606, 170);
+            label8.Location = new Point(693, 227);
             label8.Name = "label8";
-            label8.Size = new Size(96, 23);
+            label8.Size = new Size(114, 26);
             label8.TabIndex = 39;
             label8.Text = "Telefone:";
             // 
@@ -133,12 +132,13 @@
             Salvar.Image = null;
             Salvar.ImageAlign = ContentAlignment.MiddleLeft;
             Salvar.InactiveColor = Color.Green;
-            Salvar.Location = new Point(747, 549);
+            Salvar.Location = new Point(854, 732);
+            Salvar.Margin = new Padding(3, 4, 3, 4);
             Salvar.Name = "Salvar";
             Salvar.PressedBorderColor = Color.Black;
             Salvar.PressedColor = Color.Lime;
             Salvar.RightToLeft = RightToLeft.No;
-            Salvar.Size = new Size(73, 26);
+            Salvar.Size = new Size(83, 35);
             Salvar.TabIndex = 38;
             Salvar.Text = "Salvar";
             Salvar.TextAlignment = StringAlignment.Center;
@@ -146,55 +146,58 @@
             // 
             // textBox5NomeLoja
             // 
-            textBox5NomeLoja.Location = new Point(635, 314);
+            textBox5NomeLoja.Location = new Point(726, 419);
+            textBox5NomeLoja.Margin = new Padding(3, 4, 3, 4);
             textBox5NomeLoja.Name = "textBox5NomeLoja";
-            textBox5NomeLoja.Size = new Size(185, 23);
+            textBox5NomeLoja.Size = new Size(211, 27);
             textBox5NomeLoja.TabIndex = 36;
             // 
             // textBox4ConfirmarSenha
             // 
-            textBox4ConfirmarSenha.Location = new Point(120, 529);
+            textBox4ConfirmarSenha.Location = new Point(137, 705);
+            textBox4ConfirmarSenha.Margin = new Padding(3, 4, 3, 4);
             textBox4ConfirmarSenha.Name = "textBox4ConfirmarSenha";
-            textBox4ConfirmarSenha.Size = new Size(230, 23);
+            textBox4ConfirmarSenha.Size = new Size(262, 27);
             textBox4ConfirmarSenha.TabIndex = 35;
             // 
             // textBox3Senha
             // 
-            textBox3Senha.Location = new Point(114, 422);
+            textBox3Senha.Location = new Point(130, 563);
+            textBox3Senha.Margin = new Padding(3, 4, 3, 4);
             textBox3Senha.Name = "textBox3Senha";
-            textBox3Senha.Size = new Size(230, 23);
+            textBox3Senha.Size = new Size(262, 27);
             textBox3Senha.TabIndex = 34;
             // 
             // textBox2Email
             // 
-            textBox2Email.Location = new Point(120, 314);
+            textBox2Email.Location = new Point(137, 419);
+            textBox2Email.Margin = new Padding(3, 4, 3, 4);
             textBox2Email.Name = "textBox2Email";
-            textBox2Email.Size = new Size(230, 23);
+            textBox2Email.Size = new Size(262, 27);
             textBox2Email.TabIndex = 33;
             // 
             // textBox1Nome
             // 
-            textBox1Nome.Location = new Point(120, 219);
+            textBox1Nome.Location = new Point(137, 292);
+            textBox1Nome.Margin = new Padding(3, 4, 3, 4);
             textBox1Nome.Name = "textBox1Nome";
-            textBox1Nome.Size = new Size(230, 23);
+            textBox1Nome.Size = new Size(262, 27);
             textBox1Nome.TabIndex = 32;
             // 
             // comboBoxNivelPermissão
             // 
             comboBoxNivelPermissão.FormattingEnabled = true;
-            comboBoxNivelPermissão.Location = new Point(635, 408);
-            comboBoxNivelPermissão.Margin = new Padding(3, 2, 3, 2);
+            comboBoxNivelPermissão.Location = new Point(726, 544);
             comboBoxNivelPermissão.Name = "comboBoxNivelPermissão";
-            comboBoxNivelPermissão.Size = new Size(185, 23);
+            comboBoxNivelPermissão.Size = new Size(211, 28);
             comboBoxNivelPermissão.TabIndex = 31;
             // 
             // TextBoxMasCpf
             // 
-            TextBoxMasCpf.Location = new Point(120, 621);
-            TextBoxMasCpf.Margin = new Padding(3, 2, 3, 2);
+            TextBoxMasCpf.Location = new Point(137, 828);
             TextBoxMasCpf.Mask = "000-000-000,00";
             TextBoxMasCpf.Name = "TextBoxMasCpf";
-            TextBoxMasCpf.Size = new Size(230, 23);
+            TextBoxMasCpf.Size = new Size(262, 27);
             TextBoxMasCpf.TabIndex = 30;
             TextBoxMasCpf.Click += TextBoxMasCpf_Click;
             // 
@@ -203,9 +206,9 @@
             label7.AutoSize = true;
             label7.BackColor = Color.Transparent;
             label7.Font = new Font("Arial", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label7.Location = new Point(606, 366);
+            label7.Location = new Point(693, 488);
             label7.Name = "label7";
-            label7.Size = new Size(191, 23);
+            label7.Size = new Size(222, 26);
             label7.TabIndex = 6;
             label7.Text = "Tipo de permissão:";
             // 
@@ -214,9 +217,9 @@
             label6.AutoSize = true;
             label6.BackColor = Color.Transparent;
             label6.Font = new Font("Arial", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label6.Location = new Point(606, 264);
+            label6.Location = new Point(693, 352);
             label6.Name = "label6";
-            label6.Size = new Size(141, 23);
+            label6.Size = new Size(163, 26);
             label6.TabIndex = 5;
             label6.Text = "Nome Da loja:";
             // 
@@ -225,9 +228,9 @@
             label5.AutoSize = true;
             label5.BackColor = Color.Transparent;
             label5.Font = new Font("Arial", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label5.Location = new Point(107, 579);
+            label5.Location = new Point(122, 772);
             label5.Name = "label5";
-            label5.Size = new Size(48, 23);
+            label5.Size = new Size(58, 26);
             label5.TabIndex = 4;
             label5.Text = "Cpf:";
             // 
@@ -236,9 +239,9 @@
             label4.AutoSize = true;
             label4.BackColor = Color.Transparent;
             label4.Font = new Font("Arial", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label4.Location = new Point(97, 470);
+            label4.Location = new Point(111, 627);
             label4.Name = "label4";
-            label4.Size = new Size(173, 23);
+            label4.Size = new Size(200, 26);
             label4.TabIndex = 3;
             label4.Text = "Confirmar senha:";
             // 
@@ -247,9 +250,9 @@
             label3.AutoSize = true;
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Arial", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label3.Location = new Point(97, 368);
+            label3.Location = new Point(111, 491);
             label3.Name = "label3";
-            label3.Size = new Size(75, 23);
+            label3.Size = new Size(88, 26);
             label3.TabIndex = 2;
             label3.Text = "Senha:";
             // 
@@ -258,9 +261,9 @@
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Arial", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label2.Location = new Point(97, 272);
+            label2.Location = new Point(111, 363);
             label2.Name = "label2";
-            label2.Size = new Size(70, 23);
+            label2.Size = new Size(79, 26);
             label2.TabIndex = 1;
             label2.Text = "Email:";
             // 
@@ -269,20 +272,19 @@
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Arial", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label1.Location = new Point(97, 170);
+            label1.Location = new Point(111, 227);
             label1.Name = "label1";
-            label1.Size = new Size(164, 23);
+            label1.Size = new Size(192, 26);
             label1.TabIndex = 0;
             label1.Text = "Nome completo:";
             // 
             // CadastroDeUsuario
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(parrotGradientPanel1);
-            Margin = new Padding(3, 2, 3, 2);
             Name = "CadastroDeUsuario";
-            Size = new Size(926, 670);
+            Size = new Size(1058, 893);
             Load += CadastroDeUsuario_Load;
             parrotGradientPanel1.ResumeLayout(false);
             parrotGradientPanel1.PerformLayout();

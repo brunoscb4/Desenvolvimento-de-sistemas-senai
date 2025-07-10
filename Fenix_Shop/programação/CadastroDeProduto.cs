@@ -59,7 +59,7 @@ namespace Fenix_Shop.programação
                       
                         
                         string insert = @"INSERT INTO CadastroProduto(IdUsuario,Nome,Categoria,Descricao,Marca,ValorDeCusto,ValorDeVenda,CodigoDeBarras,Sku,Foto)" +
-                            "VALUES(@Id,@Nome,@Categoria,@Marca,@Descricao,@ValorCusto,@ValorVenda,@CodigoBarras,@Sku,@Imagem) RETURNING Id";
+                            "VALUES(@Id,@Nome,@Categoria,@Descricao,@Marca,@ValorCusto,@ValorVenda,@CodigoBarras,@Sku,@Imagem) RETURNING Id";
 
                         double ValorDeCustoFormatado = Math.Round(ValorCusto, 2);
                         double ValorDeVendaFormatado = Math.Round(ValorVenda,2);
@@ -102,14 +102,14 @@ namespace Fenix_Shop.programação
                 return false;
             }
         }
-       
-       
+
+
 
         public DataTable ProdutosRegistrados()
         {
             try
             {
-                using (SQLiteConnection connection = new SQLiteConnection (BancoSQLite.ConexaoSQlite))
+                using (SQLiteConnection connection = new SQLiteConnection(BancoSQLite.ConexaoSQlite))
                 {
                     connection.Open();
 
@@ -118,9 +118,9 @@ namespace Fenix_Shop.programação
                     INNER JOIN Usuario u ON cp.IdUsuario = u.Id
                     INNER JOIN Estoque e ON cp.Id = e.IdProduto";
 
-                   DataTable dt = new DataTable();
+                    DataTable dt = new DataTable();
 
-                    using (SQLiteDataAdapter adapter = new SQLiteDataAdapter(select,connection))
+                    using (SQLiteDataAdapter adapter = new SQLiteDataAdapter(select, connection))
                     {
                         adapter.Fill(dt);
                         return dt;
@@ -130,7 +130,35 @@ namespace Fenix_Shop.programação
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro ao aceesar dados "+ ex.Message);
+                MessageBox.Show("Erro ao aceesar dados " + ex.Message);
+                return null;
+            }
+        }
+
+
+             public DataTable ProdutosRegistradosVendas()
+        {
+            try
+            {
+                using (SQLiteConnection connection = new SQLiteConnection(BancoSQLite.ConexaoSQlite))
+                {
+                    connection.Open();
+
+                    string select = @"SELECT Id,Nome,Marca,ValorDeVenda,Foto FROM CadastroProduto";
+                    
+                    DataTable dt = new DataTable();
+
+                    using (SQLiteDataAdapter adapter = new SQLiteDataAdapter(select, connection))
+                    {
+                        adapter.Fill(dt);
+                        return dt;
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao aceesar dados " + ex.Message);
                 return null;
             }
         }

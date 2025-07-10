@@ -50,60 +50,62 @@ namespace Fenix_Shop.Telas
                     if (EmailValido(textBox2Email.Text))
                     {
                         usuario.Email = textBox2Email.Text;
-                      
-                          if (comboBoxNivelPermissão.Text.Equals("ADMINISTRADOR"))
-                          { 
-                            
+
+                        if (comboBoxNivelPermissão.Text.Equals("ADMINISTRADOR"))
+                        {
+
                             usuario.Nivelusuario = NivelAcesso.ADMINISTRADOR.ToString();
-                                  if (textBox3Senha.Text.Equals(textBox4ConfirmarSenha.Text))
-                                  { 
-                                       usuario.Senha = textBox3Senha.Text;
-                                       usuario.Cpf = TextBoxMasCpf.Text;
-                                       usuario.NomeLoja = textBox5NomeLoja.Text;
-                                       usuario.Telefone = TextBoxMaskTelefone.Text;
-                                            if (pictureBox1Usuario.Image != null)
-                                            {
-                                                  usuario.Imagem = CadastroProdutos.ConverterImagemParaBytes(pictureBox1Usuario.Image);
+                            if (textBox3Senha.Text.Equals(textBox4ConfirmarSenha.Text))
+                            {
+                                usuario.Senha = textBox3Senha.Text;
+                                usuario.Cpf = TextBoxMasCpf.Text;
+                                usuario.NomeLoja = textBox5NomeLoja.Text;
+                                usuario.Telefone = TextBoxMaskTelefone.Text;
+                                if (pictureBox1Usuario.Image != null)
+                                {
+                                    usuario.Imagem = CadastroProdutos.ConverterImagemParaBytes(pictureBox1Usuario.Image);
 
-                                            }
-                                            else
-                                            {
-                                                   usuario.Imagem = CadastroProdutos.ConverterImagemParaBytes(Properties.Resources.img_Fenix_Shop);
-                                            }
+                                }
+                                else
+                                {
+                                    usuario.Imagem = CadastroProdutos.ConverterImagemParaBytes(Properties.Resources.img_Fenix_Shop);
+                                }
 
-                               usuario.CadastroUsuario();
-                                  MessageBox.Show("Cadastro realizado com suceso..");
-                                    var form1 = this.FindForm() as Form1;
-                                    form1.PanelInicioLogin();
-                            
-                            
-                                  }
-                                  else
-                                  {
-                                         MessageBox.Show("As senhas não conferem. Por favor, verifique e tente novamente.");
-                                         textBox3Senha.Clear();
-                                         textBox4ConfirmarSenha.Clear();
-                                         textBox3Senha.Focus();
-                                  }
+                                usuario.CadastroUsuario();
+                                MessageBox.Show("Cadastro realizado com suceso..");
+                                var form1 = this.FindForm() as Form1;
+                                form1.PanelInicioLogin();
 
 
+                            }
+                            else
+                            {
+                                MessageBox.Show("As senhas não conferem. Por favor, verifique e tente novamente.");
+                                textBox3Senha.Clear();
+                                textBox4ConfirmarSenha.Clear();
+                                textBox3Senha.Focus();
+                            }
 
 
-                          }
 
-                          else
-                          {
-                             MessageBox.Show("Selecione um nível de permissão válido.");
-                        
-                          } 
-                    }  
-                    else { MessageBox.Show("E-mail inválido. Por favor, insira um e-mail válido.");
+
+                        }
+
+                        else
+                        {
+                            MessageBox.Show("Selecione um nível de permissão válido.");
+
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("E-mail inválido. Por favor, insira um e-mail válido.");
                         textBox2Email.Clear();
                         textBox2Email.Focus();
                     }
-                      
-                    
-                   
+
+
+
 
 
 
@@ -138,6 +140,16 @@ namespace Fenix_Shop.Telas
                 }
             }
         }
+
+        private void TextBoxMaskTelefone_Click(object sender, EventArgs e)
+        {
+            TextBoxMaskTelefone.Select(0, 0);
+        }
+
+        private void TextBoxMasCpf_Click(object sender, EventArgs e)
+        {
+            TextBoxMasCpf.Select(0, 0);
+        }
     }
-    }
+}
 

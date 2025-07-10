@@ -1,5 +1,6 @@
 using Fenix_Shop.programação;
 using Fenix_Shop.Telas;
+using System.Data.SQLite;
 using System.Runtime.InteropServices;
 
 
@@ -25,7 +26,7 @@ namespace Fenix_Shop
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
 
-        
+
         public bool PanelInicioLogin()
         {
             panel1ControlerPanelLogin.Controls.Clear();
@@ -116,15 +117,27 @@ namespace Fenix_Shop
 
         }
 
-       
+
 
         private void parrotGradientPanel1_MouseDown(object sender, MouseEventArgs e)
         {
-         
+
             ReleaseCapture();
             SendMessage(this.Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
         }
 
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            if (textBox2Senha.UseSystemPasswordChar == true)
+            {
+                  textBox2Senha.UseSystemPasswordChar = false;
+            }
+            else
+            {               
+                textBox2Senha.UseSystemPasswordChar = true;
+            }
+
+        }
     }
 }
 

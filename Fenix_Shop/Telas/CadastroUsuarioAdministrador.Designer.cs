@@ -107,6 +107,7 @@
             TextBoxMaskTelefone.Name = "TextBoxMaskTelefone";
             TextBoxMaskTelefone.Size = new Size(211, 27);
             TextBoxMaskTelefone.TabIndex = 58;
+            TextBoxMaskTelefone.Click += TextBoxMaskTelefone_Click;
             // 
             // label8
             // 
@@ -197,6 +198,7 @@
             TextBoxMasCpf.Name = "TextBoxMasCpf";
             TextBoxMasCpf.Size = new Size(262, 27);
             TextBoxMasCpf.TabIndex = 49;
+            TextBoxMasCpf.Click += TextBoxMasCpf_Click;
             // 
             // label7
             // 

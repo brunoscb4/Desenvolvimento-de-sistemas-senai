@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,7 @@ namespace Fenix_Shop.Telas
     public partial class Tela_Inicial : UserControl
     {
         private UsuarioLogado usuariologado;
+       
         public Tela_Inicial(UsuarioLogado usuariologado)
         {
             InitializeComponent();
@@ -26,22 +28,22 @@ namespace Fenix_Shop.Telas
             panel5IncialControler.Controls.Clear();
             cadastro.Dock = DockStyle.Fill;
             panel5IncialControler.Controls.Add(cadastro);
-            
+
 
         }
         public static Image ConverterImagem(byte[] ImagemBytes)
         {
             if (ImagemBytes == null || ImagemBytes.Length == 0)
-               return null;
+                return null;
             {
-               
+
                 using (MemoryStream ms = new MemoryStream(ImagemBytes))
                 {
                     return Image.FromStream(ms);
-                    
+
                 }
             }
-            
+
         }
         private void Inicio_Click(object sender, EventArgs e)
         {
@@ -89,7 +91,9 @@ namespace Fenix_Shop.Telas
         }
 
         private void Tela_Inicial_Load(object sender, EventArgs e)
-        {
+        { 
+            ItensVendidos itensVendidos = new ItensVendidos();
+            itensVendidos.IdUser = usuariologado.Id;
             labelusuario.Text = usuariologado.Nome;
             label4NivelUsuario.Text = usuariologado.Nivelusuario;
             CadastroDeProduto.Id = usuariologado.Id;
@@ -98,6 +102,11 @@ namespace Fenix_Shop.Telas
         }
 
         private void labelNumeroDeCadastrados_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBoxTelaInicial_Click(object sender, EventArgs e)
         {
 
         }

@@ -37,6 +37,7 @@
             PanelLogin = new ReaLTaiizor.Controls.ParrotGradientPanel();
             panel1ControlerPanelLogin = new Panel();
             PanelDeLoginPrincipal = new ReaLTaiizor.Controls.ParrotGradientPanel();
+            pictureBox5 = new PictureBox();
             textBox2Senha = new TextBox();
             textBox1Email = new TextBox();
             label1 = new Label();
@@ -52,6 +53,7 @@
             PanelLogin.SuspendLayout();
             panel1ControlerPanelLogin.SuspendLayout();
             PanelDeLoginPrincipal.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -169,6 +171,7 @@
             PanelDeLoginPrincipal.BottomLeft = Color.White;
             PanelDeLoginPrincipal.BottomRight = Color.White;
             PanelDeLoginPrincipal.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+            PanelDeLoginPrincipal.Controls.Add(pictureBox5);
             PanelDeLoginPrincipal.Controls.Add(textBox2Senha);
             PanelDeLoginPrincipal.Controls.Add(textBox1Email);
             PanelDeLoginPrincipal.Controls.Add(label1);
@@ -192,6 +195,18 @@
             PanelDeLoginPrincipal.TopLeft = Color.White;
             PanelDeLoginPrincipal.TopRight = Color.FromArgb(64, 64, 64);
             // 
+            // pictureBox5
+            // 
+            pictureBox5.BackColor = Color.Transparent;
+            pictureBox5.Image = Properties.Resources.olho;
+            pictureBox5.Location = new Point(513, 563);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(43, 27);
+            pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox5.TabIndex = 10;
+            pictureBox5.TabStop = false;
+            pictureBox5.Click += pictureBox5_Click;
+            // 
             // textBox2Senha
             // 
             textBox2Senha.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
@@ -203,6 +218,7 @@
             textBox2Senha.Name = "textBox2Senha";
             textBox2Senha.Size = new Size(362, 27);
             textBox2Senha.TabIndex = 9;
+            textBox2Senha.UseSystemPasswordChar = true;
             // 
             // textBox1Email
             // 
@@ -321,6 +337,7 @@
             panel1ControlerPanelLogin.ResumeLayout(false);
             PanelDeLoginPrincipal.ResumeLayout(false);
             PanelDeLoginPrincipal.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
@@ -329,18 +346,19 @@
 
         private ReaLTaiizor.Controls.ParrotGradientPanel parrotGradientPanel1;
         private ReaLTaiizor.Controls.ParrotGradientPanel PanelLogin;
-        private ReaLTaiizor.Controls.BigLabel bigLabel1;
-        private Label label2;
-        private Label label1;
-        private ReaLTaiizor.Controls.Button Login;
-        private PictureBox pictureBox1;
         private PictureBox pictureBox3;
         private PictureBox pictureBox2;
         private PictureBox pictureBox4;
-        private ReaLTaiizor.Controls.ParrotGradientPanel PanelDeLoginPrincipal;
-        private TextBox textBox2Senha;
-        private TextBox textBox1Email;
         private ContextMenuStrip contextMenuStrip1;
         private Panel panel1ControlerPanelLogin;
+        private ReaLTaiizor.Controls.ParrotGradientPanel PanelDeLoginPrincipal;
+        private PictureBox pictureBox5;
+        private TextBox textBox2Senha;
+        private TextBox textBox1Email;
+        private Label label1;
+        private ReaLTaiizor.Controls.BigLabel bigLabel1;
+        private ReaLTaiizor.Controls.Button Login;
+        private Label label2;
+        private PictureBox pictureBox1;
     }
 }
