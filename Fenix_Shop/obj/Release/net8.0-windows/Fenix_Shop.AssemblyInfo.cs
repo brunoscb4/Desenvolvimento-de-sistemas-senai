@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Fenix_Shop")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+111f462334055edcf68c16702cf259022fececd9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a9a788aa588dc8d2b9b8ce41516b68ccc0824e7d")]
 [assembly: System.Reflection.AssemblyProductAttribute("Fenix_Shop")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Fenix_Shop")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

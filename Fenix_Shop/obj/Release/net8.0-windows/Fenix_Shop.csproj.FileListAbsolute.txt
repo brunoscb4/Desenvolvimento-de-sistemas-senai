@@ -31,3 +31,36 @@ D:\Trabalho Senai\Fenix_Shop\obj\Release\net8.0-windows\refint\Fenix_Shop.dll
 D:\Trabalho Senai\Fenix_Shop\obj\Release\net8.0-windows\Fenix_Shop.pdb
 D:\Trabalho Senai\Fenix_Shop\obj\Release\net8.0-windows\Fenix_Shop.genruntimeconfig.cache
 D:\Trabalho Senai\Fenix_Shop\obj\Release\net8.0-windows\ref\Fenix_Shop.dll
+C:\Senai_Tcc\Fenix_Shop\bin\Release\net8.0-windows\Fenix_Shop.exe
+C:\Senai_Tcc\Fenix_Shop\bin\Release\net8.0-windows\Fenix_Shop.deps.json
+C:\Senai_Tcc\Fenix_Shop\bin\Release\net8.0-windows\Fenix_Shop.runtimeconfig.json
+C:\Senai_Tcc\Fenix_Shop\bin\Release\net8.0-windows\Fenix_Shop.dll
+C:\Senai_Tcc\Fenix_Shop\bin\Release\net8.0-windows\Fenix_Shop.pdb
+C:\Senai_Tcc\Fenix_Shop\bin\Release\net8.0-windows\ReaLTaiizor.dll
+C:\Senai_Tcc\Fenix_Shop\bin\Release\net8.0-windows\System.Data.SQLite.dll
+C:\Senai_Tcc\Fenix_Shop\bin\Release\net8.0-windows\runtimes\linux-x64\native\SQLite.Interop.dll
+C:\Senai_Tcc\Fenix_Shop\bin\Release\net8.0-windows\runtimes\osx-x64\native\SQLite.Interop.dll
+C:\Senai_Tcc\Fenix_Shop\bin\Release\net8.0-windows\runtimes\win-x64\native\SQLite.Interop.dll
+C:\Senai_Tcc\Fenix_Shop\bin\Release\net8.0-windows\runtimes\win-x86\native\SQLite.Interop.dll
+C:\Senai_Tcc\Fenix_Shop\obj\Release\net8.0-windows\Fenix_Shop.csproj.AssemblyReference.cache
+C:\Senai_Tcc\Fenix_Shop\obj\Release\net8.0-windows\Fenix_Shop.Properties.Resources.resources
+C:\Senai_Tcc\Fenix_Shop\obj\Release\net8.0-windows\Fenix_Shop.Telas.CadastroDeUsuario.resources
+C:\Senai_Tcc\Fenix_Shop\obj\Release\net8.0-windows\Fenix_Shop.Telas.CadastroProdutos.resources
+C:\Senai_Tcc\Fenix_Shop\obj\Release\net8.0-windows\Fenix_Shop.Telas.CadastroUsuarioAdministrador.resources
+C:\Senai_Tcc\Fenix_Shop\obj\Release\net8.0-windows\Fenix_Shop.Form1.resources
+C:\Senai_Tcc\Fenix_Shop\obj\Release\net8.0-windows\Fenix_Shop.Telas.ListaProdutos.resources
+C:\Senai_Tcc\Fenix_Shop\obj\Release\net8.0-windows\Fenix_Shop.Telas.RelatorioVendas.resources
+C:\Senai_Tcc\Fenix_Shop\obj\Release\net8.0-windows\Fenix_Shop.Telas.Tela_Inicial.resources
+C:\Senai_Tcc\Fenix_Shop\obj\Release\net8.0-windows\Fenix_Shop.Telas.Vendas.resources
+C:\Senai_Tcc\Fenix_Shop\obj\Release\net8.0-windows\Fenix_Shop.csproj.GenerateResource.cache
+C:\Senai_Tcc\Fenix_Shop\obj\Release\net8.0-windows\Fenix_Shop.GeneratedMSBuildEditorConfig.editorconfig
+C:\Senai_Tcc\Fenix_Shop\obj\Release\net8.0-windows\Fenix_Shop.AssemblyInfoInputs.cache
+C:\Senai_Tcc\Fenix_Shop\obj\Release\net8.0-windows\Fenix_Shop.AssemblyInfo.cs
+C:\Senai_Tcc\Fenix_Shop\obj\Release\net8.0-windows\Fenix_Shop.csproj.CoreCompileInputs.cache
+C:\Senai_Tcc\Fenix_Shop\obj\Release\net8.0-windows\Fenix_Shop.sourcelink.json
+C:\Senai_Tcc\Fenix_Shop\obj\Release\net8.0-windows\Fenix_Shop.csproj.Up2Date
+C:\Senai_Tcc\Fenix_Shop\obj\Release\net8.0-windows\Fenix_Shop.dll
+C:\Senai_Tcc\Fenix_Shop\obj\Release\net8.0-windows\refint\Fenix_Shop.dll
+C:\Senai_Tcc\Fenix_Shop\obj\Release\net8.0-windows\Fenix_Shop.pdb
+C:\Senai_Tcc\Fenix_Shop\obj\Release\net8.0-windows\Fenix_Shop.genruntimeconfig.cache
+C:\Senai_Tcc\Fenix_Shop\obj\Release\net8.0-windows\ref\Fenix_Shop.dll

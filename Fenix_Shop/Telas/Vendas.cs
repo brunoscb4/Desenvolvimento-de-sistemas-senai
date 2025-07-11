@@ -17,7 +17,7 @@ namespace Fenix_Shop.Telas
         {
             InitializeComponent();
         }
-
+  ListaDeVendas list = new ListaDeVendas();
         private void label11_Click(object sender, EventArgs e)
         {
 
@@ -25,7 +25,7 @@ namespace Fenix_Shop.Telas
 
         private void TextBoxCodigoBuscar_Click(object sender, EventArgs e)
         {
-            TextBoxCodigoBuscar.Select(0, 0);
+            TextBoxIdBuscar.Select(0, 0);
         }
 
         private void Vendas_Load(object sender, EventArgs e)
@@ -37,7 +37,75 @@ namespace Fenix_Shop.Telas
 
             if (dataGridViewProdutos.Columns["Foto"] is DataGridViewImageColumn imageColumn)
             {
-                imageColumn.ImageLayout = DataGridViewImageCellLayout.Stretch; 
+                imageColumn.ImageLayout = DataGridViewImageCellLayout.Stretch;
+            }
+
+            dataGridView1Vendas.Columns.Add("Id", "ID");
+            dataGridView1Vendas.Columns.Add("Produto", "Produto");
+            dataGridView1Vendas.Columns.Add("Quantidade", "Quantidade");
+            dataGridView1Vendas.Columns.Add("Valor", "Valor");
+            dataGridView1Vendas.Columns.Add("Foto", "Foto");
+        }
+
+        private void dataGridViewProdutos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                label11NomeDoProduto.Text = dataGridViewProdutos.Rows[e.RowIndex].Cells["Nome"].Value.ToString();
+                label11NumeroDoId.Text = dataGridViewProdutos.Rows[e.RowIndex].Cells["Id"].Value.ToString();
+                label11ValorProduto.Text = Convert.ToDouble(dataGridViewProdutos.Rows[e.RowIndex].Cells["ValorDeVenda"].Value).ToString("C2");
+
+                if (dataGridViewProdutos.Rows[e.RowIndex].Cells["Foto"].Value != DBNull.Value)
+                {
+
+                    byte[] imageBytes = (byte[])dataGridViewProdutos.Rows[e.RowIndex].Cells["Foto"].Value;
+
+
+                    using (MemoryStream ms = new MemoryStream(imageBytes))
+                    {
+
+                        pictureBox1Vendas.Image = Image.FromStream(ms);
+                    }
+                }
+            }
+
+
+
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(textBoxQuantidade.Text))
+                {
+                    ListVendas listVendas = new ListVendas();
+                  
+                    listVendas.Id =Convert.ToInt32(label11NumeroDoId.Text);
+                    listVendas.Produto = label11NomeDoProduto.Text;
+                    listVendas.Quantidade =Convert.ToInt32(textBoxQuantidade.Text);
+                    listVendas.Valor =  label11ValorProduto.Text;
+                    using (var bmp = new Bitmap(pictureBox1Vendas.Image))
+                    {
+                        var converter = new ImageConverter();
+                        byte[] imageBytes = (byte[])converter.ConvertTo(pictureBox1Vendas.Image, typeof(byte[]));
+                        listVendas.Foto = imageBytes;
+                    }
+
+                    
+
+                    list.add(listVendas);
+                    list.ExibirVendas(dataGridView1Vendas);
+                    
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+
+                throw;
             }
         }
     }

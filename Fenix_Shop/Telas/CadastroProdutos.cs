@@ -4,13 +4,14 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing;
+using System.Drawing.Text;
+using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.IO;
-using System.Drawing;
-using System.Drawing.Text;
 namespace Fenix_Shop.Telas
 {
 
@@ -35,10 +36,14 @@ namespace Fenix_Shop.Telas
             textBox2Categoria.Clear();
             textBox3Marca.Clear();
             TextBoxDescricao.Clear();
+            TextBoxEstoque.Clear();
             TextBoxCusto.Clear();
             TextBoxVenda.Clear();
             TextBoxCodigoBarras.Clear();
             TextBoxSku.Clear();
+            TextBoxEstoqueMinimo.Clear();
+            pictureBoxCadastroProduto = null;
+
             textBox1Nome.Focus();
         }
         private void PanelCadastroProduto_Layout(object sender, LayoutEventArgs e)
@@ -154,5 +159,9 @@ namespace Fenix_Shop.Telas
             TextBoxEstoqueMinimo.Select(0, 0);
         }
 
+        
+
     }
 }
+
+
