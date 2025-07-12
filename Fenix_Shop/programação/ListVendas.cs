@@ -13,8 +13,8 @@ namespace Fenix_Shop.programação
         private int id;
         private string produto;
         private int quantidade;
-        private string valor;
-        private byte[] foto;
+        private decimal valor,total;
+      
 
         public int Id
         {  get { return id; } set { id = value; } }
@@ -23,10 +23,10 @@ namespace Fenix_Shop.programação
         public int Quantidade 
         { get {return quantidade; } set { quantidade = value; }}
                 
-        public string Valor
+        public decimal Valor
         { get { return valor; } set { valor = value; } }
-        public byte[] Foto
-            { get { return foto; } set { foto = value; } }
+        public decimal Total
+        { get { return total; } set { total = value; } }
 
 
     }

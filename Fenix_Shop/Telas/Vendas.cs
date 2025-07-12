@@ -44,7 +44,7 @@ namespace Fenix_Shop.Telas
             dataGridView1Vendas.Columns.Add("Produto", "Produto");
             dataGridView1Vendas.Columns.Add("Quantidade", "Quantidade");
             dataGridView1Vendas.Columns.Add("Valor", "Valor");
-            dataGridView1Vendas.Columns.Add("Foto", "Foto");
+            dataGridView1Vendas.Columns.Add("Total", "Total");
         }
 
         private void dataGridViewProdutos_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -53,7 +53,7 @@ namespace Fenix_Shop.Telas
             {
                 label11NomeDoProduto.Text = dataGridViewProdutos.Rows[e.RowIndex].Cells["Nome"].Value.ToString();
                 label11NumeroDoId.Text = dataGridViewProdutos.Rows[e.RowIndex].Cells["Id"].Value.ToString();
-                label11ValorProduto.Text = Convert.ToDouble(dataGridViewProdutos.Rows[e.RowIndex].Cells["ValorDeVenda"].Value).ToString("C2");
+                label11ValorProduto.Text = Convert.ToDouble(dataGridViewProdutos.Rows[e.RowIndex].Cells["ValorDeVenda"].Value).ToString("F2");
 
                 if (dataGridViewProdutos.Rows[e.RowIndex].Cells["Foto"].Value != DBNull.Value)
                 {
@@ -78,26 +78,24 @@ namespace Fenix_Shop.Telas
         {
             try
             {
-                if (!string.IsNullOrEmpty(textBoxQuantidade.Text))
+                if (!string.IsNullOrEmpty(textBoxQuantidade.Text) && int.TryParse(textBoxQuantidade.Text, out int quantidade) && quantidade > 0)
                 {
+                    double total = double.Parse(label11ValorProduto.Text) * quantidade;
+
                     ListVendas listVendas = new ListVendas();
                   
                     listVendas.Id =Convert.ToInt32(label11NumeroDoId.Text);
                     listVendas.Produto = label11NomeDoProduto.Text;
                     listVendas.Quantidade =Convert.ToInt32(textBoxQuantidade.Text);
-                    listVendas.Valor =  label11ValorProduto.Text;
-                    using (var bmp = new Bitmap(pictureBox1Vendas.Image))
-                    {
-                        var converter = new ImageConverter();
-                        byte[] imageBytes = (byte[])converter.ConvertTo(pictureBox1Vendas.Image, typeof(byte[]));
-                        listVendas.Foto = imageBytes;
-                    }
-
-                    
-
+                    listVendas.Valor = decimal.Parse(label11ValorProduto.Text);
+                    listVendas.Total = decimal.Parse(total.ToString("F2"));
                     list.add(listVendas);
+
                     list.ExibirVendas(dataGridView1Vendas);
-                    
+                    label11ValorTotalCompra.Text = list.ValorTotal().ToString("F2");
+                    label11QuantidadeVendidos.Text = list.QuantidadeVendidos().ToString();
+                    textBoxQuantidade.Clear();
+                    textBoxQuantidade.Focus();
                 }
 
 
