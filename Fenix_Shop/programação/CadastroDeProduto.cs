@@ -70,8 +70,8 @@ namespace Fenix_Shop.programação
                             cmd.Parameters.AddWithValue("@Categoria", Categoria);
                             cmd.Parameters.AddWithValue("@Marca", Marca);
                             cmd.Parameters.AddWithValue("@Descricao", Descricao);
-                            cmd.Parameters.AddWithValue("@ValorCusto", ValorDeCustoFormatado);
-                            cmd.Parameters.AddWithValue("@ValorVenda", ValorDeVendaFormatado);
+                            cmd.Parameters.AddWithValue("@ValorCusto", ValorDeCustoFormatado.ToString("F2"));
+                            cmd.Parameters.AddWithValue("@ValorVenda", ValorDeVendaFormatado.ToString("F2"));
                             cmd.Parameters.AddWithValue("@CodigoBarras", CodigoBarras);
                             cmd.Parameters.AddWithValue("@Sku", Sku);
                             cmd.Parameters.AddWithValue("@Imagem", Imagem);

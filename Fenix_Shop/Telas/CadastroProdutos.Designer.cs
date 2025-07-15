@@ -325,7 +325,6 @@
             // TextBoxVenda
             // 
             TextBoxVenda.Location = new Point(622, 176);
-            TextBoxVenda.Mask = "000000000000000000";
             TextBoxVenda.MaximumSize = new Size(350, 33);
             TextBoxVenda.Name = "TextBoxVenda";
             TextBoxVenda.PromptChar = ' ';
@@ -353,7 +352,6 @@
             TextBoxCusto.AllowPromptAsInput = false;
             TextBoxCusto.BeepOnError = true;
             TextBoxCusto.Location = new Point(622, 107);
-            TextBoxCusto.Mask = "000000000000000000";
             TextBoxCusto.MaximumSize = new Size(350, 33);
             TextBoxCusto.Name = "TextBoxCusto";
             TextBoxCusto.PromptChar = ' ';

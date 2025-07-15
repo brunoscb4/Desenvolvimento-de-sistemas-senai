@@ -17,7 +17,7 @@ namespace Fenix_Shop.Telas
         {
             InitializeComponent();
         }
-  ListaDeVendas list = new ListaDeVendas();
+        ListaDeVendas list = new ListaDeVendas();
         private void label11_Click(object sender, EventArgs e)
         {
 
@@ -70,8 +70,6 @@ namespace Fenix_Shop.Telas
             }
 
 
-
-
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -83,10 +81,10 @@ namespace Fenix_Shop.Telas
                     double total = double.Parse(label11ValorProduto.Text) * quantidade;
 
                     ListVendas listVendas = new ListVendas();
-                  
-                    listVendas.Id =Convert.ToInt32(label11NumeroDoId.Text);
+
+                    listVendas.Id = Convert.ToInt32(label11NumeroDoId.Text);
                     listVendas.Produto = label11NomeDoProduto.Text;
-                    listVendas.Quantidade =Convert.ToInt32(textBoxQuantidade.Text);
+                    listVendas.Quantidade = Convert.ToInt32(textBoxQuantidade.Text);
                     listVendas.Valor = decimal.Parse(label11ValorProduto.Text);
                     listVendas.Total = decimal.Parse(total.ToString("F2"));
                     list.add(listVendas);
@@ -104,6 +102,37 @@ namespace Fenix_Shop.Telas
             {
 
                 throw;
+            }
+        }
+
+        private void dataGridViewProdutos_CellClick(object sender, DataGridViewCellEventArgs e)
+        
+            {
+            
+            if (e.RowIndex >= 0 && dataGridViewProdutos != null )
+            {
+                DataGridViewRow row = dataGridViewProdutos.Rows[e.RowIndex];
+                if (row.Cells["Nome"].Value != DBNull.Value && row.Cells["Id"].Value != DBNull.Value && row.Cells["ValorDeVenda"].Value != DBNull.Value)
+                {
+
+
+                    label11NomeDoProduto.Text = dataGridViewProdutos.Rows[e.RowIndex].Cells["Nome"].Value.ToString();
+                    label11NumeroDoId.Text = dataGridViewProdutos.Rows[e.RowIndex].Cells["Id"].Value.ToString();
+                    label11ValorProduto.Text = Convert.ToDouble(dataGridViewProdutos.Rows[e.RowIndex].Cells["ValorDeVenda"].Value).ToString("F2");
+
+                    if (dataGridViewProdutos.Rows[e.RowIndex].Cells["Foto"].Value != DBNull.Value)
+                    {
+
+                        byte[] imageBytes = (byte[])dataGridViewProdutos.Rows[e.RowIndex].Cells["Foto"].Value;
+
+
+                        using (MemoryStream ms = new MemoryStream(imageBytes))
+                        {
+
+                            pictureBox1Vendas.Image = Image.FromStream(ms);
+                        }
+                    }
+                }
             }
         }
     }

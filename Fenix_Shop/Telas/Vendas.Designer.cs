@@ -414,7 +414,7 @@
             dataGridViewProdutos.RowHeadersWidth = 51;
             dataGridViewProdutos.Size = new Size(536, 255);
             dataGridViewProdutos.TabIndex = 9;
-            dataGridViewProdutos.CellContentClick += dataGridViewProdutos_CellContentClick;
+            dataGridViewProdutos.CellClick += dataGridViewProdutos_CellClick;
             // 
             // label2
             // 
