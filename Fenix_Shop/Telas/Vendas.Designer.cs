@@ -120,7 +120,7 @@
             label11ValorTotalCompra.AutoSize = true;
             label11ValorTotalCompra.BackColor = Color.Transparent;
             label11ValorTotalCompra.Font = new Font("Arial", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label11ValorTotalCompra.Location = new Point(244, 175);
+            label11ValorTotalCompra.Location = new Point(145, 175);
             label11ValorTotalCompra.Name = "label11ValorTotalCompra";
             label11ValorTotalCompra.Size = new Size(17, 18);
             label11ValorTotalCompra.TabIndex = 19;
@@ -132,7 +132,7 @@
             label11QuantidadeVendidos.AutoSize = true;
             label11QuantidadeVendidos.BackColor = Color.Transparent;
             label11QuantidadeVendidos.Font = new Font("Arial", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label11QuantidadeVendidos.Location = new Point(244, 124);
+            label11QuantidadeVendidos.Location = new Point(145, 124);
             label11QuantidadeVendidos.Name = "label11QuantidadeVendidos";
             label11QuantidadeVendidos.Size = new Size(17, 18);
             label11QuantidadeVendidos.TabIndex = 18;
@@ -154,7 +154,7 @@
             label10.AutoSize = true;
             label10.BackColor = Color.Transparent;
             label10.Font = new Font("Arial", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label10.ForeColor = Color.Black;
+            label10.ForeColor = Color.Blue;
             label10.Location = new Point(22, 175);
             label10.Name = "label10";
             label10.Size = new Size(89, 18);
@@ -167,12 +167,12 @@
             label9.AutoSize = true;
             label9.BackColor = Color.Transparent;
             label9.Font = new Font("Arial", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label9.ForeColor = Color.Black;
+            label9.ForeColor = Color.Blue;
             label9.Location = new Point(22, 124);
             label9.Name = "label9";
-            label9.Size = new Size(172, 18);
+            label9.Size = new Size(83, 18);
             label9.TabIndex = 15;
-            label9.Text = "Quantidade vendidos:";
+            label9.Text = "Vendidos:";
             // 
             // button3
             // 
@@ -194,6 +194,7 @@
             button3.TabIndex = 14;
             button3.Text = "Vender";
             button3.TextAlignment = StringAlignment.Center;
+            button3.Click += button3_Click;
             // 
             // panel1
             // 

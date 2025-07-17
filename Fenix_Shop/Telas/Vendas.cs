@@ -17,7 +17,7 @@ namespace Fenix_Shop.Telas
         {
             InitializeComponent();
         }
-        ListaDeVendas list = new ListaDeVendas();
+        ItensVendidos ItensVendidos = new ItensVendidos();
         private void label11_Click(object sender, EventArgs e)
         {
 
@@ -79,19 +79,21 @@ namespace Fenix_Shop.Telas
                 if (!string.IsNullOrEmpty(textBoxQuantidade.Text) && int.TryParse(textBoxQuantidade.Text, out int quantidade) && quantidade > 0)
                 {
                     double total = double.Parse(label11ValorProduto.Text) * quantidade;
+                    
+                    ListVendas listVendas = new ListVendas
+                    {
 
-                    ListVendas listVendas = new ListVendas();
+                        Id = Convert.ToInt32(label11NumeroDoId.Text),
+                        Produto = label11NomeDoProduto.Text,
+                        Quantidade = Convert.ToInt32(textBoxQuantidade.Text),
+                        Valor = decimal.Parse(label11ValorProduto.Text),
+                        Total = decimal.Parse(total.ToString("F2")),
 
-                    listVendas.Id = Convert.ToInt32(label11NumeroDoId.Text);
-                    listVendas.Produto = label11NomeDoProduto.Text;
-                    listVendas.Quantidade = Convert.ToInt32(textBoxQuantidade.Text);
-                    listVendas.Valor = decimal.Parse(label11ValorProduto.Text);
-                    listVendas.Total = decimal.Parse(total.ToString("F2"));
-                    list.add(listVendas);
-
-                    list.ExibirVendas(dataGridView1Vendas);
-                    label11ValorTotalCompra.Text = list.ValorTotal().ToString("F2");
-                    label11QuantidadeVendidos.Text = list.QuantidadeVendidos().ToString();
+                    };
+                    ItensVendidos.AddProduto(listVendas);
+                    ItensVendidos.ExibirVendas(dataGridView1Vendas);
+                    label11ValorTotalCompra.Text = ItensVendidos.TotalVenda().ToString("F2");
+                    label11QuantidadeVendidos.Text = ItensVendidos.QuantidadeVendidos().ToString();
                     textBoxQuantidade.Clear();
                     textBoxQuantidade.Focus();
                 }
@@ -106,10 +108,10 @@ namespace Fenix_Shop.Telas
         }
 
         private void dataGridViewProdutos_CellClick(object sender, DataGridViewCellEventArgs e)
-        
-            {
-            
-            if (e.RowIndex >= 0 && dataGridViewProdutos != null )
+
+        {
+
+            if (e.RowIndex >= 0 && dataGridViewProdutos != null)
             {
                 DataGridViewRow row = dataGridViewProdutos.Rows[e.RowIndex];
                 if (row.Cells["Nome"].Value != DBNull.Value && row.Cells["Id"].Value != DBNull.Value && row.Cells["ValorDeVenda"].Value != DBNull.Value)
@@ -133,6 +135,38 @@ namespace Fenix_Shop.Telas
                         }
                     }
                 }
+            }
+        }
+    
+        private void button3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!ItensVendidos.ObterLista().Any())
+                {
+                    MessageBox.Show("Nenhuma lista encontrada");
+                    return;
+                }
+
+                ItensVendidos.ValorTotal = decimal.Parse(label11ValorTotalCompra.Text);
+
+                if (ItensVendidos.CadastrarItensVendidos())
+                {
+                    dataGridView1Vendas.Rows.Clear();
+                    label11ValorTotalCompra.Text = "0,00";
+                    label11QuantidadeVendidos.Text = "0";
+                    textBoxQuantidade.Clear();
+
+                }
+                else
+                {
+                    MessageBox.Show("Erro ao cadastara venda");
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Erro inesperado: "+ex.Message);
             }
         }
     }
