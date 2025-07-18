@@ -22,13 +22,19 @@ namespace Fenix_Shop.Telas
             this.usuariologado = usuariologado;
         }
 
+       
         private void CadastroProdutos_Click(object sender, EventArgs e)
         {
             CadastroProdutos cadastro = new CadastroProdutos();
             panel5IncialControler.Controls.Clear();
             cadastro.Dock = DockStyle.Fill;
             panel5IncialControler.Controls.Add(cadastro);
-
+            ButtonCadastroProduto.InactiveColor = Color.Green;
+            Inicio.InactiveColor = Color.SlateBlue;
+            button1LIstaProdutos.InactiveColor = Color.SlateBlue;
+            button2Relatorio.InactiveColor = Color.SlateBlue;
+            button3Vender.InactiveColor = Color.SlateBlue;
+            button4CadastroUsuario.InactiveColor = Color.SlateBlue;
 
         }
         public static Image ConverterImagem(byte[] ImagemBytes)
@@ -45,11 +51,20 @@ namespace Fenix_Shop.Telas
             }
 
         }
+
         private void Inicio_Click(object sender, EventArgs e)
         {
             panel5IncialControler.Controls.Clear();
             PanelInicio.Dock = DockStyle.Fill;
             panel5IncialControler.Controls.Add(PanelInicio);
+                            
+            Inicio.InactiveColor = Color.Green;
+            ButtonCadastroProduto.InactiveColor = Color.SlateBlue;
+            button1LIstaProdutos.InactiveColor = Color.SlateBlue;
+            button2Relatorio.InactiveColor = Color.SlateBlue;
+            button3Vender.InactiveColor = Color.SlateBlue;
+            button4CadastroUsuario.InactiveColor = Color.SlateBlue;
+
 
 
         }
@@ -60,7 +75,13 @@ namespace Fenix_Shop.Telas
             panel5IncialControler.Controls.Clear();
             lista.Dock = DockStyle.Fill;
             panel5IncialControler.Controls.Add(lista);
-
+            
+            button1LIstaProdutos.InactiveColor = Color.Green;
+            ButtonCadastroProduto.InactiveColor = Color.SlateBlue;
+            Inicio.InactiveColor = Color.SlateBlue;
+            button2Relatorio.InactiveColor = Color.SlateBlue;
+            button3Vender.InactiveColor = Color.SlateBlue;
+            button4CadastroUsuario.InactiveColor = Color.SlateBlue;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -70,15 +91,29 @@ namespace Fenix_Shop.Telas
             panel5IncialControler.Controls.Clear();
             relatorio.Dock = DockStyle.Fill;
             panel5IncialControler.Controls.Add(relatorio);
+           
+            button2Relatorio.InactiveColor = Color.Green;
+            ButtonCadastroProduto.InactiveColor = Color.SlateBlue;
+            button1LIstaProdutos.InactiveColor = Color.SlateBlue;
+            Inicio.InactiveColor = Color.SlateBlue;
+            button3Vender.InactiveColor = Color.SlateBlue;
+            button4CadastroUsuario.InactiveColor = Color.SlateBlue;
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Vendas vendas = new Vendas();
+            Vendas vendas = new Vendas(usuariologado);
 
             panel5IncialControler.Controls.Clear();
             vendas.Dock = DockStyle.Fill;
             panel5IncialControler.Controls.Add(vendas);
+           
+            button3Vender.InactiveColor = Color.Green;
+            ButtonCadastroProduto.InactiveColor = Color.SlateBlue;
+            button1LIstaProdutos.InactiveColor = Color.SlateBlue;
+            button2Relatorio.InactiveColor = Color.SlateBlue;
+            Inicio.InactiveColor = Color.SlateBlue;
+            button4CadastroUsuario.InactiveColor = Color.SlateBlue;
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -88,12 +123,20 @@ namespace Fenix_Shop.Telas
             panel5IncialControler.Controls.Clear();
             usuario.Dock = DockStyle.Fill;
             panel5IncialControler.Controls.Add(usuario);
+           
+            button4CadastroUsuario.InactiveColor = Color.Green;
+            ButtonCadastroProduto.InactiveColor = Color.SlateBlue;
+            button1LIstaProdutos.InactiveColor = Color.SlateBlue;
+            button2Relatorio.InactiveColor = Color.SlateBlue;
+            button3Vender.InactiveColor = Color.SlateBlue;
+            Inicio.InactiveColor = Color.SlateBlue;
         }
 
         private void Tela_Inicial_Load(object sender, EventArgs e)
         {
-            ItensVendidos itensVendidos = new ItensVendidos();
-            itensVendidos.IdUser = usuariologado.Id;
+
+            Inicio.InactiveColor = Color.Green;
+
             labelusuario.Text = usuariologado.Nome;
             label4NivelUsuario.Text = usuariologado.Nivelusuario;
             CadastroDeProduto.Id = usuariologado.Id;
@@ -101,19 +144,13 @@ namespace Fenix_Shop.Telas
             pictureBoxTelaInicial.Image = ConverterImagem(usuariologado.Foto);
         }
 
-        private void labelNumeroDeCadastrados_Click(object sender, EventArgs e)
+        private void timerRelogio_Tick(object sender, EventArgs e)
         {
-
+            label6Data.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            label7Hora.Text = DateTime.Now.ToString("HH:mm:ss");
         }
 
-        private void pictureBoxTelaInicial_Click(object sender, EventArgs e)
-        {
+       
 
-        }
-
-        private void label6NomeDaLoja_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

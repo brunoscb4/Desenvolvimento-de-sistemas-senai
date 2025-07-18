@@ -13,11 +13,14 @@ namespace Fenix_Shop.Telas
 {
     public partial class Vendas : UserControl
     {
-        public Vendas()
+        private UsuarioLogado usuariologado;
+        public Vendas(UsuarioLogado usuariologado   )
         {
             InitializeComponent();
+            this.usuariologado = usuariologado;
         }
         ItensVendidos ItensVendidos = new ItensVendidos();
+     
         private void label11_Click(object sender, EventArgs e)
         {
 
@@ -149,6 +152,7 @@ namespace Fenix_Shop.Telas
                 }
 
                 ItensVendidos.ValorTotal = decimal.Parse(label11ValorTotalCompra.Text);
+                ItensVendidos.IdUser = usuariologado.Id;
 
                 if (ItensVendidos.CadastrarItensVendidos())
                 {

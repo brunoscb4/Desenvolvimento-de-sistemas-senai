@@ -113,7 +113,10 @@ namespace Fenix_Shop.programação
                 {
                     connection.Open();
 
-                    string select = @"SELECT * FROM Vendas";
+                    string select = @"SELECT u.Nome AS USUARIO, p.Nome AS PRODUTO, p.ValorDeVenda AS VALOR,e.Quantidade AS ESTOQUE FROM Usuario u 
+                    JOIN CadastroProduto p ON p.IdUsuario = u.Id
+                    JOIN Estoque e ON e.IdProduto = p.Id
+";
 
                     DataTable dt = new DataTable();
 

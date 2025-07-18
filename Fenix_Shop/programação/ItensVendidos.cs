@@ -9,7 +9,7 @@ namespace Fenix_Shop.programação
 {
     internal class ItensVendidos 
     {
-        private int iduser;
+        private static int iduser;
         private decimal valorTotal;
         private string formaPagamento = "DINHEIRO";  
         private List<ListVendas> lista { get; set; } = new List<ListVendas> { };
@@ -48,7 +48,7 @@ namespace Fenix_Shop.programação
             }
            
         }
-        public int IdUser { get { return iduser; } set { iduser = value; } }   
+        public static int IdUser { get { return iduser; } set { iduser = value; } }   
         public decimal ValorTotal { get { return valorTotal; } set { valorTotal = value; } }
         public string FormaPagamento { get { return formaPagamento; } set { formaPagamento = value; } }
           
@@ -72,8 +72,8 @@ namespace Fenix_Shop.programação
                                 cmd.Parameters.AddWithValue("@FormaPagamento", FormaPagamento);
 
                                 int IdVendas = Convert.ToInt32(cmd.ExecuteScalar());
-                                string insertItensVendidos = @"INSERT INTO ItensVendidos(IdVenda,IdProduto,QuantidadeVendidas,PrecoUnitario) 
-                                                            VALUES(@IdVenda,@IdProduto,@QuantidadeVendidas,@PrecoUnitario)";
+                                string insertItensVendidos = @"INSERT INTO ItensVendidos(IdVenda,IdProduto,Quantidade,PrecoUnitario) 
+                                                            VALUES(@IdVenda,@IdProduto,@Quantidade,@PrecoUnitario)";
 
                             foreach (var item in lista)
                             {
@@ -81,7 +81,7 @@ namespace Fenix_Shop.programação
                                 {
                                     cmdItens.Parameters.AddWithValue("@IdVenda", IdVendas);
                                     cmdItens.Parameters.AddWithValue("@IdProduto", item.Id);
-                                    cmdItens.Parameters.AddWithValue("@QuantidadeVendidas", item.Quantidade);
+                                    cmdItens.Parameters.AddWithValue("@Quantidade", item.Quantidade);
                                     cmdItens.Parameters.AddWithValue("@PrecoUnitario", item.Valor);
                                     cmdItens.ExecuteNonQuery();
                                 }

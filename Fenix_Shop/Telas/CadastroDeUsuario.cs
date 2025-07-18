@@ -69,10 +69,9 @@ namespace Fenix_Shop.Telas
                     {
                         usuario.Email = textBox2Email.Text;
 
-                        if (comboBoxNivelPermissão.Text.Equals("ADMINISTRADOR"))
-                        {
+                       
 
-                            usuario.Nivelusuario = NivelAcesso.ADMINISTRADOR.ToString();
+                         
                             if (textBox3Senha.Text.Equals(textBox4ConfirmarSenha.Text))
                             {
                                 usuario.Senha = textBox3Senha.Text;
@@ -88,12 +87,27 @@ namespace Fenix_Shop.Telas
                                 {
                                     usuario.Imagem = CadastroProdutos.ConverterImagemParaBytes(Properties.Resources.img_Fenix_Shop);
                                 }
+                                   
+                            if (comboBoxNivelPermissão.Text.Equals("GERENTE"))
+                                   {
+                                        usuario.Nivelusuario = NivelAcesso.GERENTE.ToString();
+                                   }
+                                   else if (comboBoxNivelPermissão.Text.Equals("VENDEDOR"))
+                                   {
+                                        usuario.Nivelusuario = NivelAcesso.VENDEDOR.ToString();
+                                   }
+                                   else
+                                   {
+                                      MessageBox.Show("Selecione um nível de permissão válido.");
+                                   }
+                            {
 
+                            }
                                 usuario.CadastroUsuario();
                                 MessageBox.Show("Cadastro realizado com suceso..");
                                 var form1 = this.FindForm() as Form1;
                                 form1.PanelInicioLogin();
-
+                                LimparCampo();
 
                             }
                             else
@@ -107,13 +121,9 @@ namespace Fenix_Shop.Telas
 
 
 
-                        }
+                        
 
-                        else
-                        {
-                            MessageBox.Show("Selecione um nível de permissão válido.");
-
-                        }
+                        
                     }
                     else
                     {
