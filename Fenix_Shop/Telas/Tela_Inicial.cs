@@ -16,6 +16,8 @@ namespace Fenix_Shop.Telas
     {
         private UsuarioLogado usuariologado;
 
+        public  Label labeQtVendidos()
+        { return labelNumeroDeCadastrados; }
         public Tela_Inicial(UsuarioLogado usuariologado)
         {
             InitializeComponent();
@@ -134,9 +136,9 @@ namespace Fenix_Shop.Telas
 
         private void Tela_Inicial_Load(object sender, EventArgs e)
         {
-
+            ItensVendidos itensVendidos = new ItensVendidos();
             Inicio.InactiveColor = Color.Green;
-
+            labelNumeroDeCadastrados.Text = itensVendidos.QuantidadeVendidas().ToString();
             labelusuario.Text = usuariologado.Nome;
             label4NivelUsuario.Text = usuariologado.Nivelusuario;
             CadastroDeProduto.Id = usuariologado.Id;

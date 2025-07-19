@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             parrotGradientPanel1 = new ReaLTaiizor.Controls.ParrotGradientPanel();
+            textBoxBuscarNome = new TextBox();
             panel2 = new Panel();
             label11ValorTotalCompra = new Label();
             label11QuantidadeVendidos = new Label();
@@ -55,8 +56,7 @@
             label2 = new Label();
             label1 = new Label();
             button1 = new ReaLTaiizor.Controls.Button();
-            TextBoxNomeBusacar = new ReaLTaiizor.Controls.CyberRichTextBox();
-            TextBoxIdBuscar = new MaskedTextBox();
+            TextBoxIdBuscar = new TextBox();
             parrotGradientPanel1.SuspendLayout();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
@@ -71,6 +71,8 @@
             parrotGradientPanel1.BottomLeft = Color.White;
             parrotGradientPanel1.BottomRight = Color.White;
             parrotGradientPanel1.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+            parrotGradientPanel1.Controls.Add(TextBoxIdBuscar);
+            parrotGradientPanel1.Controls.Add(textBoxBuscarNome);
             parrotGradientPanel1.Controls.Add(panel2);
             parrotGradientPanel1.Controls.Add(panel1);
             parrotGradientPanel1.Controls.Add(label4);
@@ -80,8 +82,6 @@
             parrotGradientPanel1.Controls.Add(label2);
             parrotGradientPanel1.Controls.Add(label1);
             parrotGradientPanel1.Controls.Add(button1);
-            parrotGradientPanel1.Controls.Add(TextBoxNomeBusacar);
-            parrotGradientPanel1.Controls.Add(TextBoxIdBuscar);
             parrotGradientPanel1.Dock = DockStyle.Fill;
             parrotGradientPanel1.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
             parrotGradientPanel1.Location = new Point(0, 0);
@@ -96,6 +96,13 @@
             parrotGradientPanel1.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             parrotGradientPanel1.TopLeft = Color.White;
             parrotGradientPanel1.TopRight = Color.FromArgb(64, 64, 64);
+            // 
+            // textBoxBuscarNome
+            // 
+            textBoxBuscarNome.Location = new Point(405, 21);
+            textBoxBuscarNome.Name = "textBoxBuscarNome";
+            textBoxBuscarNome.Size = new Size(357, 23);
+            textBoxBuscarNome.TabIndex = 16;
             // 
             // panel2
             // 
@@ -457,46 +464,14 @@
             button1.TabIndex = 6;
             button1.Text = "Buscar";
             button1.TextAlignment = StringAlignment.Center;
-            // 
-            // TextBoxNomeBusacar
-            // 
-            TextBoxNomeBusacar.Alpha = 20;
-            TextBoxNomeBusacar.BackColor = Color.Transparent;
-            TextBoxNomeBusacar.Background_WidthPen = 3F;
-            TextBoxNomeBusacar.BackgroundPen = true;
-            TextBoxNomeBusacar.ColorBackground = Color.White;
-            TextBoxNomeBusacar.ColorBackground_Pen = Color.Black;
-            TextBoxNomeBusacar.ColorLighting = Color.Black;
-            TextBoxNomeBusacar.ColorPen_1 = Color.FromArgb(29, 200, 238);
-            TextBoxNomeBusacar.ColorPen_2 = Color.White;
-            TextBoxNomeBusacar.CyberRichTextBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
-            TextBoxNomeBusacar.Font = new Font("Arial", 11F);
-            TextBoxNomeBusacar.ForeColor = Color.FromArgb(245, 245, 245);
-            TextBoxNomeBusacar.Lighting = false;
-            TextBoxNomeBusacar.LinearGradientPen = false;
-            TextBoxNomeBusacar.Location = new Point(408, 17);
-            TextBoxNomeBusacar.Name = "TextBoxNomeBusacar";
-            TextBoxNomeBusacar.PenWidth = 15;
-            TextBoxNomeBusacar.RGB = false;
-            TextBoxNomeBusacar.Rounding = true;
-            TextBoxNomeBusacar.RoundingInt = 60;
-            TextBoxNomeBusacar.Size = new Size(341, 27);
-            TextBoxNomeBusacar.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            TextBoxNomeBusacar.TabIndex = 5;
-            TextBoxNomeBusacar.Tag = "Cyber";
-            TextBoxNomeBusacar.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            TextBoxNomeBusacar.Timer_RGB = 300;
+            button1.Click += button1_Click;
             // 
             // TextBoxIdBuscar
             // 
-            TextBoxIdBuscar.BorderStyle = BorderStyle.FixedSingle;
-            TextBoxIdBuscar.Location = new Point(105, 22);
-            TextBoxIdBuscar.Mask = "00000000000000000000000";
+            TextBoxIdBuscar.Location = new Point(80, 22);
             TextBoxIdBuscar.Name = "TextBoxIdBuscar";
-            TextBoxIdBuscar.PromptChar = ' ';
-            TextBoxIdBuscar.Size = new Size(135, 23);
-            TextBoxIdBuscar.TabIndex = 4;
-            TextBoxIdBuscar.Click += TextBoxCodigoBuscar_Click;
+            TextBoxIdBuscar.Size = new Size(100, 23);
+            TextBoxIdBuscar.TabIndex = 17;
             // 
             // Vendas
             // 
@@ -524,8 +499,6 @@
 
         private ReaLTaiizor.Controls.ParrotGradientPanel parrotGradientPanel1;
         private ReaLTaiizor.Controls.Button button1;
-        private ReaLTaiizor.Controls.CyberRichTextBox TextBoxNomeBusacar;
-        private MaskedTextBox TextBoxIdBuscar;
         private Label label2;
         private Label label1;
         private DataGridView dataGridViewProdutos;
@@ -551,5 +524,7 @@
         private Label label11ValorProduto;
         private Label label11NomeDoProduto;
         private Label label11ValorTotalCompra;
+        private TextBox textBoxBuscarNome;
+        private TextBox TextBoxIdBuscar;
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Fenix_Shop.programação;
+using ReaLTaiizor.Extension;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,13 +15,13 @@ namespace Fenix_Shop.Telas
     public partial class Vendas : UserControl
     {
         private UsuarioLogado usuariologado;
-        public Vendas(UsuarioLogado usuariologado   )
+        public Vendas(UsuarioLogado usuariologado)
         {
             InitializeComponent();
             this.usuariologado = usuariologado;
         }
         ItensVendidos ItensVendidos = new ItensVendidos();
-     
+
         private void label11_Click(object sender, EventArgs e)
         {
 
@@ -43,11 +44,11 @@ namespace Fenix_Shop.Telas
                 imageColumn.ImageLayout = DataGridViewImageCellLayout.Stretch;
             }
 
-            dataGridView1Vendas.Columns.Add("Id", "ID");
-            dataGridView1Vendas.Columns.Add("Produto", "Produto");
-            dataGridView1Vendas.Columns.Add("Quantidade", "Quantidade");
-            dataGridView1Vendas.Columns.Add("Valor", "Valor");
-            dataGridView1Vendas.Columns.Add("Total", "Total");
+            var index = dataGridView1Vendas.Columns.Add("Id", "ID");
+            dataGridView1Vendas.Columns.Add("Produto", "PRODUTO");
+            dataGridView1Vendas.Columns.Add("Quantidade", "UNIDADE");
+            dataGridView1Vendas.Columns.Add("Valor", "VALOR");
+            dataGridView1Vendas.Columns.Add("Total", "TOTAL");
         }
 
         private void dataGridViewProdutos_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -82,7 +83,7 @@ namespace Fenix_Shop.Telas
                 if (!string.IsNullOrEmpty(textBoxQuantidade.Text) && int.TryParse(textBoxQuantidade.Text, out int quantidade) && quantidade > 0)
                 {
                     double total = double.Parse(label11ValorProduto.Text) * quantidade;
-                    
+
                     ListVendas listVendas = new ListVendas
                     {
 
@@ -140,7 +141,7 @@ namespace Fenix_Shop.Telas
                 }
             }
         }
-    
+
         private void button3_Click(object sender, EventArgs e)
         {
             try
@@ -156,11 +157,13 @@ namespace Fenix_Shop.Telas
 
                 if (ItensVendidos.CadastrarItensVendidos())
                 {
-                    dataGridView1Vendas.Rows.Clear();
+                   
+
+                        dataGridView1Vendas.Rows.Clear();
                     label11ValorTotalCompra.Text = "0,00";
                     label11QuantidadeVendidos.Text = "0";
                     textBoxQuantidade.Clear();
-
+                    
                 }
                 else
                 {
@@ -170,7 +173,33 @@ namespace Fenix_Shop.Telas
             catch (Exception ex)
             {
 
-                MessageBox.Show("Erro inesperado: "+ex.Message);
+                MessageBox.Show("Erro inesperado: " + ex.Message);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+            CadastroDeProduto produto = new CadastroDeProduto();
+           int? idBuscar = null;
+            if (!string.IsNullOrWhiteSpace(TextBoxIdBuscar.Text) && TextBoxIdBuscar.Text != null)
+            {
+               idBuscar =  int.Parse( TextBoxIdBuscar.Text);
+            dataGridViewProdutos.DataSource = null;
+            dataGridViewProdutos.DataSource =   produto.BuscarPorId(idBuscar);
+            }
+            else
+            {
+                dataGridViewProdutos.DataSource =null;
+                dataGridViewProdutos.DataSource = produto.BuscarPorNome(textBoxBuscarNome.Text);
+            }
+
+            dataGridViewProdutos.RowTemplate.Height = 40;
+            dataGridViewProdutos.Columns["Foto"].Width = 40;
+
+            if (dataGridViewProdutos.Columns["Foto"] is DataGridViewImageColumn imageColumn)
+            {
+                imageColumn.ImageLayout = DataGridViewImageCellLayout.Stretch;
             }
         }
     }

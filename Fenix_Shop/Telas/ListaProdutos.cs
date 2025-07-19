@@ -27,12 +27,26 @@ namespace Fenix_Shop.Telas
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            CadastroDeProduto produto = new CadastroDeProduto();
+            int? idBuscar = null;
+            if (!string.IsNullOrWhiteSpace(TextBoxCodigoBuscar.Text) && TextBoxCodigoBuscar.Text != null)
+            {
+                idBuscar = int.Parse( TextBoxCodigoBuscar.Text);
+                dataGridView1.DataSource = null;
+                dataGridView1.DataSource = produto.ProdutosRegisBuscaId(idBuscar);
+            }
+            else
+            {
+                dataGridView1.DataSource = null;
+                dataGridView1.DataSource = produto.ProdutosRegisBuscaNome(textBoxBuscarNome.Text);
+            }
         }
 
         private void TextBoxCodigoBuscar_Click(object sender, EventArgs e)
         {
-            TextBoxCodigoBuscar.Select(0,0);
+            TextBoxCodigoBuscar.SelectionStart = TextBoxCodigoBuscar.Text.Length;
+            TextBoxCodigoBuscar.SelectionLength = 0;
+            TextBoxCodigoBuscar.Focus();
         }
     }
 }

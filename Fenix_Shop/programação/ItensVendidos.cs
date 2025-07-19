@@ -99,6 +99,42 @@ namespace Fenix_Shop.programação
                     return false;
                 }
             }
+
+        public int QuantidadeVendidas()
+        {
+            try
+            { 
+                using (SQLiteConnection connection = new SQLiteConnection(BancoSQLite.ConexaoSQlite))
+            {
+                    connection.Open();
+
+                    string qtVendidos = @"SELECT SUM(Quantidade )FROM ItensVendidos";
+                    using (SQLiteCommand cmd = new SQLiteCommand(qtVendidos, connection))
+                    {
+                         object resultado = cmd.ExecuteScalar();
+
+                        if (resultado != DBNull.Value && resultado != null)
+                        {
+                            return Convert.ToInt32(resultado);
+                        }
+                        else
+                        {
+                            return 0;
+                        }
+                    }
+
+                    
+                   
+            }
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+           
+        }
         
     }
 }
