@@ -114,19 +114,38 @@ namespace Fenix_Shop.Telas
         }
         private void pictureBoxCadastroProduto_Click(object sender, EventArgs e)
         {
-            using (OpenFileDialog open = new OpenFileDialog())
+            
+              using (OpenFileDialog open = new OpenFileDialog())
             {
                 open.Title = "Selecione uma imagem";
                 open.Filter = "Imagens(*.jpg;*.jpeg;*.png;*.bmp|*.jpg;*.jpeg;*.png;*.bmp)";
-
-                if (open.ShowDialog() == DialogResult.OK)
+                    
+                if(open.ShowDialog() == DialogResult.OK)
                 {
+                    try
+                    {
+                        if (pictureBoxCadastroProduto.Image != null)
+                    {
+                        pictureBoxCadastroProduto.Image.Dispose();
+                        pictureBoxCadastroProduto.Image = null;
+                    }
+
                     pictureBoxCadastroProduto.Image = Image.FromFile(open.FileName);
 
                     pictureBoxCadastroProduto.SizeMode = PictureBoxSizeMode.StretchImage;
+                    }
+                    catch (Exception ex)
+                    {
+
+                        MessageBox.Show("Erro ao carregar imagem: " + ex.Message ,"Erro",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    }
+                    
 
                 }
+            
             }
+            
+           
         }
 
         private void TextBoxCusto_Click(object sender, EventArgs e)

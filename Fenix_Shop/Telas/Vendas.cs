@@ -14,11 +14,13 @@ namespace Fenix_Shop.Telas
 {
     public partial class Vendas : UserControl
     {
+        private Tela_Inicial telaInicial;
         private UsuarioLogado usuariologado;
-        public Vendas(UsuarioLogado usuariologado)
+        public Vendas(UsuarioLogado usuariologado, Tela_Inicial telaInicial) 
         {
             InitializeComponent();
             this.usuariologado = usuariologado;
+            this.telaInicial = telaInicial;
         }
         ItensVendidos ItensVendidos = new ItensVendidos();
 
@@ -146,6 +148,7 @@ namespace Fenix_Shop.Telas
         {
             try
             {
+
                 if (!ItensVendidos.ObterLista().Any())
                 {
                     MessageBox.Show("Nenhuma lista encontrada");
@@ -157,9 +160,9 @@ namespace Fenix_Shop.Telas
 
                 if (ItensVendidos.CadastrarItensVendidos())
                 {
-                   
-
-                        dataGridView1Vendas.Rows.Clear();
+                    
+                    telaInicial.AtualizarVendas();
+                    dataGridView1Vendas.Rows.Clear();
                     label11ValorTotalCompra.Text = "0,00";
                     label11QuantidadeVendidos.Text = "0";
                     textBoxQuantidade.Clear();

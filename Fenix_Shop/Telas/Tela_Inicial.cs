@@ -15,16 +15,26 @@ namespace Fenix_Shop.Telas
     public partial class Tela_Inicial : UserControl
     {
         private UsuarioLogado usuariologado;
+        ItensVendidos itensVendidos = new ItensVendidos(); 
 
-        public  Label labeQtVendidos()
-        { return labelNumeroDeCadastrados; }
         public Tela_Inicial(UsuarioLogado usuariologado)
         {
             InitializeComponent();
             this.usuariologado = usuariologado;
         }
-
        
+        public bool  AtualizarVendas()
+        {
+              labelVendidos.Text = itensVendidos.QtVendidas().ToString();
+            labelVendidos.Invalidate();
+            labelVendidos.Update();
+            return true;
+        }
+            
+        
+            
+        
+
         private void CadastroProdutos_Click(object sender, EventArgs e)
         {
             CadastroProdutos cadastro = new CadastroProdutos();
@@ -59,7 +69,7 @@ namespace Fenix_Shop.Telas
             panel5IncialControler.Controls.Clear();
             PanelInicio.Dock = DockStyle.Fill;
             panel5IncialControler.Controls.Add(PanelInicio);
-                            
+
             Inicio.InactiveColor = Color.Green;
             ButtonCadastroProduto.InactiveColor = Color.SlateBlue;
             button1LIstaProdutos.InactiveColor = Color.SlateBlue;
@@ -77,7 +87,7 @@ namespace Fenix_Shop.Telas
             panel5IncialControler.Controls.Clear();
             lista.Dock = DockStyle.Fill;
             panel5IncialControler.Controls.Add(lista);
-            
+
             button1LIstaProdutos.InactiveColor = Color.Green;
             ButtonCadastroProduto.InactiveColor = Color.SlateBlue;
             Inicio.InactiveColor = Color.SlateBlue;
@@ -93,7 +103,7 @@ namespace Fenix_Shop.Telas
             panel5IncialControler.Controls.Clear();
             relatorio.Dock = DockStyle.Fill;
             panel5IncialControler.Controls.Add(relatorio);
-           
+
             button2Relatorio.InactiveColor = Color.Green;
             ButtonCadastroProduto.InactiveColor = Color.SlateBlue;
             button1LIstaProdutos.InactiveColor = Color.SlateBlue;
@@ -104,12 +114,12 @@ namespace Fenix_Shop.Telas
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Vendas vendas = new Vendas(usuariologado);
+            Vendas vendas = new Vendas(usuariologado,this);
 
             panel5IncialControler.Controls.Clear();
             vendas.Dock = DockStyle.Fill;
             panel5IncialControler.Controls.Add(vendas);
-           
+
             button3Vender.InactiveColor = Color.Green;
             ButtonCadastroProduto.InactiveColor = Color.SlateBlue;
             button1LIstaProdutos.InactiveColor = Color.SlateBlue;
@@ -125,7 +135,7 @@ namespace Fenix_Shop.Telas
             panel5IncialControler.Controls.Clear();
             usuario.Dock = DockStyle.Fill;
             panel5IncialControler.Controls.Add(usuario);
-           
+
             button4CadastroUsuario.InactiveColor = Color.Green;
             ButtonCadastroProduto.InactiveColor = Color.SlateBlue;
             button1LIstaProdutos.InactiveColor = Color.SlateBlue;
@@ -136,14 +146,16 @@ namespace Fenix_Shop.Telas
 
         private void Tela_Inicial_Load(object sender, EventArgs e)
         {
-            ItensVendidos itensVendidos = new ItensVendidos();
+
             Inicio.InactiveColor = Color.Green;
-            labelNumeroDeCadastrados.Text = itensVendidos.QuantidadeVendidas().ToString();
+            AtualizarVendas();
             labelusuario.Text = usuariologado.Nome;
             label4NivelUsuario.Text = usuariologado.Nivelusuario;
             CadastroDeProduto.Id = usuariologado.Id;
             label6NomeDaLoja.Text = usuariologado.NomeLoja;
             pictureBoxTelaInicial.Image = ConverterImagem(usuariologado.Foto);
+            
+           
         }
 
         private void timerRelogio_Tick(object sender, EventArgs e)
@@ -151,8 +163,5 @@ namespace Fenix_Shop.Telas
             label6Data.Text = DateTime.Now.ToString("dd/MM/yyyy");
             label7Hora.Text = DateTime.Now.ToString("HH:mm:ss");
         }
-
-       
-
     }
 }

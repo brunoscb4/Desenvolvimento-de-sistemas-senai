@@ -100,7 +100,7 @@ namespace Fenix_Shop.programação
                 }
             }
 
-        public int QuantidadeVendidas()
+        public int QtVendidas()
         {
             try
             { 
