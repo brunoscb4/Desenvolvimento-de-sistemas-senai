@@ -193,7 +193,7 @@ namespace Fenix_Shop.Telas
             }
             else
             {
-                dataGridViewProdutos.DataSource =null;
+                dataGridViewProdutos.DataSource = null;
                 dataGridViewProdutos.DataSource = produto.BuscarPorNome(textBoxBuscarNome.Text);
             }
 

@@ -25,9 +25,15 @@ namespace Fenix_Shop.Telas
        
         public bool  AtualizarVendas()
         {
-              labelVendidos.Text = itensVendidos.QtVendidas().ToString();
+            labelVendidos.Text = itensVendidos.QtVendidas().ToString();
+            labelNumeroDeCadastrados.Text = itensVendidos.QtItemsCadastrados().ToString();
+            labelSemEstoque.Text = CadastroDeProduto.PrSemEstoque().ToString();
+            
+
             labelVendidos.Invalidate();
             labelVendidos.Update();
+            labelNumeroDeCadastrados.Invalidate();
+            labelNumeroDeCadastrados.Update();
             return true;
         }
             
@@ -37,7 +43,7 @@ namespace Fenix_Shop.Telas
 
         private void CadastroProdutos_Click(object sender, EventArgs e)
         {
-            CadastroProdutos cadastro = new CadastroProdutos();
+            CadastroProdutos cadastro = new CadastroProdutos(this);
             panel5IncialControler.Controls.Clear();
             cadastro.Dock = DockStyle.Fill;
             panel5IncialControler.Controls.Add(cadastro);

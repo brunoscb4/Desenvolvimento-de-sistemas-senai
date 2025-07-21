@@ -113,9 +113,11 @@ namespace Fenix_Shop.programação
                 {
                     connection.Open();
 
-                    string select = @"SELECT u.Nome AS USUARIO, p.Nome AS PRODUTO,p.Id AS CODIGO, p.ValorDeVenda AS VALOR,e.Quantidade AS ESTOQUE FROM Usuario u 
+                    string select = @"SELECT u.Nome AS USUARIO, p.Nome AS PRODUTO,p.Id AS CODIGO, p.ValorDeVenda AS VALOR,
+                   SUM(CASE WHEN Tipo = 'ENTRADA' THEN Quantidade ELSE 0 END) -
+                   SUM(CASE WHEN Tipo = 'SAIDA' THEN Quantidade ELSE 0 END) AS ESTOQUE FROM Usuario u 
                     JOIN CadastroProduto p ON p.IdUsuario = u.Id
-                    JOIN Estoque e ON e.IdProduto = p.Id ";
+                    JOIN Estoque e ON e.IdProduto = p.Id  GROUP BY IdProduto " ;
 
                     DataTable dt = new DataTable();
 
@@ -132,6 +134,46 @@ namespace Fenix_Shop.programação
                 MessageBox.Show("Erro ao aceesar dados " + ex.Message);
                 return null;
             }
+        }
+
+        public static int  PrSemEstoque()
+        {
+            try
+            {
+                using ( SQLiteConnection connection = new SQLiteConnection(BancoSQLite.ConexaoSQlite))
+                {
+                    connection.Open();
+                    string SemEstoque = @"SELECT COUNT(*) FROM ( 
+                                       SELECT IdProduto 
+                                        FROM Estoque
+                                        GROUP BY IdProduto
+                                        HAVING SUM(CASE WHEN Tipo = 'ENTRADA' THEN Quantidade ELSE 0 END) -
+                                          SUM(CASE WHEN Tipo = 'SAIDA' THEN Quantidade ELSE 0 END  ) = 0 
+                                          )";
+                    using (var cmd = new SQLiteCommand(SemEstoque,connection))
+                    {
+                        object resultado = cmd.ExecuteScalar();
+                        if (resultado != DBNull.Value && resultado != null)
+                        {
+                            return Convert.ToInt32(resultado);
+                        }
+                        else
+                        {
+                            return 0;
+                        }
+                    }
+
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Erro ao buscar produto sem estoque" + ex.Message);
+                return 0;   
+            }
+        
         }
 
 

@@ -11,7 +11,8 @@ namespace Fenix_Shop.programação
     {
         private static int iduser;
         private decimal valorTotal;
-        private string formaPagamento = "DINHEIRO";  
+        private string formaPagamento = "DINHEIRO";
+        private string saida {  get; set; }
         private List<ListVendas> lista { get; set; } = new List<ListVendas> { };
       
         public bool AddProduto (ListVendas feitas)
@@ -51,6 +52,8 @@ namespace Fenix_Shop.programação
         public static int IdUser { get { return iduser; } set { iduser = value; } }   
         public decimal ValorTotal { get { return valorTotal; } set { valorTotal = value; } }
         public string FormaPagamento { get { return formaPagamento; } set { formaPagamento = value; } }
+
+        
           
         
         
@@ -65,7 +68,7 @@ namespace Fenix_Shop.programação
                         {
                             string insert = @"INSERT INTO Vendas(IdUsuario,Total,FormaDePagamento) 
                                           VALUES(@IdUser,@ValorTotal,@FormaPagamento) RETURNING Id";
-                            using (var cmd = new SQLiteCommand(insert, connection))
+                            using (var cmd = new SQLiteCommand(insert, connection,transaction))
                             {
                                 cmd.Parameters.AddWithValue("@IdUser", IdUser);
                                 cmd.Parameters.AddWithValue("@ValorTotal", ValorTotal);
@@ -75,18 +78,31 @@ namespace Fenix_Shop.programação
                                 string insertItensVendidos = @"INSERT INTO ItensVendidos(IdVenda,IdProduto,Quantidade,PrecoUnitario) 
                                                             VALUES(@IdVenda,@IdProduto,@Quantidade,@PrecoUnitario)";
 
+                                string estoque = @"INSERT INTO Estoque( IdProduto,Tipo ,Quantidade,ValorUnitario) VALUES (@IdProduto,@saida,@Quantidade,@PrecoUnitario)";
                             foreach (var item in lista)
                             {
-                                using (var cmdItens = new SQLiteCommand(insertItensVendidos, connection))
+                                using (var cmdItens = new SQLiteCommand(insertItensVendidos, connection,transaction))
                                 {
-                                    cmdItens.Parameters.AddWithValue("@IdVenda", IdVendas);
-                                    cmdItens.Parameters.AddWithValue("@IdProduto", item.Id);
-                                    cmdItens.Parameters.AddWithValue("@Quantidade", item.Quantidade);
-                                    cmdItens.Parameters.AddWithValue("@PrecoUnitario", item.Valor);
-                                    cmdItens.ExecuteNonQuery();
+                                    using (var cmdSaida = new SQLiteCommand(estoque, connection, transaction))
+                                    {
+                                        
+
+                                        cmdItens.Parameters.AddWithValue("@IdVenda", IdVendas);
+                                        cmdItens.Parameters.AddWithValue("@IdProduto", item.Id);
+                                        cmdItens.Parameters.AddWithValue("@Quantidade", item.Quantidade);
+                                        cmdItens.Parameters.AddWithValue("@PrecoUnitario", item.Valor);
+                                        cmdItens.ExecuteNonQuery();
+                                        
+                                        cmdSaida.Parameters.AddWithValue("@IdProduto",item.Id);
+                                        cmdSaida.Parameters.AddWithValue("@saida", saida = "SAIDA");
+                                        cmdSaida.Parameters.AddWithValue("@Quantidade",item.Quantidade);
+                                        cmdSaida.Parameters.AddWithValue("@PrecoUnitario",item.Valor);
+                                        cmdSaida.ExecuteNonQuery();
+
+                                    }
                                 }
                             }
-                               
+                                                                                
                             }
                             transaction.Commit();
                         }
@@ -128,13 +144,48 @@ namespace Fenix_Shop.programação
             }
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                MessageBox.Show("Erro ao buscar Quantidade "+ ex.Message);
+                return 0;
             }
            
         }
+
+        public int QtItemsCadastrados()
+        {
+            try
+            {
+                using (SQLiteConnection connection = new SQLiteConnection(BancoSQLite.ConexaoSQlite))
+                {
+                    connection.Open();
+
+                    string Cadastrados = @"SELECT COUNT(*) FROM CadastroProduto";
+                    using (SQLiteCommand cmd = new SQLiteCommand(Cadastrados,connection))
+                    {
+                        object resultado = cmd.ExecuteScalar() ;
+                        if (resultado != DBNull.Value && resultado != null)
+                        {
+                            return Convert.ToInt32(resultado);
+                        }
+                        else
+                        {
+                            return 0;
+                        }
+                        
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Erro ao fazer a contagem produtos cadastrados " +ex.Message);
+                return 0;
+            }
+        }
+
+
         
     }
 }

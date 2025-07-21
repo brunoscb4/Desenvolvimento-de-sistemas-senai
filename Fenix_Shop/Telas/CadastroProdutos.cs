@@ -17,9 +17,11 @@ namespace Fenix_Shop.Telas
 
     public partial class CadastroProdutos : UserControl
     {
-        public CadastroProdutos()
+        private Tela_Inicial tela_Inicial;
+        public CadastroProdutos(Tela_Inicial tela_Inicial)
         {
             InitializeComponent();
+            this.tela_Inicial = tela_Inicial;
             this.Resize += new System.EventHandler(this.CadastroProdutos_Resize);
         }
         public static byte[] ConverterImagemParaBytes(Image imagem)
@@ -42,7 +44,8 @@ namespace Fenix_Shop.Telas
             TextBoxCodigoBarras.Clear();
             TextBoxSku.Clear();
             TextBoxEstoqueMinimo.Clear();
-            pictureBoxCadastroProduto = null;
+            
+            pictureBoxCadastroProduto.Image = null;
 
             textBox1Nome.Focus();
         }
@@ -91,7 +94,7 @@ namespace Fenix_Shop.Telas
 
 
                     produto.CadastroProdutoEstoque();
-
+                    tela_Inicial.AtualizarVendas();
                     MessageBox.Show("Cadastro realizado..");
 
                     LimparCampos();
