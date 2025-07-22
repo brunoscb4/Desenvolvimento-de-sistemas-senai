@@ -140,6 +140,7 @@
             button1.TabIndex = 12;
             button1.Text = "Filtrar";
             button1.TextAlignment = StringAlignment.Center;
+            button1.Click += button1_Click;
             // 
             // bigLabel4
             // 
@@ -523,6 +524,7 @@
             Margin = new Padding(3, 4, 3, 4);
             Name = "RelatorioVendas";
             Size = new Size(1058, 893);
+            Load += RelatorioVendas_Load;
             parrotGradientPanel1.ResumeLayout(false);
             parrotGradientPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();

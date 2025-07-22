@@ -89,6 +89,7 @@ namespace Fenix_Shop.programação
                  IdProduto INTEGER NOT NULL,
                  Quantidade INTEGER NOT NULL CHECK (Quantidade > 0),
                  PrecoUnitario REAL NOT NULL,
+                 DataDaMovimentacao DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
                  FOREIGN KEY (IdVenda) REFERENCES Vendas (Id) ON DELETE CASCADE,
                  FOREIGN KEY (IdProduto) REFERENCES CadastroProduto(Id)
 

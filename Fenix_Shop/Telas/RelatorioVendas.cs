@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Fenix_Shop.programação;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,14 +13,37 @@ namespace Fenix_Shop.Telas
 {
     public partial class RelatorioVendas : UserControl
     {
+        ItensVendidos itensVendidos = new ItensVendidos();
         public RelatorioVendas()
         {
             InitializeComponent();
+
         }
 
         private void label16PagamentosCredito_Click(object sender, EventArgs e)
         {
 
         }
+        public bool AtualizarRelatorio()
+        {
+            label9VendasRealizadas.Text = itensVendidos.VendasRealizadas().ToString();
+            label11ConvercoesDeVendas.Text = itensVendidos.TotalVendidos().ToString("C2");
+            label13ItensVendidos.Text = itensVendidos.QtVendidas().ToString();
+            label12MediaDeVendas.Text = itensVendidos.TotalCustoProdutos().ToString("C2");
+            return true;
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RelatorioVendas_Load(object sender, EventArgs e)
+        {
+            AtualizarRelatorio();
+            DateTime inicioMes = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+            dateTimePickerInicio.Text = inicioMes.ToString("dd/MM/yyyy");
+        }
+
+        
     }
 }

@@ -13,8 +13,13 @@ namespace Fenix_Shop.programação
         private decimal valorTotal;
         private string formaPagamento = "DINHEIRO";
         private string saida {  get; set; }
+        
+
+      public static int IdUser { get { return iduser; } set { iduser = value; } }   
+        public decimal ValorTotal { get { return valorTotal; } set { valorTotal = value; } }
+        public string FormaPagamento { get { return formaPagamento; } set { formaPagamento = value; } }
+        
         private List<ListVendas> lista { get; set; } = new List<ListVendas> { };
-      
         public bool AddProduto (ListVendas feitas)
         {
             if (feitas != null)
@@ -49,9 +54,7 @@ namespace Fenix_Shop.programação
             }
            
         }
-        public static int IdUser { get { return iduser; } set { iduser = value; } }   
-        public decimal ValorTotal { get { return valorTotal; } set { valorTotal = value; } }
-        public string FormaPagamento { get { return formaPagamento; } set { formaPagamento = value; } }
+        
 
         
           
@@ -185,6 +188,105 @@ namespace Fenix_Shop.programação
             }
         }
 
+        public decimal TotalVendidos()
+        {
+            try
+            {
+                using (SQLiteConnection connetion = new SQLiteConnection(BancoSQLite.ConexaoSQlite))
+                {
+                    connetion.Open();
+
+                    string Totalvendods = @"SELECT SUM(Total) FROM Vendas";
+
+                    using (SQLiteCommand cmd = new SQLiteCommand(Totalvendods, connetion))
+                    {
+                        object resultado = cmd.ExecuteScalar();
+                        if (resultado != DBNull.Value && resultado != null)
+                        {
+                            return Convert.ToDecimal(resultado);
+                        }
+                        else
+                        {
+                            return 0;
+                        }
+                    }
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao buscar valor total vendido "+ ex.Message);
+                return 0;
+            }
+        }
+
+        public int VendasRealizadas()
+        {
+            try
+            {
+                using ( SQLiteConnection connection = new SQLiteConnection(BancoSQLite.ConexaoSQlite))
+                {
+                    connection.Open();
+                    string VendasRealizadas = @"SELECT COUNT(*) FROM Vendas";
+
+                    using (SQLiteCommand cmd = new SQLiteCommand(VendasRealizadas, connection))
+                    {
+                        object resultado = cmd.ExecuteScalar();
+                        if (resultado != DBNull.Value && resultado != null)
+                        {
+                            return Convert.ToInt32(resultado);
+                        }
+                        else
+                        {
+                            return 0;
+                        }
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Erro ao buscar vendas realizadas " + ex.Message);
+                return 0;
+            }
+        }
+
+
+        public decimal TotalCustoProdutos()
+        {
+            try {
+                using (SQLiteConnection connection = new SQLiteConnection(BancoSQLite.ConexaoSQlite))
+                {
+                    connection.Open();
+
+                    string TotalCusto = @"SELECT SUM(c.ValorDeCusto * i.Quantidade) 
+                                    FROM ItensVendidos i
+                                    JOIN CadastroProduto c ON i.IdProduto = c.Id ";
+
+                    using (SQLiteCommand cmd = new SQLiteCommand(TotalCusto, connection))
+                    {
+                        object resultado = cmd.ExecuteScalar();
+                        if (resultado != DBNull.Value && resultado != null)
+                        {
+                            return Convert.ToDecimal(resultado);
+                        }
+                        else
+                        { return 0; }
+                    }
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao buscar total valor do valor de custo " + ex.Message);
+                return 0;
+            }
+            }
+       
+	
 
         
     }
