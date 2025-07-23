@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -36,6 +37,8 @@ namespace Fenix_Shop.Telas
 
         private void Vendas_Load(object sender, EventArgs e)
         {
+            label11ValorProduto.Text = "0,00";
+            label11ValorTotalCompra.Text = "0,00";
             CadastroDeProduto cadastroDeProduto = new CadastroDeProduto();
             dataGridViewProdutos.DataSource = cadastroDeProduto.ProdutosRegistradosVendas();
             dataGridViewProdutos.RowTemplate.Height = 40;
@@ -59,7 +62,7 @@ namespace Fenix_Shop.Telas
             {
                 label11NomeDoProduto.Text = dataGridViewProdutos.Rows[e.RowIndex].Cells["Nome"].Value.ToString();
                 label11NumeroDoId.Text = dataGridViewProdutos.Rows[e.RowIndex].Cells["Id"].Value.ToString();
-                label11ValorProduto.Text = Convert.ToDouble(dataGridViewProdutos.Rows[e.RowIndex].Cells["ValorDeVenda"].Value).ToString("F2");
+                label11ValorProduto.Text = Convert.ToDouble(dataGridViewProdutos.Rows[e.RowIndex].Cells["ValorDeVenda"].Value).ToString("C2");
 
                 if (dataGridViewProdutos.Rows[e.RowIndex].Cells["Foto"].Value != DBNull.Value)
                 {
@@ -83,27 +86,30 @@ namespace Fenix_Shop.Telas
             try
             {
                 if (!string.IsNullOrEmpty(textBoxQuantidade.Text) && int.TryParse(textBoxQuantidade.Text, out int quantidade) && quantidade > 0)
+                { 
+                    string text = label11ValorProduto.Text.Replace("R$", "").Trim();
+                    decimal valor = Convert.ToDecimal(text, new CultureInfo("pt-BR"));
+
+                decimal total = (valor * quantidade);
+
+                ListVendas listVendas = new ListVendas
                 {
-                    double total = double.Parse(label11ValorProduto.Text) * quantidade;
 
-                    ListVendas listVendas = new ListVendas
-                    {
+                    Id = Convert.ToInt32(label11NumeroDoId.Text),
+                    Produto = label11NomeDoProduto.Text,
+                    Quantidade = Convert.ToInt32(textBoxQuantidade.Text),
+                    Valor = valor,
+                    Total = decimal.Parse(total.ToString("F2")),
 
-                        Id = Convert.ToInt32(label11NumeroDoId.Text),
-                        Produto = label11NomeDoProduto.Text,
-                        Quantidade = Convert.ToInt32(textBoxQuantidade.Text),
-                        Valor = decimal.Parse(label11ValorProduto.Text),
-                        Total = decimal.Parse(total.ToString("F2")),
-
-                    };
-                    ItensVendidos.AddProduto(listVendas);
-                    ItensVendidos.ExibirVendas(dataGridView1Vendas);
-                    label11ValorTotalCompra.Text = ItensVendidos.TotalVenda().ToString("F2");
-                    label11QuantidadeVendidos.Text = ItensVendidos.QuantidadeVendidos().ToString();
-                    textBoxQuantidade.Clear();
-                    textBoxQuantidade.Focus();
-                }
-
+                };
+                ItensVendidos.AddProduto(listVendas);
+                ItensVendidos.ExibirVendas(dataGridView1Vendas);
+                label11ValorTotalCompra.Text = ItensVendidos.TotalVenda().ToString("C2");
+                label11QuantidadeVendidos.Text = ItensVendidos.QuantidadeVendidos().ToString();
+                textBoxQuantidade.Clear();
+                textBoxQuantidade.Focus();
+            }
+            
 
             }
             catch (Exception ex)
@@ -120,18 +126,18 @@ namespace Fenix_Shop.Telas
             if (e.RowIndex >= 0 && dataGridViewProdutos != null)
             {
                 DataGridViewRow row = dataGridViewProdutos.Rows[e.RowIndex];
-                if (row.Cells["Nome"].Value != DBNull.Value && row.Cells["Id"].Value != DBNull.Value && row.Cells["ValorDeVenda"].Value != DBNull.Value)
+                if (row.Cells["PRODUTO"].Value != DBNull.Value && row.Cells["CODIGO"].Value != DBNull.Value && row.Cells["VALOR"].Value != DBNull.Value)
                 {
 
 
-                    label11NomeDoProduto.Text = dataGridViewProdutos.Rows[e.RowIndex].Cells["Nome"].Value.ToString();
-                    label11NumeroDoId.Text = dataGridViewProdutos.Rows[e.RowIndex].Cells["Id"].Value.ToString();
-                    label11ValorProduto.Text = Convert.ToDouble(dataGridViewProdutos.Rows[e.RowIndex].Cells["ValorDeVenda"].Value).ToString("F2");
+                    label11NomeDoProduto.Text = dataGridViewProdutos.Rows[e.RowIndex].Cells["PRODUTO"].Value.ToString();
+                    label11NumeroDoId.Text = dataGridViewProdutos.Rows[e.RowIndex].Cells["CODIGO"].Value.ToString();
+                    label11ValorProduto.Text = Convert.ToDouble(dataGridViewProdutos.Rows[e.RowIndex].Cells["VALOR"].Value).ToString("C2");
 
                     if (dataGridViewProdutos.Rows[e.RowIndex].Cells["Foto"].Value != DBNull.Value)
                     {
 
-                        byte[] imageBytes = (byte[])dataGridViewProdutos.Rows[e.RowIndex].Cells["Foto"].Value;
+                        byte[] imageBytes = (byte[])dataGridViewProdutos.Rows[e.RowIndex].Cells["FOTO"].Value;
 
 
                         using (MemoryStream ms = new MemoryStream(imageBytes))
@@ -154,8 +160,9 @@ namespace Fenix_Shop.Telas
                     MessageBox.Show("Nenhuma lista encontrada");
                     return;
                 }
-
-                ItensVendidos.ValorTotal = decimal.Parse(label11ValorTotalCompra.Text);
+                string texte = label11ValorTotalCompra.Text.Replace("R$", "").Replace(".", "").Trim();
+                decimal valor = Convert.ToDecimal(texte, new CultureInfo("pt-BR"));
+                ItensVendidos.ValorTotal = valor;
                 ItensVendidos.IdUser = usuariologado.Id;
 
                 if (ItensVendidos.CadastrarItensVendidos())
@@ -166,7 +173,7 @@ namespace Fenix_Shop.Telas
                     label11ValorTotalCompra.Text = "0,00";
                     label11QuantidadeVendidos.Text = "0";
                     textBoxQuantidade.Clear();
-                    
+                    ItensVendidos.ApagarLista();
                 }
                 else
                 {

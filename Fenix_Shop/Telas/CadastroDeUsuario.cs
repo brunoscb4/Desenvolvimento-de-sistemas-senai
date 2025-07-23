@@ -172,12 +172,16 @@ namespace Fenix_Shop.Telas
 
         private void TextBoxMaskTelefone_Click(object sender, EventArgs e)
         {
-            TextBoxMaskTelefone.Select(0, 0);
+            TextBoxMaskTelefone.SelectionStart = TextBoxMaskTelefone.Text.Length;
+            TextBoxMaskTelefone.SelectionLength = 0;
+            TextBoxMaskTelefone.Focus();
         }
 
         private void TextBoxMasCpf_Click(object sender, EventArgs e)
         {
-            TextBoxMasCpf.Select(0, 0);
+            TextBoxMasCpf.SelectionStart = TextBoxMasCpf.Text.Length;
+            TextBoxMasCpf.SelectionLength = 0;
+            TextBoxMasCpf.Focus();
         }
     }
 }

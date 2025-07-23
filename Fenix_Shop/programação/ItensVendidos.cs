@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SQLite;
+using System.Data;
+using System.Globalization;
+using System.Text.RegularExpressions;
 
 namespace Fenix_Shop.programação
 {
@@ -42,6 +45,10 @@ namespace Fenix_Shop.programação
         {
             return lista.Sum(i => i.Quantidade );
         }
+        public void ApagarLista()
+        {
+            lista.Clear();
+        }
         public void ExibirVendas(DataGridView dataGridView)
         {
             if (dataGridView == null) return;
@@ -74,7 +81,7 @@ namespace Fenix_Shop.programação
                             using (var cmd = new SQLiteCommand(insert, connection,transaction))
                             {
                                 cmd.Parameters.AddWithValue("@IdUser", IdUser);
-                                cmd.Parameters.AddWithValue("@ValorTotal", ValorTotal);
+                                cmd.Parameters.AddWithValue("@ValorTotal", ValorTotal.ToString("F2"));
                                 cmd.Parameters.AddWithValue("@FormaPagamento", FormaPagamento);
 
                                 int IdVendas = Convert.ToInt32(cmd.ExecuteScalar());
@@ -93,13 +100,13 @@ namespace Fenix_Shop.programação
                                         cmdItens.Parameters.AddWithValue("@IdVenda", IdVendas);
                                         cmdItens.Parameters.AddWithValue("@IdProduto", item.Id);
                                         cmdItens.Parameters.AddWithValue("@Quantidade", item.Quantidade);
-                                        cmdItens.Parameters.AddWithValue("@PrecoUnitario", item.Valor);
+                                        cmdItens.Parameters.AddWithValue("@PrecoUnitario", item.Valor.ToString(CultureInfo.InvariantCulture) );
                                         cmdItens.ExecuteNonQuery();
                                         
                                         cmdSaida.Parameters.AddWithValue("@IdProduto",item.Id);
                                         cmdSaida.Parameters.AddWithValue("@saida", saida = "SAIDA");
                                         cmdSaida.Parameters.AddWithValue("@Quantidade",item.Quantidade);
-                                        cmdSaida.Parameters.AddWithValue("@PrecoUnitario",item.Valor);
+                                        cmdSaida.Parameters.AddWithValue("@PrecoUnitario",item.Valor.ToString(CultureInfo.InvariantCulture));
                                         cmdSaida.ExecuteNonQuery();
 
                                     }
@@ -196,14 +203,16 @@ namespace Fenix_Shop.programação
                 {
                     connetion.Open();
 
-                    string Totalvendods = @"SELECT SUM(Total) FROM Vendas";
+                    string Totalvendods = @"SELECT COALESCE (SUM(CAST(Total AS REAL)),0)FROM Vendas";
 
                     using (SQLiteCommand cmd = new SQLiteCommand(Totalvendods, connetion))
                     {
                         object resultado = cmd.ExecuteScalar();
                         if (resultado != DBNull.Value && resultado != null)
                         {
-                            return Convert.ToDecimal(resultado);
+                            decimal valor = Convert.ToDecimal(resultado);
+                            
+                            return Math.Round(valor, 2);
                         }
                         else
                         {
@@ -261,7 +270,7 @@ namespace Fenix_Shop.programação
                 {
                     connection.Open();
 
-                    string TotalCusto = @"SELECT SUM(c.ValorDeCusto * i.Quantidade) 
+                    string TotalCusto = @"SELECT SUM(c.ValorDeCusto * i.Quantidade)
                                     FROM ItensVendidos i
                                     JOIN CadastroProduto c ON i.IdProduto = c.Id ";
 
@@ -284,10 +293,42 @@ namespace Fenix_Shop.programação
                 MessageBox.Show("Erro ao buscar total valor do valor de custo " + ex.Message);
                 return 0;
             }
-            }
-       
-	
+        }
 
-        
+        public DataTable TotalPorProduto()
+        {
+            try
+            {
+                using (SQLiteConnection connection = new SQLiteConnection(BancoSQLite.ConexaoSQlite))
+                {
+                    connection.Open();
+
+                  
+                    DataTable dt = new DataTable();  string TotalCusto = @"SELECT c.Foto AS FOTO ,c.Nome AS PRODUTO,SUM(i.Quantidade ) AS VENDIDOS,c.ValorDeVenda AS VALOR,
+                                    SUM (CAST(c.ValorDeVenda AS REAL) * i.Quantidade)  AS TOTAL
+                                    FROM ItensVendidos i
+                                    JOIN CadastroProduto c ON i.IdProduto = c.Id
+                                    GROUP BY c.Id";
+                    using (SQLiteCommand cmd = new SQLiteCommand(TotalCusto, connection))
+                    {
+                        using (var adapter = new SQLiteDataAdapter(cmd))
+                        {
+                            adapter.Fill(dt);
+                            return dt;
+                        }
+                        
+                    }
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao buscar total valor do valor de custo " + ex.Message);
+                return null;
+            }
+        }
+
+
     }
 }

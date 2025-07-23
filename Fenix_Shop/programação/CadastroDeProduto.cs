@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SQLite;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -70,8 +71,8 @@ namespace Fenix_Shop.programação
                             cmd.Parameters.AddWithValue("@Categoria", Categoria);
                             cmd.Parameters.AddWithValue("@Marca", Marca);
                             cmd.Parameters.AddWithValue("@Descricao", Descricao);
-                            cmd.Parameters.AddWithValue("@ValorCusto", ValorDeCustoFormatado.ToString("F2"));
-                            cmd.Parameters.AddWithValue("@ValorVenda", ValorDeVendaFormatado.ToString("F2"));
+                            cmd.Parameters.AddWithValue("@ValorCusto", ValorDeCustoFormatado.ToString(CultureInfo.InvariantCulture));
+                            cmd.Parameters.AddWithValue("@ValorVenda", ValorDeVendaFormatado.ToString(CultureInfo.InvariantCulture));
                             cmd.Parameters.AddWithValue("@CodigoBarras", CodigoBarras);
                             cmd.Parameters.AddWithValue("@Sku", Sku);
                             cmd.Parameters.AddWithValue("@Imagem", Imagem);
@@ -84,7 +85,7 @@ namespace Fenix_Shop.programação
                                 cmdEstoque.Parameters.AddWithValue("@IdProduto", idProduto);
                                 cmdEstoque.Parameters.AddWithValue("@MovimentacaoEstoque", MovimentacaoEstoque);
                                 cmdEstoque.Parameters.AddWithValue("@Estoque", Estoque);
-                                cmdEstoque.Parameters.AddWithValue("@ValorVenda", ValorVenda);
+                                cmdEstoque.Parameters.AddWithValue("@ValorVenda", ValorVenda.ToString(CultureInfo.InvariantCulture));
 
                                 cmdEstoque.ExecuteNonQuery();
                             }
@@ -185,7 +186,7 @@ namespace Fenix_Shop.programação
                 {
                     connection.Open();
 
-                    string select = @"SELECT Id,Nome,Marca,ValorDeVenda,Foto FROM CadastroProduto";
+                    string select = @"SELECT Id AS CODIGO,Nome AS PRODUTO ,Marca AS MARCA,ValorDeVenda AS VALOR,Foto AS FOTO FROM CadastroProduto";
 
                     DataTable dt = new DataTable();
 

@@ -33,8 +33,8 @@
             label2 = new Label();
             label1 = new Label();
             button1 = new ReaLTaiizor.Controls.Button();
-            dataGridView1 = new DataGridView();
             TextBoxCodigoBuscar = new MaskedTextBox();
+            dataGridView1 = new DataGridView();
             PanelListaProdutos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -113,20 +113,6 @@
             button1.TextAlignment = StringAlignment.Center;
             button1.Click += button1_Click;
             // 
-            // dataGridView1
-            // 
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView1.BackgroundColor = Color.White;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Dock = DockStyle.Bottom;
-            dataGridView1.GridColor = Color.Gray;
-            dataGridView1.Location = new Point(0, 98);
-            dataGridView1.Margin = new Padding(3, 2, 3, 2);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(926, 572);
-            dataGridView1.TabIndex = 4;
-            // 
             // TextBoxCodigoBuscar
             // 
             TextBoxCodigoBuscar.BorderStyle = BorderStyle.FixedSingle;
@@ -137,6 +123,20 @@
             TextBoxCodigoBuscar.Size = new Size(135, 23);
             TextBoxCodigoBuscar.TabIndex = 9;
             TextBoxCodigoBuscar.Click += TextBoxCodigoBuscar_Click;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.BackgroundColor = Color.White;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.GridColor = Color.Gray;
+            dataGridView1.Location = new Point(0, 81);
+            dataGridView1.Margin = new Padding(3, 2, 3, 2);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.Size = new Size(926, 589);
+            dataGridView1.TabIndex = 4;
             // 
             // ListaProdutos
             // 

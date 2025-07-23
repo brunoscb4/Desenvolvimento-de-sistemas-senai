@@ -33,8 +33,6 @@
             textBox3Marca = new TextBox();
             textBox2Categoria = new TextBox();
             textBox1Nome = new TextBox();
-            label12 = new Label();
-            dateTimePicker1 = new DateTimePicker();
             label11 = new Label();
             TextBoxEstoqueMinimo = new MaskedTextBox();
             label10 = new Label();
@@ -67,8 +65,6 @@
             PanelCadastroProduto.Controls.Add(textBox3Marca);
             PanelCadastroProduto.Controls.Add(textBox2Categoria);
             PanelCadastroProduto.Controls.Add(textBox1Nome);
-            PanelCadastroProduto.Controls.Add(label12);
-            PanelCadastroProduto.Controls.Add(dateTimePicker1);
             PanelCadastroProduto.Controls.Add(label11);
             PanelCadastroProduto.Controls.Add(TextBoxEstoqueMinimo);
             PanelCadastroProduto.Controls.Add(label10);
@@ -146,29 +142,6 @@
             textBox1Nome.Name = "textBox1Nome";
             textBox1Nome.Size = new Size(253, 27);
             textBox1Nome.TabIndex = 24;
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.BackColor = Color.Transparent;
-            label12.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label12.Location = new Point(622, 504);
-            label12.MaximumSize = new Size(220, 100);
-            label12.MinimumSize = new Size(110, 20);
-            label12.Name = "label12";
-            label12.Size = new Size(110, 20);
-            label12.TabIndex = 23;
-            label12.Text = "Data:";
-            // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dateTimePicker1.Format = DateTimePickerFormat.Short;
-            dateTimePicker1.Location = new Point(622, 539);
-            dateTimePicker1.MaximumSize = new Size(350, 33);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(186, 22);
-            dateTimePicker1.TabIndex = 22;
             // 
             // label11
             // 
@@ -450,8 +423,6 @@
         private Label label9;
         private MaskedTextBox TextBoxEstoqueMinimo;
         private Label label10;
-        private Label label12;
-        private DateTimePicker dateTimePicker1;
         private Label label11;
         private TextBox textBox3Marca;
         private TextBox textBox2Categoria;

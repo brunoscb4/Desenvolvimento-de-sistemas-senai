@@ -97,11 +97,10 @@
             parrotGradientPanel1.Dock = DockStyle.Fill;
             parrotGradientPanel1.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
             parrotGradientPanel1.Location = new Point(0, 0);
-            parrotGradientPanel1.Margin = new Padding(3, 4, 3, 4);
             parrotGradientPanel1.Name = "parrotGradientPanel1";
             parrotGradientPanel1.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
             parrotGradientPanel1.PrimerColor = Color.White;
-            parrotGradientPanel1.Size = new Size(1058, 893);
+            parrotGradientPanel1.Size = new Size(926, 670);
             parrotGradientPanel1.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
             parrotGradientPanel1.Style = ReaLTaiizor.Controls.ParrotGradientPanel.GradientStyle.Horizontal;
             parrotGradientPanel1.TabIndex = 0;
@@ -112,13 +111,15 @@
             // dataGridView1
             // 
             dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.BackgroundColor = Color.White;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.GridColor = Color.Gray;
-            dataGridView1.Location = new Point(0, 520);
+            dataGridView1.Location = new Point(0, 390);
+            dataGridView1.Margin = new Padding(3, 2, 3, 2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1058, 370);
+            dataGridView1.Size = new Size(926, 278);
             dataGridView1.TabIndex = 13;
             // 
             // button1
@@ -131,12 +132,11 @@
             button1.Image = null;
             button1.ImageAlign = ContentAlignment.MiddleLeft;
             button1.InactiveColor = Color.Lime;
-            button1.Location = new Point(710, 465);
-            button1.Margin = new Padding(3, 4, 3, 4);
+            button1.Location = new Point(621, 349);
             button1.Name = "button1";
             button1.PressedBorderColor = Color.Black;
             button1.PressedColor = Color.FromArgb(0, 64, 0);
-            button1.Size = new Size(114, 31);
+            button1.Size = new Size(100, 23);
             button1.TabIndex = 12;
             button1.Text = "Filtrar";
             button1.TextAlignment = StringAlignment.Center;
@@ -148,19 +148,18 @@
             bigLabel4.BackColor = Color.Transparent;
             bigLabel4.Font = new Font("Calibri", 14.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             bigLabel4.ForeColor = Color.Black;
-            bigLabel4.Location = new Point(134, 465);
+            bigLabel4.Location = new Point(117, 349);
             bigLabel4.Name = "bigLabel4";
-            bigLabel4.Size = new Size(40, 29);
+            bigLabel4.Size = new Size(31, 23);
             bigLabel4.TabIndex = 10;
             bigLabel4.Text = "De";
             // 
             // dateTimePickerFinal
             // 
             dateTimePickerFinal.Format = DateTimePickerFormat.Short;
-            dateTimePickerFinal.Location = new Point(541, 465);
-            dateTimePickerFinal.Margin = new Padding(3, 4, 3, 4);
+            dateTimePickerFinal.Location = new Point(473, 349);
             dateTimePickerFinal.Name = "dateTimePickerFinal";
-            dateTimePickerFinal.Size = new Size(125, 27);
+            dateTimePickerFinal.Size = new Size(110, 23);
             dateTimePickerFinal.TabIndex = 9;
             // 
             // bigLabel3
@@ -169,9 +168,9 @@
             bigLabel3.BackColor = Color.Transparent;
             bigLabel3.Font = new Font("Calibri", 14.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             bigLabel3.ForeColor = Color.Black;
-            bigLabel3.Location = new Point(417, 465);
+            bigLabel3.Location = new Point(365, 349);
             bigLabel3.Name = "bigLabel3";
-            bigLabel3.Size = new Size(47, 29);
+            bigLabel3.Size = new Size(37, 23);
             bigLabel3.TabIndex = 8;
             bigLabel3.Text = "Ate";
             // 
@@ -181,19 +180,18 @@
             bigLabel2.BackColor = Color.Transparent;
             bigLabel2.Font = new Font("Calibri", 14.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             bigLabel2.ForeColor = Color.Black;
-            bigLabel2.Location = new Point(45, 413);
+            bigLabel2.Location = new Point(39, 310);
             bigLabel2.Name = "bigLabel2";
-            bigLabel2.Size = new Size(65, 29);
+            bigLabel2.Size = new Size(53, 23);
             bigLabel2.TabIndex = 7;
             bigLabel2.Text = "Filtro";
             // 
             // dateTimePickerInicio
             // 
             dateTimePickerInicio.Format = DateTimePickerFormat.Short;
-            dateTimePickerInicio.Location = new Point(213, 465);
-            dateTimePickerInicio.Margin = new Padding(3, 4, 3, 4);
+            dateTimePickerInicio.Location = new Point(186, 349);
             dateTimePickerInicio.Name = "dateTimePickerInicio";
-            dateTimePickerInicio.Size = new Size(125, 27);
+            dateTimePickerInicio.Size = new Size(110, 23);
             dateTimePickerInicio.TabIndex = 6;
             // 
             // bigLabel1
@@ -202,9 +200,9 @@
             bigLabel1.BackColor = Color.Transparent;
             bigLabel1.Font = new Font("Calibri", 14.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             bigLabel1.ForeColor = Color.Black;
-            bigLabel1.Location = new Point(174, 376);
+            bigLabel1.Location = new Point(152, 282);
             bigLabel1.Name = "bigLabel1";
-            bigLabel1.Size = new Size(255, 29);
+            bigLabel1.Size = new Size(200, 23);
             bigLabel1.TabIndex = 5;
             bigLabel1.Text = "Produtos mais vendidos ";
             // 
@@ -218,11 +216,10 @@
             panel6.Controls.Add(label16PagamentosCredito);
             panel6.Controls.Add(label8);
             panel6.ImeMode = ImeMode.NoControl;
-            panel6.Location = new Point(727, 289);
-            panel6.Margin = new Padding(3, 4, 3, 4);
-            panel6.MaximumSize = new Size(428, 99);
+            panel6.Location = new Point(636, 217);
+            panel6.MaximumSize = new Size(375, 75);
             panel6.Name = "panel6";
-            panel6.Size = new Size(285, 66);
+            panel6.Size = new Size(250, 53);
             panel6.TabIndex = 4;
             // 
             // label16PagamentosCredito
@@ -231,9 +228,9 @@
             label16PagamentosCredito.BackColor = Color.Transparent;
             label16PagamentosCredito.Font = new Font("Arial", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label16PagamentosCredito.ForeColor = SystemColors.ActiveCaptionText;
-            label16PagamentosCredito.Location = new Point(128, 38);
+            label16PagamentosCredito.Location = new Point(112, 28);
             label16PagamentosCredito.Name = "label16PagamentosCredito";
-            label16PagamentosCredito.Size = new Size(25, 26);
+            label16PagamentosCredito.Size = new Size(21, 23);
             label16PagamentosCredito.TabIndex = 4;
             label16PagamentosCredito.Text = "0";
             label16PagamentosCredito.Click += label16PagamentosCredito_Click;
@@ -244,7 +241,7 @@
             label8.Font = new Font("Arial", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label8.Location = new Point(3, 0);
             label8.Name = "label8";
-            label8.Size = new Size(223, 24);
+            label8.Size = new Size(175, 18);
             label8.TabIndex = 2;
             label8.Text = "pagametos por credito";
             // 
@@ -258,12 +255,11 @@
             panel7.Controls.Add(label15PagamentosDebito);
             panel7.Controls.Add(label7);
             panel7.ImeMode = ImeMode.NoControl;
-            panel7.Location = new Point(393, 289);
-            panel7.Margin = new Padding(3, 4, 3, 4);
-            panel7.MaximumSize = new Size(428, 99);
-            panel7.MinimumSize = new Size(285, 66);
+            panel7.Location = new Point(344, 217);
+            panel7.MaximumSize = new Size(375, 75);
+            panel7.MinimumSize = new Size(250, 50);
             panel7.Name = "panel7";
-            panel7.Size = new Size(285, 66);
+            panel7.Size = new Size(250, 53);
             panel7.TabIndex = 3;
             // 
             // label15PagamentosDebito
@@ -272,9 +268,9 @@
             label15PagamentosDebito.BackColor = Color.Transparent;
             label15PagamentosDebito.Font = new Font("Arial", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label15PagamentosDebito.ForeColor = SystemColors.ActiveCaptionText;
-            label15PagamentosDebito.Location = new Point(124, 38);
+            label15PagamentosDebito.Location = new Point(108, 28);
             label15PagamentosDebito.Name = "label15PagamentosDebito";
-            label15PagamentosDebito.Size = new Size(25, 26);
+            label15PagamentosDebito.Size = new Size(21, 23);
             label15PagamentosDebito.TabIndex = 4;
             label15PagamentosDebito.Text = "0";
             // 
@@ -284,7 +280,7 @@
             label7.Font = new Font("Arial", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label7.Location = new Point(3, 0);
             label7.Name = "label7";
-            label7.Size = new Size(217, 24);
+            label7.Size = new Size(171, 18);
             label7.TabIndex = 1;
             label7.Text = "pagametos por debito";
             // 
@@ -298,11 +294,10 @@
             panel5.Controls.Add(label13ItensVendidos);
             panel5.Controls.Add(label5);
             panel5.ImeMode = ImeMode.NoControl;
-            panel5.Location = new Point(574, 168);
-            panel5.Margin = new Padding(3, 4, 3, 4);
-            panel5.MaximumSize = new Size(428, 99);
+            panel5.Location = new Point(502, 126);
+            panel5.MaximumSize = new Size(375, 75);
             panel5.Name = "panel5";
-            panel5.Size = new Size(285, 68);
+            panel5.Size = new Size(250, 55);
             panel5.TabIndex = 1;
             // 
             // label13ItensVendidos
@@ -310,9 +305,9 @@
             label13ItensVendidos.AutoSize = true;
             label13ItensVendidos.Font = new Font("Arial", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label13ItensVendidos.ForeColor = SystemColors.ButtonHighlight;
-            label13ItensVendidos.Location = new Point(107, 40);
+            label13ItensVendidos.Location = new Point(94, 30);
             label13ItensVendidos.Name = "label13ItensVendidos";
-            label13ItensVendidos.Size = new Size(25, 26);
+            label13ItensVendidos.Size = new Size(21, 23);
             label13ItensVendidos.TabIndex = 3;
             label13ItensVendidos.Text = "0";
             // 
@@ -322,7 +317,7 @@
             label5.Font = new Font("Arial", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label5.Location = new Point(3, 0);
             label5.Name = "label5";
-            label5.Size = new Size(147, 24);
+            label5.Size = new Size(119, 18);
             label5.TabIndex = 1;
             label5.Text = "Itens vendidos";
             // 
@@ -335,11 +330,10 @@
             panel8.Controls.Add(label14PagamentosPix);
             panel8.Controls.Add(label6);
             panel8.ImeMode = ImeMode.NoControl;
-            panel8.Location = new Point(53, 289);
-            panel8.Margin = new Padding(3, 4, 3, 4);
-            panel8.MaximumSize = new Size(428, 99);
+            panel8.Location = new Point(46, 217);
+            panel8.MaximumSize = new Size(375, 75);
             panel8.Name = "panel8";
-            panel8.Size = new Size(285, 68);
+            panel8.Size = new Size(250, 55);
             panel8.TabIndex = 2;
             // 
             // label14PagamentosPix
@@ -348,9 +342,9 @@
             label14PagamentosPix.BackColor = Color.Transparent;
             label14PagamentosPix.Font = new Font("Arial", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label14PagamentosPix.ForeColor = SystemColors.ActiveCaptionText;
-            label14PagamentosPix.Location = new Point(120, 40);
+            label14PagamentosPix.Location = new Point(105, 30);
             label14PagamentosPix.Name = "label14PagamentosPix";
-            label14PagamentosPix.Size = new Size(25, 26);
+            label14PagamentosPix.Size = new Size(21, 23);
             label14PagamentosPix.TabIndex = 3;
             label14PagamentosPix.Text = "0";
             // 
@@ -360,7 +354,7 @@
             label6.Font = new Font("Arial", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label6.Location = new Point(3, 0);
             label6.Name = "label6";
-            label6.Size = new Size(199, 24);
+            label6.Size = new Size(158, 18);
             label6.TabIndex = 1;
             label6.Text = "Pagamentos por pix";
             // 
@@ -374,11 +368,10 @@
             panel4.Controls.Add(label12MediaDeVendas);
             panel4.Controls.Add(label4);
             panel4.ImeMode = ImeMode.NoControl;
-            panel4.Location = new Point(192, 168);
-            panel4.Margin = new Padding(3, 4, 3, 4);
-            panel4.MaximumSize = new Size(428, 99);
+            panel4.Location = new Point(168, 126);
+            panel4.MaximumSize = new Size(375, 75);
             panel4.Name = "panel4";
-            panel4.Size = new Size(285, 69);
+            panel4.Size = new Size(250, 56);
             panel4.TabIndex = 1;
             // 
             // label12MediaDeVendas
@@ -386,9 +379,9 @@
             label12MediaDeVendas.AutoSize = true;
             label12MediaDeVendas.Font = new Font("Arial", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label12MediaDeVendas.ForeColor = SystemColors.ButtonHighlight;
-            label12MediaDeVendas.Location = new Point(124, 41);
+            label12MediaDeVendas.Location = new Point(108, 31);
             label12MediaDeVendas.Name = "label12MediaDeVendas";
-            label12MediaDeVendas.Size = new Size(25, 26);
+            label12MediaDeVendas.Size = new Size(21, 23);
             label12MediaDeVendas.TabIndex = 3;
             label12MediaDeVendas.Text = "0";
             // 
@@ -398,7 +391,7 @@
             label4.Font = new Font("Arial", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label4.Location = new Point(-1, 0);
             label4.Name = "label4";
-            label4.Size = new Size(169, 24);
+            label4.Size = new Size(134, 18);
             label4.TabIndex = 1;
             label4.Text = "Média de vendas";
             // 
@@ -412,11 +405,10 @@
             panel3.Controls.Add(label11ConvercoesDeVendas);
             panel3.Controls.Add(label3);
             panel3.ImeMode = ImeMode.NoControl;
-            panel3.Location = new Point(727, 37);
-            panel3.Margin = new Padding(3, 4, 3, 4);
-            panel3.MaximumSize = new Size(428, 99);
+            panel3.Location = new Point(636, 28);
+            panel3.MaximumSize = new Size(375, 75);
             panel3.Name = "panel3";
-            panel3.Size = new Size(285, 68);
+            panel3.Size = new Size(250, 55);
             panel3.TabIndex = 1;
             // 
             // label11ConvercoesDeVendas
@@ -424,9 +416,9 @@
             label11ConvercoesDeVendas.AutoSize = true;
             label11ConvercoesDeVendas.Font = new Font("Arial", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label11ConvercoesDeVendas.ForeColor = SystemColors.ButtonHighlight;
-            label11ConvercoesDeVendas.Location = new Point(128, 40);
+            label11ConvercoesDeVendas.Location = new Point(112, 30);
             label11ConvercoesDeVendas.Name = "label11ConvercoesDeVendas";
-            label11ConvercoesDeVendas.Size = new Size(25, 26);
+            label11ConvercoesDeVendas.Size = new Size(21, 23);
             label11ConvercoesDeVendas.TabIndex = 3;
             label11ConvercoesDeVendas.Text = "0";
             // 
@@ -436,7 +428,7 @@
             label3.Font = new Font("Arial", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label3.Location = new Point(3, 0);
             label3.Name = "label3";
-            label3.Size = new Size(222, 24);
+            label3.Size = new Size(181, 18);
             label3.TabIndex = 1;
             label3.Text = "Converções de vendas";
             // 
@@ -450,12 +442,11 @@
             panel2.Controls.Add(label10VendasCanceladas);
             panel2.Controls.Add(label2);
             panel2.ImeMode = ImeMode.NoControl;
-            panel2.Location = new Point(393, 37);
-            panel2.Margin = new Padding(3, 4, 3, 4);
-            panel2.MaximumSize = new Size(428, 99);
-            panel2.MinimumSize = new Size(285, 66);
+            panel2.Location = new Point(344, 28);
+            panel2.MaximumSize = new Size(375, 75);
+            panel2.MinimumSize = new Size(250, 50);
             panel2.Name = "panel2";
-            panel2.Size = new Size(285, 68);
+            panel2.Size = new Size(250, 55);
             panel2.TabIndex = 1;
             // 
             // label10VendasCanceladas
@@ -463,9 +454,9 @@
             label10VendasCanceladas.AutoSize = true;
             label10VendasCanceladas.Font = new Font("Arial", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label10VendasCanceladas.ForeColor = SystemColors.ButtonHighlight;
-            label10VendasCanceladas.Location = new Point(124, 40);
+            label10VendasCanceladas.Location = new Point(108, 30);
             label10VendasCanceladas.Name = "label10VendasCanceladas";
-            label10VendasCanceladas.Size = new Size(25, 26);
+            label10VendasCanceladas.Size = new Size(21, 23);
             label10VendasCanceladas.TabIndex = 3;
             label10VendasCanceladas.Text = "0";
             // 
@@ -475,7 +466,7 @@
             label2.Font = new Font("Arial", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label2.Location = new Point(3, 0);
             label2.Name = "label2";
-            label2.Size = new Size(189, 24);
+            label2.Size = new Size(152, 18);
             label2.TabIndex = 1;
             label2.Text = "Vendas canceladas";
             // 
@@ -488,11 +479,10 @@
             panel1.Controls.Add(label9VendasRealizadas);
             panel1.Controls.Add(label1);
             panel1.ImeMode = ImeMode.NoControl;
-            panel1.Location = new Point(53, 37);
-            panel1.Margin = new Padding(3, 4, 3, 4);
-            panel1.MaximumSize = new Size(428, 99);
+            panel1.Location = new Point(46, 28);
+            panel1.MaximumSize = new Size(375, 75);
             panel1.Name = "panel1";
-            panel1.Size = new Size(285, 69);
+            panel1.Size = new Size(250, 56);
             panel1.TabIndex = 0;
             // 
             // label9VendasRealizadas
@@ -500,9 +490,9 @@
             label9VendasRealizadas.AutoSize = true;
             label9VendasRealizadas.Font = new Font("Arial", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label9VendasRealizadas.ForeColor = SystemColors.ButtonHighlight;
-            label9VendasRealizadas.Location = new Point(120, 41);
+            label9VendasRealizadas.Location = new Point(105, 31);
             label9VendasRealizadas.Name = "label9VendasRealizadas";
-            label9VendasRealizadas.Size = new Size(25, 26);
+            label9VendasRealizadas.Size = new Size(21, 23);
             label9VendasRealizadas.TabIndex = 2;
             label9VendasRealizadas.Text = "0";
             // 
@@ -512,18 +502,17 @@
             label1.Font = new Font("Arial", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label1.Location = new Point(3, 0);
             label1.Name = "label1";
-            label1.Size = new Size(181, 24);
+            label1.Size = new Size(143, 18);
             label1.TabIndex = 0;
             label1.Text = "Vendas realizadas";
             // 
             // RelatorioVendas
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(parrotGradientPanel1);
-            Margin = new Padding(3, 4, 3, 4);
             Name = "RelatorioVendas";
-            Size = new Size(1058, 893);
+            Size = new Size(926, 670);
             Load += RelatorioVendas_Load;
             parrotGradientPanel1.ResumeLayout(false);
             parrotGradientPanel1.PerformLayout();

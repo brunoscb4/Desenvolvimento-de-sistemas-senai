@@ -77,8 +77,8 @@ namespace Fenix_Shop.Telas
                     produto.Categoria = textBox2Categoria.Text;
                     produto.Marca = textBox3Marca.Text;
                     produto.Descricao = TextBoxDescricao.Text;
-                    produto.ValorCusto = double.Parse(TextBoxCusto.Text);
-                    produto.ValorVenda = double.Parse(TextBoxVenda.Text);
+                    produto.ValorCusto = double.Parse(TextBoxCusto.Text.Replace("R$", "").Replace(".", "").Trim(), new CultureInfo("pt-BR"));
+                    produto.ValorVenda = double.Parse(TextBoxVenda.Text.Replace("R$", "").Replace(".", "").Trim(), new CultureInfo("pt-BR"));
                     produto.CodigoBarras = TextBoxCodigoBarras.Text;
                     produto.Sku = TextBoxSku.Text;
                     if (pictureBoxCadastroProduto.Image != null)
@@ -153,32 +153,44 @@ namespace Fenix_Shop.Telas
 
         private void TextBoxCusto_Click(object sender, EventArgs e)
         {
-            TextBoxCusto.Select(0, 0);
+            TextBoxCusto.SelectionStart = TextBoxCusto.Text.Length;
+            TextBoxCusto.SelectionLength = 0;
+            TextBoxCusto.Focus();
         }
 
         private void TextBoxVenda_Click(object sender, EventArgs e)
         {
-            TextBoxVenda.Select(0, 0);
+            TextBoxVenda.SelectionStart = TextBoxVenda.Text.Length;
+            TextBoxVenda.SelectionLength = 0;
+            TextBoxVenda.Focus();
         }
 
         private void TextBoxEstoque_Click(object sender, EventArgs e)
         {
-            TextBoxEstoque.Select(0, 0);
+            TextBoxEstoque.SelectionStart = TextBoxEstoque.Text.Length;
+            TextBoxEstoque.SelectionLength = 0;
+            TextBoxEstoque.Focus();
         }
 
         private void TextBoxCodigoBarras_Click(object sender, EventArgs e)
         {
-            TextBoxCodigoBarras.Select(0, 0);
+            TextBoxCodigoBarras.SelectionStart = TextBoxCodigoBarras.Text.Length;
+            TextBoxCodigoBarras.SelectionLength = 0;
+            TextBoxCodigoBarras.Focus();
         }
 
         private void TextBoxSku_Click(object sender, EventArgs e)
         {
-            TextBoxSku.Select(0, 0);
+            TextBoxSku.SelectionStart = TextBoxSku.Text.Length;
+            TextBoxSku.SelectionLength = 0;
+            TextBoxSku.Focus();
         }
 
         private void TextBoxEstoqueMinimo_Click(object sender, EventArgs e)
         {
-            TextBoxEstoqueMinimo.Select(0, 0);
+            TextBoxEstoqueMinimo.SelectionStart = TextBoxEstoqueMinimo.Text.Length;
+            TextBoxEstoqueMinimo.SelectionLength = 0;
+            TextBoxEstoqueMinimo.Focus();
         }
 
         

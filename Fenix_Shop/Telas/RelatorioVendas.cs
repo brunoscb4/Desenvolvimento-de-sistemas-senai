@@ -19,7 +19,21 @@ namespace Fenix_Shop.Telas
             InitializeComponent();
 
         }
+        public void CarregarRelatorio()
+        {
+            var dt = itensVendidos.TotalPorProduto();
 
+            if (dt != null)
+            {
+                dataGridView1.DataSource = dt;
+
+                dataGridView1.Columns["VALOR"].DefaultCellStyle.Format = "C2";
+                dataGridView1.Columns["TOTAL"].DefaultCellStyle.Format = "C2";
+
+                dataGridView1.Columns["VENDIDOS"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            }
+        }
         private void label16PagamentosCredito_Click(object sender, EventArgs e)
         {
 
@@ -40,6 +54,14 @@ namespace Fenix_Shop.Telas
         private void RelatorioVendas_Load(object sender, EventArgs e)
         {
             AtualizarRelatorio();
+            dataGridView1.DataSource = null;
+            CarregarRelatorio();
+            dataGridView1.RowTemplate.Height = 40;
+            dataGridView1.Columns["Foto"].Width = 40;
+            if (dataGridView1.Columns["Foto"] is DataGridViewImageColumn imageColumn)
+            {
+                imageColumn.ImageLayout = DataGridViewImageCellLayout.Stretch;
+            }
             DateTime inicioMes = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
             dateTimePickerInicio.Text = inicioMes.ToString("dd/MM/yyyy");
         }
