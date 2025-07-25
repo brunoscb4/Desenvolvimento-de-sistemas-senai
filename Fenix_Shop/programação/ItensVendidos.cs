@@ -13,13 +13,13 @@ namespace Fenix_Shop.programação
     internal class ItensVendidos 
     {
         private static int iduser;
-        private decimal valorTotal;
+        private int valorTotal;
         private string formaPagamento = "DINHEIRO";
         private string saida {  get; set; }
         
 
       public static int IdUser { get { return iduser; } set { iduser = value; } }   
-        public decimal ValorTotal { get { return valorTotal; } set { valorTotal = value; } }
+        public int ValorTotal { get { return valorTotal; } set { valorTotal = value; } }
         public string FormaPagamento { get { return formaPagamento; } set { formaPagamento = value; } }
         
         private List<ListVendas> lista { get; set; } = new List<ListVendas> { };
@@ -100,13 +100,13 @@ namespace Fenix_Shop.programação
                                         cmdItens.Parameters.AddWithValue("@IdVenda", IdVendas);
                                         cmdItens.Parameters.AddWithValue("@IdProduto", item.Id);
                                         cmdItens.Parameters.AddWithValue("@Quantidade", item.Quantidade);
-                                        cmdItens.Parameters.AddWithValue("@PrecoUnitario", item.Valor.ToString(CultureInfo.InvariantCulture) );
+                                        cmdItens.Parameters.AddWithValue("@PrecoUnitario", item.Valor );
                                         cmdItens.ExecuteNonQuery();
                                         
                                         cmdSaida.Parameters.AddWithValue("@IdProduto",item.Id);
                                         cmdSaida.Parameters.AddWithValue("@saida", saida = "SAIDA");
                                         cmdSaida.Parameters.AddWithValue("@Quantidade",item.Quantidade);
-                                        cmdSaida.Parameters.AddWithValue("@PrecoUnitario",item.Valor.ToString(CultureInfo.InvariantCulture));
+                                        cmdSaida.Parameters.AddWithValue("@PrecoUnitario",item.Valor);
                                         cmdSaida.ExecuteNonQuery();
 
                                     }
@@ -203,14 +203,15 @@ namespace Fenix_Shop.programação
                 {
                     connetion.Open();
 
-                    string Totalvendods = @"SELECT COALESCE (SUM(CAST(Total AS REAL)),0)FROM Vendas";
+                    string Totalvendods = @"SELECT SUM(Total )FROM Vendas";
 
                     using (SQLiteCommand cmd = new SQLiteCommand(Totalvendods, connetion))
                     {
                         object resultado = cmd.ExecuteScalar();
                         if (resultado != DBNull.Value && resultado != null)
                         {
-                            decimal valor = Convert.ToDecimal(resultado);
+                            int soma = Convert.ToInt32(resultado);
+                            decimal valor = soma / 100.0m;
                             
                             return Math.Round(valor, 2);
                         }
@@ -279,7 +280,9 @@ namespace Fenix_Shop.programação
                         object resultado = cmd.ExecuteScalar();
                         if (resultado != DBNull.Value && resultado != null)
                         {
-                            return Convert.ToDecimal(resultado);
+                            int soma = Convert.ToInt32(resultado);
+                             decimal valor = soma / 100.0m;
+                            return valor;
                         }
                         else
                         { return 0; }
@@ -304,8 +307,8 @@ namespace Fenix_Shop.programação
                     connection.Open();
 
                   
-                    DataTable dt = new DataTable();  string TotalCusto = @"SELECT c.Foto AS FOTO ,c.Nome AS PRODUTO,SUM(i.Quantidade ) AS VENDIDOS,c.ValorDeVenda AS VALOR,
-                                    SUM (CAST(c.ValorDeVenda AS REAL) * i.Quantidade)  AS TOTAL
+                    DataTable dt = new DataTable();  string TotalCusto = @"SELECT c.Foto AS FOTO ,c.Nome AS PRODUTO,SUM(i.Quantidade ) AS VENDIDOS,ROUND(c.ValorDeVenda / 100.0 ,2) AS VALOR,
+                                    ROUND (SUM (c.ValorDeVenda  * i.Quantidade) / 100.0 ,2 )AS TOTAL
                                     FROM ItensVendidos i
                                     JOIN CadastroProduto c ON i.IdProduto = c.Id
                                     GROUP BY c.Id";

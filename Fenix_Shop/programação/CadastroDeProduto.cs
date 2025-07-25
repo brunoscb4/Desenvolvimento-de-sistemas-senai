@@ -13,7 +13,7 @@ namespace Fenix_Shop.programação
     {
         private byte[] imagem;
         private string nome, categoria, marca, descricao, movimentacaoEstoque, codigoBarras, sku;
-        private double valorCusto, valorVenda;
+        private int valorCusto, valorVenda;
         private int estoque, esMinimo;
         private DateTime dataCadastro;
         private static int id;
@@ -29,9 +29,9 @@ namespace Fenix_Shop.programação
         { get { return descricao; } set { descricao = value; } }
         public string MovimentacaoEstoque
         { get { return movimentacaoEstoque; } set { movimentacaoEstoque = value; } }
-        public double ValorCusto
+        public int ValorCusto
         { get { return valorCusto; } set { valorCusto = value; } }
-        public double ValorVenda
+        public int ValorVenda
         { get { return valorVenda; } set { valorVenda = value; } }
         public int Estoque
         { get { return estoque; } set { estoque = value; } }
@@ -62,8 +62,6 @@ namespace Fenix_Shop.programação
                         string insert = @"INSERT INTO CadastroProduto(IdUsuario,Nome,Categoria,Descricao,Marca,ValorDeCusto,ValorDeVenda,CodigoDeBarras,Sku,Foto)" +
                             "VALUES(@Id,@Nome,@Categoria,@Descricao,@Marca,@ValorCusto,@ValorVenda,@CodigoBarras,@Sku,@Imagem) RETURNING Id";
 
-                        double ValorDeCustoFormatado = Math.Round(ValorCusto, 2);
-                        double ValorDeVendaFormatado = Math.Round(ValorVenda, 2);
                         using (SQLiteCommand cmd = new SQLiteCommand(insert, connection))
                         {
                             cmd.Parameters.AddWithValue("@Id", Id);
@@ -71,8 +69,8 @@ namespace Fenix_Shop.programação
                             cmd.Parameters.AddWithValue("@Categoria", Categoria);
                             cmd.Parameters.AddWithValue("@Marca", Marca);
                             cmd.Parameters.AddWithValue("@Descricao", Descricao);
-                            cmd.Parameters.AddWithValue("@ValorCusto", ValorDeCustoFormatado.ToString(CultureInfo.InvariantCulture));
-                            cmd.Parameters.AddWithValue("@ValorVenda", ValorDeVendaFormatado.ToString(CultureInfo.InvariantCulture));
+                            cmd.Parameters.AddWithValue("@ValorCusto", ValorCusto);
+                            cmd.Parameters.AddWithValue("@ValorVenda", ValorVenda);
                             cmd.Parameters.AddWithValue("@CodigoBarras", CodigoBarras);
                             cmd.Parameters.AddWithValue("@Sku", Sku);
                             cmd.Parameters.AddWithValue("@Imagem", Imagem);
@@ -114,11 +112,11 @@ namespace Fenix_Shop.programação
                 {
                     connection.Open();
 
-                    string select = @"SELECT u.Nome AS USUARIO, p.Nome AS PRODUTO,p.Id AS CODIGO, p.ValorDeVenda AS VALOR,
+                    string select = @"SELECT u.Nome AS USUARIO, p.Nome AS PRODUTO,p.Id AS CODIGO,ROUND( p.ValorDeVenda / 100.0 ,2) AS VALOR,
                    SUM(CASE WHEN Tipo = 'ENTRADA' THEN Quantidade ELSE 0 END) -
                    SUM(CASE WHEN Tipo = 'SAIDA' THEN Quantidade ELSE 0 END) AS ESTOQUE FROM Usuario u 
                     JOIN CadastroProduto p ON p.IdUsuario = u.Id
-                    JOIN Estoque e ON e.IdProduto = p.Id  GROUP BY IdProduto " ;
+                    JOIN Estoque e ON e.IdProduto = p.Id  GROUP BY p.Id " ;
 
                     DataTable dt = new DataTable();
 
@@ -186,7 +184,7 @@ namespace Fenix_Shop.programação
                 {
                     connection.Open();
 
-                    string select = @"SELECT Id AS CODIGO,Nome AS PRODUTO ,Marca AS MARCA,ValorDeVenda AS VALOR,Foto AS FOTO FROM CadastroProduto";
+                    string select = @"SELECT Id AS CODIGO,Nome AS PRODUTO ,Marca AS MARCA,ROUND(ValorDeVenda / 100.0 ,2 ) AS VALOR,Foto AS FOTO FROM CadastroProduto";
 
                     DataTable dt = new DataTable();
 
@@ -212,7 +210,7 @@ namespace Fenix_Shop.programação
                 {
                     connection.Open();
 
-                    string select = @"SELECT u.Nome AS USUARIO, p.Nome AS PRODUTO,p.Id AS CODIGO, p.ValorDeVenda AS VALOR,e.Quantidade AS ESTOQUE FROM Usuario u 
+                    string select = @"SELECT u.Nome AS USUARIO, p.Nome AS PRODUTO,p.Id AS CODIGO, ROUND(p.ValorDeVenda / 100.0 ,2) AS VALOR,e.Quantidade AS ESTOQUE FROM Usuario u 
                     JOIN CadastroProduto p ON p.IdUsuario = u.Id
                     JOIN Estoque e ON e.IdProduto = p.Id WHERE  p.Id = @id";
 
@@ -245,7 +243,7 @@ namespace Fenix_Shop.programação
                 {
                     connection.Open();
 
-                    string select = @"SELECT u.Nome AS USUARIO, p.Nome AS PRODUTO,p.Id AS CODIGO, p.ValorDeVenda AS VALOR,e.Quantidade AS ESTOQUE FROM Usuario u 
+                    string select = @"SELECT u.Nome AS USUARIO, p.Nome AS PRODUTO,p.Id AS CODIGO, ROUND(p.ValorDeVenda / 100.0 ,2)AS VALOR,e.Quantidade AS ESTOQUE FROM Usuario u 
                     JOIN CadastroProduto p ON p.IdUsuario = u.Id
                     JOIN Estoque e ON e.IdProduto = p.Id WHERE p.Nome LIKE @nome ";
 
@@ -278,7 +276,7 @@ namespace Fenix_Shop.programação
                 {
                     connection.Open();
 
-                    string Select = @"SELECT Id,Nome,Marca,ValorDeVenda,Foto FROM CadastroProduto WHERE @id IS NULL OR Id = @id ";
+                    string Select = @"SELECT Id AS CODIGO,Nome AS PRODUTO,Marca AS MARCA,ROUND(ValorDeVenda / 100.0 ,2) AS VALOR ,Foto AS FOTO FROM CadastroProduto WHERE @id IS NULL OR Id = @id ";
                     DataTable dt = new DataTable();
                     using SQLiteCommand cmd = new SQLiteCommand(Select, connection);
 
@@ -310,7 +308,7 @@ namespace Fenix_Shop.programação
                 {
                     connection.Open();
 
-                    string Select = @"SELECT Id,Nome,Marca,ValorDeVenda,Foto FROM CadastroProduto WHERE Nome LIKE @nome ";
+                    string Select = @"SELECT Id AS CODIGO,Nome AS PRODUTO,Marca AS MARCA,ROUND(ValorDeVenda / 100.0 ,2) AS VALOR ,Foto AS FOTO FROM CadastroProduto WHERE Nome LIKE @nome ";
                     DataTable dt = new DataTable();
                     using SQLiteCommand cmd = new SQLiteCommand(Select, connection);
 

@@ -30,8 +30,6 @@ namespace Fenix_Shop.Telas
                 dataGridView1.Columns["VALOR"].DefaultCellStyle.Format = "C2";
                 dataGridView1.Columns["TOTAL"].DefaultCellStyle.Format = "C2";
 
-                dataGridView1.Columns["VENDIDOS"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
             }
         }
         private void label16PagamentosCredito_Click(object sender, EventArgs e)

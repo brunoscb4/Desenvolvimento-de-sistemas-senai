@@ -14,7 +14,8 @@ using System.Windows.Forms;
 namespace Fenix_Shop.Telas
 {
     public partial class Vendas : UserControl
-    {
+    { 
+        CadastroDeProduto cadastroDeProduto = new CadastroDeProduto();
         private Tela_Inicial telaInicial;
         private UsuarioLogado usuariologado;
         public Vendas(UsuarioLogado usuariologado, Tela_Inicial telaInicial) 
@@ -24,7 +25,16 @@ namespace Fenix_Shop.Telas
             this.telaInicial = telaInicial;
         }
         ItensVendidos ItensVendidos = new ItensVendidos();
+        public void CarregarProdutos()
+        {
+            var dt = cadastroDeProduto.ProdutosRegistradosVendas();
 
+            if (dt != null)
+            {
+                dataGridViewProdutos.DataSource = dt;
+                dataGridViewProdutos.Columns["VALOR"].DefaultCellStyle.Format = "C2";
+            }
+        }
         private void label11_Click(object sender, EventArgs e)
         {
 
@@ -39,12 +49,12 @@ namespace Fenix_Shop.Telas
         {
             label11ValorProduto.Text = "0,00";
             label11ValorTotalCompra.Text = "0,00";
-            CadastroDeProduto cadastroDeProduto = new CadastroDeProduto();
-            dataGridViewProdutos.DataSource = cadastroDeProduto.ProdutosRegistradosVendas();
+           
+            CarregarProdutos();
             dataGridViewProdutos.RowTemplate.Height = 40;
-            dataGridViewProdutos.Columns["Foto"].Width = 40;
+            dataGridViewProdutos.Columns["FOTO"].Width = 40;
 
-            if (dataGridViewProdutos.Columns["Foto"] is DataGridViewImageColumn imageColumn)
+            if (dataGridViewProdutos.Columns["FOTO"] is DataGridViewImageColumn imageColumn)
             {
                 imageColumn.ImageLayout = DataGridViewImageCellLayout.Stretch;
             }
@@ -54,15 +64,24 @@ namespace Fenix_Shop.Telas
             dataGridView1Vendas.Columns.Add("Quantidade", "UNIDADE");
             dataGridView1Vendas.Columns.Add("Valor", "VALOR");
             dataGridView1Vendas.Columns.Add("Total", "TOTAL");
+            
+             
+            
         }
-
+        public void AtualizarValores()
+        {
+                  dataGridView1Vendas.Columns["VALOR"].DefaultCellStyle.Format = "C2";
+                dataGridView1Vendas.Columns["TOTAL"].DefaultCellStyle.Format = "C2";
+        }
         private void dataGridViewProdutos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
                 label11NomeDoProduto.Text = dataGridViewProdutos.Rows[e.RowIndex].Cells["Nome"].Value.ToString();
                 label11NumeroDoId.Text = dataGridViewProdutos.Rows[e.RowIndex].Cells["Id"].Value.ToString();
-                label11ValorProduto.Text = Convert.ToDouble(dataGridViewProdutos.Rows[e.RowIndex].Cells["ValorDeVenda"].Value).ToString("C2");
+                decimal precoReal =  Convert.ToDecimal(dataGridViewProdutos.Rows[e.RowIndex].Cells["ValorDeVenda"].Value);
+              
+                label11ValorProduto.Text = precoReal.ToString("C2", new CultureInfo("pt-BR"));
 
                 if (dataGridViewProdutos.Rows[e.RowIndex].Cells["Foto"].Value != DBNull.Value)
                 {
@@ -87,8 +106,8 @@ namespace Fenix_Shop.Telas
             {
                 if (!string.IsNullOrEmpty(textBoxQuantidade.Text) && int.TryParse(textBoxQuantidade.Text, out int quantidade) && quantidade > 0)
                 { 
-                    string text = label11ValorProduto.Text.Replace("R$", "").Trim();
-                    decimal valor = Convert.ToDecimal(text, new CultureInfo("pt-BR"));
+                    
+                decimal valor = Convert.ToDecimal(label11ValorProduto.Text.Replace("R$","").Trim());
 
                 decimal total = (valor * quantidade);
 
@@ -104,6 +123,7 @@ namespace Fenix_Shop.Telas
                 };
                 ItensVendidos.AddProduto(listVendas);
                 ItensVendidos.ExibirVendas(dataGridView1Vendas);
+                AtualizarValores();
                 label11ValorTotalCompra.Text = ItensVendidos.TotalVenda().ToString("C2");
                 label11QuantidadeVendidos.Text = ItensVendidos.QuantidadeVendidos().ToString();
                 textBoxQuantidade.Clear();
@@ -132,7 +152,9 @@ namespace Fenix_Shop.Telas
 
                     label11NomeDoProduto.Text = dataGridViewProdutos.Rows[e.RowIndex].Cells["PRODUTO"].Value.ToString();
                     label11NumeroDoId.Text = dataGridViewProdutos.Rows[e.RowIndex].Cells["CODIGO"].Value.ToString();
-                    label11ValorProduto.Text = Convert.ToDouble(dataGridViewProdutos.Rows[e.RowIndex].Cells["VALOR"].Value).ToString("C2");
+                   decimal precoReal =  Convert.ToDecimal(dataGridViewProdutos.Rows[e.RowIndex].Cells["VALOR"].Value);
+                    
+                label11ValorProduto.Text = precoReal.ToString("C2", new CultureInfo("pt-BR"));
 
                     if (dataGridViewProdutos.Rows[e.RowIndex].Cells["Foto"].Value != DBNull.Value)
                     {
@@ -160,9 +182,9 @@ namespace Fenix_Shop.Telas
                     MessageBox.Show("Nenhuma lista encontrada");
                     return;
                 }
-                string texte = label11ValorTotalCompra.Text.Replace("R$", "").Replace(".", "").Trim();
-                decimal valor = Convert.ToDecimal(texte, new CultureInfo("pt-BR"));
-                ItensVendidos.ValorTotal = valor;
+              
+               
+                ItensVendidos.ValorTotal = int.Parse(label11ValorTotalCompra.Text.Replace("R$", "").Replace(".", "").Replace(",","").Trim());
                 ItensVendidos.IdUser = usuariologado.Id;
 
                 if (ItensVendidos.CadastrarItensVendidos())

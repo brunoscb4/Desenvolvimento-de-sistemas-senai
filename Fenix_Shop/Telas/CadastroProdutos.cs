@@ -77,8 +77,8 @@ namespace Fenix_Shop.Telas
                     produto.Categoria = textBox2Categoria.Text;
                     produto.Marca = textBox3Marca.Text;
                     produto.Descricao = TextBoxDescricao.Text;
-                    produto.ValorCusto = double.Parse(TextBoxCusto.Text.Replace("R$", "").Replace(".", "").Trim(), new CultureInfo("pt-BR"));
-                    produto.ValorVenda = double.Parse(TextBoxVenda.Text.Replace("R$", "").Replace(".", "").Trim(), new CultureInfo("pt-BR"));
+                    produto.ValorCusto = int.Parse(TextBoxCusto.Text.Replace("R$", "").Replace(".", "").Replace(",","").Trim());
+                    produto.ValorVenda = int.Parse(TextBoxVenda.Text.Replace("R$", "").Replace(".", "").Replace(",", "").Trim());
                     produto.CodigoBarras = TextBoxCodigoBarras.Text;
                     produto.Sku = TextBoxSku.Text;
                     if (pictureBoxCadastroProduto.Image != null)

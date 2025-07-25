@@ -52,8 +52,8 @@ namespace Fenix_Shop.programação
                 Categoria TEXT,
                 Descricao TEXT,
                 Marca TEXT,
-                ValorDeCusto  REAL NOT NULL,
-                ValorDeVenda REAL NOT NULL,
+                ValorDeCusto  INTEGER NOT NULL,
+                ValorDeVenda INTEGER NOT NULL,
                 CodigoDeBarras TEXT UNIQUE,
                 Sku TEXT UNIQUE,
                 DataDeCadastro DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -67,7 +67,7 @@ namespace Fenix_Shop.programação
                  IdProduto INTEGER NOT NULL,
                  Tipo TEXT NOT NULL CHECK (Tipo IN ('ENTRADA','SAIDA')),
                  Quantidade INTEGER NOT NULL CHECK (Quantidade > 0),
-                 ValorUnitario REAL NOT NULL,
+                 ValorUnitario INTEGER NOT NULL,
                  DataDaMovimentacao DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
                  FOREIGN KEY (IdProduto) REFERENCES CadastroProduto(Id) ON DELETE CASCADE ON UPDATE CASCADE
                  
@@ -77,7 +77,7 @@ namespace Fenix_Shop.programação
                  Id INTEGER PRIMARY KEY AUTOINCREMENT,
                  IdUsuario INTEGER NOT NULL,
                  DataVenda DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-                 Total REAL NOT NULL,
+                 Total INTEGER NOT NULL,
                  FormaDePagamento TEXT NOT NULL CHECK (FormaDePagamento IN ('DINHEIRO','CARTAO','PIX','OUTROS')),
                  FOREIGN KEY (IdUsuario) REFERENCES Usuario(Id)
 
@@ -88,7 +88,7 @@ namespace Fenix_Shop.programação
                  IdVenda INTEGER NOT NULL,
                  IdProduto INTEGER NOT NULL,
                  Quantidade INTEGER NOT NULL CHECK (Quantidade > 0),
-                 PrecoUnitario REAL NOT NULL,
+                 PrecoUnitario INTEGER NOT NULL,
                  DataDaMovimentacao DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
                  FOREIGN KEY (IdVenda) REFERENCES Vendas (Id) ON DELETE CASCADE,
                  FOREIGN KEY (IdProduto) REFERENCES CadastroProduto(Id)
