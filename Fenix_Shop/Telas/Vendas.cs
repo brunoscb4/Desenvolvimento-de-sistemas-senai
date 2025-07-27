@@ -24,6 +24,7 @@ namespace Fenix_Shop.Telas
             this.usuariologado = usuariologado;
             this.telaInicial = telaInicial;
         }
+        public static string VerificaPagamento = "";
         ItensVendidos ItensVendidos = new ItensVendidos();
         public void CarregarProdutos()
         {
@@ -33,6 +34,32 @@ namespace Fenix_Shop.Telas
             {
                 dataGridViewProdutos.DataSource = dt;
                 dataGridViewProdutos.Columns["VALOR"].DefaultCellStyle.Format = "C2";
+
+            }
+        }
+        public  void AtualizarVenda()
+        {
+            if (VerificaPagamento.Equals("CARTAO") || VerificaPagamento.Equals("DINHEIRO") || VerificaPagamento.Equals("PIX"))
+            {
+                ItensVendidos.FormaPagamento = VerificaPagamento;
+                ItensVendidos.ValorTotal = int.Parse(label11ValorTotalCompra.Text.Replace("R$", "").Replace(".", "").Replace(",", "").Trim());
+                ItensVendidos.IdUser = usuariologado.Id;
+
+                if (ItensVendidos.CadastrarItensVendidos())
+                {
+                    MessageBox.Show("Venda realizada com sucesso..");
+                    cadastroDeProduto.ProdutosRegistradosVendas();
+                    telaInicial.AtualizarVendas();
+                    dataGridView1Vendas.Rows.Clear();
+                    label11ValorTotalCompra.Text = "0,00";
+                    label11QuantidadeVendidos.Text = "0";
+                    textBoxQuantidade.Clear();
+                    ItensVendidos.ApagarLista();
+                }
+                else
+                {
+                    MessageBox.Show("Erro ao cadastara venda");
+                }
             }
         }
         private void label11_Click(object sender, EventArgs e)
@@ -177,30 +204,23 @@ namespace Fenix_Shop.Telas
             try
             {
 
+
                 if (!ItensVendidos.ObterLista().Any())
                 {
                     MessageBox.Show("Nenhuma lista encontrada");
                     return;
                 }
-              
-               
-                ItensVendidos.ValorTotal = int.Parse(label11ValorTotalCompra.Text.Replace("R$", "").Replace(".", "").Replace(",","").Trim());
-                ItensVendidos.IdUser = usuariologado.Id;
-
-                if (ItensVendidos.CadastrarItensVendidos())
-                {
-                    
-                    telaInicial.AtualizarVendas();
-                    dataGridView1Vendas.Rows.Clear();
-                    label11ValorTotalCompra.Text = "0,00";
-                    label11QuantidadeVendidos.Text = "0";
-                    textBoxQuantidade.Clear();
-                    ItensVendidos.ApagarLista();
-                }
                 else
-                {
-                    MessageBox.Show("Erro ao cadastara venda");
+                { Pagamentos pagamentos = new Pagamentos(this);
+
+                    pagamentos.Anchor = AnchorStyles.Bottom;
+
+                    PanelVendas.Controls.Add(pagamentos);
+                    pagamentos.BringToFront();
+                       
+
                 }
+                
             }
             catch (Exception ex)
             {

@@ -16,6 +16,9 @@
     <Compile Update="Telas\ListaProdutos.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="Telas\Pagamentos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="Telas\RelatorioVendas.cs">
       <SubType>UserControl</SubType>
     </Compile>

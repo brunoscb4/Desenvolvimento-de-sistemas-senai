@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            parrotGradientPanel1 = new ReaLTaiizor.Controls.ParrotGradientPanel();
+            PanelVendas = new ReaLTaiizor.Controls.ParrotGradientPanel();
+            TextBoxIdBuscar = new TextBox();
             textBoxBuscarNome = new TextBox();
             panel2 = new Panel();
             label11ValorTotalCompra = new Label();
@@ -56,8 +57,7 @@
             label2 = new Label();
             label1 = new Label();
             button1 = new ReaLTaiizor.Controls.Button();
-            TextBoxIdBuscar = new TextBox();
-            parrotGradientPanel1.SuspendLayout();
+            PanelVendas.SuspendLayout();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -66,36 +66,43 @@
             ((System.ComponentModel.ISupportInitialize)dataGridViewProdutos).BeginInit();
             SuspendLayout();
             // 
-            // parrotGradientPanel1
+            // PanelVendas
             // 
-            parrotGradientPanel1.BottomLeft = Color.White;
-            parrotGradientPanel1.BottomRight = Color.White;
-            parrotGradientPanel1.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
-            parrotGradientPanel1.Controls.Add(TextBoxIdBuscar);
-            parrotGradientPanel1.Controls.Add(textBoxBuscarNome);
-            parrotGradientPanel1.Controls.Add(panel2);
-            parrotGradientPanel1.Controls.Add(panel1);
-            parrotGradientPanel1.Controls.Add(label4);
-            parrotGradientPanel1.Controls.Add(label3);
-            parrotGradientPanel1.Controls.Add(dataGridView1Vendas);
-            parrotGradientPanel1.Controls.Add(dataGridViewProdutos);
-            parrotGradientPanel1.Controls.Add(label2);
-            parrotGradientPanel1.Controls.Add(label1);
-            parrotGradientPanel1.Controls.Add(button1);
-            parrotGradientPanel1.Dock = DockStyle.Fill;
-            parrotGradientPanel1.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
-            parrotGradientPanel1.Location = new Point(0, 0);
-            parrotGradientPanel1.Margin = new Padding(3, 2, 3, 2);
-            parrotGradientPanel1.Name = "parrotGradientPanel1";
-            parrotGradientPanel1.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
-            parrotGradientPanel1.PrimerColor = Color.White;
-            parrotGradientPanel1.Size = new Size(926, 670);
-            parrotGradientPanel1.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-            parrotGradientPanel1.Style = ReaLTaiizor.Controls.ParrotGradientPanel.GradientStyle.Horizontal;
-            parrotGradientPanel1.TabIndex = 0;
-            parrotGradientPanel1.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            parrotGradientPanel1.TopLeft = Color.White;
-            parrotGradientPanel1.TopRight = Color.FromArgb(64, 64, 64);
+            PanelVendas.BottomLeft = Color.White;
+            PanelVendas.BottomRight = Color.White;
+            PanelVendas.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+            PanelVendas.Controls.Add(TextBoxIdBuscar);
+            PanelVendas.Controls.Add(textBoxBuscarNome);
+            PanelVendas.Controls.Add(panel2);
+            PanelVendas.Controls.Add(panel1);
+            PanelVendas.Controls.Add(label4);
+            PanelVendas.Controls.Add(label3);
+            PanelVendas.Controls.Add(dataGridView1Vendas);
+            PanelVendas.Controls.Add(dataGridViewProdutos);
+            PanelVendas.Controls.Add(label2);
+            PanelVendas.Controls.Add(label1);
+            PanelVendas.Controls.Add(button1);
+            PanelVendas.Dock = DockStyle.Fill;
+            PanelVendas.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
+            PanelVendas.Location = new Point(0, 0);
+            PanelVendas.Margin = new Padding(3, 2, 3, 2);
+            PanelVendas.Name = "PanelVendas";
+            PanelVendas.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
+            PanelVendas.PrimerColor = Color.White;
+            PanelVendas.Size = new Size(926, 670);
+            PanelVendas.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            PanelVendas.Style = ReaLTaiizor.Controls.ParrotGradientPanel.GradientStyle.Horizontal;
+            PanelVendas.TabIndex = 0;
+            PanelVendas.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            PanelVendas.TopLeft = Color.White;
+            PanelVendas.TopRight = Color.FromArgb(64, 64, 64);
+            // 
+            // TextBoxIdBuscar
+            // 
+            TextBoxIdBuscar.Location = new Point(80, 22);
+            TextBoxIdBuscar.Name = "TextBoxIdBuscar";
+            TextBoxIdBuscar.Size = new Size(100, 23);
+            TextBoxIdBuscar.TabIndex = 17;
             // 
             // textBoxBuscarNome
             // 
@@ -466,24 +473,17 @@
             button1.TextAlignment = StringAlignment.Center;
             button1.Click += button1_Click;
             // 
-            // TextBoxIdBuscar
-            // 
-            TextBoxIdBuscar.Location = new Point(80, 22);
-            TextBoxIdBuscar.Name = "TextBoxIdBuscar";
-            TextBoxIdBuscar.Size = new Size(100, 23);
-            TextBoxIdBuscar.TabIndex = 17;
-            // 
             // Vendas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(parrotGradientPanel1);
+            Controls.Add(PanelVendas);
             Margin = new Padding(3, 2, 3, 2);
             Name = "Vendas";
             Size = new Size(926, 670);
             Load += Vendas_Load;
-            parrotGradientPanel1.ResumeLayout(false);
-            parrotGradientPanel1.PerformLayout();
+            PanelVendas.ResumeLayout(false);
+            PanelVendas.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             panel1.ResumeLayout(false);
@@ -497,7 +497,7 @@
 
         #endregion
 
-        private ReaLTaiizor.Controls.ParrotGradientPanel parrotGradientPanel1;
+        private ReaLTaiizor.Controls.ParrotGradientPanel PanelVendas;
         private ReaLTaiizor.Controls.Button button1;
         private Label label2;
         private Label label1;

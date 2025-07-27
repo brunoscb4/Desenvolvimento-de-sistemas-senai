@@ -14,7 +14,7 @@ namespace Fenix_Shop.programação
     {
         private static int iduser;
         private int valorTotal;
-        private string formaPagamento = "DINHEIRO";
+        private string formaPagamento ;
         private string saida {  get; set; }
         
 
