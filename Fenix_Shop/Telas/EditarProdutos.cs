@@ -22,7 +22,37 @@ namespace Fenix_Shop.Telas
 
         private void Salvar_Click(object sender, EventArgs e)
         {
+            try
+            {
+                cadastro.Nome = textBox1Nome.Text;
+                cadastro.Categoria = textBox2Categoria.Text;
+                cadastro.Marca = textBox3Marca.Text;
+                cadastro.Descricao = TextBoxDescricao.Text;
+                cadastro.ValorCusto = int.Parse(TextBoxCusto.Text);
+                cadastro.ValorVenda = int.Parse(TextBoxVenda.Text);
+                cadastro.CodigoBarras = TextBoxCodigoBarras.Text;
+                cadastro.Sku = TextBoxSku.Text;
+                int estoqueAtual = int.Parse(TextBoxEstoque.Text);
+                if (cadastro.Estoque >= 0 && cadastro.Estoque > estoqueAtual )
+                {
+                    cadastro.Estoque = estoqueAtual =- cadastro.Estoque;
+                    cadastro.MovimentacaoEstoque = "SAIDA";
+                } else if(cadastro.Estoque < estoqueAtual)
+                {
+                    cadastro.Estoque = estoqueAtual = - cadastro.Estoque;
+                    cadastro.MovimentacaoEstoque = "ENTRADA";
+                } else if(estoqueAtual == 0)
+                {
+                    cadastro.Estoque = cadastro.Estoque =- cadastro.Estoque;
+                    cadastro.MovimentacaoEstoque = "SAIDA";
+                }
 
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
         }
 
        
