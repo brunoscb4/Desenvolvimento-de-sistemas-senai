@@ -39,7 +39,7 @@ namespace Fenix_Shop.Telas
         }
         public  void AtualizarVenda()
         {
-            if (VerificaPagamento.Equals("CARTAO") || VerificaPagamento.Equals("DINHEIRO") || VerificaPagamento.Equals("PIX"))
+            if (VerificaPagamento.Equals("CREDITO") || VerificaPagamento.Equals("DEBITO") || VerificaPagamento.Equals("DINHEIRO") || VerificaPagamento.Equals("PIX"))
             {
                 ItensVendidos.FormaPagamento = VerificaPagamento;
                 ItensVendidos.ValorTotal = int.Parse(label11ValorTotalCompra.Text.Replace("R$", "").Replace(".", "").Replace(",", "").Trim());

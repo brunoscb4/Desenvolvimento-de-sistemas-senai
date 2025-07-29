@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Fenix_Shop.Enums;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SQLite;
@@ -9,10 +10,10 @@ using System.Threading.Tasks;
 
 namespace Fenix_Shop.programação
 {
-    internal class CadastroDeProduto
+       public  class CadastroDeProduto
     {
         private byte[] imagem;
-        private string nome, categoria, marca, descricao, movimentacaoEstoque, codigoBarras, sku;
+        private string nome , categoria, marca, descricao, movimentacaoEstoque, codigoBarras, sku;
         private int valorCusto, valorVenda;
         private int estoque, esMinimo;
         private DateTime dataCadastro;
@@ -102,6 +103,23 @@ namespace Fenix_Shop.programação
             }
         }
 
+
+        public bool EditarProdutos()
+        {
+            try
+            {
+                using(SQLiteConnection connection = new SQLiteConnection(BancoSQLite.ConexaoSQlite))
+                {
+                    connection.Open();
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao atualizar produtos .." + ex.Message);
+                return false;
+            }
+        }
 
 
         public DataTable ProdutosRegistrados()
@@ -332,5 +350,66 @@ namespace Fenix_Shop.programação
 
 
         }
-    }
+
+ public bool InformacaoDoProduto()
+        {
+            try
+            {
+                using (SQLiteConnection connection = new SQLiteConnection(BancoSQLite.ConexaoSQlite))
+                {
+                    connection.Open();
+
+                    string select = @" SELECT c.Nome,c.Categoria,c.Descricao,c.Marca,c.ValorDeCusto,c.ValorDeVenda,c.CodigoDeBarras,c.Sku,c.Foto,e.Tipo,
+                                         SUM(CASE WHEN Tipo = 'ENTRADA' THEN Quantidade ELSE 0 END) -
+                                         SUM(CASE WHEN Tipo = 'SAIDA' THEN Quantidade ELSE 0 END) AS ESTOQUE,e.ValorUnitario 
+                                       FROM CadastroProduto c
+                                        JOIN Estoque e ON e.IdProduto = c.Id
+                                        WHERE c.Id = @Id
+                                        GROUP  BY C.Id";
+
+
+                    using (SQLiteCommand cmd =new SQLiteCommand(select,connection))
+                    {
+                        cmd.Parameters.AddWithValue("@Id", Id);
+
+                        using (SQLiteDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                Nome = reader["Nome"].ToString();
+                                Categoria = reader["Categoria"].ToString();
+                                Descricao = reader["Descricao"].ToString();
+                                Marca = reader["Marca"].ToString();
+                                ValorCusto = int.Parse(reader["ValorDeCusto"].ToString());
+                                ValorVenda = int.Parse(reader["ValorDeVenda"].ToString());
+                                CodigoBarras = reader["CodigoDeBarras"].ToString();
+                                if (reader["Foto"] != DBNull.Value)
+                                {
+                                   Imagem = (byte[]) reader["Foto"];
+                                }
+                                else
+                                { Imagem = null; }
+                                Sku = reader["Sku"].ToString();
+                                
+                                movimentacaoEstoque = reader["Tipo"].ToString();
+                                Estoque = int.Parse(reader["ESTOQUE"].ToString());
+                                return true;
+                            }
+                       return true;
+                        }
+                    }
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao pegar informações " + ex.Message);
+                return false;
+            }
+        }
 }
+    }
+
+
+   

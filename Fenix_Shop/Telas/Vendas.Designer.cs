@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Vendas));
             PanelVendas = new ReaLTaiizor.Controls.ParrotGradientPanel();
             TextBoxIdBuscar = new TextBox();
             textBoxBuscarNome = new TextBox();
@@ -279,7 +280,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.img_Fenix_Shop;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(22, 212);
             pictureBox1.Margin = new Padding(3, 2, 3, 2);
             pictureBox1.Name = "pictureBox1";
@@ -402,6 +403,7 @@
             // 
             // dataGridView1Vendas
             // 
+            dataGridView1Vendas.AllowUserToAddRows = false;
             dataGridView1Vendas.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridView1Vendas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1Vendas.BackgroundColor = Color.White;
@@ -417,6 +419,7 @@
             // 
             // dataGridViewProdutos
             // 
+            dataGridViewProdutos.AllowUserToAddRows = false;
             dataGridViewProdutos.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridViewProdutos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewProdutos.BackgroundColor = Color.White;

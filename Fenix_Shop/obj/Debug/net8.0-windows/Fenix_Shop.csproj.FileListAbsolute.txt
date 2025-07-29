@@ -65,3 +65,4 @@ D:\Trabalho Senai\Fenix_Shop\bin\Debug\net8.0-windows\runtimes\win-x86\native\SQ
 D:\Trabalho Senai\Fenix_Shop\obj\Debug\net8.0-windows\Fenix_Shop.Telas.CadastroUsuarioAdministrador.resources
 C:\Senai_Tcc\Fenix_Shop\obj\Debug\net8.0-windows\Fenix_Shop.Telas.CadastroUsuarioAdministrador.resources
 C:\Senai_Tcc\Fenix_Shop\obj\Debug\net8.0-windows\Fenix_Shop.Telas.Pagamentos.resources
+C:\Senai_Tcc\Fenix_Shop\obj\Debug\net8.0-windows\Fenix_Shop.Telas.EditarProdutos.resources

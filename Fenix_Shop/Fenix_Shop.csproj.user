@@ -4,6 +4,9 @@
     <Compile Update="Telas\CadastroUsuarioAdministrador.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="Telas\EditarProdutos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="Telas\Form1.cs">
       <SubType>Form</SubType>
     </Compile>

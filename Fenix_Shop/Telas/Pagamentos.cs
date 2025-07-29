@@ -28,14 +28,14 @@ namespace Fenix_Shop.Telas
 
         private void button1Credito_Click(object sender, EventArgs e)
         {
-            Vendas.VerificaPagamento = TipoDePagamento.CARTAO.ToString();
+            Vendas.VerificaPagamento = TipoDePagamento.CREDITO.ToString();
             vendas.AtualizarVenda();
             this.Parent.Controls.Remove(this);
         }
 
         private void button1Debito_Click(object sender, EventArgs e)
         {
-            Vendas.VerificaPagamento = TipoDePagamento.CARTAO.ToString();
+            Vendas.VerificaPagamento = TipoDePagamento.DEBITO.ToString();
             vendas.AtualizarVenda();
             this.Parent.Controls.Remove(this);
         }
@@ -45,6 +45,19 @@ namespace Fenix_Shop.Telas
             Vendas.VerificaPagamento = TipoDePagamento.PIX.ToString();
             vendas.AtualizarVenda();
             this.Parent.Controls.Remove(this);
+        }
+
+        private void button1Dinheiro_Click(object sender, EventArgs e)
+        {
+            Vendas.VerificaPagamento = TipoDePagamento.DINEIRO.ToString();
+            vendas.AtualizarVenda();
+            this.Parent.Controls.Remove(this);
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -78,7 +78,7 @@ namespace Fenix_Shop.programação
                  IdUsuario INTEGER NOT NULL,
                  DataVenda DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
                  Total INTEGER NOT NULL,
-                 FormaDePagamento TEXT NOT NULL CHECK (FormaDePagamento IN ('DINHEIRO','CARTAO','PIX','OUTROS')),
+                 FormaDePagamento TEXT NOT NULL CHECK (FormaDePagamento IN ('DINHEIRO','CREDITO','DEBITO','PIX','OUTROS')),
                  FOREIGN KEY (IdUsuario) REFERENCES Usuario(Id)
 
             );
