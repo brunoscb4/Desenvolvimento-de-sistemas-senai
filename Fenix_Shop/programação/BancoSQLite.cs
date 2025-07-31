@@ -66,7 +66,7 @@ namespace Fenix_Shop.programação
                  Id INTEGER PRIMARY KEY AUTOINCREMENT,
                  IdProduto INTEGER NOT NULL,
                  Tipo TEXT NOT NULL CHECK (Tipo IN ('ENTRADA','SAIDA')),
-                 Quantidade INTEGER NOT NULL CHECK (Quantidade > 0),
+                 Quantidade INTEGER NOT NULL CHECK (Quantidade >= 0),
                  ValorUnitario INTEGER NOT NULL,
                  DataDaMovimentacao DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
                  FOREIGN KEY (IdProduto) REFERENCES CadastroProduto(Id) ON DELETE CASCADE ON UPDATE CASCADE
@@ -87,7 +87,7 @@ namespace Fenix_Shop.programação
                  Id INTEGER PRIMARY KEY AUTOINCREMENT,
                  IdVenda INTEGER NOT NULL,
                  IdProduto INTEGER NOT NULL,
-                 Quantidade INTEGER NOT NULL CHECK (Quantidade > 0),
+                 Quantidade INTEGER NOT NULL CHECK (Quantidade >= 0),
                  PrecoUnitario INTEGER NOT NULL,
                  DataDaMovimentacao DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
                  FOREIGN KEY (IdVenda) REFERENCES Vendas (Id) ON DELETE CASCADE,

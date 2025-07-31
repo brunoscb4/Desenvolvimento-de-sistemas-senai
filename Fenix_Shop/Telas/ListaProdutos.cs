@@ -44,13 +44,40 @@ namespace Fenix_Shop.Telas
             if (!string.IsNullOrWhiteSpace(TextBoxCodigoBuscar.Text) && TextBoxCodigoBuscar.Text != null)
             {
                 idBuscar = int.Parse(TextBoxCodigoBuscar.Text);
-                dataGridView1.DataSource = null;
-                dataGridView1.DataSource = produto.ProdutosRegisBuscaId(idBuscar);
+           
+
+                dataGridView1.DataSource =  produto.ProdutosRegisBuscaId(idBuscar);
+                if (!dataGridView1.Columns.Contains("btnAcao"))
+                {
+                    DataGridViewButtonColumn btnColuna = new DataGridViewButtonColumn();
+                    btnColuna.Name = "btnAcao";
+                    btnColuna.HeaderText = "AÇÃO";
+                    btnColuna.Text = "Editar";
+                    btnColuna.UseColumnTextForButtonValue = true;
+                    btnColuna.DefaultCellStyle.BackColor = Color.DarkRed;
+                    dataGridView1.Columns.Add(btnColuna);
+                    btnColuna.Width = 50;
+                    dataGridView1.RowTemplate.Height = 20;
+                }
+              
             }
             else
             {
-                dataGridView1.DataSource = null;
+               
                 dataGridView1.DataSource = produto.ProdutosRegisBuscaNome(textBoxBuscarNome.Text);
+
+                if (!dataGridView1.Columns.Contains("btnAcao"))
+                {
+                    DataGridViewButtonColumn btnColuna = new DataGridViewButtonColumn();
+                    btnColuna.Name = "btnAcao";
+                    btnColuna.HeaderText = "AÇÃO";
+                    btnColuna.Text = "Editar";
+                    btnColuna.UseColumnTextForButtonValue = true;
+                    btnColuna.DefaultCellStyle.BackColor = Color.DarkRed;
+                    dataGridView1.Columns.Add(btnColuna);
+                    btnColuna.Width = 50;
+                    dataGridView1.RowTemplate.Height = 20;
+                }
             }
         }
 

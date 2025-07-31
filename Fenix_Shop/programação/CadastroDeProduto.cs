@@ -7,6 +7,7 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Transactions;
 
 namespace Fenix_Shop.programação
 {
@@ -294,7 +295,7 @@ namespace Fenix_Shop.programação
                 {
                     connection.Open();
 
-                    string Select = @"SELECT Id AS CODIGO,Nome AS PRODUTO,Marca AS MARCA,ROUND(ValorDeVenda / 100.0 ,2) AS VALOR ,Foto AS FOTO FROM CadastroProduto WHERE @id IS NULL OR Id = @id ";
+                    string Select = @"SELECT Id AS CODIGO,Nome AS PRODUTO,Marca AS MARCA,ROUND(ValorDeVenda / 100.0 ,2) AS VALOR ,Foto AS FOTO FROM CadastroProduto WHERE  Id = @id ";
                     DataTable dt = new DataTable();
                     using SQLiteCommand cmd = new SQLiteCommand(Select, connection);
 
@@ -405,6 +406,62 @@ namespace Fenix_Shop.programação
             catch (Exception ex)
             {
                 MessageBox.Show("Erro ao pegar informações " + ex.Message);
+                return false;
+            }
+        }
+
+
+        public bool atualizarProduto()
+        {
+            try
+            {
+
+                using (SQLiteConnection connection = new SQLiteConnection(BancoSQLite.ConexaoSQlite))
+                {
+                    connection.Open();
+
+                    using (var transaction = connection.BeginTransaction())
+                    {
+                        string update = @"UPDATE  CadastroProduto SET Nome=@Nome,Categoria=@Categoria,Descricao=@Descricao,Marca=@Marca,ValorDeCusto=@ValorCusto,ValorDeVenda=@ValorVenda,CodigoDeBarras=@CodigoBarras,Sku=@Sku,Foto=@Imagem
+                                     WHERE Id = @Id";
+
+                        using (SQLiteCommand cmd = new SQLiteCommand(update, connection))
+                        {
+                            cmd.Parameters.AddWithValue("@Id", Id);
+                            cmd.Parameters.AddWithValue("@Nome", Nome);
+                            cmd.Parameters.AddWithValue("@Categoria", Categoria);
+                            cmd.Parameters.AddWithValue("@Marca", Marca);
+                            cmd.Parameters.AddWithValue("@Descricao", Descricao);
+                            cmd.Parameters.AddWithValue("@ValorCusto", ValorCusto);
+                            cmd.Parameters.AddWithValue("@ValorVenda", ValorVenda);
+                            cmd.Parameters.AddWithValue("@CodigoBarras", CodigoBarras);
+                            cmd.Parameters.AddWithValue("@Sku", Sku);
+                            cmd.Parameters.AddWithValue("@Imagem", Imagem);
+                            cmd.ExecuteNonQuery();
+                            
+
+                            string insertEstoque = @"INSERT INTO Estoque (IdProduto,Tipo,Quantidade,ValorUnitario) VALUES (@IdProduto,@MovimentacaoEstoque,@Estoque,@ValorVenda) ";
+                            using (SQLiteCommand cmdEstoque = new SQLiteCommand(insertEstoque, connection))
+                            {
+                                cmdEstoque.Parameters.AddWithValue("@IdProduto", Id);
+                                cmdEstoque.Parameters.AddWithValue("@MovimentacaoEstoque", MovimentacaoEstoque);
+                                cmdEstoque.Parameters.AddWithValue("@Estoque", Estoque);
+                                cmdEstoque.Parameters.AddWithValue("@ValorVenda", ValorVenda.ToString(CultureInfo.InvariantCulture));
+
+                                cmdEstoque.ExecuteNonQuery();
+                            }
+
+                            transaction.Commit();
+                            return true;
+                        }
+                    }
+
+                }
+
+            }
+            catch (Exception ex )
+            {
+                MessageBox.Show("Erro ao atualizar produto "+  ex.Message);
                 return false;
             }
         }

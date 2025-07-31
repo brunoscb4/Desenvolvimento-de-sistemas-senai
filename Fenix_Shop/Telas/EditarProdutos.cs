@@ -17,7 +17,15 @@ namespace Fenix_Shop.Telas
         public EditarProdutos(CadastroDeProduto cadastro)
         {
             InitializeComponent();
-           this.cadastro = cadastro;
+            this.cadastro = cadastro;
+        }
+        public static byte[] ConverterImagemParaBytes(Image imagem)
+        {
+            using (MemoryStream ms = new MemoryStream())
+            {
+                imagem.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                return ms.ToArray();
+            }
         }
 
         private void Salvar_Click(object sender, EventArgs e)
@@ -28,46 +36,57 @@ namespace Fenix_Shop.Telas
                 cadastro.Categoria = textBox2Categoria.Text;
                 cadastro.Marca = textBox3Marca.Text;
                 cadastro.Descricao = TextBoxDescricao.Text;
-                cadastro.ValorCusto = int.Parse(TextBoxCusto.Text);
-                cadastro.ValorVenda = int.Parse(TextBoxVenda.Text);
+                cadastro.ValorCusto = int.Parse(TextBoxCusto.Text.Replace("R$", "").Replace(".", "").Replace(",", "").Trim());
+                cadastro.ValorVenda = int.Parse(TextBoxVenda.Text.Replace("R$", "").Replace(".", "").Replace(",", "").Trim());
                 cadastro.CodigoBarras = TextBoxCodigoBarras.Text;
                 cadastro.Sku = TextBoxSku.Text;
                 int estoqueAtual = int.Parse(TextBoxEstoque.Text);
-                if (cadastro.Estoque >= 0 && cadastro.Estoque > estoqueAtual )
+                if (cadastro.Estoque > estoqueAtual)
                 {
-                    cadastro.Estoque = estoqueAtual =- cadastro.Estoque;
-                    cadastro.MovimentacaoEstoque = "SAIDA";
-                } else if(cadastro.Estoque < estoqueAtual)
-                {
-                    cadastro.Estoque = estoqueAtual = - cadastro.Estoque;
-                    cadastro.MovimentacaoEstoque = "ENTRADA";
-                } else if(estoqueAtual == 0)
-                {
-                    cadastro.Estoque = cadastro.Estoque =- cadastro.Estoque;
+                    cadastro.Estoque = cadastro.Estoque -= estoqueAtual;
                     cadastro.MovimentacaoEstoque = "SAIDA";
                 }
-
+                else if (cadastro.Estoque < estoqueAtual)
+                {
+                    cadastro.Estoque = estoqueAtual -= cadastro.Estoque;
+                    cadastro.MovimentacaoEstoque = "ENTRADA";
+                }
+                else if (estoqueAtual == 0)
+                {
+                    cadastro.Estoque = cadastro.Estoque -= cadastro.Estoque;
+                    cadastro.MovimentacaoEstoque = "SAIDA";
+                }
+                if (pictureBoxCadastroProduto.Image != null)
+                {
+                    
+                    cadastro.Imagem = ConverterImagemParaBytes(pictureBoxCadastroProduto.Image  );
+                }
+                cadastro.atualizarProduto();
+                ListaProdutos listaPr = new ListaProdutos();
+                PanelEditarProdutos.Controls.Clear();
+                listaPr.Dock = DockStyle.Fill;
+                PanelEditarProdutos.Controls.Add(listaPr);
             }
             catch (Exception ex)
             {
 
-                throw;
+                MessageBox.Show("Erro editar " + ex.Message);
             }
         }
 
-       
+
         private void EditarProdutos_Load(object sender, EventArgs e)
         {
             try
             {
-                
+
 
                 textBox1Nome.Text = cadastro.Nome;
                 textBox2Categoria.Text = cadastro.Categoria;
                 textBox3Marca.Text = cadastro.Marca;
                 TextBoxDescricao.Text = cadastro.Descricao;
                 TextBoxCusto.Text = (cadastro.ValorCusto / 100.0m).ToString("C2");
-                TextBoxVenda.Text = (cadastro.ValorVenda / 100.0m ).ToString("C2");
+                TextBoxVenda.Text = (cadastro.ValorVenda / 100.0m).ToString("C2");
                 TextBoxEstoque.Text = cadastro.Estoque.ToString();
                 TextBoxCodigoBarras.Text = cadastro.CodigoBarras;
                 TextBoxSku.Text = cadastro.Sku;
@@ -85,5 +104,37 @@ namespace Fenix_Shop.Telas
                 throw;
             }
         }
-    }
+
+        private void pictureBoxCadastroProduto_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog open = new OpenFileDialog())
+            {
+                open.Title = "Selecione uma imagem";
+                open.Filter = "Imagens(*.jpg;*.jpeg;*.png;*.bmp|*.jpg;*.jpeg;*.png;*.bmp)";
+
+                if (open.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        if (pictureBoxCadastroProduto.Image != null)
+                        {
+                            pictureBoxCadastroProduto.Image.Dispose();
+                            pictureBoxCadastroProduto.Image = null;
+                        }
+
+                        pictureBoxCadastroProduto.Image = Image.FromFile(open.FileName);
+
+                        pictureBoxCadastroProduto.SizeMode = PictureBoxSizeMode.StretchImage;
+                    }
+                    catch (Exception ex)
+                    {
+
+                        MessageBox.Show("Erro ao carregar imagem: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+
+                }
+
+            }
+        }       }
 }
