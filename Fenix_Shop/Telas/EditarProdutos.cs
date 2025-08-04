@@ -23,7 +23,11 @@ namespace Fenix_Shop.Telas
         {
             using (MemoryStream ms = new MemoryStream())
             {
-                imagem.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                using (Bitmap bpm = new Bitmap(imagem))
+                
+                    {
+                    bpm.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                    }
                 return ms.ToArray();
             }
         }
@@ -40,11 +44,12 @@ namespace Fenix_Shop.Telas
                 cadastro.ValorVenda = int.Parse(TextBoxVenda.Text.Replace("R$", "").Replace(".", "").Replace(",", "").Trim());
                 cadastro.CodigoBarras = TextBoxCodigoBarras.Text;
                 cadastro.Sku = TextBoxSku.Text;
+                cadastro.EsMinimo = int.Parse(TextBoxEstoqueMinimo.Text);
                 int estoqueAtual = int.Parse(TextBoxEstoque.Text);
                 if (cadastro.Estoque > estoqueAtual)
                 {
                     cadastro.Estoque = cadastro.Estoque -= estoqueAtual;
-                    cadastro.MovimentacaoEstoque = "SAIDA";
+
                 }
                 else if (cadastro.Estoque < estoqueAtual)
                 {
@@ -90,7 +95,8 @@ namespace Fenix_Shop.Telas
                 TextBoxEstoque.Text = cadastro.Estoque.ToString();
                 TextBoxCodigoBarras.Text = cadastro.CodigoBarras;
                 TextBoxSku.Text = cadastro.Sku;
-                if (cadastro.Imagem != null)
+                TextBoxEstoqueMinimo.Text  = cadastro.EsMinimo.ToString();
+                if (cadastro.Imagem != null )
                 {
                     using (var ms = new System.IO.MemoryStream(cadastro.Imagem))
                     {

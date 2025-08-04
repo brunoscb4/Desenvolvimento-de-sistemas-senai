@@ -10,20 +10,27 @@ using System.Text.RegularExpressions;
 
 namespace Fenix_Shop.programação
 {
-    internal class ItensVendidos 
+    internal class ItensVendidos
     {
         private static int iduser;
         private int valorTotal;
-        private string formaPagamento ;
-        private string saida {  get; set; }
-        
+        private string formaPagamento;
+        private DateTime dataInicio;
+        private DateTime dataFim;
+        private string saida { get; set; }
 
-      public static int IdUser { get { return iduser; } set { iduser = value; } }   
+
+        public static int IdUser { get { return iduser; } set { iduser = value; } }
         public int ValorTotal { get { return valorTotal; } set { valorTotal = value; } }
         public string FormaPagamento { get { return formaPagamento; } set { formaPagamento = value; } }
-        
+
+        public DateTime DataInicio
+        { get { return dataInicio; } set { dataInicio = value; } }
+
+        public DateTime DataFim
+        { get { return dataFim; } set { dataFim = value; } }
         private List<ListVendas> lista { get; set; } = new List<ListVendas> { };
-        public bool AddProduto (ListVendas feitas)
+        public bool AddProduto(ListVendas feitas)
         {
             if (feitas != null)
             {
@@ -43,7 +50,7 @@ namespace Fenix_Shop.programação
         }
         public int QuantidadeVendidos()
         {
-            return lista.Sum(i => i.Quantidade );
+            return lista.Sum(i => i.Quantidade);
         }
         public void ApagarLista()
         {
@@ -53,91 +60,91 @@ namespace Fenix_Shop.programação
         {
             if (dataGridView == null) return;
             {
-                 dataGridView.Rows.Clear();
-            foreach (var item in lista)
-            {
-                dataGridView.Rows.Add(item.Id,item.Produto, item.Quantidade, item.Valor, item.Total);
-            }
-            }
-           
-        }
-        
-
-        
-          
-        
-        
-            public bool CadastrarItensVendidos()
-            {
-                try
+                dataGridView.Rows.Clear();
+                foreach (var item in lista)
                 {
-                    using (var connection = new SQLiteConnection(BancoSQLite.ConexaoSQlite))
-                    {
-                        connection.Open();
-                        using (var transaction = connection.BeginTransaction())
-                        {
-                            string insert = @"INSERT INTO Vendas(IdUsuario,Total,FormaDePagamento) 
-                                          VALUES(@IdUser,@ValorTotal,@FormaPagamento) RETURNING Id";
-                            using (var cmd = new SQLiteCommand(insert, connection,transaction))
-                            {
-                                cmd.Parameters.AddWithValue("@IdUser", IdUser);
-                                cmd.Parameters.AddWithValue("@ValorTotal", ValorTotal.ToString("F2"));
-                                cmd.Parameters.AddWithValue("@FormaPagamento", FormaPagamento);
+                    dataGridView.Rows.Add(item.Id, item.Produto, item.Quantidade, item.Valor, item.Total);
+                }
+            }
 
-                                int IdVendas = Convert.ToInt32(cmd.ExecuteScalar());
-                                string insertItensVendidos = @"INSERT INTO ItensVendidos(IdVenda,IdProduto,Quantidade,PrecoUnitario) 
+        }
+
+
+
+
+
+
+        public bool CadastrarItensVendidos()
+        {
+            try
+            {
+                using (var connection = new SQLiteConnection(BancoSQLite.ConexaoSQlite))
+                {
+                    connection.Open();
+                    using (var transaction = connection.BeginTransaction())
+                    {
+                        string insert = @"INSERT INTO Vendas(IdUsuario,Total,FormaDePagamento) 
+                                          VALUES(@IdUser,@ValorTotal,@FormaPagamento) RETURNING Id";
+                        using (var cmd = new SQLiteCommand(insert, connection, transaction))
+                        {
+                            cmd.Parameters.AddWithValue("@IdUser", IdUser);
+                            cmd.Parameters.AddWithValue("@ValorTotal", ValorTotal.ToString("F2"));
+                            cmd.Parameters.AddWithValue("@FormaPagamento", FormaPagamento);
+
+                            int IdVendas = Convert.ToInt32(cmd.ExecuteScalar());
+                            string insertItensVendidos = @"INSERT INTO ItensVendidos(IdVenda,IdProduto,Quantidade,PrecoUnitario) 
                                                             VALUES(@IdVenda,@IdProduto,@Quantidade,@PrecoUnitario)";
 
-                                string estoque = @"INSERT INTO Estoque( IdProduto,Tipo ,Quantidade,ValorUnitario) VALUES (@IdProduto,@saida,@Quantidade,@PrecoUnitario)";
+                            string estoque = @"INSERT INTO Estoque( IdProduto,Tipo ,Quantidade,ValorUnitario) VALUES (@IdProduto,@saida,@Quantidade,@PrecoUnitario)";
                             foreach (var item in lista)
                             {
-                                using (var cmdItens = new SQLiteCommand(insertItensVendidos, connection,transaction))
+                                using (var cmdItens = new SQLiteCommand(insertItensVendidos, connection, transaction))
                                 {
                                     using (var cmdSaida = new SQLiteCommand(estoque, connection, transaction))
                                     {
-                                        
+
 
                                         cmdItens.Parameters.AddWithValue("@IdVenda", IdVendas);
                                         cmdItens.Parameters.AddWithValue("@IdProduto", item.Id);
                                         cmdItens.Parameters.AddWithValue("@Quantidade", item.Quantidade);
-                                        cmdItens.Parameters.AddWithValue("@PrecoUnitario", item.Valor );
+                                        cmdItens.Parameters.AddWithValue("@PrecoUnitario", item.Valor);
                                         cmdItens.ExecuteNonQuery();
-                                        
-                                        cmdSaida.Parameters.AddWithValue("@IdProduto",item.Id);
+
+                                        cmdSaida.Parameters.AddWithValue("@IdProduto", item.Id);
                                         cmdSaida.Parameters.AddWithValue("@saida", saida = "SAIDA");
-                                        cmdSaida.Parameters.AddWithValue("@Quantidade",item.Quantidade);
-                                        cmdSaida.Parameters.AddWithValue("@PrecoUnitario",item.Valor);
+                                        cmdSaida.Parameters.AddWithValue("@Quantidade", item.Quantidade);
+                                        cmdSaida.Parameters.AddWithValue("@PrecoUnitario", item.Valor);
                                         cmdSaida.ExecuteNonQuery();
 
                                     }
                                 }
                             }
-                                                                                
-                            }
-                            transaction.Commit();
+
                         }
+                        transaction.Commit();
                     }
-                    return true;
                 }
-                catch (Exception ex)
-                {
-                    Console.WriteLine($"Erro ao cadastrar itens vendidos: {ex.Message}");
-                    return false;
-                }
+                return true;
             }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Erro ao cadastrar itens vendidos: {ex.Message}");
+                return false;
+            }
+        }
 
         public int QtVendidas()
         {
             try
-            { 
-                using (SQLiteConnection connection = new SQLiteConnection(BancoSQLite.ConexaoSQlite))
             {
+                using (SQLiteConnection connection = new SQLiteConnection(BancoSQLite.ConexaoSQlite))
+                {
                     connection.Open();
 
                     string qtVendidos = @"SELECT SUM(Quantidade )FROM ItensVendidos";
                     using (SQLiteCommand cmd = new SQLiteCommand(qtVendidos, connection))
                     {
-                         object resultado = cmd.ExecuteScalar();
+                        object resultado = cmd.ExecuteScalar();
 
                         if (resultado != DBNull.Value && resultado != null)
                         {
@@ -149,17 +156,17 @@ namespace Fenix_Shop.programação
                         }
                     }
 
-                    
-                   
-            }
+
+
+                }
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro ao buscar Quantidade "+ ex.Message);
+                MessageBox.Show("Erro ao buscar Quantidade " + ex.Message);
                 return 0;
             }
-           
+
         }
 
         public int QtItemsCadastrados()
@@ -171,9 +178,9 @@ namespace Fenix_Shop.programação
                     connection.Open();
 
                     string Cadastrados = @"SELECT COUNT(*) FROM CadastroProduto";
-                    using (SQLiteCommand cmd = new SQLiteCommand(Cadastrados,connection))
+                    using (SQLiteCommand cmd = new SQLiteCommand(Cadastrados, connection))
                     {
-                        object resultado = cmd.ExecuteScalar() ;
+                        object resultado = cmd.ExecuteScalar();
                         if (resultado != DBNull.Value && resultado != null)
                         {
                             return Convert.ToInt32(resultado);
@@ -182,7 +189,7 @@ namespace Fenix_Shop.programação
                         {
                             return 0;
                         }
-                        
+
                     }
                 }
 
@@ -190,7 +197,7 @@ namespace Fenix_Shop.programação
             catch (Exception ex)
             {
 
-                MessageBox.Show("Erro ao fazer a contagem produtos cadastrados " +ex.Message);
+                MessageBox.Show("Erro ao fazer a contagem produtos cadastrados " + ex.Message);
                 return 0;
             }
         }
@@ -212,7 +219,7 @@ namespace Fenix_Shop.programação
                         {
                             int soma = Convert.ToInt32(resultado);
                             decimal valor = soma / 100.0m;
-                            
+
                             return Math.Round(valor, 2);
                         }
                         else
@@ -226,7 +233,7 @@ namespace Fenix_Shop.programação
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro ao buscar valor total vendido "+ ex.Message);
+                MessageBox.Show("Erro ao buscar valor total vendido " + ex.Message);
                 return 0;
             }
         }
@@ -235,7 +242,7 @@ namespace Fenix_Shop.programação
         {
             try
             {
-                using ( SQLiteConnection connection = new SQLiteConnection(BancoSQLite.ConexaoSQlite))
+                using (SQLiteConnection connection = new SQLiteConnection(BancoSQLite.ConexaoSQlite))
                 {
                     connection.Open();
                     string VendasRealizadas = @"SELECT COUNT(*) FROM Vendas";
@@ -266,7 +273,8 @@ namespace Fenix_Shop.programação
 
         public decimal TotalCustoProdutos()
         {
-            try {
+            try
+            {
                 using (SQLiteConnection connection = new SQLiteConnection(BancoSQLite.ConexaoSQlite))
                 {
                     connection.Open();
@@ -281,7 +289,7 @@ namespace Fenix_Shop.programação
                         if (resultado != DBNull.Value && resultado != null)
                         {
                             int soma = Convert.ToInt32(resultado);
-                             decimal valor = soma / 100.0m;
+                            decimal valor = soma / 100.0m;
                             return valor;
                         }
                         else
@@ -306,20 +314,25 @@ namespace Fenix_Shop.programação
                 {
                     connection.Open();
 
-                  
-                    DataTable dt = new DataTable();  string TotalCusto = @"SELECT c.Foto AS FOTO ,c.Nome AS PRODUTO,SUM(i.Quantidade ) AS VENDIDOS,ROUND(c.ValorDeVenda / 100.0 ,2) AS VALOR,
+
+                    DataTable dt = new DataTable(); 
+                    string TotalCusto = @"SELECT c.Foto AS FOTO ,c.Nome AS PRODUTO,SUM(i.Quantidade ) AS VENDIDOS,ROUND(c.ValorDeVenda / 100.0 ,2) AS VALOR,
                                     ROUND (SUM (c.ValorDeVenda  * i.Quantidade) / 100.0 ,2 )AS TOTAL
                                     FROM ItensVendidos i
                                     JOIN CadastroProduto c ON i.IdProduto = c.Id
+                                    WHERE i.DataDaMovimentacao BETWEEN @DataInicio AND @DataFim
                                     GROUP BY c.Id";
                     using (SQLiteCommand cmd = new SQLiteCommand(TotalCusto, connection))
                     {
+                        cmd.Parameters.AddWithValue("@DataInicio",DataInicio);
+                        cmd.Parameters.AddWithValue("@DataFim", DataFim);
+
                         using (var adapter = new SQLiteDataAdapter(cmd))
                         {
                             adapter.Fill(dt);
                             return dt;
                         }
-                        
+
                     }
 
 
@@ -332,6 +345,143 @@ namespace Fenix_Shop.programação
             }
         }
 
+        public decimal PagamentoCredito()
+        {
+            try
+            {
+                using (SQLiteConnection connection = new SQLiteConnection(BancoSQLite.ConexaoSQlite))
+                {
+                    connection.Open();
 
+                    string select = @"SELECT SUM( Total ) FROM Vendas WHERE  FormaDePagamento LIKE 'CREDITO'";
+
+                    using (SQLiteCommand cmd = new SQLiteCommand(select, connection))
+                    {
+                        object resultado = cmd.ExecuteScalar();
+
+                        if (resultado != null)
+                        {
+                            int soma = Convert.ToInt32(resultado);
+                            decimal valor = soma / 100.0m;
+                            return valor;
+                        }
+                        else
+                        {
+                            return 0;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                
+                return 0;
+            }
+        }
+
+        public decimal PagamentoDebito()
+        {
+            try
+            {
+                using (SQLiteConnection connection = new SQLiteConnection(BancoSQLite.ConexaoSQlite))
+                {
+                    connection.Open();
+
+                    string select = @"SELECT SUM( Total ) FROM Vendas WHERE  FormaDePagamento LIKE 'DEBITO'";
+
+                    using (SQLiteCommand cmd = new SQLiteCommand(select, connection))
+                    {
+                        object resultado = cmd.ExecuteScalar();
+
+                        if (resultado != null)
+                        {
+                            int soma = Convert.ToInt32(resultado);
+                            decimal valor = soma / 100.0m;
+                            return valor;
+                        }
+                        else
+                        {
+                            return 0;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return 0;
+            }
+        }
+
+
+
+        public decimal PagamentoPix()
+        {
+            try
+            {
+                using (SQLiteConnection connection = new SQLiteConnection(BancoSQLite.ConexaoSQlite))
+                {
+                    connection.Open();
+
+                    string select = @"SELECT SUM( Total ) FROM Vendas WHERE  FormaDePagamento LIKE 'PIX'";
+
+                    using (SQLiteCommand cmd = new SQLiteCommand(select, connection))
+                    {
+                        object resultado = cmd.ExecuteScalar();
+
+                        if (resultado != null)
+                        {
+                            int soma = Convert.ToInt32(resultado);
+                            decimal valor = soma / 100.0m;
+                            return valor;
+                        }
+                        else
+                        {
+                            return 0;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                
+                return 0;
+            }
+        }
+
+
+
+        public decimal PagamentoDinheiro()
+        {
+            try
+            {
+                using (SQLiteConnection connection = new SQLiteConnection(BancoSQLite.ConexaoSQlite))
+                {
+                    connection.Open();
+
+                    string select = @"SELECT SUM( Total ) FROM Vendas WHERE  FormaDePagamento LIKE 'DINHEIRO'";
+
+                    using (SQLiteCommand cmd = new SQLiteCommand(select, connection))
+                    {
+                        object resultado = cmd.ExecuteScalar();
+
+                        if (resultado != null)
+                        {
+                            int soma = Convert.ToInt32(resultado);
+                            decimal valor = soma / 100.0m;
+                            return valor;
+                        }
+                        else
+                        {
+                            return 0;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+               
+                return 0;
+            }
+        }
     }
 }

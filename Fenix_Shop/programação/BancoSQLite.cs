@@ -56,6 +56,7 @@ namespace Fenix_Shop.programação
                 ValorDeVenda INTEGER NOT NULL,
                 CodigoDeBarras TEXT UNIQUE,
                 Sku TEXT UNIQUE,
+                EstoqueMinimo INTEGER CHECK(EstoqueMinimo > 0),
                 DataDeCadastro DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
                 Foto BLOB,
                 FOREIGN KEY (Idusuario) REFERENCES Usuario (Id)

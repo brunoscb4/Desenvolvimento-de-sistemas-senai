@@ -8,7 +8,7 @@ namespace Fenix_Shop.Enums
 {
     internal enum TipoDePagamento
     {
-        DINEIRO,
+        DINHEIRO,
         CREDITO,
         DEBITO,
         PIX

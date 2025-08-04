@@ -21,6 +21,7 @@ namespace Fenix_Shop.Telas
             InitializeComponent();
 
         }
+       
         private static bool EmailValido(string email)
         {
             try

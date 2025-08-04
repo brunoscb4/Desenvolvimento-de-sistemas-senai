@@ -49,7 +49,7 @@ namespace Fenix_Shop.Telas
 
         private void button1Dinheiro_Click(object sender, EventArgs e)
         {
-            Vendas.VerificaPagamento = TipoDePagamento.DINEIRO.ToString();
+            Vendas.VerificaPagamento = TipoDePagamento.DINHEIRO.ToString();
             vendas.AtualizarVenda();
             this.Parent.Controls.Remove(this);
 

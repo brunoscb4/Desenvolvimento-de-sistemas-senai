@@ -23,6 +23,13 @@ namespace Fenix_Shop.Telas
             
 
             dataGridView1.DataSource = produto.ProdutosRegistrados();
+            var dt = produto.ProdutosRegistrados();
+
+            if (dt != null)
+            {
+                dataGridView1.DataSource = dt;
+                dataGridView1.Columns["VALOR"].DefaultCellStyle.Format = "C2";
+            }
             if (!dataGridView1.Columns.Contains("btnAcao"))
             {
                 DataGridViewButtonColumn btnColuna = new DataGridViewButtonColumn();

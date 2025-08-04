@@ -19,6 +19,8 @@ namespace Fenix_Shop.programação
         private int estoque, esMinimo;
         private DateTime dataCadastro;
         private static int id;
+
+        private int GuardaValorEstoque;
         public byte[] Imagem
         { get { return imagem; } set { imagem = value; } }
         public string Nome
@@ -61,8 +63,8 @@ namespace Fenix_Shop.programação
                     {
 
 
-                        string insert = @"INSERT INTO CadastroProduto(IdUsuario,Nome,Categoria,Descricao,Marca,ValorDeCusto,ValorDeVenda,CodigoDeBarras,Sku,Foto)" +
-                            "VALUES(@Id,@Nome,@Categoria,@Descricao,@Marca,@ValorCusto,@ValorVenda,@CodigoBarras,@Sku,@Imagem) RETURNING Id";
+                        string insert = @"INSERT INTO CadastroProduto(IdUsuario,Nome,Categoria,Descricao,Marca,ValorDeCusto,ValorDeVenda,CodigoDeBarras,Sku,EstoqueMinimo,Foto)" +
+                            "VALUES(@Id,@Nome,@Categoria,@Descricao,@Marca,@ValorCusto,@ValorVenda,@CodigoBarras,@Sku,@EsMinimo,@Imagem) RETURNING Id";
 
                         using (SQLiteCommand cmd = new SQLiteCommand(insert, connection))
                         {
@@ -75,6 +77,7 @@ namespace Fenix_Shop.programação
                             cmd.Parameters.AddWithValue("@ValorVenda", ValorVenda);
                             cmd.Parameters.AddWithValue("@CodigoBarras", CodigoBarras);
                             cmd.Parameters.AddWithValue("@Sku", Sku);
+                            cmd.Parameters.AddWithValue("@EsMinimo",EsMinimo);
                             cmd.Parameters.AddWithValue("@Imagem", Imagem);
 
                             int idProduto = Convert.ToInt32(cmd.ExecuteScalar());
@@ -134,8 +137,8 @@ namespace Fenix_Shop.programação
                     string select = @"SELECT u.Nome AS USUARIO, p.Nome AS PRODUTO,p.Id AS CODIGO,ROUND( p.ValorDeVenda / 100.0 ,2) AS VALOR,
                    SUM(CASE WHEN Tipo = 'ENTRADA' THEN Quantidade ELSE 0 END) -
                    SUM(CASE WHEN Tipo = 'SAIDA' THEN Quantidade ELSE 0 END) AS ESTOQUE FROM Usuario u 
-                    JOIN CadastroProduto p ON p.IdUsuario = u.Id
-                    JOIN Estoque e ON e.IdProduto = p.Id  GROUP BY p.Id " ;
+                   LEFT  JOIN CadastroProduto p ON p.IdUsuario = u.Id
+                    LEFT JOIN Estoque e ON e.IdProduto = p.Id  GROUP BY p.Id,u.Nome,p.Nome,p.ValorDeVenda " ;
 
                     DataTable dt = new DataTable();
 
@@ -229,9 +232,14 @@ namespace Fenix_Shop.programação
                 {
                     connection.Open();
 
-                    string select = @"SELECT u.Nome AS USUARIO, p.Nome AS PRODUTO,p.Id AS CODIGO, ROUND(p.ValorDeVenda / 100.0 ,2) AS VALOR,e.Quantidade AS ESTOQUE FROM Usuario u 
+                    string select = @"SELECT u.Nome AS USUARIO, p.Nome AS PRODUTO,p.Id AS CODIGO, ROUND(p.ValorDeVenda / 100.0 ,2) AS VALOR,
+                      (  SELECT
+                      SUM(CASE WHEN Tipo = 'ENTRADA' THEN Quantidade ELSE 0 END ) -
+                      SUM(CASE WHEN Tipo = 'SAIDA' THEN Quantidade ELSE 0 END )
+                      FROM Estoque e 
+                      WHERE e.IdProduto = p.Id ) AS ESTOQUE FROM Usuario u 
                     JOIN CadastroProduto p ON p.IdUsuario = u.Id
-                    JOIN Estoque e ON e.IdProduto = p.Id WHERE  p.Id = @id";
+                     WHERE  p.Id = @id";
 
                     DataTable dt = new DataTable();
                     using SQLiteCommand cmd = new SQLiteCommand(select, connection);
@@ -262,9 +270,14 @@ namespace Fenix_Shop.programação
                 {
                     connection.Open();
 
-                    string select = @"SELECT u.Nome AS USUARIO, p.Nome AS PRODUTO,p.Id AS CODIGO, ROUND(p.ValorDeVenda / 100.0 ,2)AS VALOR,e.Quantidade AS ESTOQUE FROM Usuario u 
+                    string select = @"SELECT u.Nome AS USUARIO, p.Nome AS PRODUTO,p.Id AS CODIGO, ROUND(p.ValorDeVenda / 100.0 ,2)AS VALOR,
+                     (  SELECT
+                      SUM(CASE WHEN Tipo = 'ENTRADA' THEN Quantidade ELSE 0 END ) -
+                      SUM(CASE WHEN Tipo = 'SAIDA' THEN Quantidade ELSE 0 END )
+                      FROM Estoque e 
+                      WHERE e.IdProduto = p.Id ) AS ESTOQUE FROM Usuario u 
                     JOIN CadastroProduto p ON p.IdUsuario = u.Id
-                    JOIN Estoque e ON e.IdProduto = p.Id WHERE p.Nome LIKE @nome ";
+                     WHERE p.Nome LIKE @nome ";
 
                     DataTable dt = new DataTable();
                     using SQLiteCommand cmd = new SQLiteCommand(select, connection);
@@ -360,7 +373,7 @@ namespace Fenix_Shop.programação
                 {
                     connection.Open();
 
-                    string select = @" SELECT c.Nome,c.Categoria,c.Descricao,c.Marca,c.ValorDeCusto,c.ValorDeVenda,c.CodigoDeBarras,c.Sku,c.Foto,e.Tipo,
+                    string select = @" SELECT c.Nome,c.Categoria,c.Descricao,c.Marca,c.ValorDeCusto,c.ValorDeVenda,c.CodigoDeBarras,c.Sku,c.EstoqueMinimo,c.Foto,e.Tipo,
                                          SUM(CASE WHEN Tipo = 'ENTRADA' THEN Quantidade ELSE 0 END) -
                                          SUM(CASE WHEN Tipo = 'SAIDA' THEN Quantidade ELSE 0 END) AS ESTOQUE,e.ValorUnitario 
                                        FROM CadastroProduto c
@@ -391,9 +404,10 @@ namespace Fenix_Shop.programação
                                 else
                                 { Imagem = null; }
                                 Sku = reader["Sku"].ToString();
-                                
+                                EsMinimo = int.Parse(reader["EstoqueMinimo"].ToString());
                                 movimentacaoEstoque = reader["Tipo"].ToString();
                                 Estoque = int.Parse(reader["ESTOQUE"].ToString());
+                                GuardaValorEstoque = Estoque;
                                 return true;
                             }
                        return true;
@@ -422,7 +436,7 @@ namespace Fenix_Shop.programação
 
                     using (var transaction = connection.BeginTransaction())
                     {
-                        string update = @"UPDATE  CadastroProduto SET Nome=@Nome,Categoria=@Categoria,Descricao=@Descricao,Marca=@Marca,ValorDeCusto=@ValorCusto,ValorDeVenda=@ValorVenda,CodigoDeBarras=@CodigoBarras,Sku=@Sku,Foto=@Imagem
+                        string update = @"UPDATE  CadastroProduto SET Nome=@Nome,Categoria=@Categoria,Descricao=@Descricao,Marca=@Marca,ValorDeCusto=@ValorCusto,ValorDeVenda=@ValorVenda,CodigoDeBarras=@CodigoBarras,Sku=@Sku,EStoqueMinimo=@EsMinimo,Foto=@Imagem
                                      WHERE Id = @Id";
 
                         using (SQLiteCommand cmd = new SQLiteCommand(update, connection))
@@ -436,11 +450,13 @@ namespace Fenix_Shop.programação
                             cmd.Parameters.AddWithValue("@ValorVenda", ValorVenda);
                             cmd.Parameters.AddWithValue("@CodigoBarras", CodigoBarras);
                             cmd.Parameters.AddWithValue("@Sku", Sku);
+                            cmd.Parameters.AddWithValue("@EsMinimo",EsMinimo);
                             cmd.Parameters.AddWithValue("@Imagem", Imagem);
                             cmd.ExecuteNonQuery();
-                            
 
-                            string insertEstoque = @"INSERT INTO Estoque (IdProduto,Tipo,Quantidade,ValorUnitario) VALUES (@IdProduto,@MovimentacaoEstoque,@Estoque,@ValorVenda) ";
+                            if (Estoque != GuardaValorEstoque)
+                            {
+                          string insertEstoque = @"INSERT INTO Estoque (IdProduto,Tipo,Quantidade,ValorUnitario) VALUES (@IdProduto,@MovimentacaoEstoque,@Estoque,@ValorVenda) ";
                             using (SQLiteCommand cmdEstoque = new SQLiteCommand(insertEstoque, connection))
                             {
                                 cmdEstoque.Parameters.AddWithValue("@IdProduto", Id);
@@ -450,6 +466,8 @@ namespace Fenix_Shop.programação
 
                                 cmdEstoque.ExecuteNonQuery();
                             }
+                            }
+                           
 
                             transaction.Commit();
                             return true;

@@ -47,6 +47,13 @@
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
+            checkBoxTelaInicio = new CheckBox();
+            label9 = new Label();
+            checkBox2CadastroProduto = new CheckBox();
+            checkBox3ListaDEProdutos = new CheckBox();
+            checkBox4Relatorio = new CheckBox();
+            checkBox5Vendas = new CheckBox();
+            checkBox6CadastroDeUsuario = new CheckBox();
             parrotGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1Usuario).BeginInit();
             SuspendLayout();
@@ -57,6 +64,13 @@
             parrotGradientPanel1.BottomLeft = Color.White;
             parrotGradientPanel1.BottomRight = Color.White;
             parrotGradientPanel1.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+            parrotGradientPanel1.Controls.Add(checkBox6CadastroDeUsuario);
+            parrotGradientPanel1.Controls.Add(checkBox5Vendas);
+            parrotGradientPanel1.Controls.Add(checkBox4Relatorio);
+            parrotGradientPanel1.Controls.Add(checkBox3ListaDEProdutos);
+            parrotGradientPanel1.Controls.Add(checkBox2CadastroProduto);
+            parrotGradientPanel1.Controls.Add(label9);
+            parrotGradientPanel1.Controls.Add(checkBoxTelaInicio);
             parrotGradientPanel1.Controls.Add(pictureBox1Usuario);
             parrotGradientPanel1.Controls.Add(TextBoxMaskTelefone);
             parrotGradientPanel1.Controls.Add(label8);
@@ -132,7 +146,7 @@
             Salvar.Image = null;
             Salvar.ImageAlign = ContentAlignment.MiddleLeft;
             Salvar.InactiveColor = Color.Green;
-            Salvar.Location = new Point(854, 732);
+            Salvar.Location = new Point(854, 820);
             Salvar.Margin = new Padding(3, 4, 3, 4);
             Salvar.Name = "Salvar";
             Salvar.PressedBorderColor = Color.Black;
@@ -278,6 +292,83 @@
             label1.TabIndex = 0;
             label1.Text = "Nome completo:";
             // 
+            // checkBoxTelaInicio
+            // 
+            checkBoxTelaInicio.AutoSize = true;
+            checkBoxTelaInicio.BackColor = Color.Transparent;
+            checkBoxTelaInicio.Location = new Point(726, 651);
+            checkBoxTelaInicio.Name = "checkBoxTelaInicio";
+            checkBoxTelaInicio.Size = new Size(98, 24);
+            checkBoxTelaInicio.TabIndex = 42;
+            checkBoxTelaInicio.Text = "Tela Inicio";
+            checkBoxTelaInicio.UseVisualStyleBackColor = false;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.BackColor = Color.Transparent;
+            label9.Font = new Font("Arial", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label9.Location = new Point(693, 605);
+            label9.Name = "label9";
+            label9.Size = new Size(245, 26);
+            label9.TabIndex = 43;
+            label9.Text = "Permissões de Telas:";
+            // 
+            // checkBox2CadastroProduto
+            // 
+            checkBox2CadastroProduto.AutoSize = true;
+            checkBox2CadastroProduto.BackColor = Color.Transparent;
+            checkBox2CadastroProduto.Location = new Point(726, 692);
+            checkBox2CadastroProduto.Name = "checkBox2CadastroProduto";
+            checkBox2CadastroProduto.Size = new Size(178, 24);
+            checkBox2CadastroProduto.TabIndex = 44;
+            checkBox2CadastroProduto.Text = "Tela Cadastro Produto";
+            checkBox2CadastroProduto.UseVisualStyleBackColor = false;
+            // 
+            // checkBox3ListaDEProdutos
+            // 
+            checkBox3ListaDEProdutos.AutoSize = true;
+            checkBox3ListaDEProdutos.BackColor = Color.Transparent;
+            checkBox3ListaDEProdutos.Location = new Point(726, 732);
+            checkBox3ListaDEProdutos.Name = "checkBox3ListaDEProdutos";
+            checkBox3ListaDEProdutos.Size = new Size(177, 24);
+            checkBox3ListaDEProdutos.TabIndex = 45;
+            checkBox3ListaDEProdutos.Text = "Tela Lista de produtos";
+            checkBox3ListaDEProdutos.UseVisualStyleBackColor = false;
+            // 
+            // checkBox4Relatorio
+            // 
+            checkBox4Relatorio.AutoSize = true;
+            checkBox4Relatorio.BackColor = Color.Transparent;
+            checkBox4Relatorio.Location = new Point(723, 811);
+            checkBox4Relatorio.Name = "checkBox4Relatorio";
+            checkBox4Relatorio.Size = new Size(123, 24);
+            checkBox4Relatorio.TabIndex = 46;
+            checkBox4Relatorio.Text = "Tela Relatorio";
+            checkBox4Relatorio.UseVisualStyleBackColor = false;
+            // 
+            // checkBox5Vendas
+            // 
+            checkBox5Vendas.AutoSize = true;
+            checkBox5Vendas.BackColor = Color.Transparent;
+            checkBox5Vendas.Location = new Point(840, 651);
+            checkBox5Vendas.Name = "checkBox5Vendas";
+            checkBox5Vendas.Size = new Size(109, 24);
+            checkBox5Vendas.TabIndex = 47;
+            checkBox5Vendas.Text = "Tela Vendas";
+            checkBox5Vendas.UseVisualStyleBackColor = false;
+            // 
+            // checkBox6CadastroDeUsuario
+            // 
+            checkBox6CadastroDeUsuario.AutoSize = true;
+            checkBox6CadastroDeUsuario.BackColor = Color.Transparent;
+            checkBox6CadastroDeUsuario.Location = new Point(723, 772);
+            checkBox6CadastroDeUsuario.Name = "checkBox6CadastroDeUsuario";
+            checkBox6CadastroDeUsuario.Size = new Size(181, 24);
+            checkBox6CadastroDeUsuario.TabIndex = 48;
+            checkBox6CadastroDeUsuario.Text = "Tela Casdastro Usuario";
+            checkBox6CadastroDeUsuario.UseVisualStyleBackColor = false;
+            // 
             // CadastroDeUsuario
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -313,5 +404,12 @@
         private MaskedTextBox TextBoxMaskTelefone;
         private Label label8;
         private PictureBox pictureBox1Usuario;
+        private CheckBox checkBoxTelaInicio;
+        private Label label9;
+        private CheckBox checkBox2CadastroProduto;
+        private CheckBox checkBox3ListaDEProdutos;
+        private CheckBox checkBox5Vendas;
+        private CheckBox checkBox4Relatorio;
+        private CheckBox checkBox6CadastroDeUsuario;
     }
 }

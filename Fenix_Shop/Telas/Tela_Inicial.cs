@@ -12,17 +12,40 @@ using System.Windows.Forms;
 
 namespace Fenix_Shop.Telas
 {
+
     public partial class Tela_Inicial : UserControl
     {
         private UsuarioLogado usuariologado;
         ItensVendidos itensVendidos = new ItensVendidos(); 
-
+       
         public Tela_Inicial(UsuarioLogado usuariologado)
         {
             InitializeComponent();
             this.usuariologado = usuariologado;
+            
         }
        
+        public bool AcesssoUsuarioPanel()
+        {
+            if (usuariologado.Nivelusuario.Equals("GERENTE"))
+            {
+                ButtonCadastroProduto.Enabled = true;
+                button1LIstaProdutos.Enabled = true;
+                button2Relatorio.Enabled = false;
+                button3Vender.Enabled = true;
+                button4CadastroUsuario.Enabled = false;
+
+            }
+            else if (usuariologado.Nivelusuario.Equals("VENDEDOR"))
+            {
+                ButtonCadastroProduto.Enabled = false;
+                button1LIstaProdutos.Enabled = false;
+                button2Relatorio.Enabled = false;
+                button3Vender.Enabled = true;
+                button4CadastroUsuario.Enabled = false;
+            }
+                return true;
+        }
         public bool  AtualizarVendas()
         {
             labelVendidos.Text = itensVendidos.QtVendidas().ToString();
@@ -152,7 +175,7 @@ namespace Fenix_Shop.Telas
 
         private void Tela_Inicial_Load(object sender, EventArgs e)
         {
-
+            AcesssoUsuarioPanel();
             Inicio.InactiveColor = Color.Green;
             AtualizarVendas();
             labelusuario.Text = usuariologado.Nome;

@@ -77,10 +77,13 @@ namespace Fenix_Shop.Telas
                     produto.Categoria = textBox2Categoria.Text;
                     produto.Marca = textBox3Marca.Text;
                     produto.Descricao = TextBoxDescricao.Text;
-                    produto.ValorCusto = int.Parse(TextBoxCusto.Text.Replace("R$", "").Replace(".", "").Replace(",","").Trim());
+                    decimal custo;
+                     produto.ValorCusto = int.Parse(TextBoxCusto.Text.Replace("R$", "").Replace(".", "").Replace(",","").Trim());
+                    decimal venda;
                     produto.ValorVenda = int.Parse(TextBoxVenda.Text.Replace("R$", "").Replace(".", "").Replace(",", "").Trim());
                     produto.CodigoBarras = TextBoxCodigoBarras.Text;
                     produto.Sku = TextBoxSku.Text;
+                    produto.EsMinimo = int.Parse(TextBoxEstoqueMinimo.Text);
                     if (pictureBoxCadastroProduto.Image != null)
                     {
                         produto.Imagem = ConverterImagemParaBytes(pictureBoxCadastroProduto.Image);
@@ -114,6 +117,9 @@ namespace Fenix_Shop.Telas
 
         private void CadastroProdutos_Load(object sender, EventArgs e)
         {
+            int valor = 00;
+            TextBoxVenda.Text = valor.ToString("C2");
+            TextBoxCusto.Text = valor.ToString("C2");
         }
         private void pictureBoxCadastroProduto_Click(object sender, EventArgs e)
         {

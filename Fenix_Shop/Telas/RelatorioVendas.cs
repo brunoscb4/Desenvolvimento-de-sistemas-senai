@@ -29,12 +29,18 @@ namespace Fenix_Shop.Telas
 
                 dataGridView1.Columns["VALOR"].DefaultCellStyle.Format = "C2";
                 dataGridView1.Columns["TOTAL"].DefaultCellStyle.Format = "C2";
+                dataGridView1.RowTemplate.Height = 40;
+                dataGridView1.Columns["Foto"].Width = 40;
+                if (dataGridView1.Columns["Foto"] is DataGridViewImageColumn imageColumn)
+                {
+                    imageColumn.ImageLayout = DataGridViewImageCellLayout.Stretch;
+                }
 
             }
         }
         private void label16PagamentosCredito_Click(object sender, EventArgs e)
         {
-
+           
         }
         public bool AtualizarRelatorio()
         {
@@ -42,28 +48,32 @@ namespace Fenix_Shop.Telas
             label11ConvercoesDeVendas.Text = itensVendidos.TotalVendidos().ToString("C2");
             label13ItensVendidos.Text = itensVendidos.QtVendidas().ToString();
             label12MediaDeVendas.Text = itensVendidos.TotalCustoProdutos().ToString("C2");
+            label16PagamentosCredito.Text = itensVendidos.PagamentoCredito().ToString("C2");
+            label15PagamentosDebito.Text = itensVendidos.PagamentoDebito().ToString("C2");
+            label10Pagamentodinheiro.Text = itensVendidos.PagamentoDinheiro().ToString("C2");
+            label14PagamentosPix.Text = itensVendidos.PagamentoPix().ToString("C2");
             return true;
         }
         private void button1_Click(object sender, EventArgs e)
         {
-
+ itensVendidos.DataInicio = dateTimePickerInicio.Value.Date;
+            itensVendidos.DataFim = dateTimePickerFinal.Value.Date.AddDays(1).AddSeconds(1);
+            dataGridView1.DataSource = null;
+            AtualizarRelatorio();
+            CarregarRelatorio();
         }
 
         private void RelatorioVendas_Load(object sender, EventArgs e)
         {
+
+            itensVendidos.DataInicio = dateTimePickerInicio.Value.Date;
+            itensVendidos.DataFim = dateTimePickerFinal.Value.Date.AddDays(1).AddSeconds(1);
             AtualizarRelatorio();
             dataGridView1.DataSource = null;
             CarregarRelatorio();
-            dataGridView1.RowTemplate.Height = 40;
-            dataGridView1.Columns["Foto"].Width = 40;
-            if (dataGridView1.Columns["Foto"] is DataGridViewImageColumn imageColumn)
-            {
-                imageColumn.ImageLayout = DataGridViewImageCellLayout.Stretch;
-            }
+            
             DateTime inicioMes = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
             dateTimePickerInicio.Text = inicioMes.ToString("dd/MM/yyyy");
         }
-
-        
     }
 }
