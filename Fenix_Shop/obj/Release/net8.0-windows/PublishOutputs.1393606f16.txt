@@ -1,0 +1,11 @@
+C:\Users\bruno\Desktop\Fenix_Shop.exe
+C:\Users\bruno\Desktop\Fenix_Shop.dll
+C:\Users\bruno\Desktop\Fenix_Shop.deps.json
+C:\Users\bruno\Desktop\Fenix_Shop.runtimeconfig.json
+C:\Users\bruno\Desktop\Fenix_Shop.pdb
+C:\Users\bruno\Desktop\ReaLTaiizor.dll
+C:\Users\bruno\Desktop\System.Data.SQLite.dll
+C:\Users\bruno\Desktop\runtimes\linux-x64\native\SQLite.Interop.dll
+C:\Users\bruno\Desktop\runtimes\osx-x64\native\SQLite.Interop.dll
+C:\Users\bruno\Desktop\runtimes\win-x64\native\SQLite.Interop.dll
+C:\Users\bruno\Desktop\runtimes\win-x86\native\SQLite.Interop.dll

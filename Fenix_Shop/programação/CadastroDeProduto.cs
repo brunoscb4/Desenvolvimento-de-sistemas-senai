@@ -19,6 +19,8 @@ namespace Fenix_Shop.programação
         private int estoque, esMinimo;
         private DateTime dataCadastro;
         private static int id;
+        private string statusProduto;
+        private static int  codigoVendas;
 
         private int GuardaValorEstoque;
         public byte[] Imagem
@@ -49,7 +51,11 @@ namespace Fenix_Shop.programação
         { get { return id; } set { id = value; } }
         public DateTime DataCadastro
         { get { return dataCadastro; } set { dataCadastro = value; } }
+        public string StatusProduto
+        { get { return statusProduto; } set { statusProduto = value; } }
 
+        public static int CodigoVendas
+        { get { return codigoVendas; } set { codigoVendas = value; } }
 
         public bool CadastroProdutoEstoque()
         {
@@ -63,8 +69,8 @@ namespace Fenix_Shop.programação
                     {
 
 
-                        string insert = @"INSERT INTO CadastroProduto(IdUsuario,Nome,Categoria,Descricao,Marca,ValorDeCusto,ValorDeVenda,CodigoDeBarras,Sku,EstoqueMinimo,Foto)" +
-                            "VALUES(@Id,@Nome,@Categoria,@Descricao,@Marca,@ValorCusto,@ValorVenda,@CodigoBarras,@Sku,@EsMinimo,@Imagem) RETURNING Id";
+                        string insert = @"INSERT INTO CadastroProduto(IdUsuario,Nome,Categoria,Descricao,Marca,ValorDeCusto,ValorDeVenda,CodigoDeBarras,Sku,EstoqueMinimo,Foto,StatusDoProduto )" +
+                            "VALUES(@Id,@Nome,@Categoria,@Descricao,@Marca,@ValorCusto,@ValorVenda,@CodigoBarras,@Sku,@EsMinimo,@Imagem,@StatusProduto) RETURNING Id";
 
                         using (SQLiteCommand cmd = new SQLiteCommand(insert, connection))
                         {
@@ -79,6 +85,7 @@ namespace Fenix_Shop.programação
                             cmd.Parameters.AddWithValue("@Sku", Sku);
                             cmd.Parameters.AddWithValue("@EsMinimo",EsMinimo);
                             cmd.Parameters.AddWithValue("@Imagem", Imagem);
+                            cmd.Parameters.AddWithValue("@StatusProduto",StatusProduto);
 
                             int idProduto = Convert.ToInt32(cmd.ExecuteScalar());
 
@@ -137,8 +144,10 @@ namespace Fenix_Shop.programação
                     string select = @"SELECT u.Nome AS USUARIO, p.Nome AS PRODUTO,p.Id AS CODIGO,ROUND( p.ValorDeVenda / 100.0 ,2) AS VALOR,
                    SUM(CASE WHEN Tipo = 'ENTRADA' THEN Quantidade ELSE 0 END) -
                    SUM(CASE WHEN Tipo = 'SAIDA' THEN Quantidade ELSE 0 END) AS ESTOQUE FROM Usuario u 
-                   LEFT  JOIN CadastroProduto p ON p.IdUsuario = u.Id
-                    LEFT JOIN Estoque e ON e.IdProduto = p.Id  GROUP BY p.Id,u.Nome,p.Nome,p.ValorDeVenda " ;
+                     JOIN CadastroProduto p ON p.IdUsuario = u.Id
+                     JOIN Estoque e ON e.IdProduto = p.Id  
+                   WHERE p.StatusDoProduto = 'ATIVO'
+                   GROUP BY p.Id,u.Nome,p.Nome,p.ValorDeVenda ";
 
                     DataTable dt = new DataTable();
 
@@ -166,10 +175,13 @@ namespace Fenix_Shop.programação
                     connection.Open();
                     string SemEstoque = @"SELECT COUNT(*) FROM ( 
                                        SELECT IdProduto 
-                                        FROM Estoque
+                                        FROM Estoque e
+                                        JOIN CadastroProduto p ON p.Id = e.IdProduto
+                                       WHERE StatusDoProduto = 'ATIVO'
                                         GROUP BY IdProduto
                                         HAVING SUM(CASE WHEN Tipo = 'ENTRADA' THEN Quantidade ELSE 0 END) -
-                                          SUM(CASE WHEN Tipo = 'SAIDA' THEN Quantidade ELSE 0 END  ) = 0 
+                                          SUM(CASE WHEN Tipo = 'SAIDA' THEN Quantidade ELSE 0 END  ) = 0
+                                    
                                           )";
                     using (var cmd = new SQLiteCommand(SemEstoque,connection))
                     {
@@ -196,6 +208,90 @@ namespace Fenix_Shop.programação
             }
         
         }
+        public DataTable  EstoqueMinimo()
+        {
+            try
+            {
+                using (SQLiteConnection connection = new SQLiteConnection(BancoSQLite.ConexaoSQlite))
+                {
+                    connection.Open();
+                    string minimo = @"
+                SELECT 
+                    p.Nome AS PRODUTO, 
+                    p.EstoqueMinimo AS MINIMO,
+                    (
+                        SUM(CASE WHEN e.Tipo = 'ENTRADA' THEN e.Quantidade ELSE 0 END) -
+                        SUM(CASE WHEN e.Tipo = 'SAIDA' THEN e.Quantidade ELSE 0 END)
+                    ) AS ESTOQUE
+                FROM Estoque e
+                JOIN CadastroProduto p ON p.Id = e.IdProduto
+                WHERE p.StatusDoProduto = 'ATIVO'
+                GROUP BY e.IdProduto
+                HAVING ESTOQUE <= p.EstoqueMinimo
+            ";
+                    using (SQLiteCommand cmd = new SQLiteCommand(minimo,connection))
+                    {
+                        using (SQLiteDataAdapter adapter = new SQLiteDataAdapter(cmd))
+                        {
+                            DataTable dt = new DataTable(); 
+                            adapter.Fill(dt);
+                            return dt;
+                        }
+
+                    }
+
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Erro ao buscar estoque minimo" + ex.Message);
+                return null;
+            }
+
+        }
+        public static int ProdutoEstoqueAtual(int Id)
+        {
+            try
+            {
+                using (SQLiteConnection connection = new SQLiteConnection(BancoSQLite.ConexaoSQlite))
+                {
+                    connection.Open();
+                    string SemEstoque = @"
+                SELECT 
+                    COALESCE(SUM(CASE WHEN Tipo = 'ENTRADA' THEN Quantidade ELSE 0 END), 0) -
+                    COALESCE(SUM(CASE WHEN Tipo = 'SAIDA' THEN Quantidade ELSE 0 END), 0) 
+                FROM Estoque
+                WHERE IdProduto = @IdProduto
+            ";
+                    using (var cmd = new SQLiteCommand(SemEstoque, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@IdProduto",Id);
+                        object resultado = cmd.ExecuteScalar();
+                        if (resultado != DBNull.Value && resultado != null)
+                        {
+                            return Convert.ToInt32(resultado);
+                        }
+                        else
+                        {
+                            return 0;
+                        }
+                    }
+
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Erro ao buscar produto sem estoque" + ex.Message);
+                return 0;
+            }
+
+        }
 
 
         public DataTable ProdutosRegistradosVendas()
@@ -206,7 +302,7 @@ namespace Fenix_Shop.programação
                 {
                     connection.Open();
 
-                    string select = @"SELECT Id AS CODIGO,Nome AS PRODUTO ,Marca AS MARCA,ROUND(ValorDeVenda / 100.0 ,2 ) AS VALOR,Foto AS FOTO FROM CadastroProduto";
+                    string select = @"SELECT Id AS CODIGO,Nome AS PRODUTO ,Marca AS MARCA,ROUND(ValorDeVenda / 100.0 ,2 ) AS VALOR,Foto AS FOTO FROM CadastroProduto  WHERE StatusDoProduto = 'ATIVO'";
 
                     DataTable dt = new DataTable();
 
@@ -239,7 +335,7 @@ namespace Fenix_Shop.programação
                       FROM Estoque e 
                       WHERE e.IdProduto = p.Id ) AS ESTOQUE FROM Usuario u 
                     JOIN CadastroProduto p ON p.IdUsuario = u.Id
-                     WHERE  p.Id = @id";
+                     WHERE  p.Id = @id  AND  p.StatusDoProduto = 'ATIVO'";
 
                     DataTable dt = new DataTable();
                     using SQLiteCommand cmd = new SQLiteCommand(select, connection);
@@ -277,7 +373,7 @@ namespace Fenix_Shop.programação
                       FROM Estoque e 
                       WHERE e.IdProduto = p.Id ) AS ESTOQUE FROM Usuario u 
                     JOIN CadastroProduto p ON p.IdUsuario = u.Id
-                     WHERE p.Nome LIKE @nome ";
+                     WHERE p.Nome LIKE @nome  AND   p.StatusDoProduto = 'ATIVO'";
 
                     DataTable dt = new DataTable();
                     using SQLiteCommand cmd = new SQLiteCommand(select, connection);
@@ -308,7 +404,7 @@ namespace Fenix_Shop.programação
                 {
                     connection.Open();
 
-                    string Select = @"SELECT Id AS CODIGO,Nome AS PRODUTO,Marca AS MARCA,ROUND(ValorDeVenda / 100.0 ,2) AS VALOR ,Foto AS FOTO FROM CadastroProduto WHERE  Id = @id ";
+                    string Select = @"SELECT Id AS CODIGO,Nome AS PRODUTO,Marca AS MARCA,ROUND(ValorDeVenda / 100.0 ,2) AS VALOR ,Foto AS FOTO FROM CadastroProduto WHERE  Id = @id AND  StatusDoProduto = 'ATIVO' ";
                     DataTable dt = new DataTable();
                     using SQLiteCommand cmd = new SQLiteCommand(Select, connection);
 
@@ -340,7 +436,7 @@ namespace Fenix_Shop.programação
                 {
                     connection.Open();
 
-                    string Select = @"SELECT Id AS CODIGO,Nome AS PRODUTO,Marca AS MARCA,ROUND(ValorDeVenda / 100.0 ,2) AS VALOR ,Foto AS FOTO FROM CadastroProduto WHERE Nome LIKE @nome ";
+                    string Select = @"SELECT Id AS CODIGO,Nome AS PRODUTO,Marca AS MARCA,ROUND(ValorDeVenda / 100.0 ,2) AS VALOR ,Foto AS FOTO FROM CadastroProduto WHERE Nome LIKE @nome AND   StatusDoProduto = 'ATIVO' ";
                     DataTable dt = new DataTable();
                     using SQLiteCommand cmd = new SQLiteCommand(Select, connection);
 
@@ -378,7 +474,7 @@ namespace Fenix_Shop.programação
                                          SUM(CASE WHEN Tipo = 'SAIDA' THEN Quantidade ELSE 0 END) AS ESTOQUE,e.ValorUnitario 
                                        FROM CadastroProduto c
                                         JOIN Estoque e ON e.IdProduto = c.Id
-                                        WHERE c.Id = @Id
+                                        WHERE c.Id = @Id AND   c.StatusDoProduto = 'ATIVO'
                                         GROUP  BY C.Id";
 
 
@@ -436,7 +532,7 @@ namespace Fenix_Shop.programação
 
                     using (var transaction = connection.BeginTransaction())
                     {
-                        string update = @"UPDATE  CadastroProduto SET Nome=@Nome,Categoria=@Categoria,Descricao=@Descricao,Marca=@Marca,ValorDeCusto=@ValorCusto,ValorDeVenda=@ValorVenda,CodigoDeBarras=@CodigoBarras,Sku=@Sku,EStoqueMinimo=@EsMinimo,Foto=@Imagem
+                        string update = @"UPDATE  CadastroProduto SET Nome=@Nome,Categoria=@Categoria,Descricao=@Descricao,Marca=@Marca,ValorDeCusto=@ValorCusto,ValorDeVenda=@ValorVenda,CodigoDeBarras=@CodigoBarras,Sku=@Sku,EStoqueMinimo=@EsMinimo,Foto=@Imagem,StatusDoProduto=@StatusProduto
                                      WHERE Id = @Id";
 
                         using (SQLiteCommand cmd = new SQLiteCommand(update, connection))
@@ -452,6 +548,7 @@ namespace Fenix_Shop.programação
                             cmd.Parameters.AddWithValue("@Sku", Sku);
                             cmd.Parameters.AddWithValue("@EsMinimo",EsMinimo);
                             cmd.Parameters.AddWithValue("@Imagem", Imagem);
+                            cmd.Parameters.AddWithValue("@StatusProduto", StatusProduto);
                             cmd.ExecuteNonQuery();
 
                             if (Estoque != GuardaValorEstoque)
@@ -483,8 +580,11 @@ namespace Fenix_Shop.programação
                 return false;
             }
         }
-}
+
+        
+
     }
+}
 
 
    

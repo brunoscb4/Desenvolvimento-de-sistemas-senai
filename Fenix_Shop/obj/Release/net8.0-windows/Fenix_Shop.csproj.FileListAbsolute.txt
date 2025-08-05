@@ -64,3 +64,5 @@ C:\Senai_Tcc\Fenix_Shop\obj\Release\net8.0-windows\refint\Fenix_Shop.dll
 C:\Senai_Tcc\Fenix_Shop\obj\Release\net8.0-windows\Fenix_Shop.pdb
 C:\Senai_Tcc\Fenix_Shop\obj\Release\net8.0-windows\Fenix_Shop.genruntimeconfig.cache
 C:\Senai_Tcc\Fenix_Shop\obj\Release\net8.0-windows\ref\Fenix_Shop.dll
+D:\Trabalho Senai\Fenix_Shop\obj\Release\net8.0-windows\Fenix_Shop.Telas.EditarProdutos.resources
+D:\Trabalho Senai\Fenix_Shop\obj\Release\net8.0-windows\Fenix_Shop.Telas.Pagamentos.resources

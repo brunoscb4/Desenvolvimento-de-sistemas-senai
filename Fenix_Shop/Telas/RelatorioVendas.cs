@@ -52,6 +52,8 @@ namespace Fenix_Shop.Telas
             label15PagamentosDebito.Text = itensVendidos.PagamentoDebito().ToString("C2");
             label10Pagamentodinheiro.Text = itensVendidos.PagamentoDinheiro().ToString("C2");
             label14PagamentosPix.Text = itensVendidos.PagamentoPix().ToString("C2");
+            
+
             return true;
         }
         private void button1_Click(object sender, EventArgs e)

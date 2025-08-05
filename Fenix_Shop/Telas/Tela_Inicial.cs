@@ -16,15 +16,16 @@ namespace Fenix_Shop.Telas
     public partial class Tela_Inicial : UserControl
     {
         private UsuarioLogado usuariologado;
-        ItensVendidos itensVendidos = new ItensVendidos(); 
-       
+        ItensVendidos itensVendidos = new ItensVendidos();
+        CadastroDeProduto Produto = new CadastroDeProduto();
+
         public Tela_Inicial(UsuarioLogado usuariologado)
         {
             InitializeComponent();
             this.usuariologado = usuariologado;
-            
+
         }
-       
+
         public bool AcesssoUsuarioPanel()
         {
             if (usuariologado.Nivelusuario.Equals("GERENTE"))
@@ -44,14 +45,14 @@ namespace Fenix_Shop.Telas
                 button3Vender.Enabled = true;
                 button4CadastroUsuario.Enabled = false;
             }
-                return true;
+            return true;
         }
-        public bool  AtualizarVendas()
+        public bool AtualizarVendas()
         {
             labelVendidos.Text = itensVendidos.QtVendidas().ToString();
             labelNumeroDeCadastrados.Text = itensVendidos.QtItemsCadastrados().ToString();
             labelSemEstoque.Text = CadastroDeProduto.PrSemEstoque().ToString();
-            
+            dataGridViewMinimo.DataSource = Produto.EstoqueMinimo();
 
             labelVendidos.Invalidate();
             labelVendidos.Update();
@@ -59,10 +60,10 @@ namespace Fenix_Shop.Telas
             labelNumeroDeCadastrados.Update();
             return true;
         }
-            
-        
-            
-        
+
+
+
+
 
         private void CadastroProdutos_Click(object sender, EventArgs e)
         {
@@ -143,7 +144,7 @@ namespace Fenix_Shop.Telas
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Vendas vendas = new Vendas(usuariologado,this);
+            Vendas vendas = new Vendas(usuariologado, this);
 
             panel5IncialControler.Controls.Clear();
             vendas.Dock = DockStyle.Fill;
@@ -175,6 +176,7 @@ namespace Fenix_Shop.Telas
 
         private void Tela_Inicial_Load(object sender, EventArgs e)
         {
+            dataGridViewMinimo.DataSource = Produto.EstoqueMinimo();
             AcesssoUsuarioPanel();
             Inicio.InactiveColor = Color.Green;
             AtualizarVendas();
@@ -183,14 +185,20 @@ namespace Fenix_Shop.Telas
             CadastroDeProduto.Id = usuariologado.Id;
             label6NomeDaLoja.Text = usuariologado.NomeLoja;
             pictureBoxTelaInicial.Image = ConverterImagem(usuariologado.Foto);
-            
-           
+
+
         }
 
         private void timerRelogio_Tick(object sender, EventArgs e)
         {
             label6Data.Text = DateTime.Now.ToString("dd/MM/yyyy");
             label7Hora.Text = DateTime.Now.ToString("HH:mm:ss");
+        }
+
+        private void Logout_Click(object sender, EventArgs e)
+        {
+           
+            
         }
     }
 }

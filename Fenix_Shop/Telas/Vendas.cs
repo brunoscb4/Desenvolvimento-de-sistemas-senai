@@ -14,11 +14,11 @@ using System.Windows.Forms;
 namespace Fenix_Shop.Telas
 {
     public partial class Vendas : UserControl
-    { 
+    {
         CadastroDeProduto cadastroDeProduto = new CadastroDeProduto();
         private Tela_Inicial telaInicial;
         private UsuarioLogado usuariologado;
-        public Vendas(UsuarioLogado usuariologado, Tela_Inicial telaInicial) 
+        public Vendas(UsuarioLogado usuariologado, Tela_Inicial telaInicial)
         {
             InitializeComponent();
             this.usuariologado = usuariologado;
@@ -26,6 +26,7 @@ namespace Fenix_Shop.Telas
         }
         public static string VerificaPagamento = "";
         ItensVendidos ItensVendidos = new ItensVendidos();
+        private int codigo;
         public void CarregarProdutos()
         {
             var dt = cadastroDeProduto.ProdutosRegistradosVendas();
@@ -37,7 +38,7 @@ namespace Fenix_Shop.Telas
 
             }
         }
-        public  void AtualizarVenda()
+        public void AtualizarVenda()
         {
             if (VerificaPagamento.Equals("CREDITO") || VerificaPagamento.Equals("DEBITO") || VerificaPagamento.Equals("DINHEIRO") || VerificaPagamento.Equals("PIX"))
             {
@@ -76,7 +77,7 @@ namespace Fenix_Shop.Telas
         {
             label11ValorProduto.Text = "0,00";
             label11ValorTotalCompra.Text = "0,00";
-           
+
             CarregarProdutos();
             dataGridViewProdutos.RowTemplate.Height = 40;
             dataGridViewProdutos.Columns["FOTO"].Width = 40;
@@ -86,28 +87,36 @@ namespace Fenix_Shop.Telas
                 imageColumn.ImageLayout = DataGridViewImageCellLayout.Stretch;
             }
 
-            var index = dataGridView1Vendas.Columns.Add("Id", "ID");
+            var index = dataGridView1Vendas.Columns.Add("Id", "CODIGO");
             dataGridView1Vendas.Columns.Add("Produto", "PRODUTO");
             dataGridView1Vendas.Columns.Add("Quantidade", "UNIDADE");
             dataGridView1Vendas.Columns.Add("Valor", "VALOR");
             dataGridView1Vendas.Columns.Add("Total", "TOTAL");
-            
-             
-            
+            DataGridViewButtonColumn btnExcluir = new DataGridViewButtonColumn();
+            btnExcluir.HeaderText = "AÇÃO";
+            btnExcluir.Name = "AÇÃO";
+            btnExcluir.Text = "Excluir";
+            btnExcluir.UseColumnTextForButtonValue = true;
+            btnExcluir.DefaultCellStyle.BackColor = Color.Red;
+            btnExcluir.Width = 80;
+            dataGridView1Vendas.Columns.Add(btnExcluir);
+
+
+
         }
         public void AtualizarValores()
         {
-                  dataGridView1Vendas.Columns["VALOR"].DefaultCellStyle.Format = "C2";
-                dataGridView1Vendas.Columns["TOTAL"].DefaultCellStyle.Format = "C2";
+            dataGridView1Vendas.Columns["VALOR"].DefaultCellStyle.Format = "C2";
+            dataGridView1Vendas.Columns["TOTAL"].DefaultCellStyle.Format = "C2";
         }
         private void dataGridViewProdutos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
                 label11NomeDoProduto.Text = dataGridViewProdutos.Rows[e.RowIndex].Cells["Nome"].Value.ToString();
+
                 label11NumeroDoId.Text = dataGridViewProdutos.Rows[e.RowIndex].Cells["Id"].Value.ToString();
-                decimal precoReal =  Convert.ToDecimal(dataGridViewProdutos.Rows[e.RowIndex].Cells["ValorDeVenda"].Value);
-              
+                decimal precoReal = Convert.ToDecimal(dataGridViewProdutos.Rows[e.RowIndex].Cells["ValorDeVenda"].Value);
                 label11ValorProduto.Text = precoReal.ToString("C2", new CultureInfo("pt-BR"));
 
                 if (dataGridViewProdutos.Rows[e.RowIndex].Cells["Foto"].Value != DBNull.Value)
@@ -122,6 +131,7 @@ namespace Fenix_Shop.Telas
                         pictureBox1Vendas.Image = Image.FromStream(ms);
                     }
                 }
+
             }
 
 
@@ -131,32 +141,45 @@ namespace Fenix_Shop.Telas
         {
             try
             {
+
+
                 if (!string.IsNullOrEmpty(textBoxQuantidade.Text) && int.TryParse(textBoxQuantidade.Text, out int quantidade) && quantidade > 0)
-                { 
-                    
-                decimal valor = Convert.ToDecimal(label11ValorProduto.Text.Replace("R$","").Trim());
-
-                decimal total = (valor * quantidade);
-
-                ListVendas listVendas = new ListVendas
                 {
+                    int QtVender = int.Parse(textBoxQuantidade.Text);
+                    int estoque = int.Parse(label12Estoque.Text);
 
-                    Id = Convert.ToInt32(label11NumeroDoId.Text),
-                    Produto = label11NomeDoProduto.Text,
-                    Quantidade = Convert.ToInt32(textBoxQuantidade.Text),
-                    Valor = valor,
-                    Total = decimal.Parse(total.ToString("F2")),
+                    if ((estoque - QtVender) >= 0)
+                    {
+                        decimal valor = Convert.ToDecimal(label11ValorProduto.Text.Replace("R$", "").Trim());
 
-                };
-                ItensVendidos.AddProduto(listVendas);
-                ItensVendidos.ExibirVendas(dataGridView1Vendas);
-                AtualizarValores();
-                label11ValorTotalCompra.Text = ItensVendidos.TotalVenda().ToString("C2");
-                label11QuantidadeVendidos.Text = ItensVendidos.QuantidadeVendidos().ToString();
-                textBoxQuantidade.Clear();
-                textBoxQuantidade.Focus();
-            }
-            
+                        decimal total = (valor * quantidade);
+
+                        ListVendas listVendas = new ListVendas
+                        {
+
+                            Id = Convert.ToInt32(label11NumeroDoId.Text),
+                            Produto = label11NomeDoProduto.Text,
+                            Quantidade = Convert.ToInt32(textBoxQuantidade.Text),
+                            Valor = valor,
+                            Total = decimal.Parse(total.ToString("F2")),
+
+                        };
+                        ItensVendidos.AddProduto(listVendas);
+                        ItensVendidos.ExibirVendas(dataGridView1Vendas);
+                        AtualizarValores();
+                        label11ValorTotalCompra.Text = ItensVendidos.TotalVenda().ToString("C2");
+                        label11QuantidadeVendidos.Text = ItensVendidos.QuantidadeVendidos().ToString();
+                        textBoxQuantidade.Clear();
+                        textBoxQuantidade.Focus();
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Estoque indisponevel para essa quantidade !");
+                    }
+
+                }
+
 
             }
             catch (Exception ex)
@@ -178,10 +201,12 @@ namespace Fenix_Shop.Telas
 
 
                     label11NomeDoProduto.Text = dataGridViewProdutos.Rows[e.RowIndex].Cells["PRODUTO"].Value.ToString();
-                    label11NumeroDoId.Text = dataGridViewProdutos.Rows[e.RowIndex].Cells["CODIGO"].Value.ToString();
-                   decimal precoReal =  Convert.ToDecimal(dataGridViewProdutos.Rows[e.RowIndex].Cells["VALOR"].Value);
-                    
-                label11ValorProduto.Text = precoReal.ToString("C2", new CultureInfo("pt-BR"));
+                    codigo = int.Parse(dataGridViewProdutos.Rows[e.RowIndex].Cells["CODIGO"].Value.ToString());
+                    label11NumeroDoId.Text = codigo.ToString();
+                    label12Estoque.Text = CadastroDeProduto.ProdutoEstoqueAtual(codigo).ToString();
+                    decimal precoReal = Convert.ToDecimal(dataGridViewProdutos.Rows[e.RowIndex].Cells["VALOR"].Value);
+
+                    label11ValorProduto.Text = precoReal.ToString("C2", new CultureInfo("pt-BR"));
 
                     if (dataGridViewProdutos.Rows[e.RowIndex].Cells["Foto"].Value != DBNull.Value)
                     {
@@ -211,16 +236,17 @@ namespace Fenix_Shop.Telas
                     return;
                 }
                 else
-                { Pagamentos pagamentos = new Pagamentos(this);
+                {
+                    Pagamentos pagamentos = new Pagamentos(this);
 
                     pagamentos.Anchor = AnchorStyles.Bottom;
 
                     PanelVendas.Controls.Add(pagamentos);
                     pagamentos.BringToFront();
-                       
+
 
                 }
-                
+
             }
             catch (Exception ex)
             {
@@ -231,14 +257,14 @@ namespace Fenix_Shop.Telas
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+
             CadastroDeProduto produto = new CadastroDeProduto();
-           int? idBuscar = null;
+            int? idBuscar = null;
             if (!string.IsNullOrWhiteSpace(TextBoxIdBuscar.Text) && TextBoxIdBuscar.Text != null)
             {
-               idBuscar =  int.Parse( TextBoxIdBuscar.Text);
-            dataGridViewProdutos.DataSource = null;
-            dataGridViewProdutos.DataSource =   produto.BuscarPorId(idBuscar);
+                idBuscar = int.Parse(TextBoxIdBuscar.Text);
+                dataGridViewProdutos.DataSource = null;
+                dataGridViewProdutos.DataSource = produto.BuscarPorId(idBuscar);
             }
             else
             {
@@ -252,6 +278,18 @@ namespace Fenix_Shop.Telas
             if (dataGridViewProdutos.Columns["Foto"] is DataGridViewImageColumn imageColumn)
             {
                 imageColumn.ImageLayout = DataGridViewImageCellLayout.Stretch;
+            }
+        }
+
+        private void dataGridView1Vendas_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >=0 && e.ColumnIndex == dataGridView1Vendas.Columns["AÇÃO"].Index)
+            {
+                int IdProduto = Convert.ToInt32(dataGridView1Vendas.Rows[e.RowIndex].Cells["Id"].Value);
+
+                ItensVendidos.ExluirProdutoList(IdProduto);
+                dataGridView1Vendas.DataSource = null;
+                ItensVendidos.ExibirVendas(dataGridView1Vendas);
             }
         }
     }

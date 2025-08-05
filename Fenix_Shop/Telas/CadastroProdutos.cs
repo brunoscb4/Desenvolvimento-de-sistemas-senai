@@ -1,9 +1,9 @@
-﻿using Fenix_Shop.programação;
+﻿using Fenix_Shop.Enums;
+using Fenix_Shop.programação;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Drawing;
 using System.Drawing.Text;
 using System.Globalization;
@@ -93,6 +93,7 @@ namespace Fenix_Shop.Telas
                         produto.Imagem = ConverterImagemParaBytes(Properties.Resources.img_Fenix_Shop);
                     }
                     produto.MovimentacaoEstoque = "ENTRADA";
+                    produto.StatusProduto = StatusProdutoAI.ATIVO.ToString();
                     produto.Estoque = Convert.ToInt32(TextBoxEstoque.Text);
 
 

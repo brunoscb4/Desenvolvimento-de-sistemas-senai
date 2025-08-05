@@ -3,44 +3,40 @@
   "WorkspaceRootPath": "D:\\Trabalho Senai\\Fenix_Shop\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{EB9715DA-A2D7-4EED-A567-2E48181DBAC9}|Fenix_Shop.csproj|d:\\trabalho senai\\fenix_shop\\telas\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB9715DA-A2D7-4EED-A567-2E48181DBAC9}|Fenix_Shop.csproj|solutionrelative:telas\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{EB9715DA-A2D7-4EED-A567-2E48181DBAC9}|Fenix_Shop.csproj|d:\\trabalho senai\\fenix_shop\\telas\\tela_inicial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EB9715DA-A2D7-4EED-A567-2E48181DBAC9}|Fenix_Shop.csproj|solutionrelative:telas\\tela_inicial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EB9715DA-A2D7-4EED-A567-2E48181DBAC9}|Fenix_Shop.csproj|d:\\trabalho senai\\fenix_shop\\telas\\cadastrodeusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB9715DA-A2D7-4EED-A567-2E48181DBAC9}|Fenix_Shop.csproj|solutionrelative:telas\\cadastrodeusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EB9715DA-A2D7-4EED-A567-2E48181DBAC9}|Fenix_Shop.csproj|d:\\trabalho senai\\fenix_shop\\telas\\tela_inicial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{EB9715DA-A2D7-4EED-A567-2E48181DBAC9}|Fenix_Shop.csproj|solutionrelative:telas\\tela_inicial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EB9715DA-A2D7-4EED-A567-2E48181DBAC9}|Fenix_Shop.csproj|d:\\trabalho senai\\fenix_shop\\telas\\cadastrodeusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{EB9715DA-A2D7-4EED-A567-2E48181DBAC9}|Fenix_Shop.csproj|solutionrelative:telas\\cadastrodeusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{EB9715DA-A2D7-4EED-A567-2E48181DBAC9}|Fenix_Shop.csproj|d:\\trabalho senai\\fenix_shop\\telas\\pagamentos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{EB9715DA-A2D7-4EED-A567-2E48181DBAC9}|Fenix_Shop.csproj|solutionrelative:telas\\pagamentos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EB9715DA-A2D7-4EED-A567-2E48181DBAC9}|Fenix_Shop.csproj|d:\\trabalho senai\\fenix_shop\\programa\u00E7\u00E3o\\usuariologado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB9715DA-A2D7-4EED-A567-2E48181DBAC9}|Fenix_Shop.csproj|solutionrelative:programa\u00E7\u00E3o\\usuariologado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EB9715DA-A2D7-4EED-A567-2E48181DBAC9}|Fenix_Shop.csproj|d:\\trabalho senai\\fenix_shop\\telas\\vendas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB9715DA-A2D7-4EED-A567-2E48181DBAC9}|Fenix_Shop.csproj|solutionrelative:telas\\vendas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EB9715DA-A2D7-4EED-A567-2E48181DBAC9}|Fenix_Shop.csproj|d:\\trabalho senai\\fenix_shop\\programa\u00E7\u00E3o\\itensvendidos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB9715DA-A2D7-4EED-A567-2E48181DBAC9}|Fenix_Shop.csproj|solutionrelative:programa\u00E7\u00E3o\\itensvendidos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EB9715DA-A2D7-4EED-A567-2E48181DBAC9}|Fenix_Shop.csproj|d:\\trabalho senai\\fenix_shop\\telas\\vendas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{EB9715DA-A2D7-4EED-A567-2E48181DBAC9}|Fenix_Shop.csproj|solutionrelative:telas\\vendas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EB9715DA-A2D7-4EED-A567-2E48181DBAC9}|Fenix_Shop.csproj|d:\\trabalho senai\\fenix_shop\\telas\\relatoriovendas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB9715DA-A2D7-4EED-A567-2E48181DBAC9}|Fenix_Shop.csproj|solutionrelative:telas\\relatoriovendas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EB9715DA-A2D7-4EED-A567-2E48181DBAC9}|Fenix_Shop.csproj|D:\\Trabalho Senai\\Fenix_Shop\\telas\\relatoriovendas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{EB9715DA-A2D7-4EED-A567-2E48181DBAC9}|Fenix_Shop.csproj|solutionrelative:telas\\relatoriovendas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{EB9715DA-A2D7-4EED-A567-2E48181DBAC9}|Fenix_Shop.csproj|d:\\trabalho senai\\fenix_shop\\telas\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{EB9715DA-A2D7-4EED-A567-2E48181DBAC9}|Fenix_Shop.csproj|solutionrelative:telas\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EB9715DA-A2D7-4EED-A567-2E48181DBAC9}|Fenix_Shop.csproj|d:\\trabalho senai\\fenix_shop\\programa\u00E7\u00E3o\\bancosqlite.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EB9715DA-A2D7-4EED-A567-2E48181DBAC9}|Fenix_Shop.csproj|solutionrelative:programa\u00E7\u00E3o\\bancosqlite.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EB9715DA-A2D7-4EED-A567-2E48181DBAC9}|Fenix_Shop.csproj|d:\\trabalho senai\\fenix_shop\\telas\\listaprodutos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB9715DA-A2D7-4EED-A567-2E48181DBAC9}|Fenix_Shop.csproj|solutionrelative:telas\\listaprodutos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EB9715DA-A2D7-4EED-A567-2E48181DBAC9}|Fenix_Shop.csproj|d:\\trabalho senai\\fenix_shop\\telas\\editarprodutos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB9715DA-A2D7-4EED-A567-2E48181DBAC9}|Fenix_Shop.csproj|solutionrelative:telas\\editarprodutos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EB9715DA-A2D7-4EED-A567-2E48181DBAC9}|Fenix_Shop.csproj|d:\\trabalho senai\\fenix_shop\\telas\\listaprodutos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{EB9715DA-A2D7-4EED-A567-2E48181DBAC9}|Fenix_Shop.csproj|solutionrelative:telas\\listaprodutos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,95 +46,94 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "CadastroDeUsuario.cs",
-              "DocumentMoniker": "D:\\Trabalho Senai\\Fenix_Shop\\Telas\\CadastroDeUsuario.cs",
-              "RelativeDocumentMoniker": "Telas\\CadastroDeUsuario.cs",
-              "ToolTip": "D:\\Trabalho Senai\\Fenix_Shop\\Telas\\CadastroDeUsuario.cs",
-              "RelativeToolTip": "Telas\\CadastroDeUsuario.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAHAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "Tela_Inicial.cs [Projeto]",
+              "DocumentMoniker": "D:\\Trabalho Senai\\Fenix_Shop\\Telas\\Tela_Inicial.cs",
+              "RelativeDocumentMoniker": "Telas\\Tela_Inicial.cs",
+              "ToolTip": "D:\\Trabalho Senai\\Fenix_Shop\\Telas\\Tela_Inicial.cs [Projeto]",
+              "RelativeToolTip": "Telas\\Tela_Inicial.cs [Projeto]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-03T23:33:47.861Z",
+              "WhenOpened": "2025-08-05T19:37:45.82Z",
+              "EditorCaption": " [Projeto]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Pagamentos.cs [Projeto]",
+              "DocumentMoniker": "D:\\Trabalho Senai\\Fenix_Shop\\Telas\\Pagamentos.cs",
+              "RelativeDocumentMoniker": "Telas\\Pagamentos.cs",
+              "ToolTip": "D:\\Trabalho Senai\\Fenix_Shop\\Telas\\Pagamentos.cs [Projeto]",
+              "RelativeToolTip": "Telas\\Pagamentos.cs [Projeto]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-05T19:26:22.738Z",
+              "EditorCaption": " [Projeto]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Vendas.cs",
+              "DocumentMoniker": "D:\\Trabalho Senai\\Fenix_Shop\\Telas\\Vendas.cs",
+              "RelativeDocumentMoniker": "Telas\\Vendas.cs",
+              "ToolTip": "D:\\Trabalho Senai\\Fenix_Shop\\Telas\\Vendas.cs",
+              "RelativeToolTip": "Telas\\Vendas.cs",
+              "ViewState": "AgIAAPMAAAAAAAAAAAAqwOQAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-05T19:26:13.771Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Vendas.cs [Projeto]",
+              "DocumentMoniker": "D:\\Trabalho Senai\\Fenix_Shop\\Telas\\Vendas.cs",
+              "RelativeDocumentMoniker": "Telas\\Vendas.cs",
+              "ToolTip": "D:\\Trabalho Senai\\Fenix_Shop\\Telas\\Vendas.cs [Projeto]",
+              "RelativeToolTip": "Telas\\Vendas.cs [Projeto]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-05T19:26:10.889Z",
+              "EditorCaption": " [Projeto]"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "D:\\Trabalho Senai\\Fenix_Shop\\Telas\\Form1.cs",
+              "RelativeDocumentMoniker": "Telas\\Form1.cs",
+              "ToolTip": "D:\\Trabalho Senai\\Fenix_Shop\\Telas\\Form1.cs",
+              "RelativeToolTip": "Telas\\Form1.cs",
+              "ViewState": "AgIAAEMAAAAAAAAAAAA6wFoAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-05T19:00:29.84Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Tela_Inicial.cs",
               "DocumentMoniker": "D:\\Trabalho Senai\\Fenix_Shop\\Telas\\Tela_Inicial.cs",
               "RelativeDocumentMoniker": "Telas\\Tela_Inicial.cs",
               "ToolTip": "D:\\Trabalho Senai\\Fenix_Shop\\Telas\\Tela_Inicial.cs",
               "RelativeToolTip": "Telas\\Tela_Inicial.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAACEAAAAxAAAAAAAAAA==",
+              "ViewState": "AgIAALIAAAAAAAAAAAAkwMcAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-03T23:35:49.097Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "UsuarioLogado.cs",
-              "DocumentMoniker": "D:\\Trabalho Senai\\Fenix_Shop\\programa\u00E7\u00E3o\\UsuarioLogado.cs",
-              "RelativeDocumentMoniker": "programa\u00E7\u00E3o\\UsuarioLogado.cs",
-              "ToolTip": "D:\\Trabalho Senai\\Fenix_Shop\\programa\u00E7\u00E3o\\UsuarioLogado.cs",
-              "RelativeToolTip": "programa\u00E7\u00E3o\\UsuarioLogado.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-03T23:40:15.065Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "CadastroDeUsuario.cs [Projeto]",
-              "DocumentMoniker": "D:\\Trabalho Senai\\Fenix_Shop\\Telas\\CadastroDeUsuario.cs",
-              "RelativeDocumentMoniker": "Telas\\CadastroDeUsuario.cs",
-              "ToolTip": "D:\\Trabalho Senai\\Fenix_Shop\\Telas\\CadastroDeUsuario.cs [Projeto]",
-              "RelativeToolTip": "Telas\\CadastroDeUsuario.cs [Projeto]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-02T21:30:40.894Z",
-              "EditorCaption": " [Projeto]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "RelatorioVendas.cs",
-              "DocumentMoniker": "D:\\Trabalho Senai\\Fenix_Shop\\Telas\\RelatorioVendas.cs",
-              "RelativeDocumentMoniker": "Telas\\RelatorioVendas.cs",
-              "ToolTip": "D:\\Trabalho Senai\\Fenix_Shop\\Telas\\RelatorioVendas.cs",
-              "RelativeToolTip": "Telas\\RelatorioVendas.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEkAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-01T19:54:55.643Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ItensVendidos.cs",
-              "DocumentMoniker": "D:\\Trabalho Senai\\Fenix_Shop\\programa\u00E7\u00E3o\\ItensVendidos.cs",
-              "RelativeDocumentMoniker": "programa\u00E7\u00E3o\\ItensVendidos.cs",
-              "ToolTip": "D:\\Trabalho Senai\\Fenix_Shop\\programa\u00E7\u00E3o\\ItensVendidos.cs",
-              "RelativeToolTip": "programa\u00E7\u00E3o\\ItensVendidos.cs",
-              "ViewState": "AgIAABUBAAAAAAAAAAAYwDMBAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-01T18:45:42.909Z",
+              "WhenOpened": "2025-08-05T17:36:38.983Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "RelatorioVendas.cs [Projeto]",
-              "DocumentMoniker": "D:\\Trabalho Senai\\Fenix_Shop\\Telas\\RelatorioVendas.cs",
-              "RelativeDocumentMoniker": "Telas\\RelatorioVendas.cs",
-              "ToolTip": "D:\\Trabalho Senai\\Fenix_Shop\\Telas\\RelatorioVendas.cs [Projeto]",
-              "RelativeToolTip": "Telas\\RelatorioVendas.cs [Projeto]",
+              "Title": "Form1.cs [Projeto]",
+              "DocumentMoniker": "D:\\Trabalho Senai\\Fenix_Shop\\Telas\\Form1.cs",
+              "RelativeDocumentMoniker": "Telas\\Form1.cs",
+              "ToolTip": "D:\\Trabalho Senai\\Fenix_Shop\\Telas\\Form1.cs [Projeto]",
+              "RelativeToolTip": "Telas\\Form1.cs [Projeto]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-01T18:57:40.307Z"
+              "WhenOpened": "2025-08-05T17:09:11.142Z",
+              "EditorCaption": " [Projeto]"
             },
             {
               "$type": "Document",
@@ -148,33 +143,22 @@
               "RelativeDocumentMoniker": "programa\u00E7\u00E3o\\BancoSQLite.cs",
               "ToolTip": "D:\\Trabalho Senai\\Fenix_Shop\\programa\u00E7\u00E3o\\BancoSQLite.cs",
               "RelativeToolTip": "programa\u00E7\u00E3o\\BancoSQLite.cs",
-              "ViewState": "AgIAAEMAAAAAAAAAAAAowEcAAABQAAAAAAAAAA==",
+              "ViewState": "AgIAACgAAAAAAAAAAAAQwDoAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-31T16:00:23.384Z"
+              "WhenOpened": "2025-08-05T00:17:41.143Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "ListaProdutos.cs",
+              "Title": "ListaProdutos.cs [Projeto]",
               "DocumentMoniker": "D:\\Trabalho Senai\\Fenix_Shop\\Telas\\ListaProdutos.cs",
               "RelativeDocumentMoniker": "Telas\\ListaProdutos.cs",
-              "ToolTip": "D:\\Trabalho Senai\\Fenix_Shop\\Telas\\ListaProdutos.cs",
-              "RelativeToolTip": "Telas\\ListaProdutos.cs",
-              "ViewState": "AgIAAFEAAAAAAAAAAAAgwGMAAAAMAAAAAAAAAA==",
+              "ToolTip": "D:\\Trabalho Senai\\Fenix_Shop\\Telas\\ListaProdutos.cs [Projeto]",
+              "RelativeToolTip": "Telas\\ListaProdutos.cs [Projeto]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-29T02:02:38.783Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "EditarProdutos.cs",
-              "DocumentMoniker": "D:\\Trabalho Senai\\Fenix_Shop\\Telas\\EditarProdutos.cs",
-              "RelativeDocumentMoniker": "Telas\\EditarProdutos.cs",
-              "ToolTip": "D:\\Trabalho Senai\\Fenix_Shop\\Telas\\EditarProdutos.cs",
-              "RelativeToolTip": "Telas\\EditarProdutos.cs",
-              "ViewState": "AgIAACMAAAAAAAAAAAAgwFkAAAA8AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-29T05:42:58.599Z"
+              "WhenOpened": "2025-08-05T15:00:55.954Z",
+              "EditorCaption": " [Projeto]"
             }
           ]
         }

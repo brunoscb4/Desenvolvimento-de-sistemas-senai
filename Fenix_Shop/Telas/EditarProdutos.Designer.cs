@@ -52,6 +52,7 @@
             label2 = new Label();
             label1 = new Label();
             pictureBoxCadastroProduto = new PictureBox();
+            button1 = new ReaLTaiizor.Controls.Button();
             PanelEditarProdutos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxCadastroProduto).BeginInit();
             SuspendLayout();
@@ -61,6 +62,7 @@
             PanelEditarProdutos.BottomLeft = Color.White;
             PanelEditarProdutos.BottomRight = Color.White;
             PanelEditarProdutos.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+            PanelEditarProdutos.Controls.Add(button1);
             PanelEditarProdutos.Controls.Add(Salvar);
             PanelEditarProdutos.Controls.Add(textBox3Marca);
             PanelEditarProdutos.Controls.Add(textBox2Categoria);
@@ -153,12 +155,12 @@
             label11.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label11.AutoSize = true;
             label11.BackColor = Color.Transparent;
-            label11.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label11.Font = new Font("Calibri", 12F);
             label11.Location = new Point(263, 77);
             label11.MaximumSize = new Size(251, 53);
             label11.MinimumSize = new Size(126, 27);
             label11.Name = "label11";
-            label11.Size = new Size(164, 27);
+            label11.Size = new Size(149, 27);
             label11.TabIndex = 58;
             label11.Text = "Foto do produto";
             // 
@@ -177,12 +179,12 @@
             // 
             label10.AutoSize = true;
             label10.BackColor = Color.Transparent;
-            label10.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label10.Font = new Font("Calibri", 12F);
             label10.Location = new Point(722, 552);
             label10.MaximumSize = new Size(251, 133);
             label10.MinimumSize = new Size(126, 27);
             label10.Name = "label10";
-            label10.Size = new Size(172, 27);
+            label10.Size = new Size(152, 27);
             label10.TabIndex = 56;
             label10.Text = "Estoque minimo:";
             // 
@@ -191,7 +193,7 @@
             label9.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label9.AutoSize = true;
             label9.BackColor = Color.Transparent;
-            label9.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label9.Font = new Font("Calibri", 12F);
             label9.Location = new Point(123, 497);
             label9.MaximumSize = new Size(251, 133);
             label9.MinimumSize = new Size(126, 27);
@@ -220,7 +222,7 @@
             label8.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label8.AutoSize = true;
             label8.BackColor = Color.Transparent;
-            label8.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label8.Font = new Font("Calibri", 12F);
             label8.Location = new Point(123, 395);
             label8.MaximumSize = new Size(251, 133);
             label8.MinimumSize = new Size(126, 27);
@@ -244,7 +246,7 @@
             // 
             label7.AutoSize = true;
             label7.BackColor = Color.Transparent;
-            label7.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.Font = new Font("Calibri", 12F);
             label7.Location = new Point(722, 449);
             label7.MaximumSize = new Size(251, 133);
             label7.MinimumSize = new Size(126, 27);
@@ -268,12 +270,12 @@
             // 
             label6.AutoSize = true;
             label6.BackColor = Color.Transparent;
-            label6.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.Font = new Font("Calibri", 12F);
             label6.Location = new Point(722, 356);
             label6.MaximumSize = new Size(251, 133);
             label6.MinimumSize = new Size(126, 27);
             label6.Name = "label6";
-            label6.Size = new Size(185, 27);
+            label6.Size = new Size(157, 27);
             label6.TabIndex = 49;
             label6.Text = "Codigo de barras:";
             // 
@@ -292,7 +294,7 @@
             // 
             label5.AutoSize = true;
             label5.BackColor = Color.Transparent;
-            label5.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.Font = new Font("Calibri", 12F);
             label5.Location = new Point(722, 263);
             label5.MaximumSize = new Size(251, 133);
             label5.MinimumSize = new Size(126, 27);
@@ -315,12 +317,12 @@
             // 
             label4.AutoSize = true;
             label4.BackColor = Color.Transparent;
-            label4.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.Font = new Font("Calibri", 12F);
             label4.Location = new Point(722, 171);
             label4.MaximumSize = new Size(251, 133);
             label4.MinimumSize = new Size(126, 27);
             label4.Name = "label4";
-            label4.Size = new Size(165, 27);
+            label4.Size = new Size(140, 27);
             label4.TabIndex = 45;
             label4.Text = "Valor de venda:";
             // 
@@ -342,12 +344,12 @@
             // 
             label3.AutoSize = true;
             label3.BackColor = Color.Transparent;
-            label3.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Font = new Font("Calibri", 12F);
             label3.Location = new Point(722, 77);
             label3.MaximumSize = new Size(251, 133);
             label3.MinimumSize = new Size(126, 27);
             label3.Name = "label3";
-            label3.Size = new Size(158, 27);
+            label3.Size = new Size(134, 27);
             label3.TabIndex = 43;
             label3.Text = "Valor de custo:";
             // 
@@ -356,7 +358,7 @@
             label2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Font = new Font("Calibri", 12F);
             label2.Location = new Point(123, 287);
             label2.MaximumSize = new Size(251, 133);
             label2.MinimumSize = new Size(126, 27);
@@ -370,7 +372,7 @@
             label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Calibri", 12F);
             label1.Location = new Point(123, 179);
             label1.MaximumSize = new Size(251, 133);
             label1.MinimumSize = new Size(126, 27);
@@ -393,6 +395,28 @@
             pictureBoxCadastroProduto.TabIndex = 40;
             pictureBoxCadastroProduto.TabStop = false;
             pictureBoxCadastroProduto.Click += pictureBoxCadastroProduto_Click;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.Transparent;
+            button1.BorderColor = Color.Black;
+            button1.EnteredBorderColor = Color.Black;
+            button1.EnteredColor = Color.FromArgb(0, 64, 0);
+            button1.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.Image = null;
+            button1.ImageAlign = ContentAlignment.MiddleLeft;
+            button1.InactiveColor = Color.Red;
+            button1.Location = new Point(713, 805);
+            button1.Margin = new Padding(3, 4, 3, 4);
+            button1.Name = "button1";
+            button1.PressedBorderColor = Color.Black;
+            button1.PressedColor = Color.Lime;
+            button1.RightToLeft = RightToLeft.No;
+            button1.Size = new Size(87, 35);
+            button1.TabIndex = 63;
+            button1.Text = "Excluir";
+            button1.TextAlignment = StringAlignment.Center;
+            button1.Click += button1_Click;
             // 
             // EditarProdutos
             // 
@@ -435,5 +459,6 @@
         private Label label2;
         private Label label1;
         private PictureBox pictureBoxCadastroProduto;
+        private ReaLTaiizor.Controls.Button button1;
     }
 }

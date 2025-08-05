@@ -148,11 +148,11 @@
             // 
             bigLabel4.AutoSize = true;
             bigLabel4.BackColor = Color.Transparent;
-            bigLabel4.Font = new Font("Calibri", 14.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            bigLabel4.ForeColor = Color.Black;
+            bigLabel4.Font = new Font("Calibri", 13.8F);
+            bigLabel4.ForeColor = Color.Blue;
             bigLabel4.Location = new Point(134, 465);
             bigLabel4.Name = "bigLabel4";
-            bigLabel4.Size = new Size(40, 29);
+            bigLabel4.Size = new Size(37, 28);
             bigLabel4.TabIndex = 10;
             bigLabel4.Text = "De";
             // 
@@ -169,11 +169,11 @@
             // 
             bigLabel3.AutoSize = true;
             bigLabel3.BackColor = Color.Transparent;
-            bigLabel3.Font = new Font("Calibri", 14.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            bigLabel3.ForeColor = Color.Black;
+            bigLabel3.Font = new Font("Calibri", 13.8F);
+            bigLabel3.ForeColor = Color.Blue;
             bigLabel3.Location = new Point(417, 465);
             bigLabel3.Name = "bigLabel3";
-            bigLabel3.Size = new Size(47, 29);
+            bigLabel3.Size = new Size(43, 28);
             bigLabel3.TabIndex = 8;
             bigLabel3.Text = "Ate";
             // 
@@ -181,11 +181,11 @@
             // 
             bigLabel2.AutoSize = true;
             bigLabel2.BackColor = Color.Transparent;
-            bigLabel2.Font = new Font("Calibri", 14.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            bigLabel2.ForeColor = Color.Black;
+            bigLabel2.Font = new Font("Calibri", 13.8F);
+            bigLabel2.ForeColor = Color.Blue;
             bigLabel2.Location = new Point(45, 413);
             bigLabel2.Name = "bigLabel2";
-            bigLabel2.Size = new Size(65, 29);
+            bigLabel2.Size = new Size(61, 28);
             bigLabel2.TabIndex = 7;
             bigLabel2.Text = "Filtro";
             // 
@@ -202,11 +202,11 @@
             // 
             bigLabel1.AutoSize = true;
             bigLabel1.BackColor = Color.Transparent;
-            bigLabel1.Font = new Font("Calibri", 14.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            bigLabel1.ForeColor = Color.Black;
+            bigLabel1.Font = new Font("Calibri", 13.8F);
+            bigLabel1.ForeColor = Color.Blue;
             bigLabel1.Location = new Point(174, 376);
             bigLabel1.Name = "bigLabel1";
-            bigLabel1.Size = new Size(255, 29);
+            bigLabel1.Size = new Size(238, 28);
             bigLabel1.TabIndex = 5;
             bigLabel1.Text = "Produtos mais vendidos ";
             // 
@@ -232,11 +232,11 @@
             label16PagamentosCredito.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label16PagamentosCredito.AutoSize = true;
             label16PagamentosCredito.BackColor = Color.Transparent;
-            label16PagamentosCredito.Font = new Font("Arial", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label16PagamentosCredito.Font = new Font("Calibri", 12F);
             label16PagamentosCredito.ForeColor = SystemColors.ActiveCaptionText;
             label16PagamentosCredito.Location = new Point(18, 37);
             label16PagamentosCredito.Name = "label16PagamentosCredito";
-            label16PagamentosCredito.Size = new Size(25, 26);
+            label16PagamentosCredito.Size = new Size(20, 24);
             label16PagamentosCredito.TabIndex = 4;
             label16PagamentosCredito.Text = "0";
             label16PagamentosCredito.Click += label16PagamentosCredito_Click;
@@ -245,10 +245,10 @@
             // 
             label8.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label8.AutoSize = true;
-            label8.Font = new Font("Arial", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label8.Font = new Font("Calibri", 13.8F);
             label8.Location = new Point(18, -1);
             label8.Name = "label8";
-            label8.Size = new Size(223, 24);
+            label8.Size = new Size(223, 28);
             label8.TabIndex = 2;
             label8.Text = "pagametos por credito";
             // 
@@ -275,11 +275,11 @@
             label15PagamentosDebito.Anchor = AnchorStyles.Top;
             label15PagamentosDebito.AutoSize = true;
             label15PagamentosDebito.BackColor = Color.Transparent;
-            label15PagamentosDebito.Font = new Font("Arial", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label15PagamentosDebito.Font = new Font("Calibri", 12F);
             label15PagamentosDebito.ForeColor = SystemColors.ActiveCaptionText;
             label15PagamentosDebito.Location = new Point(23, 37);
             label15PagamentosDebito.Name = "label15PagamentosDebito";
-            label15PagamentosDebito.Size = new Size(25, 26);
+            label15PagamentosDebito.Size = new Size(20, 24);
             label15PagamentosDebito.TabIndex = 4;
             label15PagamentosDebito.Text = "0";
             // 
@@ -287,10 +287,10 @@
             // 
             label7.Anchor = AnchorStyles.Top;
             label7.AutoSize = true;
-            label7.Font = new Font("Arial", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label7.Font = new Font("Calibri", 13.8F);
             label7.Location = new Point(23, 0);
             label7.Name = "label7";
-            label7.Size = new Size(217, 24);
+            label7.Size = new Size(217, 28);
             label7.TabIndex = 1;
             label7.Text = "pagametos por debito";
             // 
@@ -313,21 +313,21 @@
             // label13ItensVendidos
             // 
             label13ItensVendidos.AutoSize = true;
-            label13ItensVendidos.Font = new Font("Arial", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label13ItensVendidos.Font = new Font("Calibri", 12F);
             label13ItensVendidos.ForeColor = SystemColors.ButtonHighlight;
             label13ItensVendidos.Location = new Point(12, 37);
             label13ItensVendidos.Name = "label13ItensVendidos";
-            label13ItensVendidos.Size = new Size(25, 26);
+            label13ItensVendidos.Size = new Size(20, 24);
             label13ItensVendidos.TabIndex = 3;
             label13ItensVendidos.Text = "0";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("Arial", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label5.Font = new Font("Calibri", 13.8F);
             label5.Location = new Point(12, 0);
             label5.Name = "label5";
-            label5.Size = new Size(263, 24);
+            label5.Size = new Size(259, 28);
             label5.TabIndex = 1;
             label5.Text = "Quantidade itens vendidos";
             // 
@@ -351,21 +351,21 @@
             // 
             label14PagamentosPix.AutoSize = true;
             label14PagamentosPix.BackColor = Color.Transparent;
-            label14PagamentosPix.Font = new Font("Arial", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label14PagamentosPix.Font = new Font("Calibri", 12F);
             label14PagamentosPix.ForeColor = SystemColors.ActiveCaptionText;
             label14PagamentosPix.Location = new Point(12, 37);
             label14PagamentosPix.Name = "label14PagamentosPix";
-            label14PagamentosPix.Size = new Size(25, 26);
+            label14PagamentosPix.Size = new Size(20, 24);
             label14PagamentosPix.TabIndex = 3;
             label14PagamentosPix.Text = "0";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Font = new Font("Arial", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label6.Font = new Font("Calibri", 13.8F);
             label6.Location = new Point(27, 0);
             label6.Name = "label6";
-            label6.Size = new Size(199, 24);
+            label6.Size = new Size(196, 28);
             label6.TabIndex = 1;
             label6.Text = "Pagamentos por pix";
             // 
@@ -390,11 +390,11 @@
             // 
             label12MediaDeVendas.Anchor = AnchorStyles.Top;
             label12MediaDeVendas.AutoSize = true;
-            label12MediaDeVendas.Font = new Font("Arial", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label12MediaDeVendas.Font = new Font("Calibri", 12F);
             label12MediaDeVendas.ForeColor = SystemColors.ButtonHighlight;
             label12MediaDeVendas.Location = new Point(19, 39);
             label12MediaDeVendas.Name = "label12MediaDeVendas";
-            label12MediaDeVendas.Size = new Size(25, 26);
+            label12MediaDeVendas.Size = new Size(20, 24);
             label12MediaDeVendas.TabIndex = 3;
             label12MediaDeVendas.Text = "0";
             // 
@@ -402,10 +402,10 @@
             // 
             label4.Anchor = AnchorStyles.Top;
             label4.AutoSize = true;
-            label4.Font = new Font("Arial", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label4.Font = new Font("Calibri", 13.8F);
             label4.Location = new Point(3, 0);
             label4.Name = "label4";
-            label4.Size = new Size(292, 24);
+            label4.Size = new Size(288, 28);
             label4.TabIndex = 1;
             label4.Text = "Gastos em produtos vendidos";
             // 
@@ -430,21 +430,21 @@
             // 
             label11ConvercoesDeVendas.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label11ConvercoesDeVendas.AutoSize = true;
-            label11ConvercoesDeVendas.Font = new Font("Arial", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label11ConvercoesDeVendas.Font = new Font("Calibri", 12F);
             label11ConvercoesDeVendas.ForeColor = SystemColors.ButtonHighlight;
             label11ConvercoesDeVendas.Location = new Point(7, 40);
             label11ConvercoesDeVendas.Name = "label11ConvercoesDeVendas";
-            label11ConvercoesDeVendas.Size = new Size(25, 26);
+            label11ConvercoesDeVendas.Size = new Size(20, 24);
             label11ConvercoesDeVendas.TabIndex = 3;
             label11ConvercoesDeVendas.Text = "0";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Arial", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label3.Font = new Font("Calibri", 13.8F);
             label3.Location = new Point(41, 1);
             label3.Name = "label3";
-            label3.Size = new Size(200, 24);
+            label3.Size = new Size(197, 28);
             label3.TabIndex = 1;
             label3.Text = "Valor total vendidos";
             // 
@@ -471,11 +471,11 @@
             label10Pagamentodinheiro.Anchor = AnchorStyles.Top;
             label10Pagamentodinheiro.AutoSize = true;
             label10Pagamentodinheiro.BackColor = Color.Transparent;
-            label10Pagamentodinheiro.Font = new Font("Arial", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label10Pagamentodinheiro.Font = new Font("Calibri", 12F);
             label10Pagamentodinheiro.ForeColor = Color.Black;
             label10Pagamentodinheiro.Location = new Point(19, 37);
             label10Pagamentodinheiro.Name = "label10Pagamentodinheiro";
-            label10Pagamentodinheiro.Size = new Size(25, 26);
+            label10Pagamentodinheiro.Size = new Size(20, 24);
             label10Pagamentodinheiro.TabIndex = 3;
             label10Pagamentodinheiro.Text = "0";
             // 
@@ -483,10 +483,10 @@
             // 
             label2.Anchor = AnchorStyles.Top;
             label2.AutoSize = true;
-            label2.Font = new Font("Arial", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label2.Font = new Font("Calibri", 13.8F);
             label2.Location = new Point(19, -1);
             label2.Name = "label2";
-            label2.Size = new Size(235, 24);
+            label2.Size = new Size(234, 28);
             label2.TabIndex = 1;
             label2.Text = "Pagamento em dinheiro";
             // 
@@ -509,21 +509,21 @@
             // label9VendasRealizadas
             // 
             label9VendasRealizadas.AutoSize = true;
-            label9VendasRealizadas.Font = new Font("Arial", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label9VendasRealizadas.Font = new Font("Calibri", 12F);
             label9VendasRealizadas.ForeColor = SystemColors.ButtonHighlight;
             label9VendasRealizadas.Location = new Point(12, 40);
             label9VendasRealizadas.Name = "label9VendasRealizadas";
-            label9VendasRealizadas.Size = new Size(25, 26);
+            label9VendasRealizadas.Size = new Size(20, 24);
             label9VendasRealizadas.TabIndex = 2;
             label9VendasRealizadas.Text = "0";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Arial", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Calibri", 13.8F);
             label1.Location = new Point(60, 1);
             label1.Name = "label1";
-            label1.Size = new Size(181, 24);
+            label1.Size = new Size(176, 28);
             label1.TabIndex = 0;
             label1.Text = "Vendas realizadas";
             // 

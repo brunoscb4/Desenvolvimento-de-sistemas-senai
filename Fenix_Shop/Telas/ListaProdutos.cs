@@ -13,11 +13,13 @@ namespace Fenix_Shop.Telas
 {
     public partial class ListaProdutos : UserControl
     {
+        
         public ListaProdutos()
         {
             InitializeComponent();
         }
          CadastroDeProduto produto = new CadastroDeProduto();
+        RelatorioVendas relatorio =  new RelatorioVendas();
         private void ListaProdutos_Load(object sender, EventArgs e)
         {
             

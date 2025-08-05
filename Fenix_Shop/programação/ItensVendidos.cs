@@ -56,6 +56,11 @@ namespace Fenix_Shop.programação
         {
             lista.Clear();
         }
+
+        public void ExluirProdutoList(int IdProduto)
+        {
+            lista.RemoveAll(p => p.Id == IdProduto);
+        }
         public void ExibirVendas(DataGridView dataGridView)
         {
             if (dataGridView == null) return;
@@ -177,7 +182,7 @@ namespace Fenix_Shop.programação
                 {
                     connection.Open();
 
-                    string Cadastrados = @"SELECT COUNT(*) FROM CadastroProduto";
+                    string Cadastrados = @"SELECT COUNT(*) FROM CadastroProduto WHERE StatusDoProduto = 'ATIVO'";
                     using (SQLiteCommand cmd = new SQLiteCommand(Cadastrados, connection))
                     {
                         object resultado = cmd.ExecuteScalar();

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             parrotGradientPanel1 = new ReaLTaiizor.Controls.ParrotGradientPanel();
+            label9 = new Label();
             pictureBox1Usuario = new PictureBox();
             TextBoxMaskTelefone = new MaskedTextBox();
             label8 = new Label();
@@ -47,13 +48,6 @@
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
-            checkBoxTelaInicio = new CheckBox();
-            label9 = new Label();
-            checkBox2CadastroProduto = new CheckBox();
-            checkBox3ListaDEProdutos = new CheckBox();
-            checkBox4Relatorio = new CheckBox();
-            checkBox5Vendas = new CheckBox();
-            checkBox6CadastroDeUsuario = new CheckBox();
             parrotGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1Usuario).BeginInit();
             SuspendLayout();
@@ -64,13 +58,7 @@
             parrotGradientPanel1.BottomLeft = Color.White;
             parrotGradientPanel1.BottomRight = Color.White;
             parrotGradientPanel1.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
-            parrotGradientPanel1.Controls.Add(checkBox6CadastroDeUsuario);
-            parrotGradientPanel1.Controls.Add(checkBox5Vendas);
-            parrotGradientPanel1.Controls.Add(checkBox4Relatorio);
-            parrotGradientPanel1.Controls.Add(checkBox3ListaDEProdutos);
-            parrotGradientPanel1.Controls.Add(checkBox2CadastroProduto);
             parrotGradientPanel1.Controls.Add(label9);
-            parrotGradientPanel1.Controls.Add(checkBoxTelaInicio);
             parrotGradientPanel1.Controls.Add(pictureBox1Usuario);
             parrotGradientPanel1.Controls.Add(TextBoxMaskTelefone);
             parrotGradientPanel1.Controls.Add(label8);
@@ -104,6 +92,17 @@
             parrotGradientPanel1.TopLeft = Color.White;
             parrotGradientPanel1.TopRight = Color.FromArgb(64, 64, 64);
             // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.BackColor = Color.Transparent;
+            label9.Font = new Font("Calibri", 13.8F);
+            label9.Location = new Point(693, 605);
+            label9.Name = "label9";
+            label9.Size = new Size(200, 28);
+            label9.TabIndex = 43;
+            label9.Text = "Permissões de Telas:";
+            // 
             // pictureBox1Usuario
             // 
             pictureBox1Usuario.BorderStyle = BorderStyle.FixedSingle;
@@ -117,10 +116,11 @@
             // 
             // TextBoxMaskTelefone
             // 
+            TextBoxMaskTelefone.Font = new Font("Cambria", 12F);
             TextBoxMaskTelefone.Location = new Point(726, 276);
             TextBoxMaskTelefone.Mask = "(00) 0000-0000";
             TextBoxMaskTelefone.Name = "TextBoxMaskTelefone";
-            TextBoxMaskTelefone.Size = new Size(211, 27);
+            TextBoxMaskTelefone.Size = new Size(211, 31);
             TextBoxMaskTelefone.TabIndex = 40;
             TextBoxMaskTelefone.Click += TextBoxMaskTelefone_Click;
             // 
@@ -128,10 +128,10 @@
             // 
             label8.AutoSize = true;
             label8.BackColor = Color.Transparent;
-            label8.Font = new Font("Arial", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label8.Font = new Font("Calibri", 13.8F);
             label8.Location = new Point(693, 227);
             label8.Name = "label8";
-            label8.Size = new Size(114, 26);
+            label8.Size = new Size(96, 28);
             label8.TabIndex = 39;
             label8.Text = "Telefone:";
             // 
@@ -160,50 +160,56 @@
             // 
             // textBox5NomeLoja
             // 
+            textBox5NomeLoja.Font = new Font("Cambria", 12F);
             textBox5NomeLoja.Location = new Point(726, 419);
             textBox5NomeLoja.Margin = new Padding(3, 4, 3, 4);
             textBox5NomeLoja.Name = "textBox5NomeLoja";
-            textBox5NomeLoja.Size = new Size(211, 27);
+            textBox5NomeLoja.Size = new Size(211, 31);
             textBox5NomeLoja.TabIndex = 36;
             // 
             // textBox4ConfirmarSenha
             // 
+            textBox4ConfirmarSenha.Font = new Font("Cambria", 12F);
             textBox4ConfirmarSenha.Location = new Point(137, 705);
             textBox4ConfirmarSenha.Margin = new Padding(3, 4, 3, 4);
             textBox4ConfirmarSenha.Name = "textBox4ConfirmarSenha";
-            textBox4ConfirmarSenha.Size = new Size(262, 27);
+            textBox4ConfirmarSenha.Size = new Size(262, 31);
             textBox4ConfirmarSenha.TabIndex = 35;
             // 
             // textBox3Senha
             // 
+            textBox3Senha.Font = new Font("Cambria", 12F);
             textBox3Senha.Location = new Point(130, 563);
             textBox3Senha.Margin = new Padding(3, 4, 3, 4);
             textBox3Senha.Name = "textBox3Senha";
-            textBox3Senha.Size = new Size(262, 27);
+            textBox3Senha.Size = new Size(262, 31);
             textBox3Senha.TabIndex = 34;
             // 
             // textBox2Email
             // 
+            textBox2Email.Font = new Font("Cambria", 12F);
             textBox2Email.Location = new Point(137, 419);
             textBox2Email.Margin = new Padding(3, 4, 3, 4);
             textBox2Email.Name = "textBox2Email";
-            textBox2Email.Size = new Size(262, 27);
+            textBox2Email.Size = new Size(262, 31);
             textBox2Email.TabIndex = 33;
             // 
             // textBox1Nome
             // 
+            textBox1Nome.Font = new Font("Cambria", 12F);
             textBox1Nome.Location = new Point(137, 292);
             textBox1Nome.Margin = new Padding(3, 4, 3, 4);
             textBox1Nome.Name = "textBox1Nome";
-            textBox1Nome.Size = new Size(262, 27);
+            textBox1Nome.Size = new Size(262, 31);
             textBox1Nome.TabIndex = 32;
             // 
             // comboBoxNivelPermissão
             // 
+            comboBoxNivelPermissão.Font = new Font("Cambria", 12F);
             comboBoxNivelPermissão.FormattingEnabled = true;
             comboBoxNivelPermissão.Location = new Point(726, 544);
             comboBoxNivelPermissão.Name = "comboBoxNivelPermissão";
-            comboBoxNivelPermissão.Size = new Size(211, 28);
+            comboBoxNivelPermissão.Size = new Size(211, 31);
             comboBoxNivelPermissão.TabIndex = 31;
             // 
             // TextBoxMasCpf
@@ -219,10 +225,10 @@
             // 
             label7.AutoSize = true;
             label7.BackColor = Color.Transparent;
-            label7.Font = new Font("Arial", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label7.Font = new Font("Calibri", 13.8F);
             label7.Location = new Point(693, 488);
             label7.Name = "label7";
-            label7.Size = new Size(222, 26);
+            label7.Size = new Size(186, 28);
             label7.TabIndex = 6;
             label7.Text = "Tipo de permissão:";
             // 
@@ -230,10 +236,10 @@
             // 
             label6.AutoSize = true;
             label6.BackColor = Color.Transparent;
-            label6.Font = new Font("Arial", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label6.Font = new Font("Calibri", 13.8F);
             label6.Location = new Point(693, 352);
             label6.Name = "label6";
-            label6.Size = new Size(163, 26);
+            label6.Size = new Size(143, 28);
             label6.TabIndex = 5;
             label6.Text = "Nome Da loja:";
             // 
@@ -241,10 +247,10 @@
             // 
             label5.AutoSize = true;
             label5.BackColor = Color.Transparent;
-            label5.Font = new Font("Arial", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label5.Font = new Font("Calibri", 13.8F);
             label5.Location = new Point(122, 772);
             label5.Name = "label5";
-            label5.Size = new Size(58, 26);
+            label5.Size = new Size(49, 28);
             label5.TabIndex = 4;
             label5.Text = "Cpf:";
             // 
@@ -252,10 +258,10 @@
             // 
             label4.AutoSize = true;
             label4.BackColor = Color.Transparent;
-            label4.Font = new Font("Arial", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label4.Font = new Font("Calibri", 13.8F);
             label4.Location = new Point(111, 627);
             label4.Name = "label4";
-            label4.Size = new Size(200, 26);
+            label4.Size = new Size(171, 28);
             label4.TabIndex = 3;
             label4.Text = "Confirmar senha:";
             // 
@@ -263,10 +269,10 @@
             // 
             label3.AutoSize = true;
             label3.BackColor = Color.Transparent;
-            label3.Font = new Font("Arial", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label3.Font = new Font("Calibri", 13.8F);
             label3.Location = new Point(111, 491);
             label3.Name = "label3";
-            label3.Size = new Size(88, 26);
+            label3.Size = new Size(75, 28);
             label3.TabIndex = 2;
             label3.Text = "Senha:";
             // 
@@ -274,10 +280,10 @@
             // 
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Arial", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label2.Font = new Font("Calibri", 13.8F);
             label2.Location = new Point(111, 363);
             label2.Name = "label2";
-            label2.Size = new Size(79, 26);
+            label2.Size = new Size(68, 28);
             label2.TabIndex = 1;
             label2.Text = "Email:";
             // 
@@ -285,89 +291,12 @@
             // 
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Arial", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Calibri", 13.8F);
             label1.Location = new Point(111, 227);
             label1.Name = "label1";
-            label1.Size = new Size(192, 26);
+            label1.Size = new Size(167, 28);
             label1.TabIndex = 0;
             label1.Text = "Nome completo:";
-            // 
-            // checkBoxTelaInicio
-            // 
-            checkBoxTelaInicio.AutoSize = true;
-            checkBoxTelaInicio.BackColor = Color.Transparent;
-            checkBoxTelaInicio.Location = new Point(726, 651);
-            checkBoxTelaInicio.Name = "checkBoxTelaInicio";
-            checkBoxTelaInicio.Size = new Size(98, 24);
-            checkBoxTelaInicio.TabIndex = 42;
-            checkBoxTelaInicio.Text = "Tela Inicio";
-            checkBoxTelaInicio.UseVisualStyleBackColor = false;
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.BackColor = Color.Transparent;
-            label9.Font = new Font("Arial", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label9.Location = new Point(693, 605);
-            label9.Name = "label9";
-            label9.Size = new Size(245, 26);
-            label9.TabIndex = 43;
-            label9.Text = "Permissões de Telas:";
-            // 
-            // checkBox2CadastroProduto
-            // 
-            checkBox2CadastroProduto.AutoSize = true;
-            checkBox2CadastroProduto.BackColor = Color.Transparent;
-            checkBox2CadastroProduto.Location = new Point(726, 692);
-            checkBox2CadastroProduto.Name = "checkBox2CadastroProduto";
-            checkBox2CadastroProduto.Size = new Size(178, 24);
-            checkBox2CadastroProduto.TabIndex = 44;
-            checkBox2CadastroProduto.Text = "Tela Cadastro Produto";
-            checkBox2CadastroProduto.UseVisualStyleBackColor = false;
-            // 
-            // checkBox3ListaDEProdutos
-            // 
-            checkBox3ListaDEProdutos.AutoSize = true;
-            checkBox3ListaDEProdutos.BackColor = Color.Transparent;
-            checkBox3ListaDEProdutos.Location = new Point(726, 732);
-            checkBox3ListaDEProdutos.Name = "checkBox3ListaDEProdutos";
-            checkBox3ListaDEProdutos.Size = new Size(177, 24);
-            checkBox3ListaDEProdutos.TabIndex = 45;
-            checkBox3ListaDEProdutos.Text = "Tela Lista de produtos";
-            checkBox3ListaDEProdutos.UseVisualStyleBackColor = false;
-            // 
-            // checkBox4Relatorio
-            // 
-            checkBox4Relatorio.AutoSize = true;
-            checkBox4Relatorio.BackColor = Color.Transparent;
-            checkBox4Relatorio.Location = new Point(723, 811);
-            checkBox4Relatorio.Name = "checkBox4Relatorio";
-            checkBox4Relatorio.Size = new Size(123, 24);
-            checkBox4Relatorio.TabIndex = 46;
-            checkBox4Relatorio.Text = "Tela Relatorio";
-            checkBox4Relatorio.UseVisualStyleBackColor = false;
-            // 
-            // checkBox5Vendas
-            // 
-            checkBox5Vendas.AutoSize = true;
-            checkBox5Vendas.BackColor = Color.Transparent;
-            checkBox5Vendas.Location = new Point(840, 651);
-            checkBox5Vendas.Name = "checkBox5Vendas";
-            checkBox5Vendas.Size = new Size(109, 24);
-            checkBox5Vendas.TabIndex = 47;
-            checkBox5Vendas.Text = "Tela Vendas";
-            checkBox5Vendas.UseVisualStyleBackColor = false;
-            // 
-            // checkBox6CadastroDeUsuario
-            // 
-            checkBox6CadastroDeUsuario.AutoSize = true;
-            checkBox6CadastroDeUsuario.BackColor = Color.Transparent;
-            checkBox6CadastroDeUsuario.Location = new Point(723, 772);
-            checkBox6CadastroDeUsuario.Name = "checkBox6CadastroDeUsuario";
-            checkBox6CadastroDeUsuario.Size = new Size(181, 24);
-            checkBox6CadastroDeUsuario.TabIndex = 48;
-            checkBox6CadastroDeUsuario.Text = "Tela Casdastro Usuario";
-            checkBox6CadastroDeUsuario.UseVisualStyleBackColor = false;
             // 
             // CadastroDeUsuario
             // 
@@ -404,12 +333,6 @@
         private MaskedTextBox TextBoxMaskTelefone;
         private Label label8;
         private PictureBox pictureBox1Usuario;
-        private CheckBox checkBoxTelaInicio;
         private Label label9;
-        private CheckBox checkBox2CadastroProduto;
-        private CheckBox checkBox3ListaDEProdutos;
-        private CheckBox checkBox5Vendas;
-        private CheckBox checkBox4Relatorio;
-        private CheckBox checkBox6CadastroDeUsuario;
     }
 }

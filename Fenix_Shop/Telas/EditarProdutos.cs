@@ -1,4 +1,5 @@
-﻿using Fenix_Shop.programação;
+﻿using Fenix_Shop.Enums;
+using Fenix_Shop.programação;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,20 +15,23 @@ namespace Fenix_Shop.Telas
     public partial class EditarProdutos : UserControl
     {
         private CadastroDeProduto cadastro;
+        
+
         public EditarProdutos(CadastroDeProduto cadastro)
         {
             InitializeComponent();
             this.cadastro = cadastro;
         }
+            
         public static byte[] ConverterImagemParaBytes(Image imagem)
         {
             using (MemoryStream ms = new MemoryStream())
             {
                 using (Bitmap bpm = new Bitmap(imagem))
-                
-                    {
+
+                {
                     bpm.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
-                    }
+                }
                 return ms.ToArray();
             }
         }
@@ -63,9 +67,10 @@ namespace Fenix_Shop.Telas
                 }
                 if (pictureBoxCadastroProduto.Image != null)
                 {
-                    
-                    cadastro.Imagem = ConverterImagemParaBytes(pictureBoxCadastroProduto.Image  );
+
+                    cadastro.Imagem = ConverterImagemParaBytes(pictureBoxCadastroProduto.Image);
                 }
+                cadastro.StatusProduto = StatusProdutoAI.ATIVO.ToString();
                 cadastro.atualizarProduto();
                 ListaProdutos listaPr = new ListaProdutos();
                 PanelEditarProdutos.Controls.Clear();
@@ -95,8 +100,8 @@ namespace Fenix_Shop.Telas
                 TextBoxEstoque.Text = cadastro.Estoque.ToString();
                 TextBoxCodigoBarras.Text = cadastro.CodigoBarras;
                 TextBoxSku.Text = cadastro.Sku;
-                TextBoxEstoqueMinimo.Text  = cadastro.EsMinimo.ToString();
-                if (cadastro.Imagem != null )
+                TextBoxEstoqueMinimo.Text = cadastro.EsMinimo.ToString();
+                if (cadastro.Imagem != null)
                 {
                     using (var ms = new System.IO.MemoryStream(cadastro.Imagem))
                     {
@@ -142,5 +147,63 @@ namespace Fenix_Shop.Telas
                 }
 
             }
-        }       }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+         
+            DialogResult resultado = MessageBox.Show(
+                "Deseaja realmente ecluir esse item?",
+                "Confirmaçao",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+            if (resultado == DialogResult.Yes)
+            {
+
+                cadastro.Nome = textBox1Nome.Text;
+                cadastro.Categoria = textBox2Categoria.Text;
+                cadastro.Marca = textBox3Marca.Text;
+                cadastro.Descricao = TextBoxDescricao.Text;
+                cadastro.ValorCusto = int.Parse(TextBoxCusto.Text.Replace("R$", "").Replace(".", "").Replace(",", "").Trim());
+                cadastro.ValorVenda = int.Parse(TextBoxVenda.Text.Replace("R$", "").Replace(".", "").Replace(",", "").Trim());
+                cadastro.CodigoBarras = TextBoxCodigoBarras.Text;
+                cadastro.Sku = TextBoxSku.Text;
+                cadastro.EsMinimo = int.Parse(TextBoxEstoqueMinimo.Text);
+                int estoqueAtual = int.Parse(TextBoxEstoque.Text);
+                if (cadastro.Estoque > estoqueAtual)
+                {
+                    cadastro.Estoque = cadastro.Estoque -= estoqueAtual;
+
+                }
+                else if (cadastro.Estoque < estoqueAtual)
+                {
+                    cadastro.Estoque = estoqueAtual -= cadastro.Estoque;
+                    cadastro.MovimentacaoEstoque = "ENTRADA";
+                }
+                else if (estoqueAtual == 0)
+                {
+                    cadastro.Estoque = cadastro.Estoque -= cadastro.Estoque;
+                    cadastro.MovimentacaoEstoque = "INATIVO";
+                }
+                if (pictureBoxCadastroProduto.Image != null)
+                {
+
+                    cadastro.Imagem = ConverterImagemParaBytes(pictureBoxCadastroProduto.Image);
+                }
+                cadastro.StatusProduto = StatusProdutoAI.INATIVO.ToString();
+                cadastro.atualizarProduto();
+                ListaProdutos listaPr = new ListaProdutos();
+                PanelEditarProdutos.Controls.Clear();
+                listaPr.Dock = DockStyle.Fill;
+                PanelEditarProdutos.Controls.Add(listaPr);
+                MessageBox.Show("Cadastro excluido com sucesso..");
+            }
+            else
+            {
+                MessageBox.Show("Operaçao cancelada..");
+            }
+           
+        }
+    }
 }

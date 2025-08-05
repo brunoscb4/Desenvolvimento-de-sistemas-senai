@@ -59,6 +59,7 @@ namespace Fenix_Shop.programação
                 EstoqueMinimo INTEGER CHECK(EstoqueMinimo > 0),
                 DataDeCadastro DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
                 Foto BLOB,
+                StatusDoProduto TEXT NOT NULL CHECK (StatusDoProduto IN('ATIVO','INATIVO')),
                 FOREIGN KEY (Idusuario) REFERENCES Usuario (Id)
 
             );

@@ -67,20 +67,21 @@
             // 
             // textBoxBuscarNome
             // 
+            textBoxBuscarNome.Font = new Font("Calibri", 12F);
             textBoxBuscarNome.Location = new Point(475, 41);
             textBoxBuscarNome.Margin = new Padding(3, 4, 3, 4);
             textBoxBuscarNome.Name = "textBoxBuscarNome";
-            textBoxBuscarNome.Size = new Size(395, 27);
+            textBoxBuscarNome.Size = new Size(395, 32);
             textBoxBuscarNome.TabIndex = 14;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Arial", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label2.Font = new Font("Calibri", 13.8F);
             label2.Location = new Point(330, 43);
             label2.Name = "label2";
-            label2.Size = new Size(102, 24);
+            label2.Size = new Size(99, 28);
             label2.TabIndex = 13;
             label2.Text = "Pesquisa:";
             // 
@@ -88,10 +89,10 @@
             // 
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Arial", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Calibri", 13.8F);
             label1.Location = new Point(22, 45);
             label1.Name = "label1";
-            label1.Size = new Size(85, 24);
+            label1.Size = new Size(82, 28);
             label1.TabIndex = 12;
             label1.Text = "Codigo:";
             // 
@@ -119,12 +120,13 @@
             // TextBoxCodigoBuscar
             // 
             TextBoxCodigoBuscar.BorderStyle = BorderStyle.FixedSingle;
+            TextBoxCodigoBuscar.Font = new Font("Calibri", 12F);
             TextBoxCodigoBuscar.Location = new Point(123, 43);
             TextBoxCodigoBuscar.Margin = new Padding(3, 4, 3, 4);
             TextBoxCodigoBuscar.Mask = "00000000000000000000000";
             TextBoxCodigoBuscar.Name = "TextBoxCodigoBuscar";
             TextBoxCodigoBuscar.PromptChar = ' ';
-            TextBoxCodigoBuscar.Size = new Size(154, 27);
+            TextBoxCodigoBuscar.Size = new Size(154, 32);
             TextBoxCodigoBuscar.TabIndex = 9;
             TextBoxCodigoBuscar.Click += TextBoxCodigoBuscar_Click;
             // 

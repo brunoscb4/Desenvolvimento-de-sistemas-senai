@@ -9,12 +9,18 @@ namespace Fenix_Shop
 
     public partial class Form1 : Form
     {
+      
 
         public Form1()
         {
             InitializeComponent();
-
-
+         
+            
+        }
+       
+        public Panel PanelLg()
+        {
+            return PanelDeLoginPrincipal;
         }
 
         [DllImport("user32.dll")]
@@ -76,14 +82,16 @@ namespace Fenix_Shop
                         usuarioLogado.Email = usuario.Email;
                         if (usuarioLogado.UsuarioAtivo())
                         {
+                            
                             Tela_Inicial tela_Inicial = new Tela_Inicial(usuarioLogado);
                             PanelLogin.Controls.Clear();
                             tela_Inicial.Dock = DockStyle.Fill;
                             PanelLogin.Controls.Add(tela_Inicial);
                         }
-
+                        
 
                     }
+
                     else { MessageBox.Show("Email ou senha inválidos."); }
 
                 }
