@@ -69,7 +69,7 @@ namespace Fenix_Shop.Telas
                                 }
                                 else
                                 {
-                                    usuario.Imagem = CadastroProdutos.ConverterImagemParaBytes(Properties.Resources.img_Fenix_Shop);
+                                    usuario.Imagem = CadastroProdutos.ConverterImagemParaBytes(Properties.Resources.Untitled_design__1_);
                                 }
 
                                 usuario.CadastroUsuario();

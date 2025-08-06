@@ -1,0 +1,11 @@
+D:\TrabalhoTccPhenixGpv\Sistema Phenix Gpv\Fenix_Shop.exe
+D:\TrabalhoTccPhenixGpv\Sistema Phenix Gpv\Fenix_Shop.dll
+D:\TrabalhoTccPhenixGpv\Sistema Phenix Gpv\Fenix_Shop.deps.json
+D:\TrabalhoTccPhenixGpv\Sistema Phenix Gpv\Fenix_Shop.runtimeconfig.json
+D:\TrabalhoTccPhenixGpv\Sistema Phenix Gpv\Fenix_Shop.pdb
+D:\TrabalhoTccPhenixGpv\Sistema Phenix Gpv\ReaLTaiizor.dll
+D:\TrabalhoTccPhenixGpv\Sistema Phenix Gpv\System.Data.SQLite.dll
+D:\TrabalhoTccPhenixGpv\Sistema Phenix Gpv\runtimes\linux-x64\native\SQLite.Interop.dll
+D:\TrabalhoTccPhenixGpv\Sistema Phenix Gpv\runtimes\osx-x64\native\SQLite.Interop.dll
+D:\TrabalhoTccPhenixGpv\Sistema Phenix Gpv\runtimes\win-x64\native\SQLite.Interop.dll
+D:\TrabalhoTccPhenixGpv\Sistema Phenix Gpv\runtimes\win-x86\native\SQLite.Interop.dll

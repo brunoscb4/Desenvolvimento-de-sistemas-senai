@@ -90,7 +90,7 @@ namespace Fenix_Shop.Telas
                     }
                     else
                     {
-                        produto.Imagem = ConverterImagemParaBytes(Properties.Resources.img_Fenix_Shop);
+                        produto.Imagem = ConverterImagemParaBytes(Properties.Resources.Untitled_design__1_);
                     }
                     produto.MovimentacaoEstoque = "ENTRADA";
                     produto.StatusProduto = StatusProdutoAI.ATIVO.ToString();
