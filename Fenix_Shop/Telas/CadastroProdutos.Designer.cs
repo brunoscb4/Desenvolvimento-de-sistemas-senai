@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroProdutos));
             PanelCadastroProduto = new ReaLTaiizor.Controls.ParrotGradientPanel();
             Salvar = new ReaLTaiizor.Controls.Button();
             textBox3Marca = new TextBox();
@@ -395,6 +396,7 @@
             // 
             pictureBoxCadastroProduto.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             pictureBoxCadastroProduto.BorderStyle = BorderStyle.FixedSingle;
+            pictureBoxCadastroProduto.InitialImage = (Image)resources.GetObject("pictureBoxCadastroProduto.InitialImage");
             pictureBoxCadastroProduto.Location = new Point(112, 47);
             pictureBoxCadastroProduto.Margin = new Padding(3, 4, 3, 4);
             pictureBoxCadastroProduto.MaximumSize = new Size(114, 133);

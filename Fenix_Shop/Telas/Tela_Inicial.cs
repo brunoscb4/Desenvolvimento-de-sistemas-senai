@@ -197,7 +197,11 @@ namespace Fenix_Shop.Telas
 
         private void Logout_Click(object sender, EventArgs e)
         {
-           
+           Form1 form = new Form1();
+
+            panelControlInicial.Controls.Clear();
+                form.PanelLg().Dock = DockStyle.Fill;
+            panelControlInicial.Controls.Add(form.PanelLg());
             
         }
     }

@@ -61,6 +61,7 @@ namespace Fenix_Shop.Telas
                                 usuario.Cpf = TextBoxMasCpf.Text;
                                 usuario.NomeLoja = textBox5NomeLoja.Text;
                                 usuario.Telefone = TextBoxMaskTelefone.Text;
+                                usuario.StatusUser = "ATIVO";
                                 if (pictureBox1Usuario.Image != null)
                                 {
                                     usuario.Imagem = CadastroProdutos.ConverterImagemParaBytes(pictureBox1Usuario.Image);

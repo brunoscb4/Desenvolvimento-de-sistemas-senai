@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroDeUsuario));
             parrotGradientPanel1 = new ReaLTaiizor.Controls.ParrotGradientPanel();
-            label9 = new Label();
+            dataGridView1 = new DataGridView();
             pictureBox1Usuario = new PictureBox();
             TextBoxMaskTelefone = new MaskedTextBox();
             label8 = new Label();
@@ -49,6 +50,7 @@
             label2 = new Label();
             label1 = new Label();
             parrotGradientPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1Usuario).BeginInit();
             SuspendLayout();
             // 
@@ -58,7 +60,7 @@
             parrotGradientPanel1.BottomLeft = Color.White;
             parrotGradientPanel1.BottomRight = Color.White;
             parrotGradientPanel1.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
-            parrotGradientPanel1.Controls.Add(label9);
+            parrotGradientPanel1.Controls.Add(dataGridView1);
             parrotGradientPanel1.Controls.Add(pictureBox1Usuario);
             parrotGradientPanel1.Controls.Add(TextBoxMaskTelefone);
             parrotGradientPanel1.Controls.Add(label8);
@@ -92,21 +94,24 @@
             parrotGradientPanel1.TopLeft = Color.White;
             parrotGradientPanel1.TopRight = Color.FromArgb(64, 64, 64);
             // 
-            // label9
+            // dataGridView1
             // 
-            label9.AutoSize = true;
-            label9.BackColor = Color.Transparent;
-            label9.Font = new Font("Calibri", 13.8F);
-            label9.Location = new Point(693, 605);
-            label9.Name = "label9";
-            label9.Size = new Size(200, 28);
-            label9.TabIndex = 43;
-            label9.Text = "Permissões de Telas:";
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.BackgroundColor = Color.White;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(331, 21);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.Size = new Size(704, 188);
+            dataGridView1.TabIndex = 44;
+            dataGridView1.CellClick += dataGridView1_CellClick;
             // 
             // pictureBox1Usuario
             // 
             pictureBox1Usuario.BorderStyle = BorderStyle.FixedSingle;
-            pictureBox1Usuario.Location = new Point(111, 56);
+            pictureBox1Usuario.InitialImage = (Image)resources.GetObject("pictureBox1Usuario.InitialImage");
+            pictureBox1Usuario.Location = new Point(111, 21);
             pictureBox1Usuario.Margin = new Padding(3, 4, 3, 4);
             pictureBox1Usuario.Name = "pictureBox1Usuario";
             pictureBox1Usuario.Size = new Size(114, 133);
@@ -117,7 +122,7 @@
             // TextBoxMaskTelefone
             // 
             TextBoxMaskTelefone.Font = new Font("Cambria", 12F);
-            TextBoxMaskTelefone.Location = new Point(726, 276);
+            TextBoxMaskTelefone.Location = new Point(726, 292);
             TextBoxMaskTelefone.Mask = "(00) 0000-0000";
             TextBoxMaskTelefone.Name = "TextBoxMaskTelefone";
             TextBoxMaskTelefone.Size = new Size(211, 31);
@@ -129,7 +134,7 @@
             label8.AutoSize = true;
             label8.BackColor = Color.Transparent;
             label8.Font = new Font("Calibri", 13.8F);
-            label8.Location = new Point(693, 227);
+            label8.Location = new Point(693, 243);
             label8.Name = "label8";
             label8.Size = new Size(96, 28);
             label8.TabIndex = 39;
@@ -161,7 +166,7 @@
             // textBox5NomeLoja
             // 
             textBox5NomeLoja.Font = new Font("Cambria", 12F);
-            textBox5NomeLoja.Location = new Point(726, 419);
+            textBox5NomeLoja.Location = new Point(726, 435);
             textBox5NomeLoja.Margin = new Padding(3, 4, 3, 4);
             textBox5NomeLoja.Name = "textBox5NomeLoja";
             textBox5NomeLoja.Size = new Size(211, 31);
@@ -207,7 +212,7 @@
             // 
             comboBoxNivelPermissão.Font = new Font("Cambria", 12F);
             comboBoxNivelPermissão.FormattingEnabled = true;
-            comboBoxNivelPermissão.Location = new Point(726, 544);
+            comboBoxNivelPermissão.Location = new Point(726, 560);
             comboBoxNivelPermissão.Name = "comboBoxNivelPermissão";
             comboBoxNivelPermissão.Size = new Size(211, 31);
             comboBoxNivelPermissão.TabIndex = 31;
@@ -226,7 +231,7 @@
             label7.AutoSize = true;
             label7.BackColor = Color.Transparent;
             label7.Font = new Font("Calibri", 13.8F);
-            label7.Location = new Point(693, 488);
+            label7.Location = new Point(693, 504);
             label7.Name = "label7";
             label7.Size = new Size(186, 28);
             label7.TabIndex = 6;
@@ -237,7 +242,7 @@
             label6.AutoSize = true;
             label6.BackColor = Color.Transparent;
             label6.Font = new Font("Calibri", 13.8F);
-            label6.Location = new Point(693, 352);
+            label6.Location = new Point(693, 368);
             label6.Name = "label6";
             label6.Size = new Size(143, 28);
             label6.TabIndex = 5;
@@ -308,6 +313,7 @@
             Load += CadastroDeUsuario_Load;
             parrotGradientPanel1.ResumeLayout(false);
             parrotGradientPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1Usuario).EndInit();
             ResumeLayout(false);
         }
@@ -333,6 +339,6 @@
         private MaskedTextBox TextBoxMaskTelefone;
         private Label label8;
         private PictureBox pictureBox1Usuario;
-        private Label label9;
+        private DataGridView dataGridView1;
     }
 }

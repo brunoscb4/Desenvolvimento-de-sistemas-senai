@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroUsuarioAdministrador));
             parrotGradientPanel1 = new ReaLTaiizor.Controls.ParrotGradientPanel();
             pictureBox1Usuario = new PictureBox();
             TextBoxMaskTelefone = new MaskedTextBox();
@@ -92,6 +93,7 @@
             // pictureBox1Usuario
             // 
             pictureBox1Usuario.BorderStyle = BorderStyle.FixedSingle;
+            pictureBox1Usuario.InitialImage = (Image)resources.GetObject("pictureBox1Usuario.InitialImage");
             pictureBox1Usuario.Location = new Point(69, 14);
             pictureBox1Usuario.Margin = new Padding(3, 4, 3, 4);
             pictureBox1Usuario.Name = "pictureBox1Usuario";

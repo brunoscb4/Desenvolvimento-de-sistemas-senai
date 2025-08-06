@@ -54,10 +54,5 @@ namespace Fenix_Shop.Telas
             this.Parent.Controls.Remove(this);
 
         }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

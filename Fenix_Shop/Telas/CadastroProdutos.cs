@@ -100,8 +100,10 @@ namespace Fenix_Shop.Telas
                     produto.CadastroProdutoEstoque();
                     tela_Inicial.AtualizarVendas();
                     MessageBox.Show("Cadastro realizado..");
-
                     LimparCampos();
+                    int valor = 00;
+                    TextBoxVenda.Text = valor.ToString("C2");
+                    TextBoxCusto.Text = valor.ToString("C2");
                 }
                 else
                 {

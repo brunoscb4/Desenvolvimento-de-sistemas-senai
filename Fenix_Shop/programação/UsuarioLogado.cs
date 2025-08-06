@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SQLite;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -65,6 +68,41 @@ namespace Fenix_Shop.programação
                 throw;
             }
         }
+
+        public DataTable Usuarios()
+        {
+            try
+            {
+                using (SQLiteConnection connection = new SQLiteConnection(BancoSQLite.ConexaoSQlite))
+                {
+                    connection.Open();
+
+                    string select = @"SELECT Id AS CODIGO, Nome AS NOME , NivelUsuario AS NIVEL , Telefone AS TELEFONE, DataDeCadastro AS ENTRADA FROM Usuario WHERE Status = 'ATIVO'";
+
+                    using (SQLiteCommand cmd = new SQLiteCommand(select, connection))
+                    {
+                        DataTable dt = new DataTable();
+                        using (SQLiteDataAdapter adapter = new SQLiteDataAdapter(cmd))
+                        {
+                            adapter.Fill(dt);
+                            return dt;
+                        }
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Erro ao buscar usuarios " + ex.Message);
+                return null;
+            }
+
+
+        }
+
+
+        
     }
 
 

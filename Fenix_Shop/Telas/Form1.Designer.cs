@@ -253,11 +253,11 @@
             bigLabel1.BackColor = Color.Transparent;
             bigLabel1.Font = new Font("Gabriola", 40.2F, FontStyle.Italic, GraphicsUnit.Point, 0);
             bigLabel1.ForeColor = Color.Black;
-            bigLabel1.Location = new Point(243, -19);
+            bigLabel1.Location = new Point(221, -18);
             bigLabel1.Name = "bigLabel1";
-            bigLabel1.Size = new Size(275, 124);
+            bigLabel1.Size = new Size(293, 124);
             bigLabel1.TabIndex = 0;
-            bigLabel1.Text = "Fenix shop";
+            bigLabel1.Text = "Phenix Gpv";
             // 
             // Login
             // 

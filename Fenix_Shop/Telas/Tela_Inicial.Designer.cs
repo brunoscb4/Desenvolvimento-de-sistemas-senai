@@ -61,6 +61,7 @@
             label1 = new Label();
             pictureBox2 = new PictureBox();
             panel5IncialControler = new Panel();
+            panelControlInicial = new Panel();
             timerRelogio = new System.Windows.Forms.Timer(components);
             parrotGradientPanel1.SuspendLayout();
             parrotGradientPanel2.SuspendLayout();
@@ -72,6 +73,7 @@
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel5IncialControler.SuspendLayout();
+            panelControlInicial.SuspendLayout();
             SuspendLayout();
             // 
             // parrotGradientPanel1
@@ -105,6 +107,7 @@
             // 
             // Logout
             // 
+            Logout.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             Logout.BackColor = Color.Transparent;
             Logout.BorderColor = Color.FromArgb(32, 34, 37);
             Logout.EnteredBorderColor = Color.FromArgb(165, 37, 37);
@@ -201,6 +204,7 @@
             // 
             pictureBoxTelaInicial.BackColor = Color.White;
             pictureBoxTelaInicial.BorderStyle = BorderStyle.FixedSingle;
+            pictureBoxTelaInicial.InitialImage = (Image)resources.GetObject("pictureBoxTelaInicial.InitialImage");
             pictureBoxTelaInicial.Location = new Point(13, 13);
             pictureBoxTelaInicial.Margin = new Padding(3, 4, 3, 4);
             pictureBoxTelaInicial.Name = "pictureBoxTelaInicial";
@@ -553,6 +557,7 @@
             // 
             // panel5IncialControler
             // 
+            panel5IncialControler.BackColor = Color.FromArgb(224, 224, 224);
             panel5IncialControler.Controls.Add(PanelInicio);
             panel5IncialControler.Dock = DockStyle.Fill;
             panel5IncialControler.Location = new Point(313, 0);
@@ -560,6 +565,16 @@
             panel5IncialControler.Name = "panel5IncialControler";
             panel5IncialControler.Size = new Size(1058, 893);
             panel5IncialControler.TabIndex = 4;
+            // 
+            // panelControlInicial
+            // 
+            panelControlInicial.Controls.Add(panel5IncialControler);
+            panelControlInicial.Controls.Add(parrotGradientPanel1);
+            panelControlInicial.Dock = DockStyle.Fill;
+            panelControlInicial.Location = new Point(0, 0);
+            panelControlInicial.Name = "panelControlInicial";
+            panelControlInicial.Size = new Size(1371, 893);
+            panelControlInicial.TabIndex = 12;
             // 
             // timerRelogio
             // 
@@ -572,8 +587,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            Controls.Add(panel5IncialControler);
-            Controls.Add(parrotGradientPanel1);
+            Controls.Add(panelControlInicial);
             ForeColor = Color.Black;
             ImeMode = ImeMode.On;
             Margin = new Padding(3, 4, 3, 4);
@@ -595,6 +609,7 @@
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             panel5IncialControler.ResumeLayout(false);
+            panelControlInicial.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -632,5 +647,6 @@
         private Label label6;
         private DataGridView dataGridViewMinimo;
         private ReaLTaiizor.Controls.Button Logout;
+        private Panel panelControlInicial;
     }
 }

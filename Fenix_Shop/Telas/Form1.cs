@@ -20,7 +20,7 @@ namespace Fenix_Shop
        
         public Panel PanelLg()
         {
-            return PanelDeLoginPrincipal;
+            return PanelLogin;
         }
 
         [DllImport("user32.dll")]
@@ -75,8 +75,9 @@ namespace Fenix_Shop
                 {
                     usuario.Email = textBox1Email.Text;
                     usuario.Senha = textBox2Senha.Text;
-
-                    if (usuario.FazerLogin())
+                    if (usuario.Status(textBox1Email.Text) == "ATIVO")
+                    {
+                      if (usuario.FazerLogin())
                     {
                         UsuarioLogado usuarioLogado = new UsuarioLogado();
                         usuarioLogado.Email = usuario.Email;
@@ -91,6 +92,8 @@ namespace Fenix_Shop
                         
 
                     }
+                    }
+                    
 
                     else { MessageBox.Show("Email ou senha inválidos."); }
 

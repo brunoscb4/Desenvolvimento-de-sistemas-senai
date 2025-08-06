@@ -240,7 +240,9 @@ namespace Fenix_Shop.Telas
                     Pagamentos pagamentos = new Pagamentos(this);
 
                     pagamentos.Anchor = AnchorStyles.Bottom;
-
+                    int posX = (PanelVendas.Width - pagamentos.Width) / 2;
+                    int posY = (PanelVendas.Height - pagamentos.Height) / 2;
+                    pagamentos.Location = new Point(posX, posY);
                     PanelVendas.Controls.Add(pagamentos);
                     pagamentos.BringToFront();
 
