@@ -33,13 +33,14 @@
             TextBoxIdBuscar = new TextBox();
             textBoxBuscarNome = new TextBox();
             panel2 = new Panel();
+            label12 = new Label();
             label11ValorTotalCompra = new Label();
             label11QuantidadeVendidos = new Label();
-            dateTimePicker1 = new DateTimePicker();
             label10 = new Label();
             label9 = new Label();
             button3 = new ReaLTaiizor.Controls.Button();
             panel1 = new Panel();
+            label13 = new Label();
             label12Estoque = new Label();
             label11 = new Label();
             textBoxQuantidade = new TextBox();
@@ -71,6 +72,7 @@
             // 
             // PanelVendas
             // 
+            PanelVendas.BorderStyle = BorderStyle.Fixed3D;
             PanelVendas.BottomLeft = Color.White;
             PanelVendas.BottomRight = Color.White;
             PanelVendas.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
@@ -97,7 +99,7 @@
             PanelVendas.TabIndex = 0;
             PanelVendas.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             PanelVendas.TopLeft = Color.White;
-            PanelVendas.TopRight = Color.FromArgb(64, 64, 64);
+            PanelVendas.TopRight = Color.Silver;
             // 
             // TextBoxIdBuscar
             // 
@@ -120,16 +122,29 @@
             panel2.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             panel2.BackColor = Color.SlateBlue;
             panel2.BorderStyle = BorderStyle.FixedSingle;
+            panel2.Controls.Add(label12);
             panel2.Controls.Add(label11ValorTotalCompra);
             panel2.Controls.Add(label11QuantidadeVendidos);
-            panel2.Controls.Add(dateTimePicker1);
             panel2.Controls.Add(label10);
             panel2.Controls.Add(label9);
             panel2.Controls.Add(button3);
-            panel2.Location = new Point(653, 496);
+            panel2.Location = new Point(649, 552);
             panel2.Name = "panel2";
-            panel2.Size = new Size(388, 375);
+            panel2.Size = new Size(388, 315);
             panel2.TabIndex = 15;
+            // 
+            // label12
+            // 
+            label12.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            label12.AutoSize = true;
+            label12.BackColor = Color.Transparent;
+            label12.Font = new Font("Calibri", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label12.ForeColor = Color.White;
+            label12.Location = new Point(26, 10);
+            label12.Name = "label12";
+            label12.Size = new Size(337, 37);
+            label12.TabIndex = 20;
+            label12.Text = "INFORMAÇÕES DA VENDA";
             // 
             // label11ValorTotalCompra
             // 
@@ -137,7 +152,7 @@
             label11ValorTotalCompra.AutoSize = true;
             label11ValorTotalCompra.BackColor = Color.Transparent;
             label11ValorTotalCompra.Font = new Font("Calibri", 13.8F);
-            label11ValorTotalCompra.Location = new Point(166, 233);
+            label11ValorTotalCompra.Location = new Point(166, 173);
             label11ValorTotalCompra.Name = "label11ValorTotalCompra";
             label11ValorTotalCompra.Size = new Size(24, 28);
             label11ValorTotalCompra.TabIndex = 19;
@@ -149,31 +164,22 @@
             label11QuantidadeVendidos.AutoSize = true;
             label11QuantidadeVendidos.BackColor = Color.Transparent;
             label11QuantidadeVendidos.Font = new Font("Calibri", 13.8F);
-            label11QuantidadeVendidos.Location = new Point(166, 165);
+            label11QuantidadeVendidos.Location = new Point(166, 105);
             label11QuantidadeVendidos.Name = "label11QuantidadeVendidos";
             label11QuantidadeVendidos.Size = new Size(24, 28);
             label11QuantidadeVendidos.TabIndex = 18;
             label11QuantidadeVendidos.Text = "0";
-            // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            dateTimePicker1.Format = DateTimePickerFormat.Short;
-            dateTimePicker1.Location = new Point(25, 60);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(159, 27);
-            dateTimePicker1.TabIndex = 17;
             // 
             // label10
             // 
             label10.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             label10.AutoSize = true;
             label10.BackColor = Color.Transparent;
-            label10.Font = new Font("Calibri", 13.8F);
-            label10.ForeColor = Color.Black;
-            label10.Location = new Point(25, 233);
+            label10.Font = new Font("Calibri", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label10.ForeColor = Color.White;
+            label10.Location = new Point(14, 166);
             label10.Name = "label10";
-            label10.Size = new Size(115, 28);
+            label10.Size = new Size(151, 37);
             label10.TabIndex = 16;
             label10.Text = "Valor total:";
             // 
@@ -182,11 +188,11 @@
             label9.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             label9.AutoSize = true;
             label9.BackColor = Color.Transparent;
-            label9.Font = new Font("Calibri", 13.8F);
-            label9.ForeColor = Color.Black;
-            label9.Location = new Point(25, 165);
+            label9.Font = new Font("Calibri", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label9.ForeColor = Color.White;
+            label9.Location = new Point(14, 98);
             label9.Name = "label9";
-            label9.Size = new Size(103, 28);
+            label9.Size = new Size(139, 37);
             label9.TabIndex = 15;
             label9.Text = "Vendidos:";
             // 
@@ -201,7 +207,7 @@
             button3.Image = null;
             button3.ImageAlign = ContentAlignment.MiddleLeft;
             button3.InactiveColor = Color.FromArgb(0, 192, 0);
-            button3.Location = new Point(241, 317);
+            button3.Location = new Point(241, 257);
             button3.Name = "button3";
             button3.PressedBorderColor = Color.Black;
             button3.PressedColor = Color.Green;
@@ -216,6 +222,7 @@
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             panel1.BackColor = Color.FromArgb(192, 192, 255);
             panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(label13);
             panel1.Controls.Add(label12Estoque);
             panel1.Controls.Add(label11);
             panel1.Controls.Add(textBoxQuantidade);
@@ -229,10 +236,23 @@
             panel1.Controls.Add(label6);
             panel1.Controls.Add(label5);
             panel1.Controls.Add(pictureBox1Vendas);
-            panel1.Location = new Point(653, 115);
+            panel1.Location = new Point(649, 115);
             panel1.Name = "panel1";
-            panel1.Size = new Size(388, 758);
+            panel1.Size = new Size(388, 754);
             panel1.TabIndex = 13;
+            // 
+            // label13
+            // 
+            label13.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            label13.AutoSize = true;
+            label13.BackColor = Color.Transparent;
+            label13.Font = new Font("Calibri", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label13.ForeColor = Color.Black;
+            label13.Location = new Point(126, 0);
+            label13.Name = "label13";
+            label13.Size = new Size(140, 37);
+            label13.TabIndex = 21;
+            label13.Text = "PRODUTO";
             // 
             // label12Estoque
             // 
@@ -306,9 +326,9 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(23, 296);
+            pictureBox1.Location = new Point(12, 290);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(125, 80);
+            pictureBox1.Size = new Size(141, 94);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 14;
             pictureBox1.TabStop = false;
@@ -324,7 +344,7 @@
             button2.Image = null;
             button2.ImageAlign = ContentAlignment.MiddleLeft;
             button2.InactiveColor = Color.FromArgb(0, 192, 0);
-            button2.Location = new Point(241, 325);
+            button2.Location = new Point(222, 347);
             button2.Name = "button2";
             button2.PressedBorderColor = Color.Black;
             button2.PressedColor = Color.Green;
@@ -391,7 +411,7 @@
             pictureBox1Vendas.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pictureBox1Vendas.BackColor = Color.White;
             pictureBox1Vendas.BorderStyle = BorderStyle.FixedSingle;
-            pictureBox1Vendas.Location = new Point(25, 19);
+            pictureBox1Vendas.Location = new Point(26, 45);
             pictureBox1Vendas.Name = "pictureBox1Vendas";
             pictureBox1Vendas.Size = new Size(80, 93);
             pictureBox1Vendas.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -405,11 +425,11 @@
             label4.BackColor = Color.Transparent;
             label4.Font = new Font("Calibri", 13.8F);
             label4.ForeColor = Color.Blue;
-            label4.Location = new Point(19, 459);
+            label4.Location = new Point(19, 518);
             label4.Name = "label4";
-            label4.Size = new Size(79, 28);
+            label4.Size = new Size(89, 28);
             label4.TabIndex = 12;
-            label4.Text = "Vendas";
+            label4.Text = "VENDAS";
             // 
             // label3
             // 
@@ -419,9 +439,9 @@
             label3.ForeColor = Color.Blue;
             label3.Location = new Point(19, 77);
             label3.Name = "label3";
-            label3.Size = new Size(97, 28);
+            label3.Size = new Size(116, 28);
             label3.TabIndex = 11;
-            label3.Text = "Produtos";
+            label3.Text = "PRODUTOS";
             // 
             // dataGridView1Vendas
             // 
@@ -432,10 +452,10 @@
             dataGridView1Vendas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1Vendas.EditMode = DataGridViewEditMode.EditProgrammatically;
             dataGridView1Vendas.GridColor = Color.FromArgb(64, 64, 64);
-            dataGridView1Vendas.Location = new Point(19, 496);
+            dataGridView1Vendas.Location = new Point(19, 552);
             dataGridView1Vendas.Name = "dataGridView1Vendas";
             dataGridView1Vendas.RowHeadersWidth = 51;
-            dataGridView1Vendas.Size = new Size(613, 376);
+            dataGridView1Vendas.Size = new Size(609, 316);
             dataGridView1Vendas.TabIndex = 10;
             dataGridView1Vendas.CellClick += dataGridView1Vendas_CellClick;
             // 
@@ -451,7 +471,7 @@
             dataGridViewProdutos.Location = new Point(19, 116);
             dataGridViewProdutos.Name = "dataGridViewProdutos";
             dataGridViewProdutos.RowHeadersWidth = 51;
-            dataGridViewProdutos.Size = new Size(613, 340);
+            dataGridViewProdutos.Size = new Size(609, 399);
             dataGridViewProdutos.TabIndex = 9;
             dataGridViewProdutos.CellClick += dataGridViewProdutos_CellClick;
             // 
@@ -538,7 +558,6 @@
         private Label label5;
         private PictureBox pictureBox1;
         private Panel panel2;
-        private DateTimePicker dateTimePicker1;
         private Label label10;
         private Label label9;
         private ReaLTaiizor.Controls.Button button3;
@@ -552,5 +571,7 @@
         private TextBox TextBoxIdBuscar;
         private Label label12Estoque;
         private Label label11;
+        private Label label12;
+        private Label label13;
     }
 }

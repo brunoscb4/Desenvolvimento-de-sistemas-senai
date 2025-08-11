@@ -285,7 +285,7 @@ namespace Fenix_Shop.Telas
 
         private void dataGridView1Vendas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >=0 && e.ColumnIndex == dataGridView1Vendas.Columns["AÇÃO"].Index)
+            if (e.RowIndex >= 0 && e.ColumnIndex == dataGridView1Vendas.Columns["AÇÃO"].Index)
             {
                 int IdProduto = Convert.ToInt32(dataGridView1Vendas.Rows[e.RowIndex].Cells["Id"].Value);
 

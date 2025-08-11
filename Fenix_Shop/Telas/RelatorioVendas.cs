@@ -40,7 +40,7 @@ namespace Fenix_Shop.Telas
         }
         private void label16PagamentosCredito_Click(object sender, EventArgs e)
         {
-           
+
         }
         public bool AtualizarRelatorio()
         {
@@ -52,13 +52,13 @@ namespace Fenix_Shop.Telas
             label15PagamentosDebito.Text = itensVendidos.PagamentoDebito().ToString("C2");
             label10Pagamentodinheiro.Text = itensVendidos.PagamentoDinheiro().ToString("C2");
             label14PagamentosPix.Text = itensVendidos.PagamentoPix().ToString("C2");
-            
+
 
             return true;
         }
         private void button1_Click(object sender, EventArgs e)
         {
- itensVendidos.DataInicio = dateTimePickerInicio.Value.Date;
+            itensVendidos.DataInicio = dateTimePickerInicio.Value.Date;
             itensVendidos.DataFim = dateTimePickerFinal.Value.Date.AddDays(1).AddSeconds(1);
             dataGridView1.DataSource = null;
             AtualizarRelatorio();
@@ -73,9 +73,14 @@ namespace Fenix_Shop.Telas
             AtualizarRelatorio();
             dataGridView1.DataSource = null;
             CarregarRelatorio();
-            
+
             DateTime inicioMes = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
             dateTimePickerInicio.Text = inicioMes.ToString("dd/MM/yyyy");
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

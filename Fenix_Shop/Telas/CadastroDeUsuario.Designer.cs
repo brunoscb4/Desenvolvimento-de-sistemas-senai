@@ -56,7 +56,7 @@
             // 
             // parrotGradientPanel1
             // 
-            parrotGradientPanel1.BorderStyle = BorderStyle.FixedSingle;
+            parrotGradientPanel1.BorderStyle = BorderStyle.Fixed3D;
             parrotGradientPanel1.BottomLeft = Color.White;
             parrotGradientPanel1.BottomRight = Color.White;
             parrotGradientPanel1.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
@@ -92,7 +92,7 @@
             parrotGradientPanel1.TabIndex = 0;
             parrotGradientPanel1.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             parrotGradientPanel1.TopLeft = Color.White;
-            parrotGradientPanel1.TopRight = Color.FromArgb(64, 64, 64);
+            parrotGradientPanel1.TopRight = Color.Silver;
             // 
             // dataGridView1
             // 
@@ -151,7 +151,7 @@
             Salvar.Image = null;
             Salvar.ImageAlign = ContentAlignment.MiddleLeft;
             Salvar.InactiveColor = Color.Green;
-            Salvar.Location = new Point(854, 820);
+            Salvar.Location = new Point(854, 819);
             Salvar.Margin = new Padding(3, 4, 3, 4);
             Salvar.Name = "Salvar";
             Salvar.PressedBorderColor = Color.Black;

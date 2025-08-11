@@ -53,7 +53,7 @@ namespace Fenix_Shop.Telas
                 if (cadastro.Estoque > estoqueAtual)
                 {
                     cadastro.Estoque = cadastro.Estoque -= estoqueAtual;
-
+                    cadastro.MovimentacaoEstoque = "SAIDA";
                 }
                 else if (cadastro.Estoque < estoqueAtual)
                 {

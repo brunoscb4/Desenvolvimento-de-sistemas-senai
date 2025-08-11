@@ -1,23 +1,34 @@
 using Fenix_Shop.programação;
 using Fenix_Shop.Telas;
+using ReaLTaiizor.Extension;
 using System.Data.SQLite;
+using System.Diagnostics;
 using System.Runtime.InteropServices;
 
 
 namespace Fenix_Shop
 {
-
     public partial class Form1 : Form
     {
-      
+
+
+
 
         public Form1()
         {
             InitializeComponent();
-           
-            
+
+
         }
-       
+
+
+
+
+
+
+
+
+
         public Panel PanelLg()
         {
             return PanelLogin;
@@ -77,23 +88,23 @@ namespace Fenix_Shop
                     usuario.Senha = textBox2Senha.Text;
                     if (usuario.Status(textBox1Email.Text) == "ATIVO")
                     {
-                      if (usuario.FazerLogin())
-                    {
-                        UsuarioLogado usuarioLogado = new UsuarioLogado();
-                        usuarioLogado.Email = usuario.Email;
-                        if (usuarioLogado.UsuarioAtivo())
+                        if (usuario.FazerLogin())
                         {
-                            
-                            Tela_Inicial tela_Inicial = new Tela_Inicial(usuarioLogado);
-                            PanelLogin.Controls.Clear();
-                            tela_Inicial.Dock = DockStyle.Fill;
-                            PanelLogin.Controls.Add(tela_Inicial);
-                        }
-                        
+                            UsuarioLogado usuarioLogado = new UsuarioLogado();
+                            usuarioLogado.Email = usuario.Email;
+                            if (usuarioLogado.UsuarioAtivo())
+                            {
 
+                                Tela_Inicial tela_Inicial = new Tela_Inicial(usuarioLogado);
+                                PanelLogin.Controls.Clear();
+                                tela_Inicial.Dock = DockStyle.Fill;
+                                PanelLogin.Controls.Add(tela_Inicial);
+                            }
+
+
+                        }
                     }
-                    }
-                    
+
 
                     else { MessageBox.Show("Email ou senha inválidos."); }
 
@@ -110,6 +121,7 @@ namespace Fenix_Shop
 
         private void Form1_Load(object sender, EventArgs e)
         {
+
             CadastroNovoUsuario usuario = new CadastroNovoUsuario();
             CadastroUsuarioAdministrador cadastro = new CadastroUsuarioAdministrador();
             BancoSQLite.CriarBancoETabela();
@@ -141,14 +153,16 @@ namespace Fenix_Shop
         {
             if (textBox2Senha.UseSystemPasswordChar == true)
             {
-                  textBox2Senha.UseSystemPasswordChar = false;
+                textBox2Senha.UseSystemPasswordChar = false;
             }
             else
-            {               
+            {
                 textBox2Senha.UseSystemPasswordChar = true;
             }
 
         }
     }
+
+
 }
 

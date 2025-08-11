@@ -41,6 +41,7 @@
             // 
             // PanelListaProdutos
             // 
+            PanelListaProdutos.BorderStyle = BorderStyle.Fixed3D;
             PanelListaProdutos.BottomLeft = Color.White;
             PanelListaProdutos.BottomRight = Color.White;
             PanelListaProdutos.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
@@ -63,7 +64,7 @@
             PanelListaProdutos.TabIndex = 0;
             PanelListaProdutos.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             PanelListaProdutos.TopLeft = Color.White;
-            PanelListaProdutos.TopRight = Color.FromArgb(64, 64, 64);
+            PanelListaProdutos.TopRight = Color.FromArgb(224, 224, 224);
             // 
             // textBoxBuscarNome
             // 
@@ -142,7 +143,7 @@
             dataGridView1.Location = new Point(0, 108);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1058, 785);
+            dataGridView1.Size = new Size(1054, 781);
             dataGridView1.TabIndex = 4;
             dataGridView1.CellClick += dataGridView1_CellClick;
             // 

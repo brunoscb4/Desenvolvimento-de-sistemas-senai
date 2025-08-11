@@ -78,9 +78,9 @@
             // 
             // parrotGradientPanel1
             // 
-            parrotGradientPanel1.BorderStyle = BorderStyle.FixedSingle;
-            parrotGradientPanel1.BottomLeft = Color.FromArgb(192, 192, 255);
-            parrotGradientPanel1.BottomRight = Color.FromArgb(128, 128, 255);
+            parrotGradientPanel1.BorderStyle = BorderStyle.Fixed3D;
+            parrotGradientPanel1.BottomLeft = Color.FromArgb(64, 64, 64);
+            parrotGradientPanel1.BottomRight = Color.FromArgb(64, 64, 64);
             parrotGradientPanel1.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
             parrotGradientPanel1.Controls.Add(Logout);
             parrotGradientPanel1.Controls.Add(parrotGradientPanel2);
@@ -96,14 +96,14 @@
             parrotGradientPanel1.Margin = new Padding(3, 4, 3, 4);
             parrotGradientPanel1.Name = "parrotGradientPanel1";
             parrotGradientPanel1.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
-            parrotGradientPanel1.PrimerColor = Color.FromArgb(192, 192, 255);
+            parrotGradientPanel1.PrimerColor = Color.FromArgb(64, 64, 64);
             parrotGradientPanel1.Size = new Size(313, 893);
             parrotGradientPanel1.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
             parrotGradientPanel1.Style = ReaLTaiizor.Controls.ParrotGradientPanel.GradientStyle.Horizontal;
             parrotGradientPanel1.TabIndex = 0;
             parrotGradientPanel1.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            parrotGradientPanel1.TopLeft = Color.FromArgb(128, 128, 255);
-            parrotGradientPanel1.TopRight = Color.White;
+            parrotGradientPanel1.TopLeft = Color.Silver;
+            parrotGradientPanel1.TopRight = Color.Black;
             // 
             // Logout
             // 
@@ -116,7 +116,7 @@
             Logout.Image = (Image)resources.GetObject("Logout.Image");
             Logout.ImageAlign = ContentAlignment.MiddleLeft;
             Logout.InactiveColor = Color.Transparent;
-            Logout.Location = new Point(27, 837);
+            Logout.Location = new Point(27, 835);
             Logout.Name = "Logout";
             Logout.PressedBorderColor = Color.FromArgb(165, 37, 37);
             Logout.PressedColor = Color.FromArgb(165, 37, 37);
@@ -127,9 +127,9 @@
             // 
             // parrotGradientPanel2
             // 
-            parrotGradientPanel2.BorderStyle = BorderStyle.FixedSingle;
-            parrotGradientPanel2.BottomLeft = Color.Black;
-            parrotGradientPanel2.BottomRight = Color.FromArgb(192, 192, 255);
+            parrotGradientPanel2.BorderStyle = BorderStyle.Fixed3D;
+            parrotGradientPanel2.BottomLeft = Color.FromArgb(64, 64, 64);
+            parrotGradientPanel2.BottomRight = Color.FromArgb(64, 64, 64);
             parrotGradientPanel2.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
             parrotGradientPanel2.Controls.Add(label7Hora);
             parrotGradientPanel2.Controls.Add(label6Data);
@@ -144,12 +144,12 @@
             parrotGradientPanel2.Name = "parrotGradientPanel2";
             parrotGradientPanel2.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
             parrotGradientPanel2.PrimerColor = Color.Black;
-            parrotGradientPanel2.Size = new Size(311, 239);
+            parrotGradientPanel2.Size = new Size(309, 239);
             parrotGradientPanel2.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-            parrotGradientPanel2.Style = ReaLTaiizor.Controls.ParrotGradientPanel.GradientStyle.Corners;
+            parrotGradientPanel2.Style = ReaLTaiizor.Controls.ParrotGradientPanel.GradientStyle.Horizontal;
             parrotGradientPanel2.TabIndex = 9;
             parrotGradientPanel2.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            parrotGradientPanel2.TopLeft = Color.FromArgb(192, 192, 255);
+            parrotGradientPanel2.TopLeft = Color.FromArgb(224, 224, 224);
             parrotGradientPanel2.TopRight = Color.Black;
             // 
             // label7Hora
@@ -157,7 +157,7 @@
             label7Hora.AutoSize = true;
             label7Hora.BackColor = Color.Transparent;
             label7Hora.Font = new Font("Calibri", 13.8F);
-            label7Hora.ForeColor = Color.Black;
+            label7Hora.ForeColor = Color.White;
             label7Hora.Location = new Point(133, 53);
             label7Hora.Name = "label7Hora";
             label7Hora.Size = new Size(57, 28);
@@ -169,7 +169,7 @@
             label6Data.AutoSize = true;
             label6Data.BackColor = Color.Transparent;
             label6Data.Font = new Font("Calibri", 13.8F);
-            label6Data.ForeColor = Color.Black;
+            label6Data.ForeColor = Color.White;
             label6Data.Location = new Point(133, 13);
             label6Data.Name = "label6Data";
             label6Data.Size = new Size(56, 28);
@@ -181,7 +181,7 @@
             label5.AutoSize = true;
             label5.BackColor = Color.Transparent;
             label5.Font = new Font("Calibri", 13.8F);
-            label5.ForeColor = Color.FromArgb(128, 128, 255);
+            label5.ForeColor = Color.Lime;
             label5.Location = new Point(13, 200);
             label5.Name = "label5";
             label5.Size = new Size(61, 28);
@@ -193,7 +193,7 @@
             label4.AutoSize = true;
             label4.BackColor = Color.Transparent;
             label4.Font = new Font("Calibri", 13.8F);
-            label4.ForeColor = Color.FromArgb(128, 128, 255);
+            label4.ForeColor = Color.Lime;
             label4.Location = new Point(13, 161);
             label4.Name = "label4";
             label4.Size = new Size(64, 28);
@@ -218,7 +218,7 @@
             labelusuario.AutoSize = true;
             labelusuario.BackColor = Color.Transparent;
             labelusuario.Font = new Font("Calibri", 13.8F);
-            labelusuario.ForeColor = Color.Black;
+            labelusuario.ForeColor = Color.White;
             labelusuario.Location = new Point(86, 200);
             labelusuario.Name = "labelusuario";
             labelusuario.Size = new Size(84, 28);
@@ -230,7 +230,7 @@
             label4NivelUsuario.AutoSize = true;
             label4NivelUsuario.BackColor = Color.Transparent;
             label4NivelUsuario.Font = new Font("Calibri", 13.8F);
-            label4NivelUsuario.ForeColor = Color.Black;
+            label4NivelUsuario.ForeColor = Color.White;
             label4NivelUsuario.Location = new Point(86, 161);
             label4NivelUsuario.Name = "label4NivelUsuario";
             label4NivelUsuario.Size = new Size(135, 28);
@@ -248,7 +248,7 @@
             button4CadastroUsuario.Image = null;
             button4CadastroUsuario.ImageAlign = ContentAlignment.MiddleLeft;
             button4CadastroUsuario.InactiveColor = Color.SlateBlue;
-            button4CadastroUsuario.Location = new Point(27, 723);
+            button4CadastroUsuario.Location = new Point(26, 709);
             button4CadastroUsuario.Margin = new Padding(3, 4, 3, 4);
             button4CadastroUsuario.Name = "button4CadastroUsuario";
             button4CadastroUsuario.PressedBorderColor = Color.Black;
@@ -270,7 +270,7 @@
             button3Vender.Image = null;
             button3Vender.ImageAlign = ContentAlignment.MiddleLeft;
             button3Vender.InactiveColor = Color.SlateBlue;
-            button3Vender.Location = new Point(27, 616);
+            button3Vender.Location = new Point(26, 616);
             button3Vender.Margin = new Padding(3, 4, 3, 4);
             button3Vender.Name = "button3Vender";
             button3Vender.PressedBorderColor = Color.Black;
@@ -292,7 +292,7 @@
             button2Relatorio.Image = null;
             button2Relatorio.ImageAlign = ContentAlignment.MiddleLeft;
             button2Relatorio.InactiveColor = Color.SlateBlue;
-            button2Relatorio.Location = new Point(27, 523);
+            button2Relatorio.Location = new Point(26, 523);
             button2Relatorio.Margin = new Padding(3, 4, 3, 4);
             button2Relatorio.Name = "button2Relatorio";
             button2Relatorio.PressedBorderColor = Color.Black;
@@ -314,7 +314,7 @@
             button1LIstaProdutos.Image = null;
             button1LIstaProdutos.ImageAlign = ContentAlignment.MiddleLeft;
             button1LIstaProdutos.InactiveColor = Color.SlateBlue;
-            button1LIstaProdutos.Location = new Point(27, 429);
+            button1LIstaProdutos.Location = new Point(26, 429);
             button1LIstaProdutos.Margin = new Padding(3, 4, 3, 4);
             button1LIstaProdutos.Name = "button1LIstaProdutos";
             button1LIstaProdutos.PressedBorderColor = Color.Black;
@@ -336,7 +336,7 @@
             ButtonCadastroProduto.Image = null;
             ButtonCadastroProduto.ImageAlign = ContentAlignment.MiddleLeft;
             ButtonCadastroProduto.InactiveColor = Color.SlateBlue;
-            ButtonCadastroProduto.Location = new Point(27, 337);
+            ButtonCadastroProduto.Location = new Point(26, 337);
             ButtonCadastroProduto.Margin = new Padding(3, 4, 3, 4);
             ButtonCadastroProduto.Name = "ButtonCadastroProduto";
             ButtonCadastroProduto.PressedBorderColor = Color.Black;
@@ -358,7 +358,7 @@
             Inicio.Image = null;
             Inicio.ImageAlign = ContentAlignment.MiddleLeft;
             Inicio.InactiveColor = Color.SlateBlue;
-            Inicio.Location = new Point(27, 247);
+            Inicio.Location = new Point(26, 247);
             Inicio.Margin = new Padding(3, 4, 3, 4);
             Inicio.Name = "Inicio";
             Inicio.PressedBorderColor = Color.Black;
@@ -371,7 +371,7 @@
             // 
             // PanelInicio
             // 
-            PanelInicio.BorderStyle = BorderStyle.FixedSingle;
+            PanelInicio.BorderStyle = BorderStyle.Fixed3D;
             PanelInicio.BottomLeft = Color.White;
             PanelInicio.BottomRight = Color.White;
             PanelInicio.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
@@ -395,16 +395,16 @@
             PanelInicio.TabIndex = 1;
             PanelInicio.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             PanelInicio.TopLeft = Color.White;
-            PanelInicio.TopRight = Color.FromArgb(64, 64, 64);
+            PanelInicio.TopRight = Color.Silver;
             // 
             // label6
             // 
             label6.AutoSize = true;
             label6.BackColor = Color.Transparent;
-            label6.Font = new Font("Calibri", 13.8F);
+            label6.Font = new Font("Calibri", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label6.Location = new Point(36, 267);
             label6.Name = "label6";
-            label6.Size = new Size(282, 28);
+            label6.Size = new Size(347, 35);
             label6.TabIndex = 11;
             label6.Text = "Produtos com estoque baixo:";
             // 
@@ -418,7 +418,7 @@
             dataGridViewMinimo.Location = new Point(36, 308);
             dataGridViewMinimo.Name = "dataGridViewMinimo";
             dataGridViewMinimo.RowHeadersWidth = 51;
-            dataGridViewMinimo.Size = new Size(509, 580);
+            dataGridViewMinimo.Size = new Size(509, 578);
             dataGridViewMinimo.TabIndex = 10;
             // 
             // label6NomeDaLoja
@@ -436,11 +436,11 @@
             // panel3
             // 
             panel3.Anchor = AnchorStyles.Top;
-            panel3.BackColor = Color.MediumTurquoise;
+            panel3.BackColor = Color.Gray;
             panel3.BorderStyle = BorderStyle.FixedSingle;
             panel3.Controls.Add(labelSemEstoque);
             panel3.Controls.Add(label3);
-            panel3.Location = new Point(723, 138);
+            panel3.Location = new Point(722, 138);
             panel3.Margin = new Padding(3, 4, 3, 4);
             panel3.Name = "panel3";
             panel3.Size = new Size(291, 70);
@@ -452,7 +452,8 @@
             labelSemEstoque.AutoSize = true;
             labelSemEstoque.BackColor = Color.Transparent;
             labelSemEstoque.Font = new Font("Calibri", 13.8F);
-            labelSemEstoque.Location = new Point(248, 19);
+            labelSemEstoque.ForeColor = Color.Red;
+            labelSemEstoque.Location = new Point(185, 24);
             labelSemEstoque.Name = "labelSemEstoque";
             labelSemEstoque.Size = new Size(24, 28);
             labelSemEstoque.TabIndex = 3;
@@ -463,21 +464,22 @@
             label3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label3.AutoSize = true;
             label3.BackColor = Color.Transparent;
-            label3.Font = new Font("Calibri", 13.8F);
-            label3.Location = new Point(75, 19);
+            label3.Font = new Font("Calibri", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(16, 17);
             label3.Name = "label3";
-            label3.Size = new Size(132, 28);
+            label3.Size = new Size(171, 35);
             label3.TabIndex = 3;
-            label3.Text = "Sem estoque";
+            label3.Text = "Sem estoque:";
             // 
             // panel2
             // 
             panel2.Anchor = AnchorStyles.Top;
-            panel2.BackColor = Color.MediumTurquoise;
+            panel2.BackColor = Color.Gray;
             panel2.BorderStyle = BorderStyle.FixedSingle;
             panel2.Controls.Add(labelVendidos);
             panel2.Controls.Add(label2);
-            panel2.Location = new Point(383, 138);
+            panel2.Location = new Point(382, 138);
             panel2.Margin = new Padding(3, 4, 3, 4);
             panel2.Name = "panel2";
             panel2.Size = new Size(291, 70);
@@ -489,7 +491,8 @@
             labelVendidos.AutoSize = true;
             labelVendidos.BackColor = Color.Transparent;
             labelVendidos.Font = new Font("Calibri", 13.8F);
-            labelVendidos.Location = new Point(213, 19);
+            labelVendidos.ForeColor = Color.Lime;
+            labelVendidos.Location = new Point(147, 24);
             labelVendidos.Name = "labelVendidos";
             labelVendidos.Size = new Size(24, 28);
             labelVendidos.TabIndex = 2;
@@ -500,21 +503,22 @@
             label2.Anchor = AnchorStyles.Top;
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Calibri", 13.8F);
-            label2.Location = new Point(64, 19);
+            label2.Font = new Font("Calibri", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(12, 17);
             label2.Name = "label2";
-            label2.Size = new Size(97, 28);
+            label2.Size = new Size(129, 35);
             label2.TabIndex = 2;
-            label2.Text = "Vendidos";
+            label2.Text = "Vendidos:";
             // 
             // panel1
             // 
             panel1.Anchor = AnchorStyles.Top;
-            panel1.BackColor = Color.MediumTurquoise;
+            panel1.BackColor = Color.Gray;
             panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(labelNumeroDeCadastrados);
             panel1.Controls.Add(label1);
-            panel1.Location = new Point(36, 138);
+            panel1.Location = new Point(35, 138);
             panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
             panel1.Size = new Size(291, 70);
@@ -525,7 +529,8 @@
             labelNumeroDeCadastrados.AutoSize = true;
             labelNumeroDeCadastrados.BackColor = Color.Transparent;
             labelNumeroDeCadastrados.Font = new Font("Calibri", 13.8F);
-            labelNumeroDeCadastrados.Location = new Point(216, 19);
+            labelNumeroDeCadastrados.ForeColor = Color.Lime;
+            labelNumeroDeCadastrados.Location = new Point(172, 24);
             labelNumeroDeCadastrados.Name = "labelNumeroDeCadastrados";
             labelNumeroDeCadastrados.Size = new Size(24, 28);
             labelNumeroDeCadastrados.TabIndex = 1;
@@ -535,19 +540,20 @@
             // 
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Calibri", 13.8F);
-            label1.Location = new Point(63, 19);
+            label1.Font = new Font("Calibri", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(12, 17);
             label1.Name = "label1";
-            label1.Size = new Size(127, 28);
+            label1.Size = new Size(162, 35);
             label1.TabIndex = 0;
-            label1.Text = "Cadastrados";
+            label1.Text = "Cadastrados:";
             // 
             // pictureBox2
             // 
             pictureBox2.Anchor = AnchorStyles.None;
             pictureBox2.BackColor = Color.Transparent;
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(551, 308);
+            pictureBox2.Location = new Point(550, 307);
             pictureBox2.Margin = new Padding(3, 4, 3, 4);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(530, 436);

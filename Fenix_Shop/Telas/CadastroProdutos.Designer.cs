@@ -59,6 +59,7 @@
             // 
             // PanelCadastroProduto
             // 
+            PanelCadastroProduto.BorderStyle = BorderStyle.Fixed3D;
             PanelCadastroProduto.BottomLeft = Color.White;
             PanelCadastroProduto.BottomRight = Color.White;
             PanelCadastroProduto.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
@@ -98,7 +99,7 @@
             PanelCadastroProduto.TabIndex = 0;
             PanelCadastroProduto.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             PanelCadastroProduto.TopLeft = Color.White;
-            PanelCadastroProduto.TopRight = Color.FromArgb(64, 64, 64);
+            PanelCadastroProduto.TopRight = Color.FromArgb(224, 224, 224);
             // 
             // Salvar
             // 
@@ -110,7 +111,7 @@
             Salvar.Image = null;
             Salvar.ImageAlign = ContentAlignment.MiddleLeft;
             Salvar.InactiveColor = Color.Green;
-            Salvar.Location = new Point(840, 827);
+            Salvar.Location = new Point(918, 800);
             Salvar.Margin = new Padding(3, 4, 3, 4);
             Salvar.Name = "Salvar";
             Salvar.PressedBorderColor = Color.Black;
@@ -155,7 +156,7 @@
             label11.AutoSize = true;
             label11.BackColor = Color.Transparent;
             label11.Font = new Font("Calibri", 13.8F);
-            label11.Location = new Point(251, 99);
+            label11.Location = new Point(236, 47);
             label11.MaximumSize = new Size(251, 53);
             label11.MinimumSize = new Size(126, 27);
             label11.Name = "label11";
@@ -166,7 +167,7 @@
             // TextBoxEstoqueMinimo
             // 
             TextBoxEstoqueMinimo.Font = new Font("Calibri", 12F);
-            TextBoxEstoqueMinimo.Location = new Point(711, 616);
+            TextBoxEstoqueMinimo.Location = new Point(789, 564);
             TextBoxEstoqueMinimo.Margin = new Padding(3, 4, 3, 4);
             TextBoxEstoqueMinimo.Mask = "000000000000000000";
             TextBoxEstoqueMinimo.MaximumSize = new Size(399, 33);
@@ -181,7 +182,7 @@
             label10.AutoSize = true;
             label10.BackColor = Color.Transparent;
             label10.Font = new Font("Calibri", 13.8F);
-            label10.Location = new Point(711, 573);
+            label10.Location = new Point(789, 521);
             label10.MaximumSize = new Size(251, 133);
             label10.MinimumSize = new Size(126, 27);
             label10.Name = "label10";
@@ -209,12 +210,11 @@
             TextBoxDescricao.BackColor = Color.White;
             TextBoxDescricao.BorderStyle = BorderStyle.FixedSingle;
             TextBoxDescricao.Font = new Font("Calibri", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            TextBoxDescricao.Location = new Point(112, 561);
+            TextBoxDescricao.Location = new Point(112, 573);
             TextBoxDescricao.Margin = new Padding(3, 4, 3, 4);
             TextBoxDescricao.MaximumSize = new Size(500, 492);
-            TextBoxDescricao.MinimumSize = new Size(309, 328);
             TextBoxDescricao.Name = "TextBoxDescricao";
-            TextBoxDescricao.Size = new Size(354, 328);
+            TextBoxDescricao.Size = new Size(371, 262);
             TextBoxDescricao.TabIndex = 17;
             TextBoxDescricao.Text = "";
             // 
@@ -235,7 +235,7 @@
             // TextBoxSku
             // 
             TextBoxSku.Font = new Font("Calibri", 12F);
-            TextBoxSku.Location = new Point(711, 519);
+            TextBoxSku.Location = new Point(789, 467);
             TextBoxSku.Margin = new Padding(3, 4, 3, 4);
             TextBoxSku.Mask = "000000000000000000";
             TextBoxSku.MaximumSize = new Size(399, 33);
@@ -250,7 +250,7 @@
             label7.AutoSize = true;
             label7.BackColor = Color.Transparent;
             label7.Font = new Font("Calibri", 13.8F);
-            label7.Location = new Point(711, 471);
+            label7.Location = new Point(789, 419);
             label7.MaximumSize = new Size(251, 133);
             label7.MinimumSize = new Size(126, 27);
             label7.Name = "label7";
@@ -261,7 +261,7 @@
             // TextBoxCodigoBarras
             // 
             TextBoxCodigoBarras.Font = new Font("Calibri", 12F);
-            TextBoxCodigoBarras.Location = new Point(711, 420);
+            TextBoxCodigoBarras.Location = new Point(789, 368);
             TextBoxCodigoBarras.Margin = new Padding(3, 4, 3, 4);
             TextBoxCodigoBarras.Mask = "000000000000000000";
             TextBoxCodigoBarras.MaximumSize = new Size(399, 33);
@@ -276,7 +276,7 @@
             label6.AutoSize = true;
             label6.BackColor = Color.Transparent;
             label6.Font = new Font("Calibri", 13.8F);
-            label6.Location = new Point(711, 377);
+            label6.Location = new Point(789, 325);
             label6.MaximumSize = new Size(251, 133);
             label6.MinimumSize = new Size(126, 27);
             label6.Name = "label6";
@@ -287,7 +287,7 @@
             // TextBoxEstoque
             // 
             TextBoxEstoque.Font = new Font("Calibri", 12F);
-            TextBoxEstoque.Location = new Point(711, 327);
+            TextBoxEstoque.Location = new Point(789, 275);
             TextBoxEstoque.Margin = new Padding(3, 4, 3, 4);
             TextBoxEstoque.Mask = "000000000000000000";
             TextBoxEstoque.MaximumSize = new Size(399, 33);
@@ -302,7 +302,7 @@
             label5.AutoSize = true;
             label5.BackColor = Color.Transparent;
             label5.Font = new Font("Calibri", 13.8F);
-            label5.Location = new Point(711, 284);
+            label5.Location = new Point(789, 232);
             label5.MaximumSize = new Size(251, 133);
             label5.MinimumSize = new Size(126, 27);
             label5.Name = "label5";
@@ -313,7 +313,7 @@
             // TextBoxVenda
             // 
             TextBoxVenda.Font = new Font("Calibri", 12F);
-            TextBoxVenda.Location = new Point(711, 235);
+            TextBoxVenda.Location = new Point(789, 183);
             TextBoxVenda.Margin = new Padding(3, 4, 3, 4);
             TextBoxVenda.MaximumSize = new Size(399, 33);
             TextBoxVenda.Name = "TextBoxVenda";
@@ -327,7 +327,7 @@
             label4.AutoSize = true;
             label4.BackColor = Color.Transparent;
             label4.Font = new Font("Calibri", 13.8F);
-            label4.Location = new Point(711, 192);
+            label4.Location = new Point(789, 140);
             label4.MaximumSize = new Size(251, 133);
             label4.MinimumSize = new Size(126, 27);
             label4.Name = "label4";
@@ -342,7 +342,7 @@
             TextBoxCusto.AllowPromptAsInput = false;
             TextBoxCusto.BeepOnError = true;
             TextBoxCusto.Font = new Font("Calibri", 12F);
-            TextBoxCusto.Location = new Point(711, 143);
+            TextBoxCusto.Location = new Point(789, 91);
             TextBoxCusto.Margin = new Padding(3, 4, 3, 4);
             TextBoxCusto.MaximumSize = new Size(399, 33);
             TextBoxCusto.Name = "TextBoxCusto";
@@ -356,7 +356,7 @@
             label3.AutoSize = true;
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Calibri", 13.8F);
-            label3.Location = new Point(711, 99);
+            label3.Location = new Point(789, 47);
             label3.MaximumSize = new Size(251, 133);
             label3.MinimumSize = new Size(126, 27);
             label3.Name = "label3";
