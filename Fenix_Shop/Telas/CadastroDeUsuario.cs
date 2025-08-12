@@ -220,7 +220,7 @@ namespace Fenix_Shop.Telas
                     if (e.RowIndex >= 0 && dataGridView1.Columns[e.ColumnIndex].Name == "Excluir")
                     {
                         DialogResult resultado = MessageBox.Show(
-                       "Deseaja realmente ecluir esse item?",
+                       "Deseaja realmente ecluir esse usuario",
                        "Confirmaçao",
                        MessageBoxButtons.YesNo,
                        MessageBoxIcon.Question);

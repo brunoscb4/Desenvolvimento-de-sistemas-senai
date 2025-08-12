@@ -247,7 +247,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             PanelLogin.ResumeLayout(false);
-            PanelLogin.PerformLayout();
             panel1ControlerPanelLogin.ResumeLayout(false);
             PanelDeLoginPrincipal.ResumeLayout(false);
             PanelDeLoginPrincipal.PerformLayout();

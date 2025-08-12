@@ -58,7 +58,7 @@
             PanelListaProdutos.Name = "PanelListaProdutos";
             PanelListaProdutos.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
             PanelListaProdutos.PrimerColor = Color.White;
-            PanelListaProdutos.Size = new Size(1058, 893);
+            PanelListaProdutos.Size = new Size(936, 681);
             PanelListaProdutos.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
             PanelListaProdutos.Style = ReaLTaiizor.Controls.ParrotGradientPanel.GradientStyle.Vertical;
             PanelListaProdutos.TabIndex = 0;
@@ -69,7 +69,7 @@
             // textBoxBuscarNome
             // 
             textBoxBuscarNome.Font = new Font("Calibri", 12F);
-            textBoxBuscarNome.Location = new Point(475, 41);
+            textBoxBuscarNome.Location = new Point(412, 43);
             textBoxBuscarNome.Margin = new Padding(3, 4, 3, 4);
             textBoxBuscarNome.Name = "textBoxBuscarNome";
             textBoxBuscarNome.Size = new Size(395, 32);
@@ -80,7 +80,7 @@
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Calibri", 13.8F);
-            label2.Location = new Point(330, 43);
+            label2.Location = new Point(298, 46);
             label2.Name = "label2";
             label2.Size = new Size(99, 28);
             label2.TabIndex = 13;
@@ -107,12 +107,12 @@
             button1.Image = null;
             button1.ImageAlign = ContentAlignment.MiddleLeft;
             button1.InactiveColor = Color.FromArgb(0, 192, 0);
-            button1.Location = new Point(919, 37);
+            button1.Location = new Point(828, 44);
             button1.Margin = new Padding(3, 4, 3, 4);
             button1.Name = "button1";
             button1.PressedBorderColor = Color.Black;
             button1.PressedColor = Color.FromArgb(0, 64, 0);
-            button1.Size = new Size(113, 37);
+            button1.Size = new Size(90, 30);
             button1.TabIndex = 11;
             button1.Text = "Buscar";
             button1.TextAlignment = StringAlignment.Center;
@@ -143,7 +143,7 @@
             dataGridView1.Location = new Point(0, 108);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1054, 781);
+            dataGridView1.Size = new Size(932, 569);
             dataGridView1.TabIndex = 4;
             dataGridView1.CellClick += dataGridView1_CellClick;
             // 
@@ -154,7 +154,7 @@
             Controls.Add(PanelListaProdutos);
             Margin = new Padding(3, 4, 3, 4);
             Name = "ListaProdutos";
-            Size = new Size(1058, 893);
+            Size = new Size(936, 681);
             Load += ListaProdutos_Load;
             PanelListaProdutos.ResumeLayout(false);
             PanelListaProdutos.PerformLayout();

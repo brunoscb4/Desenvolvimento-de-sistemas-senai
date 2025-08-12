@@ -102,7 +102,7 @@
             parrotGradientPanel1.Name = "parrotGradientPanel1";
             parrotGradientPanel1.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
             parrotGradientPanel1.PrimerColor = Color.White;
-            parrotGradientPanel1.Size = new Size(1058, 893);
+            parrotGradientPanel1.Size = new Size(936, 681);
             parrotGradientPanel1.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
             parrotGradientPanel1.Style = ReaLTaiizor.Controls.ParrotGradientPanel.GradientStyle.Horizontal;
             parrotGradientPanel1.TabIndex = 0;
@@ -118,10 +118,10 @@
             dataGridView1.BackgroundColor = Color.White;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.GridColor = Color.Gray;
-            dataGridView1.Location = new Point(0, 520);
+            dataGridView1.Location = new Point(0, 481);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1054, 367);
+            dataGridView1.Size = new Size(932, 194);
             dataGridView1.TabIndex = 13;
             // 
             // button1
@@ -134,7 +134,7 @@
             button1.Image = null;
             button1.ImageAlign = ContentAlignment.MiddleLeft;
             button1.InactiveColor = Color.Lime;
-            button1.Location = new Point(710, 465);
+            button1.Location = new Point(705, 443);
             button1.Margin = new Padding(3, 4, 3, 4);
             button1.Name = "button1";
             button1.PressedBorderColor = Color.Black;
@@ -151,7 +151,7 @@
             bigLabel4.BackColor = Color.Transparent;
             bigLabel4.Font = new Font("Calibri", 13.8F);
             bigLabel4.ForeColor = Color.Blue;
-            bigLabel4.Location = new Point(134, 465);
+            bigLabel4.Location = new Point(129, 443);
             bigLabel4.Name = "bigLabel4";
             bigLabel4.Size = new Size(37, 28);
             bigLabel4.TabIndex = 10;
@@ -160,7 +160,7 @@
             // dateTimePickerFinal
             // 
             dateTimePickerFinal.Format = DateTimePickerFormat.Short;
-            dateTimePickerFinal.Location = new Point(541, 465);
+            dateTimePickerFinal.Location = new Point(536, 443);
             dateTimePickerFinal.Margin = new Padding(3, 4, 3, 4);
             dateTimePickerFinal.Name = "dateTimePickerFinal";
             dateTimePickerFinal.Size = new Size(125, 27);
@@ -172,7 +172,7 @@
             bigLabel3.BackColor = Color.Transparent;
             bigLabel3.Font = new Font("Calibri", 13.8F);
             bigLabel3.ForeColor = Color.Blue;
-            bigLabel3.Location = new Point(417, 465);
+            bigLabel3.Location = new Point(412, 443);
             bigLabel3.Name = "bigLabel3";
             bigLabel3.Size = new Size(43, 28);
             bigLabel3.TabIndex = 8;
@@ -184,7 +184,7 @@
             bigLabel2.BackColor = Color.Transparent;
             bigLabel2.Font = new Font("Calibri", 13.8F);
             bigLabel2.ForeColor = Color.Blue;
-            bigLabel2.Location = new Point(45, 413);
+            bigLabel2.Location = new Point(40, 391);
             bigLabel2.Name = "bigLabel2";
             bigLabel2.Size = new Size(61, 28);
             bigLabel2.TabIndex = 7;
@@ -193,7 +193,7 @@
             // dateTimePickerInicio
             // 
             dateTimePickerInicio.Format = DateTimePickerFormat.Short;
-            dateTimePickerInicio.Location = new Point(213, 465);
+            dateTimePickerInicio.Location = new Point(208, 443);
             dateTimePickerInicio.Margin = new Padding(3, 4, 3, 4);
             dateTimePickerInicio.Name = "dateTimePickerInicio";
             dateTimePickerInicio.Size = new Size(125, 27);
@@ -205,7 +205,7 @@
             bigLabel1.BackColor = Color.Transparent;
             bigLabel1.Font = new Font("Calibri", 13.8F);
             bigLabel1.ForeColor = Color.Blue;
-            bigLabel1.Location = new Point(174, 376);
+            bigLabel1.Location = new Point(169, 354);
             bigLabel1.Name = "bigLabel1";
             bigLabel1.Size = new Size(238, 28);
             bigLabel1.TabIndex = 5;
@@ -221,7 +221,7 @@
             panel6.Controls.Add(label16PagamentosCredito);
             panel6.Controls.Add(label8);
             panel6.ImeMode = ImeMode.NoControl;
-            panel6.Location = new Point(723, 289);
+            panel6.Location = new Point(639, 270);
             panel6.Margin = new Padding(3, 4, 3, 4);
             panel6.MaximumSize = new Size(428, 99);
             panel6.Name = "panel6";
@@ -264,7 +264,7 @@
             panel7.Controls.Add(label15PagamentosDebito);
             panel7.Controls.Add(label7);
             panel7.ImeMode = ImeMode.NoControl;
-            panel7.Location = new Point(391, 289);
+            panel7.Location = new Point(325, 267);
             panel7.Margin = new Padding(3, 4, 3, 4);
             panel7.MaximumSize = new Size(428, 99);
             panel7.MinimumSize = new Size(285, 66);
@@ -306,7 +306,7 @@
             panel5.Controls.Add(label13ItensVendidos);
             panel5.Controls.Add(label5);
             panel5.ImeMode = ImeMode.NoControl;
-            panel5.Location = new Point(53, 165);
+            panel5.Location = new Point(16, 143);
             panel5.Margin = new Padding(3, 4, 3, 4);
             panel5.MaximumSize = new Size(428, 99);
             panel5.Name = "panel5";
@@ -344,7 +344,7 @@
             panel8.Controls.Add(label14PagamentosPix);
             panel8.Controls.Add(label6);
             panel8.ImeMode = ImeMode.NoControl;
-            panel8.Location = new Point(53, 289);
+            panel8.Location = new Point(16, 267);
             panel8.Margin = new Padding(3, 4, 3, 4);
             panel8.MaximumSize = new Size(428, 99);
             panel8.Name = "panel8";
@@ -384,7 +384,7 @@
             panel4.Controls.Add(label12MediaDeVendas);
             panel4.Controls.Add(label4);
             panel4.ImeMode = ImeMode.NoControl;
-            panel4.Location = new Point(395, 38);
+            panel4.Location = new Point(329, 16);
             panel4.Margin = new Padding(3, 4, 3, 4);
             panel4.MaximumSize = new Size(428, 99);
             panel4.Name = "panel4";
@@ -426,7 +426,7 @@
             panel3.Controls.Add(label11ConvercoesDeVendas);
             panel3.Controls.Add(label3);
             panel3.ImeMode = ImeMode.NoControl;
-            panel3.Location = new Point(723, 37);
+            panel3.Location = new Point(639, 18);
             panel3.Margin = new Padding(3, 4, 3, 4);
             panel3.MaximumSize = new Size(428, 99);
             panel3.Name = "panel3";
@@ -466,7 +466,7 @@
             panel2.Controls.Add(label10Pagamentodinheiro);
             panel2.Controls.Add(label2);
             panel2.ImeMode = ImeMode.NoControl;
-            panel2.Location = new Point(395, 165);
+            panel2.Location = new Point(329, 143);
             panel2.Margin = new Padding(3, 4, 3, 4);
             panel2.MaximumSize = new Size(428, 99);
             panel2.MinimumSize = new Size(285, 66);
@@ -508,7 +508,7 @@
             panel1.Controls.Add(label9VendasRealizadas);
             panel1.Controls.Add(label1);
             panel1.ImeMode = ImeMode.NoControl;
-            panel1.Location = new Point(53, 37);
+            panel1.Location = new Point(16, 16);
             panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.MaximumSize = new Size(428, 99);
             panel1.Name = "panel1";
@@ -545,7 +545,7 @@
             Controls.Add(parrotGradientPanel1);
             Margin = new Padding(3, 4, 3, 4);
             Name = "RelatorioVendas";
-            Size = new Size(1058, 893);
+            Size = new Size(936, 681);
             Load += RelatorioVendas_Load;
             parrotGradientPanel1.ResumeLayout(false);
             parrotGradientPanel1.PerformLayout();

@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Drawing.Text;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -25,6 +26,33 @@ namespace Fenix_Shop.Telas
             this.usuariologado = usuariologado;
 
         }
+
+        public bool DistanciaButton()
+        {
+            if (this.FindForm() != null && this.FindForm().WindowState == FormWindowState.Maximized)
+            {
+            Inicio.Location = new Point(19, 232);
+            ButtonCadastroProduto.Location = new Point(19, 335);
+            button1LIstaProdutos.Location = new Point(19, 438);
+            button2Relatorio.Location = new Point(19, 541);
+            button3Vender.Location = new Point(19, 646);
+            button4CadastroUsuario.Location = new Point(19, 754);
+            }
+            else
+            {
+                Inicio.Location = new Point(19, 222);
+            ButtonCadastroProduto.Location = new Point(19, 285);
+            button1LIstaProdutos.Location = new Point(20, 348);
+            button2Relatorio.Location = new Point(19, 411);
+            button3Vender.Location = new Point(18, 474);
+            button4CadastroUsuario.Location = new Point(19, 537);
+            }
+
+
+
+                return true;
+        }
+
 
         public bool AcesssoUsuarioPanel()
         {
@@ -203,6 +231,17 @@ namespace Fenix_Shop.Telas
             form.PanelLg().Dock = DockStyle.Fill;
             panelControlInicial.Controls.Add(form.PanelLg());
 
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Tela_Inicial_Resize(object sender, EventArgs e)
+        {
+           
+            DistanciaButton();
         }
     }
 }

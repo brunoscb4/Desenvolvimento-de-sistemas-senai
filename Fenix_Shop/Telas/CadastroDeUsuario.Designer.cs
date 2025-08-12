@@ -82,11 +82,11 @@
             parrotGradientPanel1.Dock = DockStyle.Fill;
             parrotGradientPanel1.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
             parrotGradientPanel1.Location = new Point(0, 0);
-            parrotGradientPanel1.MinimumSize = new Size(1058, 893);
+            parrotGradientPanel1.MinimumSize = new Size(936, 681);
             parrotGradientPanel1.Name = "parrotGradientPanel1";
             parrotGradientPanel1.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
             parrotGradientPanel1.PrimerColor = Color.White;
-            parrotGradientPanel1.Size = new Size(1058, 893);
+            parrotGradientPanel1.Size = new Size(936, 681);
             parrotGradientPanel1.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
             parrotGradientPanel1.Style = ReaLTaiizor.Controls.ParrotGradientPanel.GradientStyle.Horizontal;
             parrotGradientPanel1.TabIndex = 0;
@@ -100,7 +100,7 @@
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.BackgroundColor = Color.White;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(331, 21);
+            dataGridView1.Location = new Point(177, 25);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(704, 188);
@@ -111,7 +111,7 @@
             // 
             pictureBox1Usuario.BorderStyle = BorderStyle.FixedSingle;
             pictureBox1Usuario.InitialImage = (Image)resources.GetObject("pictureBox1Usuario.InitialImage");
-            pictureBox1Usuario.Location = new Point(111, 21);
+            pictureBox1Usuario.Location = new Point(42, 25);
             pictureBox1Usuario.Margin = new Padding(3, 4, 3, 4);
             pictureBox1Usuario.Name = "pictureBox1Usuario";
             pictureBox1Usuario.Size = new Size(114, 133);
@@ -122,7 +122,7 @@
             // TextBoxMaskTelefone
             // 
             TextBoxMaskTelefone.Font = new Font("Cambria", 12F);
-            TextBoxMaskTelefone.Location = new Point(726, 292);
+            TextBoxMaskTelefone.Location = new Point(655, 336);
             TextBoxMaskTelefone.Mask = "(00) 0000-0000";
             TextBoxMaskTelefone.Name = "TextBoxMaskTelefone";
             TextBoxMaskTelefone.Size = new Size(211, 31);
@@ -134,7 +134,7 @@
             label8.AutoSize = true;
             label8.BackColor = Color.Transparent;
             label8.Font = new Font("Calibri", 13.8F);
-            label8.Location = new Point(693, 243);
+            label8.Location = new Point(631, 291);
             label8.Name = "label8";
             label8.Size = new Size(96, 28);
             label8.TabIndex = 39;
@@ -151,13 +151,13 @@
             Salvar.Image = null;
             Salvar.ImageAlign = ContentAlignment.MiddleLeft;
             Salvar.InactiveColor = Color.Green;
-            Salvar.Location = new Point(854, 819);
+            Salvar.Location = new Point(783, 614);
             Salvar.Margin = new Padding(3, 4, 3, 4);
             Salvar.Name = "Salvar";
             Salvar.PressedBorderColor = Color.Black;
             Salvar.PressedColor = Color.Lime;
             Salvar.RightToLeft = RightToLeft.No;
-            Salvar.Size = new Size(83, 35);
+            Salvar.Size = new Size(83, 27);
             Salvar.TabIndex = 38;
             Salvar.Text = "Salvar";
             Salvar.TextAlignment = StringAlignment.Center;
@@ -166,7 +166,7 @@
             // textBox5NomeLoja
             // 
             textBox5NomeLoja.Font = new Font("Cambria", 12F);
-            textBox5NomeLoja.Location = new Point(726, 435);
+            textBox5NomeLoja.Location = new Point(655, 403);
             textBox5NomeLoja.Margin = new Padding(3, 4, 3, 4);
             textBox5NomeLoja.Name = "textBox5NomeLoja";
             textBox5NomeLoja.Size = new Size(211, 31);
@@ -175,7 +175,7 @@
             // textBox4ConfirmarSenha
             // 
             textBox4ConfirmarSenha.Font = new Font("Cambria", 12F);
-            textBox4ConfirmarSenha.Location = new Point(137, 705);
+            textBox4ConfirmarSenha.Location = new Point(75, 548);
             textBox4ConfirmarSenha.Margin = new Padding(3, 4, 3, 4);
             textBox4ConfirmarSenha.Name = "textBox4ConfirmarSenha";
             textBox4ConfirmarSenha.Size = new Size(262, 31);
@@ -184,7 +184,7 @@
             // textBox3Senha
             // 
             textBox3Senha.Font = new Font("Cambria", 12F);
-            textBox3Senha.Location = new Point(130, 563);
+            textBox3Senha.Location = new Point(75, 470);
             textBox3Senha.Margin = new Padding(3, 4, 3, 4);
             textBox3Senha.Name = "textBox3Senha";
             textBox3Senha.Size = new Size(262, 31);
@@ -193,7 +193,7 @@
             // textBox2Email
             // 
             textBox2Email.Font = new Font("Cambria", 12F);
-            textBox2Email.Location = new Point(137, 419);
+            textBox2Email.Location = new Point(75, 403);
             textBox2Email.Margin = new Padding(3, 4, 3, 4);
             textBox2Email.Name = "textBox2Email";
             textBox2Email.Size = new Size(262, 31);
@@ -202,7 +202,7 @@
             // textBox1Nome
             // 
             textBox1Nome.Font = new Font("Cambria", 12F);
-            textBox1Nome.Location = new Point(137, 292);
+            textBox1Nome.Location = new Point(75, 336);
             textBox1Nome.Margin = new Padding(3, 4, 3, 4);
             textBox1Nome.Name = "textBox1Nome";
             textBox1Nome.Size = new Size(262, 31);
@@ -212,14 +212,14 @@
             // 
             comboBoxNivelPermissão.Font = new Font("Cambria", 12F);
             comboBoxNivelPermissão.FormattingEnabled = true;
-            comboBoxNivelPermissão.Location = new Point(726, 560);
+            comboBoxNivelPermissão.Location = new Point(655, 483);
             comboBoxNivelPermissão.Name = "comboBoxNivelPermissão";
             comboBoxNivelPermissão.Size = new Size(211, 31);
             comboBoxNivelPermissão.TabIndex = 31;
             // 
             // TextBoxMasCpf
             // 
-            TextBoxMasCpf.Location = new Point(137, 828);
+            TextBoxMasCpf.Location = new Point(75, 614);
             TextBoxMasCpf.Mask = "000-000-000,00";
             TextBoxMasCpf.Name = "TextBoxMasCpf";
             TextBoxMasCpf.Size = new Size(262, 27);
@@ -231,7 +231,7 @@
             label7.AutoSize = true;
             label7.BackColor = Color.Transparent;
             label7.Font = new Font("Calibri", 13.8F);
-            label7.Location = new Point(693, 504);
+            label7.Location = new Point(631, 438);
             label7.Name = "label7";
             label7.Size = new Size(186, 28);
             label7.TabIndex = 6;
@@ -242,7 +242,7 @@
             label6.AutoSize = true;
             label6.BackColor = Color.Transparent;
             label6.Font = new Font("Calibri", 13.8F);
-            label6.Location = new Point(693, 368);
+            label6.Location = new Point(631, 371);
             label6.Name = "label6";
             label6.Size = new Size(143, 28);
             label6.TabIndex = 5;
@@ -253,7 +253,7 @@
             label5.AutoSize = true;
             label5.BackColor = Color.Transparent;
             label5.Font = new Font("Calibri", 13.8F);
-            label5.Location = new Point(122, 772);
+            label5.Location = new Point(49, 583);
             label5.Name = "label5";
             label5.Size = new Size(49, 28);
             label5.TabIndex = 4;
@@ -264,7 +264,7 @@
             label4.AutoSize = true;
             label4.BackColor = Color.Transparent;
             label4.Font = new Font("Calibri", 13.8F);
-            label4.Location = new Point(111, 627);
+            label4.Location = new Point(49, 516);
             label4.Name = "label4";
             label4.Size = new Size(171, 28);
             label4.TabIndex = 3;
@@ -275,7 +275,7 @@
             label3.AutoSize = true;
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Calibri", 13.8F);
-            label3.Location = new Point(111, 491);
+            label3.Location = new Point(49, 438);
             label3.Name = "label3";
             label3.Size = new Size(75, 28);
             label3.TabIndex = 2;
@@ -286,7 +286,7 @@
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Calibri", 13.8F);
-            label2.Location = new Point(111, 363);
+            label2.Location = new Point(49, 371);
             label2.Name = "label2";
             label2.Size = new Size(68, 28);
             label2.TabIndex = 1;
@@ -297,7 +297,7 @@
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Calibri", 13.8F);
-            label1.Location = new Point(111, 227);
+            label1.Location = new Point(49, 291);
             label1.Name = "label1";
             label1.Size = new Size(167, 28);
             label1.TabIndex = 0;
@@ -308,8 +308,9 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(parrotGradientPanel1);
+            MinimumSize = new Size(936, 681);
             Name = "CadastroDeUsuario";
-            Size = new Size(1058, 893);
+            Size = new Size(936, 681);
             Load += CadastroDeUsuario_Load;
             parrotGradientPanel1.ResumeLayout(false);
             parrotGradientPanel1.PerformLayout();
