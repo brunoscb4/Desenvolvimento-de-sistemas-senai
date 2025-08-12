@@ -212,9 +212,10 @@
             TextBoxDescricao.Font = new Font("Calibri", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             TextBoxDescricao.Location = new Point(25, 435);
             TextBoxDescricao.Margin = new Padding(3, 4, 3, 4);
-            TextBoxDescricao.MaximumSize = new Size(500, 492);
+            TextBoxDescricao.MaximumSize = new Size(400, 350);
+            TextBoxDescricao.MinimumSize = new Size(289, 226);
             TextBoxDescricao.Name = "TextBoxDescricao";
-            TextBoxDescricao.Size = new Size(249, 226);
+            TextBoxDescricao.Size = new Size(289, 226);
             TextBoxDescricao.TabIndex = 17;
             TextBoxDescricao.Text = "";
             // 
